@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             existingBtn.remove();
         }
         
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
             // Add button to the nav container
             if (navContainer) {
                 navContainer.prepend(mobileMenuBtn);
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to toggle dropdown on mobile
     function toggleDropdown(e) {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1024) {
             // Toggle active class which shows/hides dropdown
             this.classList.toggle('active');
             
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             if (navbar) {
                 navbar.classList.remove('sticky');
-                if (brandLogo && window.innerWidth <= 768) {
+                if (brandLogo && window.innerWidth <= 1024) {
                     // Keep logo visible on mobile even when not sticky
                     brandLogo.style.display = 'block';
                 } else if (brandLogo) {
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Handle desktop marquee - make it sticky ONLY when it's about to pass the navbar
-        if (desktopMarquee && window.innerWidth > 768) {
+        if (desktopMarquee && window.innerWidth > 1024) {
             // If scroll position + navbar height is greater than or equal to the marquee's original position
             if (window.pageYOffset + navbarHeight >= desktopMarqueeOriginalTop) {
                 // Make the marquee sticky
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Handle mobile marquee behavior
-        if (mobileMarquee && window.innerWidth <= 768) {
+        if (mobileMarquee && window.innerWidth <= 1024) {
             if (window.pageYOffset > 90) {
                 // When scrolled down, change to light background with dark text
                 mobileMarquee.style.backgroundColor = '#f5f5f5';

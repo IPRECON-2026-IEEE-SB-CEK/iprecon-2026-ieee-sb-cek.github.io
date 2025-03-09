@@ -154,6 +154,10 @@
   min-height: 70px;
 }
 
+.navbar.sticky .nav-items{
+  padding-top: 10px;
+}
+
 .navbar.sticky .brand-logo {
   display: block; /* Show when sticky */
   max-height: 50px;
@@ -182,7 +186,7 @@
 }
 
 /* Navbar Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar {
     background-color: #211021;
   }
@@ -337,7 +341,7 @@
 }
 
 /* Marquee Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .mob-marq {
     display: block !important;
     background-color: #211021 !important;
@@ -384,7 +388,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .mob-marq {
     display: none !important;
   }
