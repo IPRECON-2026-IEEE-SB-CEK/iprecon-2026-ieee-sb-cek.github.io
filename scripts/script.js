@@ -50,6 +50,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (window.innerWidth <= 1024) {
+            // Create overlay background if it doesn't exist
+            let menuOverlay = document.querySelector('.menu-overlay');
+            if (!menuOverlay) {
+                menuOverlay = document.createElement('div');
+                menuOverlay.className = 'menu-overlay';
+                document.body.appendChild(menuOverlay);
+            }
+            
+            // Create close button if it doesn't exist
+            let menuClose = navItemsList.querySelector('.menu-close');
+            if (!menuClose) {
+                menuClose = document.createElement('div');
+                menuClose.className = 'menu-close';
+                menuClose.innerHTML = '<i class="fas fa-times"></i>';
+                navItemsList.prepend(menuClose);
+            }
+            
             // Add button to the nav container
             if (navContainer) {
                 navContainer.prepend(mobileMenuBtn);
@@ -59,14 +76,43 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenuBtn.addEventListener('click', function() {
                 if (navItemsList) {
                     navItemsList.classList.toggle('show');
+                    menuOverlay.classList.toggle('show');
                     
-                    // Toggle icon between bars and X
+                    // Toggle icon
                     const icon = this.querySelector('i');
                     if (navItemsList.classList.contains('show')) {
                         icon.className = 'fas fa-times';
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
                     } else {
                         icon.className = 'fas fa-bars';
+                        document.body.style.overflow = ''; // Allow scrolling again
                     }
+                }
+            });
+            
+            // Close menu on close button click
+            menuClose.addEventListener('click', function() {
+                navItemsList.classList.remove('show');
+                menuOverlay.classList.remove('show');
+                document.body.style.overflow = ''; // Allow scrolling again
+                
+                // Reset menu button icon
+                const menuBtnIcon = mobileMenuBtn.querySelector('i');
+                if (menuBtnIcon) {
+                    menuBtnIcon.className = 'fas fa-bars';
+                }
+            });
+            
+            // Close menu when clicking on overlay
+            menuOverlay.addEventListener('click', function() {
+                navItemsList.classList.remove('show');
+                menuOverlay.classList.remove('show');
+                document.body.style.overflow = ''; // Allow scrolling again
+                
+                // Reset menu button icon
+                const menuBtnIcon = mobileMenuBtn.querySelector('i');
+                if (menuBtnIcon) {
+                    menuBtnIcon.className = 'fas fa-bars';
                 }
             });
             
@@ -93,20 +139,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.addEventListener('click', toggleDropdown);
                 }
             });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (navContainer && !navContainer.contains(e.target) && navItemsList && navItemsList.classList.contains('show')) {
-                    navItemsList.classList.remove('show');
-                    mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
-                }
-            });
-            
         } else {
             // Remove mobile-specific classes on larger screens
             if (navItemsList) {
                 navItemsList.classList.remove('show');
+                
+                // Remove close button if exists
+                const menuClose = navItemsList.querySelector('.menu-close');
+                if (menuClose) {
+                    menuClose.remove();
+                }
             }
+            
+            // Remove overlay if exists
+            const menuOverlay = document.querySelector('.menu-overlay');
+            if (menuOverlay) {
+                menuOverlay.classList.remove('show');
+            }
+            
+            // Enable scrolling
+            document.body.style.overflow = '';
             
             // Remove active class from all nav items
             navItems.forEach(item => {

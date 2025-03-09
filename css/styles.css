@@ -210,23 +210,55 @@
     margin-left: 15px;
   }
 
+  /* Change the nav-items to overlay style */
   .nav-items {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #8e24aa;
+    position: fixed; /* Change from absolute to fixed */
+    top: 0;
+    right: -100%; /* Start off-screen */
+    width: 80%; /* Take 80% of screen width */
+    max-width: 400px; /* Maximum width */
+    height: 100vh; /* Full height */
+    background-color: #211021; /* Dark background */
     flex-direction: column;
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
-    max-height: 80vh;
     overflow-y: auto;
-    z-index: 1005;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2000; /* Higher z-index */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out; /* Smooth transition */
+    padding-top: 60px; /* Space for close button */
   }
 
+  /* When menu is shown */
   .nav-items.show {
     display: flex;
+    right: 0; /* Slide in from right */
+  }
+
+  /* Overlay background when menu is open */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Just below the menu */
+  }
+
+  .menu-overlay.show {
+    display: block;
+  }
+
+  /* Close button in the menu */
+  .menu-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2001;
   }
 
   .nav-item {
