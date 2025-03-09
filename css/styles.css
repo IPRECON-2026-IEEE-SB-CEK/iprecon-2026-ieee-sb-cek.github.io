@@ -225,7 +225,7 @@
     z-index: 2000; /* Higher z-index */
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out; /* Smooth transition */
-    padding-top: 60px; /* Space for close button */
+    padding-top: 20px; /* Space for close button */
   }
 
   /* When menu is shown */
