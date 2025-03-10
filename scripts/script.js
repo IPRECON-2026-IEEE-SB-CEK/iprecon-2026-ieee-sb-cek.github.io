@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const totalDistance = contentWidth + viewportWidth;
           
           // Calculate a base speed (px per second) - adjust this value to change overall speed
-          const baseSpeed = 220; // pixels per second
+          const baseSpeed = 170; // pixels per second
           
           // Calculate duration based on distance and speed (in seconds)
           const duration = totalDistance / baseSpeed;
