@@ -103,15 +103,24 @@
   height: 100%;
 }
 
+.nav-item > a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  font-weight: bold;
+  height: 100%;
+}
+
 .nav-item {
   position: relative;
   color: white;
-  padding: 15px 20px;
   cursor: pointer;
   font-weight: bold;
   height: 100%;
   display: flex;
   align-items: center;
+  padding: 0;
 }
 
 .nav-item:hover {
@@ -778,6 +787,35 @@
   width: 100%;
   max-width: 450px;
 }
+
+/*---------------------- DEI STATEMENT ---------------------*/
+.dei-section {
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  line-height: 1.5;
+}
+.dei-section>hr{
+  margin: 30px 0;
+  border: none; 
+  height: 1px; 
+  background: #ccc;
+}
+.dei-sub{
+  margin: 15px 0 10px 0;
+}
+.section-content{
+  text-align: justify;
+  color: #414141;
+}
+.dei-section ul{
+  margin: 20px 0;
+  list-style-type: disc;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
 
 /* About Section Responsive */
 @media (max-width: 768px) {
