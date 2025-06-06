@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - IPRECON 2026</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            border: none;
+            outline: none;
+        }
+
+        body {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Modern Glitch 404 Page */
+        .error-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a0e2e 25%, #211021 50%, #8e24aa 75%, #d4af37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Subtle Grid */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(142, 36, 170, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(142, 36, 170, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: gridFlow 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes gridFlow {
+            0%, 100% { opacity: 0.2; transform: translateX(0px) translateY(0px); }
+            50% { opacity: 0.4; transform: translateX(20px) translateY(10px); }
+        }
+
+        /* Elegant Glitch Lines */
+        .glitch-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .glitch-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8e24aa, #d4af37, transparent);
+            animation: glitchSweep 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .glitch-line:nth-child(1) {
+            top: 25%;
+            width: 70%;
+            left: -70%;
+            animation-delay: 0s;
+        }
+
+        .glitch-line:nth-child(2) {
+            top: 50%;
+            width: 60%;
+            right: -60%;
+            animation-delay: 2s;
+            animation-direction: reverse;
+        }
+
+        .glitch-line:nth-child(3) {
+            top: 75%;
+            width: 80%;
+            left: -80%;
+            animation-delay: 4s;
+        }
+
+        @keyframes glitchSweep {
+            0% { transform: translateX(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateX(100vw); opacity: 0; }
+        }
+
+        /* Floating Data Particles */
+        .data-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(142, 36, 170, 0.4);
+            animation: floatData 10s ease-in-out infinite;
+        }
+
+        .data-particle:nth-child(1) {
+            width: 6px;
+            height: 6px;
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .data-particle:nth-child(2) {
+            width: 4px;
+            height: 4px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 3s;
+            background: rgba(212, 175, 55, 0.4);
+        }
+
+        .data-particle:nth-child(3) {
+            width: 8px;
+            height: 8px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 6s;
+            background: rgba(76, 175, 80, 0.4);
+        }
+
+        @keyframes floatData {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+            25% { transform: translateY(-15px) translateX(8px); opacity: 0.8; }
+            50% { transform: translateY(-8px) translateX(-8px); opacity: 0.6; }
+            75% { transform: translateY(-20px) translateX(5px); opacity: 0.8; }
+        }
+
+        /* Main Content Container */
+        .error-container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            position: relative;
+            max-width: 800px;
+            padding: 30px 30px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            border: 1px solid rgba(142, 36, 170, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Glitch 404 Number */
+        .error-number {
+            font-size: 10rem;
+            font-weight: 800;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #8e24aa, #d4af37);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glitchGlow 4s ease-in-out infinite;
+            position: relative;
+            filter: drop-shadow(0 0 20px rgba(142, 36, 170, 0.3));
+        }
+
+        .error-number::before {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: rgba(142, 36, 170, 0.1);
+            animation: glitchShift 0.5s infinite;
+            z-index: -1;
+        }
+
+        .error-number::after {
+            content: '⚡';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            font-size: 3rem;
+            color: #d4af37;
+            animation: subtleBounce 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes glitchGlow {
+            0%, 100% { 
+                background-position: 0% 50%;
+                transform: scale(1);
+            }
+            50% { 
+                background-position: 100% 50%;
+                transform: scale(1.01);
+            }
+        }
+
+        @keyframes glitchShift {
+            0%, 90%, 100% { transform: translate(0); }
+            20% { transform: translate(-1px, 1px); }
+            40% { transform: translate(-1px, -1px); }
+            60% { transform: translate(1px, 1px); }
+            80% { transform: translate(1px, -1px); }
+        }
+
+        @keyframes subtleBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Clean Typography */
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+            animation: slideIn 1s ease-out 0.3s both;
+            letter-spacing: -1px;
+        }
+
+        .error-subtitle {
+            font-size: 1.6rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-weight: 500;
+            animation: slideIn 1s ease-out 0.5s both;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 25px;
+            line-height: 1.6;
+            animation: fadeIn 1s ease-out 0.7s both;
+            font-weight: 400;
+        }
+
+        .error-message .highlight {
+            color: #8e24aa;
+            font-weight: 600;
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Modern Action Buttons */
+        .error-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: popIn 1s ease-out 0.9s both;
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .modern-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .modern-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .modern-btn:hover::before {
+            left: 100%;
+        }
+
+        .modern-btn.primary {
+            color: #ffffff;
+            border-color: #8e24aa;
+            box-shadow: 0 0 20px rgba(142, 36, 170, 0.2);
+        }
+
+        .modern-btn.primary:hover {
+            background: rgba(142, 36, 170, 0.2);
+            border-color: #8e24aa;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(142, 36, 170, 0.3);
+        }
+
+        .modern-btn.secondary {
+            color: #d4af37;
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .modern-btn.secondary:hover {
+            background: rgba(212, 175, 55, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Clean Quote */
+        .tech-quote {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            animation: fadeIn 2s ease-out 1.5s both;
+            font-style: italic;
+        }
+
+        /* Conference Info */
+        .conference-info {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            animation: fadeIn 2s ease-out 1.7s both;
+            font-weight: 400;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .error-number {
+                font-size: 11rem;
+            }
+            
+            .error-title {
+                font-size: 2.8rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .error-message {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 40px 25px;
+                border-radius: 12px;
+            }
+            
+            .error-number {
+                font-size: 8rem;
+            }
+            
+            .error-number::after {
+                font-size: 2.5rem;
+                right: -8%;
+            }
+            
+            .error-title {
+                font-size: 2.2rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+                margin-bottom: 35px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .modern-btn {
+                width: 220px;
+                justify-content: center;
+                padding: 14px 28px;
+            }
+
+            .data-particle {
+                transform: scale(0.8);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-container {
+                padding: 30px 20px;
+            }
+            
+            .error-number {
+                font-size: 6rem;
+                margin-bottom: 20px;
+            }
+            
+            .error-title {
+                font-size: 1.8rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1rem;
+            }
+            
+            .error-message {
+                font-size: 0.9rem;
+                padding: 0 10px;
+            }
+            
+            .tech-quote, .conference-info {
+                font-size: 0.8rem;
+                padding: 0 20px;
+            }
+
+            .conference-info {
+                bottom: 60px;
+            }
+
+            .tech-quote {
+                bottom: 20px;
+            }
+        }
+
+        /* Floating tech particles */
+        .tech-particle {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            animation: floatTech 8s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatTech {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-50px) translateX(30px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <!-- Tech Grid -->
+        <div class="tech-grid"></div>
+        
+        <!-- Glitch Lines -->
+        <div class="glitch-lines">
+            <div class="glitch-line"></div>
+            <div class="glitch-line"></div>
+            <div class="glitch-line"></div>
+        </div>
+        
+        <!-- Data Particles -->
+        <div class="data-particle"></div>
+        <div class="data-particle"></div>
+        <div class="data-particle"></div>
+
+        <!-- Main Content -->
+        <div class="error-container">
+            <div class="error-number">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <h2 class="error-subtitle">Oops! Circuit Breaker Tripped</h2>
+            <p class="error-message">
+                Looks like you've discovered a <span class="highlight">circuit in progress!</span> 
+                Our engineers are still wiring this section, or you might have hit a wrong frequency.
+            </p>
+            <p class="error-message"> 
+                While we code the future, explore our <span class="highlight">powered-up sections!</span> ⚡
+            </p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="modern-btn primary">
+                    <i class="fas fa-home"></i>
+                    Reboot Home
+                </a>
+            </div>
+        </div>
+
+        <!-- Conference Info -->
+        <div class="conference-info">
+            <div>
+                <strong>IPRECON 2026</strong> | March 20-22, 2026 | Kerala, India
+            </div>
+            <div style="margin-top: 5px;">
+                International Power and Renewable Energy Conference
+            </div>
+        </div>
+
+        <!-- Tech Quote -->
+        <div class="tech-quote">
+            "Even the smartest grids need a moment to recalibrate."
+        </div>
+    </div>
+
+    <script>
+        // Create floating tech particles
+        function createTechParticles() {
+            function addParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'tech-particle';
+                
+                const colors = ['#8e24aa', '#d4af37', '#4CAF50'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                particle.style.cssText = `
+                    left: ${Math.random() * 100}%;
+                    width: ${3 + Math.random() * 4}px;
+                    height: ${3 + Math.random() * 4}px;
+                    background: ${color};
+                    animation-duration: ${6 + Math.random() * 4}s;
+                    animation-delay: ${Math.random() * 2}s;
+                    z-index: 3;
+                `;
+                
+                document.querySelector('.error-page').appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 10000);
+            }
+            
+            setInterval(addParticle, 800);
+            
+            // Initial particles
+            for (let i = 0; i < 5; i++) {
+                setTimeout(addParticle, i * 300);
+            }
+        }
+
+        // Subtle mouse interactions
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.97) {
+                createSparkle(e.clientX, e.clientY);
+            }
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            const colors = ['#8e24aa', '#d4af37'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            sparkle.style.cssText = `
+                position: fixed;
+                left: ${x}px;
+                top: ${y}px;
+                width: 4px;
+                height: 4px;
+                background: ${color};
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1000;
+                animation: sparkleAnim 1.2s ease-out forwards;
+            `;
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                if (sparkle.parentNode) {
+                    sparkle.parentNode.removeChild(sparkle);
+                }
+            }, 1200);
+        }
+
+        // Add sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleAnim {
+                0% {
+                    transform: scale(0) rotate(0deg);
+                    opacity: 1;
+                }
+                50% {
+                    transform: scale(1.5) rotate(180deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(0) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Button hover effects
+        document.addEventListener('DOMContentLoaded', function() {
+            createTechParticles();
+            
+            const buttons = document.querySelectorAll('.modern-btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    const rect = this.getBoundingClientRect();
+                    for(let i = 0; i < 3; i++) {
+                        setTimeout(() => {
+                            createSparkle(
+                                rect.left + Math.random() * rect.width,
+                                rect.top + Math.random() * rect.height
+                            );
+                        }, i * 100);
+                    }
+                });
+            });
+        });
+
+        // Console message
+        console.log(`
+        ⚡ IPRECON 2026 - System Status ⚡
+        
+        🔌 Main Grid: ONLINE
+        🔋 Backup Systems: ACTIVE
+        ⚙️ Smart Controllers: OPERATIONAL
+        📡 Network Status: RECONNECTING...
+        
+        Error 404: Temporary connection lost
+        Redirecting to main grid... ⚡
+        `);
+    </script>
+</body>
+</html>
