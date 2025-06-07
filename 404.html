@@ -33,11 +33,13 @@
             min-height: 100vh;
             background: linear-gradient(135deg, #0f0f0f 0%, #1a0e2e 25%, #211021 50%, #8e24aa 75%, #d4af37 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
             font-family: 'Montserrat', sans-serif;
+            padding: 20px;
         }
 
         /* Subtle Grid */
@@ -147,19 +149,40 @@
             75% { transform: translateY(-20px) translateX(5px); opacity: 0.8; }
         }
 
+        /* Content Wrapper */
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            z-index: 10;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
         /* Main Content Container */
         .error-container {
             text-align: center;
             color: white;
-            z-index: 10;
-            position: relative;
-            max-width: 800px;
-            padding: 30px 30px;
+            padding: 30px;
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(15px);
             border-radius: 15px;
             border: 1px solid rgba(142, 36, 170, 0.2);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            width: 100%;
         }
 
         /* Glitch 404 Number */
@@ -324,53 +347,39 @@
             box-shadow: 0 15px 30px rgba(142, 36, 170, 0.3);
         }
 
-        .modern-btn.secondary {
-            color: #d4af37;
-            border-color: #d4af37;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .modern-btn.secondary:hover {
-            background: rgba(212, 175, 55, 0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        /* Clean Quote */
-        .tech-quote {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1rem;
-            font-weight: 500;
-            text-align: center;
-            animation: fadeIn 2s ease-out 1.5s both;
-            font-style: italic;
-        }
-
-        /* Conference Info */
-        .conference-info {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
+        /* Footer Info */
+        .footer-info {
             text-align: center;
             color: rgba(255, 255, 255, 0.7);
+            z-index: 10;
+            position: relative;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .conference-info {
             font-size: 0.9rem;
-            animation: fadeIn 2s ease-out 1.7s both;
             font-weight: 400;
+            margin-bottom: 15px;
+            animation: fadeIn 2s ease-out 1.7s both;
+        }
+
+        .tech-quote {
+            font-size: 1rem;
+            font-weight: 500;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.6);
+            animation: fadeIn 2s ease-out 1.5s both;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
             .error-number {
-                font-size: 11rem;
+                font-size: 8rem;
             }
             
             .error-title {
-                font-size: 2.8rem;
+                font-size: 2.2rem;
             }
             
             .error-subtitle {
@@ -383,22 +392,27 @@
         }
 
         @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 20px;
+            }
+
             .error-container {
-                padding: 40px 25px;
+                padding: 25px 20px;
                 border-radius: 12px;
+                margin-bottom: 30px;
             }
             
             .error-number {
-                font-size: 8rem;
+                font-size: 6rem;
             }
             
             .error-number::after {
-                font-size: 2.5rem;
+                font-size: 2rem;
                 right: -8%;
             }
             
             .error-title {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
             
             .error-subtitle {
@@ -407,7 +421,7 @@
             
             .error-message {
                 font-size: 1rem;
-                margin-bottom: 35px;
+                margin-bottom: 25px;
             }
             
             .error-actions {
@@ -422,23 +436,43 @@
                 padding: 14px 28px;
             }
 
-            .data-particle {
-                transform: scale(0.8);
+            .footer-info {
+                padding: 15px;
+            }
+
+            .conference-info {
+                font-size: 0.8rem;
+            }
+
+            .tech-quote {
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
+            .error-page {
+                padding: 15px;
+            }
+
+            .content-wrapper {
+                padding: 10px;
+            }
+            
             .error-container {
-                padding: 30px 20px;
+                padding: 20px 15px;
             }
             
             .error-number {
-                font-size: 6rem;
-                margin-bottom: 20px;
+                font-size: 4.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .error-number::after {
+                font-size: 1.5rem;
             }
             
             .error-title {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             
             .error-subtitle {
@@ -447,20 +481,25 @@
             
             .error-message {
                 font-size: 0.9rem;
-                padding: 0 10px;
+                padding: 0 5px;
+            }
+
+            .modern-btn {
+                width: 100%;
+                max-width: 250px;
             }
             
-            .tech-quote, .conference-info {
-                font-size: 0.8rem;
-                padding: 0 20px;
+            .footer-info {
+                padding: 10px;
             }
 
             .conference-info {
-                bottom: 60px;
+                font-size: 0.75rem;
+                margin-bottom: 10px;
             }
 
             .tech-quote {
-                bottom: 20px;
+                font-size: 0.8rem;
             }
         }
 
@@ -508,40 +547,46 @@
         <div class="data-particle"></div>
         <div class="data-particle"></div>
 
-        <!-- Main Content -->
-        <div class="error-container">
-            <div class="error-number">404</div>
-            <h1 class="error-title">Page Not Found</h1>
-            <h2 class="error-subtitle">Oops! Circuit Breaker Tripped</h2>
-            <p class="error-message">
-                Looks like you've discovered a <span class="highlight">circuit in progress!</span> 
-                Our engineers are still wiring this section, or you might have hit a wrong frequency.
-            </p>
-            <p class="error-message"> 
-                While we code the future, explore our <span class="highlight">powered-up sections!</span> ⚡
-            </p>
-            
-            <div class="error-actions">
-                <a href="index.html" class="modern-btn primary">
-                    <i class="fas fa-home"></i>
-                    Reboot Home
-                </a>
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <div class="error-container">
+                    <div class="error-number">404</div>
+                    <h1 class="error-title">Page Not Found</h1>
+                    <h2 class="error-subtitle">Oops! Circuit Breaker Tripped</h2>
+                    <p class="error-message">
+                        Looks like you've discovered a <span class="highlight">circuit in progress!</span> 
+                        Our engineers are still wiring this section, or you might have hit a wrong frequency.
+                    </p>
+                    <p class="error-message"> 
+                        While we code the future, explore our <span class="highlight">powered-up sections!</span> ⚡
+                    </p>
+                    
+                    <div class="error-actions">
+                        <a href="index.html" class="modern-btn primary">
+                            <i class="fas fa-home"></i>
+                            Reboot Home
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Conference Info -->
-        <div class="conference-info">
-            <div>
-                <strong>IPRECON 2026</strong> | March 20-22, 2026 | Kerala, India
-            </div>
-            <div style="margin-top: 5px;">
-                International Power and Renewable Energy Conference
-            </div>
-        </div>
+            <!-- Footer Info -->
+            <div class="footer-info">
+                <div class="conference-info">
+                    <div>
+                        <strong>IPRECON 2026</strong> | March 20-22, 2026 | Kerala, India
+                    </div>
+                    <div style="margin-top: 5px;">
+                        International Power and Renewable Energy Conference
+                    </div>
+                </div>
 
-        <!-- Tech Quote -->
-        <div class="tech-quote">
-            "Even the smartest grids need a moment to recalibrate."
+                <div class="tech-quote">
+                    "Even the smartest grids need a moment to recalibrate."
+                </div>
+            </div>
         </div>
     </div>
 
