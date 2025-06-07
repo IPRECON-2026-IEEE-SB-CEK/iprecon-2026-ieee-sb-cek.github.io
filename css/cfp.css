@@ -198,7 +198,7 @@
 }
 
 .date-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -253,11 +253,25 @@
 .date-status.upcoming {
   background: #e8f5e8;
   color: #2e7d32;
+  border: 1px solid #4caf50;
 }
 
 .date-status.future {
   background: #e3f2fd;
   color: #1565c0;
+  border: 1px solid #2196f3;
+}
+
+.date-status.deadline {
+  background: #fff3e0;
+  color: #ef6c00;
+  border: 1px solid #ff9800;
+}
+
+.date-status.final {
+  background: #fce4ec;
+  color: #c2185b;
+  border: 1px solid #e91e63;
 }
 
 /* Overview Section */
@@ -417,7 +431,7 @@
 }
 
 .track-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -481,7 +495,7 @@
 }
 
 .track-topics li::before {
-  content: '→';
+  content: "→";
   position: absolute;
   left: 0;
   color: #8e24aa;
@@ -555,7 +569,7 @@
 }
 
 .guideline-card li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: #8e24aa;
@@ -578,7 +592,7 @@
 }
 
 .action-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -668,7 +682,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
+
   .topics-highlight {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -699,7 +713,7 @@
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .topics-highlight {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -876,12 +890,12 @@
     background: white !important;
     color: black !important;
   }
-  
+
   .cfp-btn,
   .action-buttons {
     display: none;
   }
-  
+
   .track-card,
   .guideline-card,
   .date-card {
