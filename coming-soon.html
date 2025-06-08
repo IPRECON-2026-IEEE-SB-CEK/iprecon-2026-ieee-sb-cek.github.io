@@ -21,7 +21,12 @@
       /* Coming Soon Page Specific Styles */
       .coming-soon-section {
         padding: 80px 0;
-        background: linear-gradient(135deg, #6c5a7a 0%, #4a3c5a 50%, #3d2f4a 100%);
+        background: linear-gradient(
+          135deg,
+          #6c5a7a 0%,
+          #4a3c5a 50%,
+          #3d2f4a 100%
+        );
         min-height: 60vh;
         display: flex;
         align-items: center;
@@ -47,7 +52,7 @@
       }
 
       .coming-soon-content::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -74,8 +79,13 @@
       }
 
       @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
 
       .coming-soon-title {
@@ -194,7 +204,7 @@
       }
 
       .notification-signup::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -219,21 +229,230 @@
       }
 
       .notification-form {
-        display: flex;
-        gap: 15px;
         max-width: 400px;
         margin: 0 auto;
         position: relative;
         z-index: 2;
       }
 
-      .notification-form input {
+      .form-row {
+        display: flex;
+        gap: 15px;
+      }
+
+      .email-input-container {
         flex: 1;
+      }
+
+      .notification-form input {
+        width: 100%;
         padding: 12px 15px;
         border: none;
         border-radius: 8px;
         font-size: 1rem;
         outline: none;
+        border: 2px solid transparent;
+        transition: border-color 0.3s ease;
+      }
+
+      .notification-form input.error {
+        border-color: #dc3545;
+      }
+
+      .error-message {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 8px;
+        margin-bottom: 0;
+        display: none;
+        font-weight: 500;
+        text-align: left;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      .success-message {
+        color: #28a745;
+        font-size: 0.875rem;
+        margin-top: 8px;
+        margin-bottom: 0;
+        display: none;
+        font-weight: 500;
+        text-align: left;
+      }
+
+      .success-message.show {
+        display: block;
+      }
+
+      /* Success Popup Modal */
+      .success-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .success-popup.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .success-popup-content {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        text-align: center;
+        max-width: 450px;
+        width: 90%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        position: relative;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+      }
+
+      .success-popup.show .success-popup-content {
+        transform: scale(1);
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: #28a745;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        animation: successBounce 0.6s ease;
+      }
+
+      .success-icon i {
+        font-size: 2.5rem;
+        color: white;
+      }
+
+      @keyframes successBounce {
+        0% {
+          transform: scale(0);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .success-popup h3 {
+        font-size: 1.8rem;
+        color: #211021;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .success-popup p {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      .success-popup-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .popup-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        border: 2px solid;
+        cursor: pointer;
+      }
+
+      .popup-btn.primary {
+        background: #8e24aa;
+        color: white;
+        border-color: #8e24aa;
+      }
+
+      .popup-btn.primary:hover {
+        background: #7b1f96;
+        transform: translateY(-2px);
+      }
+
+      .popup-btn.secondary {
+        background: transparent;
+        color: #6c757d;
+        border-color: #6c757d;
+      }
+
+      .popup-btn.secondary:hover {
+        background: #6c757d;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .auto-close-info {
+        font-size: 0.85rem;
+        color: #adb5bd;
+        margin-top: 15px;
+        font-style: italic;
+      }
+
+      /* Responsive for popup */
+      @media (max-width: 480px) {
+        .success-popup-content {
+          padding: 30px 20px;
+        }
+
+        .success-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .success-icon i {
+          font-size: 2rem;
+        }
+
+        .success-popup h3 {
+          font-size: 1.5rem;
+        }
+
+        .success-popup p {
+          font-size: 1rem;
+        }
+
+        .success-popup-actions {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .popup-btn {
+          width: 100%;
+          max-width: 200px;
+          justify-content: center;
+        }
       }
 
       .notification-form button {
@@ -319,8 +538,12 @@
           justify-content: center;
         }
 
-        .notification-form {
+        .form-row {
           flex-direction: column;
+          gap: 15px;
+        }
+
+        .notification-form {
           max-width: 100%;
         }
 
@@ -356,10 +579,18 @@
         animation: fadeInUp 0.6s ease forwards;
       }
 
-      .fade-in:nth-child(1) { animation-delay: 0.1s; }
-      .fade-in:nth-child(2) { animation-delay: 0.2s; }
-      .fade-in:nth-child(3) { animation-delay: 0.3s; }
-      .fade-in:nth-child(4) { animation-delay: 0.4s; }
+      .fade-in:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .fade-in:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .fade-in:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .fade-in:nth-child(4) {
+        animation-delay: 0.4s;
+      }
 
       @keyframes fadeInUp {
         to {
@@ -404,7 +635,7 @@
               <i class="fas fa-bell"></i>
               Paper Submissions Opening Soon! To View Call for Papers
               <a
-                href="./submissions"
+                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
                 class="purple-link"
                 >Click Here</a
               >
@@ -435,7 +666,7 @@
         <ul class="nav-items">
           <li class="nav-item"><a href="index.html">HOME</a></li>
           <li class="nav-item">
-            <a href="about.html">ABOUT</a>
+            <span class="nav-link">ABOUT</span>
             <div class="dropdown-content">
               <a href="about-iprecon.html" class="dropdown-item">IPRECON</a>
               <a href="organizers.html" class="dropdown-item">ORGANIZERS</a>
@@ -453,7 +684,7 @@
           </li>
           <li class="nav-item"><a href="committee.html">COMMITTEE</a></li>
           <li class="nav-item">
-            <a href="authors.html">FOR AUTHORS</a>
+            <span class="nav-link">FOR AUTHORS</span>
             <div class="dropdown-content">
               <a href="call-for-papers.html" class="dropdown-item"
                 >CALL FOR PAPERS</a
@@ -472,10 +703,10 @@
           </li>
           <li class="nav-item"><a href="speakers.html">SPEAKERS</a></li>
           <li class="nav-item">
-            <a href="program.html">PROGRAM</a>
+            <span class="nav-link">PROGRAM</span>
             <div class="dropdown-content">
               <a href="inaugural.html" class="dropdown-item"
-                >INAUGURAL PROGRAM</a
+                >INAUGRAL PROGRAM</a
               >
               <a href="distinguished-lectures.html" class="dropdown-item"
                 >DISTINGUISHED LECTURE PROGRAM</a
@@ -535,30 +766,40 @@
             <div class="coming-soon-icon fade-in">
               <i class="fas fa-cogs"></i>
             </div>
-            
+
             <h1 class="coming-soon-title fade-in">Coming Soon</h1>
-            <h2 class="coming-soon-subtitle fade-in">We're Working Hard Behind the Scenes</h2>
-            
+            <h2 class="coming-soon-subtitle fade-in">
+              This Page Is Being Developed
+            </h2>
+
             <p class="coming-soon-message fade-in">
-              This section of IPRECON 2026 is currently under development. Our team is working diligently to bring you the best possible experience with cutting-edge features and comprehensive information.
+              This section is currently being finalized. We are preparing
+              comprehensive information and details that will be published
+              shortly. Please check back soon for updates.
             </p>
 
-            <div class="progress-indicators fade-in">
-              <div class="progress-item active">
-                <i class="fas fa-check-circle"></i>
-                <span>Planning</span>
-              </div>
-              <div class="progress-item active">
-                <i class="fas fa-check-circle"></i>
-                <span>Development</span>
-              </div>
-              <div class="progress-item">
-                <i class="fas fa-clock"></i>
-                <span>Testing</span>
-              </div>
-              <div class="progress-item">
-                <i class="fas fa-rocket"></i>
-                <span>Launch</span>
+            <div class="notification-signup fade-in">
+              <h3>Get Notified When We Launch</h3>
+              <p>
+                Be the first to know when this section becomes available. We'll
+                send you an update as soon as it's ready!
+              </p>
+              <div class="notification-form">
+                <div class="form-row">
+                  <div class="email-input-container">
+                    <input
+                      type="email"
+                      placeholder="Enter your email address"
+                      id="emailInput"
+                    />
+                  </div>
+                  <button type="submit" id="notifyBtn">
+                    <i class="fas fa-bell"></i>
+                    Notify Me
+                  </button>
+                </div>
+                <div class="error-message" id="errorMessage"></div>
+                <div class="success-message" id="successMessage"></div>
               </div>
             </div>
 
@@ -573,6 +814,34 @@
       </section>
     </main>
 
+    <!-- Success Popup Modal -->
+    <div class="success-popup" id="successPopup">
+      <div class="success-popup-content">
+        <div class="success-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <h3>Thank You!</h3>
+        <p>
+          We'll notify you at the earliest once this page is ready. Please check
+          your inbox regularly for updates.
+        </p>
+        <div class="success-popup-actions">
+          <a href="index.html" class="popup-btn primary">
+            <i class="fas fa-home"></i>
+            Back to Home
+          </a>
+          <button class="popup-btn secondary" onclick="closeSuccessPopup()">
+            <i class="fas fa-times"></i>
+            Close
+          </button>
+        </div>
+        <div class="auto-close-info">
+          This popup will close automatically in
+          <span id="countdown">5</span> seconds
+        </div>
+      </div>
+    </div>
+
     <!-- Footer section -->
     <footer class="site-footer">
       <div class="footer-container">
@@ -581,7 +850,11 @@
           <ul class="footer-links">
             <li><a href="./call-for-papers.html">Call for Papers</a></li>
             <li><a href="./submissions.html">Submit a Paper</a></li>
-            <li><a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a></li>
+            <li>
+              <a href="https://www.ieee.org/conferences/publishing/templates"
+                >Paper Template</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -653,17 +926,97 @@
           },
         });
 
-        // Simple notification form handling
-        $('.notification-form button').click(function(e) {
+        // Enhanced notification form handling with popup success
+        let countdownTimer;
+        let countdownInterval;
+
+        $("#notifyBtn").click(function (e) {
           e.preventDefault();
-          const email = $('.notification-form input').val();
-          if (email && email.includes('@')) {
-            alert('Thank you! We\'ll notify you when this section is ready.');
-            $('.notification-form input').val('');
-          } else {
-            alert('Please enter a valid email address.');
+
+          const email = $("#emailInput").val().trim();
+          const emailInput = $("#emailInput");
+          const errorMessage = $("#errorMessage");
+
+          // Clear previous states
+          emailInput.removeClass("error");
+          errorMessage.removeClass("show").text("");
+
+          // Validation
+          if (!email) {
+            showError("Please enter an email address.");
+            return;
+          }
+
+          if (!isValidEmail(email)) {
+            showError("Please enter a valid email address.");
+            return;
+          }
+
+          // Success case - show popup
+          showSuccessPopup();
+          emailInput.val("");
+
+          function showError(message) {
+            emailInput.addClass("error");
+            errorMessage.text(message).addClass("show");
+          }
+
+          function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
           }
         });
+
+        // Clear error state when user starts typing
+        $("#emailInput").on("input", function () {
+          $(this).removeClass("error");
+          $("#errorMessage").removeClass("show");
+        });
+
+        // Success popup functions
+        function showSuccessPopup() {
+          $("#successPopup").addClass("show");
+          startCountdown();
+        }
+
+        function closeSuccessPopup() {
+          $("#successPopup").removeClass("show");
+          if (countdownTimer) {
+            clearTimeout(countdownTimer);
+          }
+          if (countdownInterval) {
+            clearInterval(countdownInterval);
+          }
+        }
+
+        function startCountdown() {
+          let seconds = 5;
+          $("#countdown").text(seconds);
+
+          countdownInterval = setInterval(function () {
+            seconds--;
+            $("#countdown").text(seconds);
+
+            if (seconds <= 0) {
+              clearInterval(countdownInterval);
+              closeSuccessPopup();
+            }
+          }, 1000);
+
+          countdownTimer = setTimeout(function () {
+            closeSuccessPopup();
+          }, 5000);
+        }
+
+        // Close popup when clicking outside
+        $("#successPopup").click(function (e) {
+          if (e.target === this) {
+            closeSuccessPopup();
+          }
+        });
+
+        // Global function for close button
+        window.closeSuccessPopup = closeSuccessPopup;
       });
     </script>
   </body>
