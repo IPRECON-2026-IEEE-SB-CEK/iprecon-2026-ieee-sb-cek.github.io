@@ -259,15 +259,15 @@
         font-weight: 500;
       }
 
-      /* Past Endeavours Section - Expanded Cards */
+      /* Past Endeavours Section - New Design */
       .past-endeavours-section {
         background: white;
         padding: 80px 0;
       }
 
       .endeavours-grid {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 60px;
         margin-top: 60px;
       }
@@ -275,12 +275,12 @@
       .endeavour-card {
         background: #f8f9fa;
         border-radius: 25px;
-        padding: 50px;
+        overflow: hidden;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
         position: relative;
-        overflow: hidden;
-        border: 3px solid transparent;
+        min-height: 400px;
+        margin-bottom: 60px;
       }
 
       .endeavour-card::before {
@@ -291,138 +291,175 @@
         right: 0;
         height: 6px;
         background: linear-gradient(90deg, #8e24aa, #d4af37);
+        z-index: 10;
       }
 
       .endeavour-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-        border-color: #8e24aa;
+      }
+
+      /* Desktop Layout */
+      @media (min-width: 1025px) {
+        .endeavour-card {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: stretch;
+        }
+      }
+
+      /* Content Section with Purple Gradient and Vertical Text */
+      .endeavour-content {
+        display: flex;
         background: white;
+        position: relative;
+        width: 100%;
       }
 
-      .endeavour-header {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 40px;
+      .purple-gradient-section {
+        background: linear-gradient(180deg, #8e24aa, #211021);
+        width: 80px;
+        display: flex;
         align-items: center;
-        margin-bottom: 40px;
+        justify-content: center;
+        position: relative;
+        flex-shrink: 0;
       }
 
-      .endeavour-year-section {
-        text-align: center;
-      }
-
-      .endeavour-year {
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: #211021;
-        line-height: 1;
-      }
-
-      .endeavour-edition {
-        background: linear-gradient(135deg, #8e24aa, #211021);
+      .edition-text {
         color: white;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-top: 10px;
-        display: inline-block;
+        font-weight: 700;
+        font-size: 1.2rem;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
       }
 
-      .endeavour-details {
+      .main-content-area {
+        flex: 1;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        position: relative;
+        width: 100%;
+      }
+
+      .content-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 15px;
+        min-height: 70px;
+      }
+
+      .endeavour-logo {
+        width: 100px;
+        height: auto;
+        flex-shrink: 0;
+      }
+
+      .vertical-separator {
+        width: 2px;
+        height: 60px;
+        background: linear-gradient(180deg, #8e24aa, #211021);
+        flex-shrink: 0;
+      }
+
+      .title-section {
         flex: 1;
       }
 
       .endeavour-conference-name {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
         color: #211021;
         font-weight: 700;
-        margin-bottom: 15px;
-        line-height: 1.3;
-      }
-
-      .endeavour-theme {
-        font-size: 1.2rem;
-        color: #8e24aa;
-        font-weight: 600;
-        margin-bottom: 20px;
-        font-style: italic;
-        line-height: 1.4;
+        line-height: 1.1;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .endeavour-description {
         color: #555;
         line-height: 1.6;
         font-size: 1.05rem;
+        margin-bottom: 18px;
+        text-align: justify;
       }
 
-      .endeavour-logo {
-        width: 120px;
-        height: auto;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
+      .know-more-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(142, 36, 170, 0.3);
+        align-self: flex-start;
       }
 
-      .endeavour-card:hover .endeavour-logo {
-        opacity: 1;
+      .know-more-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(142, 36, 170, 0.4);
+        color: white;
       }
 
+      /* Statistics Section */
       .endeavour-stats {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
-        margin: 40px 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 30px;
+        background: white;
+        align-items: center;
+        justify-items: center;
       }
 
       .stat-box {
         text-align: center;
-        padding: 25px 15px;
-        background: white;
-        border-radius: 15px;
-        border: 2px solid #e9ecef;
+        padding: 20px 12px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #8e24aa;
         transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 110px;
       }
 
       .stat-box:hover {
-        border-color: #8e24aa;
         transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        background: white;
       }
 
       .stat-number {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
         font-weight: 700;
         color: #211021;
         display: block;
         line-height: 1;
+        margin-bottom: 8px;
       }
 
       .stat-label {
         font-size: 0.9rem;
         color: #6c757d;
-        margin-top: 8px;
         font-weight: 500;
-      }
-
-      .endeavour-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 15px 30px;
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        text-decoration: none;
-        border-radius: 12px;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 20px rgba(142, 36, 170, 0.3);
-      }
-
-      .endeavour-link:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(142, 36, 170, 0.4);
-        color: white;
+        line-height: 1.3;
       }
 
       /* Global Impact Section - Card Style */
@@ -559,7 +596,7 @@
         opacity: 0.9;
       }
 
-      /* Responsive Design */
+      /* Responsive Design - FIXED */
       @media (max-width: 1024px) {
         .iprecon-general-content,
         .iprecon-2026-content,
@@ -568,15 +605,85 @@
           gap: 40px;
         }
 
-        .endeavour-header {
-          grid-template-columns: 1fr;
-          gap: 30px;
-          text-align: center;
+        .iprecon-general-content {
+          display: flex;
+          flex-direction: column;
         }
 
+        .iprecon-logo-section {
+          order: 1;
+        }
+
+        .iprecon-text {
+          order: 2;
+        }
+
+        .endeavour-card {
+          display: block !important;
+          grid-template-columns: none !important;
+        }
+        
+        .endeavour-content {
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100%;
+          order: 1;
+        }
+        
         .endeavour-stats {
+          display: grid !important;
+          width: 100%;
+          order: 2;
           grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
+          gap: 10px;
+          padding: 30px;
+        }
+
+        .purple-gradient-section {
+          width: 100% !important;
+          height: 60px !important;
+          flex-direction: row !important;
+          justify-content: center !important;
+          display: flex !important;
+        }
+
+        .edition-text {
+          writing-mode: horizontal-tb !important;
+          text-orientation: initial !important;
+          font-size: 1.2rem !important;
+        }
+
+        .main-content-area {
+          flex: none !important;
+          width: 100% !important;
+          padding: 30px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+
+        .content-header {
+          justify-content: center !important;
+          text-align: center !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          margin-bottom: 20px !important;
+        }
+
+        .endeavour-description {
+          text-align: justify !important;
+          max-width: 90% !important;
+          margin: 0 auto 20px auto !important;
+        }
+
+        .know-more-btn {
+          align-self: center !important;
+        }
+
+        .vertical-separator {
+          width: 2px !important;
+          height: 60px !important;
         }
 
         .impact-statistics .statistics-grid {
@@ -606,13 +713,107 @@
           font-size: 2rem;
         }
 
+        .past-endeavours-section {
+          padding: 60px 0;
+        }
+
         .endeavour-card {
-          padding: 40px 30px;
+          display: block !important;
+          grid-template-columns: none !important;
+        }
+
+        .endeavour-content {
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          order: 1;
         }
 
         .endeavour-stats {
-          grid-template-columns: 1fr;
-          gap: 15px;
+          display: grid !important;
+          width: 100% !important;
+          order: 2;
+          grid-template-columns: 1fr !important;
+          gap: 15px !important;
+          padding: 30px !important;
+        }
+
+        .purple-gradient-section {
+          display: flex !important;
+          width: 100% !important;
+          height: 60px !important;
+          flex-direction: row !important;
+          justify-content: center !important;
+        }
+
+        .main-content-area {
+          padding: 25px !important;
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          flex: none !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+
+        .content-header {
+          flex-direction: row !important;
+          gap: 15px !important;
+          text-align: center !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          margin-bottom: 20px !important;
+        }
+
+        .endeavour-conference-name {
+          font-size: 1.4rem !important;
+          white-space: normal !important;
+          text-align: center !important;
+        }
+
+        .endeavour-description {
+          text-align: justify !important;
+          max-width: 100% !important;
+          margin: 0 auto 20px auto !important;
+          line-height: 1.6 !important;
+        }
+
+        .know-more-btn {
+          align-self: center !important;
+          margin: 10px 0 !important;
+        }
+
+        .stat-number {
+          font-size: 2.2rem;
+        }
+
+        .vertical-separator {
+          width: 2px !important;
+          height: 40px !important;
+        }
+
+        /* Ensure all content is visible */
+        .title-section,
+        .endeavour-logo,
+        .endeavour-conference-name,
+        .endeavour-description,
+        .know-more-btn,
+        .edition-text {
+          visibility: visible !important;
+          opacity: 1 !important;
+          display: block !important;
+        }
+
+        .endeavour-logo{
+          width: 70px !important;
+          height: auto !important;
+        }
+
+        .title-section {
+          display: flex !important;
+          flex-direction: column !important;
+          text-align: center !important;
         }
 
         .impact-statistics .statistics-grid {
@@ -655,12 +856,25 @@
           font-size: 1.8rem;
         }
 
-        .endeavour-year {
-          font-size: 2.5rem;
+        .endeavour-conference-name {
+          font-size: 1.2rem !important;
+          white-space: normal !important;
         }
 
-        .endeavour-conference-name {
-          font-size: 1.4rem;
+        .stat-number {
+          font-size: 2rem;
+        }
+
+        .main-content-area {
+          padding: 20px !important;
+        }
+
+        .edition-text {
+          font-size: 1rem !important;
+        }
+
+        .content-header {
+          text-align: center !important;
         }
 
         .impact-stat-number {
@@ -718,7 +932,7 @@
         />
         <div class="separator"></div>
         <div class="event-info">
-          <span>March 20-22, 2026</span>
+          <span>August 28-30, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -883,6 +1097,10 @@
           </div>
 
           <div class="iprecon-general-content fade-in">
+            <div class="iprecon-logo-section">
+              <img src="./assets/img/iprecon black.png" alt="IPRECON Logo" class="iprecon-main-logo" />
+            </div>
+            
             <div class="iprecon-text">
               <p>
                 IPRECON (International Power and Renewable Energy Conference) is India's first IEEE IAS club of six conferences, proudly organized by IEEE Student Branch College of Engineering Karunagappally. Since its inception, IPRECON has set a benchmark in combining innovation, sustainability, and academic excellence, offering a unified platform for students, researchers, professionals, and industry experts to collaborate on transformative solutions for the future of power and energy.
@@ -893,10 +1111,6 @@
               <p>
                 All proceedings are published in the IEEE Xplore® Digital Library, with 20% of presented papers eligible for further review and possible publication in premier IEEE IAS Periodicals, including Transactions and Magazines.
               </p>
-            </div>
-            
-            <div class="iprecon-logo-section">
-              <img src="./assets/img/iprecon black.png" alt="IPRECON Logo" class="iprecon-main-logo" />
             </div>
           </div>
         </div>
@@ -940,7 +1154,7 @@
               <div class="detail-grid">
                 <div class="detail-item">
                   <i class="fas fa-calendar"></i>
-                  <span>March 20-22, 2026</span>
+                  <span>August 28-30, 2026</span>
                 </div>
                 <div class="detail-item">
                   <i class="fas fa-map-marker-alt"></i>
@@ -968,8 +1182,8 @@
         </div>
       </section>
 
-      <!-- Past Endeavours Section -->
-      <section class="past-endeavours-section content-section">
+      <!-- Past Endeavours Section - Updated with New Design -->
+      <section class="past-endeavours-section">
         <div class="content-container">
           <div class="section-header">
             <h2 class="section-title">Past Endeavours</h2>
@@ -981,29 +1195,33 @@
           <div class="endeavours-grid">
             <!-- IPRECON 2022 -->
             <div class="endeavour-card">
-              <div class="endeavour-header">
-                <div class="endeavour-year-section">
-                  <div class="endeavour-year">2022</div>
-                  <div class="endeavour-edition">3rd Edition</div>
+              <!-- Content Section (Left) -->
+              <div class="endeavour-content">
+                <div class="purple-gradient-section">
+                  <div class="edition-text">3rd Edition</div>
                 </div>
                 
-                <div class="endeavour-details">
-                  <div class="endeavour-conference-name">
-                    IEEE International Power and Renewable Energy Conference (IPRECON 2022)
-                  </div>
-                  
-                  <div class="endeavour-theme">
-                    "Engineering the Sustainable World with Renewable Energy Resources through Ingenious Computing Technologies"
+                <div class="main-content-area">
+                  <div class="content-header">
+                    <img src="./assets/img/Past editions/iprecon22.png" alt="IPRECON 2022 Logo" class="endeavour-logo" />
+                    <div class="vertical-separator"></div>
+                    <div class="title-section">
+                      <div class="endeavour-conference-name">IPRECON 2022</div>
+                    </div>
                   </div>
                   
                   <div class="endeavour-description">
                     The third edition was successfully organized from 16th to 18th December 2022, serving as a vital platform for interdisciplinary discourse and research exchange. The conference marked another milestone in advancing scholarly contributions toward a sustainable future.
                   </div>
+                  
+                  <a href="https://2022.iprecon.org" target="_blank" class="know-more-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    Know More
+                  </a>
                 </div>
-
-                <img src="./assets/img/iprecon black.png" alt="IPRECON 2022 Logo" class="endeavour-logo" />
               </div>
-              
+
+              <!-- Statistics Section (Right) -->
               <div class="endeavour-stats">
                 <div class="stat-box">
                   <span class="stat-number">311</span>
@@ -1018,51 +1236,48 @@
                   <span class="stat-label">International Papers</span>
                 </div>
                 <div class="stat-box">
-                  <span class="stat-number">124</span>
-                  <span class="stat-label">Papers Presented</span>
+                  <span class="stat-number">121</span>
+                  <span class="stat-label">IEEE Xplore® Published</span>
                 </div>
-              </div>
-              
-              <div style="text-align: center;">
-                <a href="https://ieeexplore.ieee.org/xpl/conhome/10050851/proceeding" target="_blank" class="endeavour-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  View IPRECON 2022
-                </a>
               </div>
             </div>
 
             <!-- IPRECON 2021 -->
             <div class="endeavour-card">
-              <div class="endeavour-header">
-                <div class="endeavour-year-section">
-                  <div class="endeavour-year">2021</div>
-                  <div class="endeavour-edition">2nd Edition</div>
+              <!-- Content Section (Left) -->
+              <div class="endeavour-content">
+                <div class="purple-gradient-section">
+                  <div class="edition-text">2nd Edition</div>
                 </div>
                 
-                <div class="endeavour-details">
-                  <div class="endeavour-conference-name">
-                    IEEE International Power and Renewable Energy Conference (IPRECON 2021)
-                  </div>
-                  
-                  <div class="endeavour-theme">
-                    Building on Strong Foundations
+                <div class="main-content-area">
+                  <div class="content-header">
+                    <img src="./assets/img/Past editions/iprecon21.png" alt="IPRECON 2021 Logo" class="endeavour-logo" />
+                    <div class="vertical-separator"></div>
+                    <div class="title-section">
+                      <div class="endeavour-conference-name">IPRECON 2021</div>
+                    </div>
                   </div>
                   
                   <div class="endeavour-description">
                     Building on the strong foundation laid by its predecessor, the second edition was held on 24th, 25th, and 26th September 2021. The conference experienced a surge in participation, reflecting IPRECON's growing global reach and continued commitment to quality and relevance.
                   </div>
+                  
+                  <a href="https://2021.iprecon.org" target="_blank" class="know-more-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    Know More
+                  </a>
                 </div>
-
-                <img src="./assets/img/iprecon black.png" alt="IPRECON 2021 Logo" class="endeavour-logo" />
               </div>
-              
+
+              <!-- Statistics Section (Right) -->
               <div class="endeavour-stats">
                 <div class="stat-box">
                   <span class="stat-number">241</span>
                   <span class="stat-label">Papers Received</span>
                 </div>
                 <div class="stat-box">
-                  <span class="stat-number">120</span>
+                  <span class="stat-number">147</span>
                   <span class="stat-label">Papers Accepted</span>
                 </div>
                 <div class="stat-box">
@@ -1070,44 +1285,41 @@
                   <span class="stat-label">International Papers</span>
                 </div>
                 <div class="stat-box">
-                  <span class="stat-number">20%</span>
+                  <span class="stat-number">115</span>
                   <span class="stat-label">IEEE Xplore® Published</span>
                 </div>
-              </div>
-              
-              <div style="text-align: center;">
-                <a href="https://ieeexplore.ieee.org/xpl/conhome/9564471/proceeding" target="_blank" class="endeavour-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  View IPRECON 2021
-                </a>
               </div>
             </div>
 
             <!-- IPRECON 2020 -->
             <div class="endeavour-card">
-              <div class="endeavour-header">
-                <div class="endeavour-year-section">
-                  <div class="endeavour-year">2020</div>
-                  <div class="endeavour-edition">1st Edition</div>
+              <!-- Content Section (Left) -->
+              <div class="endeavour-content">
+                <div class="purple-gradient-section">
+                  <div class="edition-text">1st Edition</div>
                 </div>
                 
-                <div class="endeavour-details">
-                  <div class="endeavour-conference-name">
-                    IEEE International Power and Renewable Energy Conference (IPRECON 2020)
-                  </div>
-                  
-                  <div class="endeavour-theme">
-                    Pioneering Initiative
+                <div class="main-content-area">
+                  <div class="content-header">
+                    <img src="./assets/img/Past editions/iprecon20.png" alt="IPRECON 2020 Logo" class="endeavour-logo" />
+                    <div class="vertical-separator"></div>
+                    <div class="title-section">
+                      <div class="endeavour-conference-name">IPRECON 2020</div>
+                    </div>
                   </div>
                   
                   <div class="endeavour-description">
                     Launched as a pioneering initiative in the realm of power and energy conferences in India, the first edition was held on 30th, 31st October and 1st November 2020. IPRECON 2020 emerged as a global platform for thought leaders, young researchers, and innovators to converge and exchange ideas.
                   </div>
+                  
+                  <a href="https://2020.iprecon.org" target="_blank" class="know-more-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    Know More
+                  </a>
                 </div>
-
-                <img src="./assets/img/iprecon black.png" alt="IPRECON 2020 Logo" class="endeavour-logo" />
               </div>
-              
+
+              <!-- Statistics Section (Right) -->
               <div class="endeavour-stats">
                 <div class="stat-box">
                   <span class="stat-number">146</span>
@@ -1122,16 +1334,9 @@
                   <span class="stat-label">International Papers</span>
                 </div>
                 <div class="stat-box">
-                  <span class="stat-number">IEEE</span>
-                  <span class="stat-label">Xplore® Published</span>
+                  <span class="stat-number">35</span>
+                  <span class="stat-label">IEEE Xplore® Published</span>
                 </div>
-              </div>
-              
-              <div style="text-align: center;">
-                <a href="https://ieeexplore.ieee.org/xpl/conhome/9292576/proceeding" target="_blank" class="endeavour-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  View IPRECON 2020
-                </a>
               </div>
             </div>
           </div>
