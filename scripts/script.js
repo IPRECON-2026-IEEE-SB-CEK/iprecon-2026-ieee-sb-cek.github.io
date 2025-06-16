@@ -1,5 +1,14 @@
+/**
+ * IPRECON 2026 - Common JavaScript
+ * Contains only shared functionality used across all pages
+ * - Mobile navigation menu
+ * - Sticky navbar behavior
+ * - Marquee animations and sticky behavior
+ * - Responsive handling
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Get all necessary elements
+  // Get all necessary common elements
   const navbar = document.getElementById("navbar");
   const desktopMarquee = document.querySelector(".non-mob.marquee-container");
   const mobileMarquee = document.querySelector(".mob-marq.marquee-container");
@@ -16,11 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let mobileMenuInitialized = false;
   let menuOverlay = null;
   let menuClose = null;
-
-  // Get all carousel slides and log the count (debugging)
-  const slides = document.querySelectorAll(".carousel-slide");
-  const totalSlides = slides.length;
-  console.log("Total slides found:", totalSlides);
 
   // Store original position of the desktop marquee
   let desktopMarqueeOriginalTop = 0;
@@ -49,7 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // Function to close mobile menu
+  /**
+   * Close mobile menu and reset states
+   */
   function closeMobileMenu() {
     const navItemsList = document.querySelector(".nav-items");
     if (navItemsList && menuOverlay) {
@@ -75,7 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Setup mobile menu functionality - FIXED VERSION
+  /**
+   * Initialize mobile menu functionality
+   */
   function initializeMobileMenu() {
     if (mobileMenuInitialized) return;
 
@@ -140,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
         closeMobileMenu();
       });
 
-      // Setup navigation items - CORRECTED VERSION with wrapper
+      // Setup navigation items with dropdown functionality
       navItems.forEach((item) => {
         const hasDropdown = item.querySelector(".dropdown-content") !== null;
         const mainLink = item.querySelector("a, .nav-link");
@@ -152,10 +160,10 @@ document.addEventListener("DOMContentLoaded", function () {
             navLinkWrapper = document.createElement("div");
             navLinkWrapper.classList.add("nav-link-with-toggle");
 
-            // Move the <a> into the wrapper
+            // Move the main link into the wrapper
             navLinkWrapper.appendChild(mainLink);
 
-            // Add chevron
+            // Add chevron toggle indicator
             let toggleIndicator = document.createElement("span");
             toggleIndicator.classList.add("dropdown-toggle");
             toggleIndicator.innerHTML = '<i class="fas fa-chevron-down"></i>';
@@ -169,14 +177,13 @@ document.addEventListener("DOMContentLoaded", function () {
           item.setAttribute("aria-expanded", "false");
           item.setAttribute("aria-haspopup", "true");
 
-          // Handle wrapper click
+          // Handle wrapper click for dropdown toggle
           navLinkWrapper.addEventListener("click", function (e) {
             e.preventDefault();
             e.stopPropagation();
 
-            // If clicking on mainLink and it is a real URL:
+            // If clicking on mainLink and it has a real URL, navigate and close menu
             if (e.target === mainLink) {
-              // If it's an <a> with real href — close menu
               if (
                 mainLink.tagName === "A" &&
                 mainLink.getAttribute("href") &&
@@ -187,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             }
 
-            // Toggle dropdown
+            // Close other dropdowns
             navItems.forEach((otherItem) => {
               if (
                 otherItem !== item &&
@@ -202,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
             });
 
+            // Toggle current dropdown
             const isActive = item.classList.contains("active");
 
             if (isActive) {
@@ -242,7 +250,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Handle responsive behavior without reinitializing menu
+  /**
+   * Handle responsive behavior changes
+   */
   function handleResponsive() {
     const navItemsList = document.querySelector(".nav-items");
 
@@ -263,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Enable scrolling
       document.body.style.overflow = "";
 
-      // Remove active class from all nav items
+      // Reset all nav item states
       navItems.forEach((item) => {
         item.classList.remove("active");
 
@@ -285,18 +295,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Handle scroll behavior with throttling
-  let isScrolling = false;
-  window.addEventListener("scroll", function () {
-    if (!isScrolling) {
-      isScrolling = true;
-      window.requestAnimationFrame(function () {
-        handleScroll();
-        isScrolling = false;
-      });
-    }
-  });
-
+  /**
+   * Handle scroll behavior for sticky navbar and marquee
+   */
   function handleScroll() {
     // Update navbar height for accuracy
     navbarHeight = navbar ? navbar.offsetHeight : 0;
@@ -321,9 +322,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Handle desktop marquee - make it sticky ONLY when it's about to pass the navbar
+    // Handle desktop marquee - make it sticky when it reaches navbar
     if (desktopMarquee && window.innerWidth > 1024) {
-      // If scroll position + navbar height is greater than or equal to the marquee's original position
       if (window.pageYOffset + navbarHeight >= desktopMarqueeOriginalTop) {
         // Make the marquee sticky
         desktopMarquee.style.position = "fixed";
@@ -381,37 +381,55 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Carousel functions
-  let currentSlide = 0;
+  /**
+   * Optimize marquee animation speed based on content width
+   */
+  function adjustMarqueeSpeed() {
+    const marquees = document.querySelectorAll(".marquee");
 
-  function showSlide(n) {
-    // Make sure n is within bounds
-    if (n >= totalSlides) {
-      n = 0;
+    marquees.forEach((marquee) => {
+      // Get the total width of the marquee content
+      const contentWidth = marquee.scrollWidth;
+
+      // Get viewport width to calculate travel distance
+      const viewportWidth = window.innerWidth;
+
+      // Total distance to travel = content width + viewport width
+      const totalDistance = contentWidth + viewportWidth;
+
+      // Calculate speed (pixels per second) - adjust this value to change overall speed
+      const baseSpeed = 170; // pixels per second
+
+      // Calculate duration based on distance and speed (in seconds)
+      const duration = totalDistance / baseSpeed;
+
+      // Apply the calculated duration
+      marquee.style.animationDuration = duration + "s";
+
+      // Debug logging for development environments
+      if (
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+      ) {
+        console.log("Marquee width:", contentWidth, "px");
+        console.log("Animation duration:", duration, "s");
+      }
+    });
+  }
+
+  // Handle scroll behavior with throttling for performance
+  let isScrolling = false;
+  window.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      window.requestAnimationFrame(function () {
+        handleScroll();
+        isScrolling = false;
+      });
     }
-    if (n < 0) {
-      n = totalSlides - 1;
-    }
+  });
 
-    // Remove active class from all slides
-    slides.forEach((slide) => slide.classList.remove("active"));
-
-    // Add active class to the current slide
-    slides[n].classList.add("active");
-
-    // Update current slide index
-    currentSlide = n;
-  }
-
-  function nextSlide() {
-    showSlide(currentSlide + 1);
-  }
-
-  function prevSlide() {
-    showSlide(currentSlide - 1);
-  }
-
-  // Handle window resize with proper cleanup
+  // Handle window resize with proper cleanup and debouncing
   let resizeTimeout;
   window.addEventListener("resize", function () {
     // Debounce resize event
@@ -442,92 +460,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Update scroll state
       handleScroll();
+
+      // Adjust marquee speed for new viewport
+      adjustMarqueeSpeed();
     }, 250);
   });
 
-  // Initialize
+  // Initialize everything
   handleResponsive();
   handleScroll();
-
-  // Initialize carousel - ensure all 4 slides work
-  if (slides.length > 0) {
-    // Set first slide as active
-    showSlide(0);
-
-    // Change slides every 5 seconds
-    setInterval(nextSlide, 5000);
-  }
-
-  // Enhanced carousel button functionality
-  const carouselButtons = document.querySelectorAll(".carousel-btn");
-  carouselButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href === "#" || href === "") {
-        e.preventDefault();
-        // Smooth scroll to relevant section if href is just a placeholder
-        const targetSection = this.getAttribute("data-target");
-        if (targetSection) {
-          const section = document.getElementById(targetSection);
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-          }
-        }
-      }
-      // If href is a real URL, let it navigate normally
-    });
-  });
-
-  // Optimized marquee speed calculation
-  function adjustMarqueeSpeed() {
-    const marquees = document.querySelectorAll(".marquee");
-
-    marquees.forEach((marquee) => {
-      // Get the total width of the marquee content
-      const contentWidth = marquee.scrollWidth;
-
-      // Get viewport width to calculate how far the marquee needs to travel
-      const viewportWidth = window.innerWidth;
-
-      // Total distance to travel = content width + viewport width
-      const totalDistance = contentWidth + viewportWidth;
-
-      // Calculate a base speed (px per second) - adjust this value to change overall speed
-      const baseSpeed = 170; // pixels per second
-
-      // Calculate duration based on distance and speed (in seconds)
-      const duration = totalDistance / baseSpeed;
-
-      // Apply the calculated duration
-      marquee.style.animationDuration = duration + "s";
-
-      // For debugging (can be removed in production)
-      if (
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1"
-      ) {
-        console.log("Marquee width:", contentWidth, "px");
-        console.log("Animation duration:", duration, "s");
-      }
-    });
-  }
-
-  // Call marquee speed adjustment
   adjustMarqueeSpeed();
 
-  // Also call it on window resize in case content reflows
-  window.addEventListener("resize", function () {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(adjustMarqueeSpeed, 300);
-  });
+  // Also call marquee speed adjustment on content reflow
+  window.addEventListener("load", adjustMarqueeSpeed);
 
-  // Debug logging for development
+  // Debug logging for development environments
   if (
     window.location.hostname === "localhost" ||
     window.location.hostname === "127.0.0.1"
   ) {
-    console.log("IPRECON 2026 Website Script Initialized");
+    console.log("IPRECON 2026 Common Script Initialized");
     console.log("Mobile menu initialized:", mobileMenuInitialized);
-    console.log("Total carousel slides:", totalSlides);
+    console.log("Navbar height:", navbarHeight);
+    console.log("Desktop marquee found:", !!desktopMarquee);
+    console.log("Mobile marquee found:", !!mobileMarquee);
   }
 });

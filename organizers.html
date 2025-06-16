@@ -26,12 +26,115 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
+    <!-- Link to common styles -->
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/organizers.css" />
     <meta
       name="description"
       content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
     />
+    <!-- Page-specific styles embedded -->
+    <style>
+      /*---------------------- DEI STATEMENT BASE ---------------------*/
+      .dei-section {
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        line-height: 1.5;
+      }
+      .dei-section > hr {
+        margin: 30px 0;
+        border: none;
+        height: 1px;
+        background: #ccc;
+      }
+
+      /*----------------------Organizers page---------------------*/
+      .organizer-row {
+        display: flex;
+        margin-bottom: 2rem;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .organizer-row.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .organizer-img-col {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 520px;
+      }
+
+      .organizer-content-col {
+        flex: 2;
+        min-width: 300px;
+      }
+
+      .organizer-content-col p {
+        text-align: justify;
+        color: #414141;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      .organizer-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .organizer-title {
+        color: #211021;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .organizer-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: #8e24aa;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .organizer-row,
+        .organizer-row.reverse {
+          flex-direction: column;
+        }
+
+        .organizer-img-col {
+          order: 1;
+          margin-bottom: 1.5rem;
+          min-width: auto;
+        }
+
+        .organizer-content-col {
+          order: 2;
+          min-width: auto;
+        }
+
+        .organizer-title {
+          text-align: center;
+        }
+
+        .organizer-title::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -46,7 +149,7 @@
         </a>
         <div class="separator"></div>
         <div class="event-info">
-          <span>September 04-06, 2026</span>
+          <span>August 28-30, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -358,6 +461,7 @@
       </div>
     </footer>
 
+    <!-- Link to common script -->
     <script src="./scripts/script.js"></script>
     <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

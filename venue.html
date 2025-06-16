@@ -31,6 +31,192 @@
       name="description"
       content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
     />
+    <!-- Page-specific styles embedded -->
+    <style>
+      /*---------------------- VENUE PAGE STYLES ---------------------*/
+      .dei-section {
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        line-height: 1.5;
+      }
+      
+      .dei-section > hr {
+        margin: 30px 0;
+        border: none;
+        height: 1px;
+        background: #ccc;
+      }
+      
+      .dei-sub {
+        margin: 15px 0 10px 0;
+        color: #211021;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      
+      .section-content {
+        text-align: justify;
+        color: #414141;
+      }
+      
+      .section-content h3 {
+        color: #211021;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      
+      .section-content h4 {
+        color: #211021;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      
+      .dei-section ul {
+        margin: 20px 0;
+        list-style-type: disc;
+        padding-left: 20px;
+        line-height: 1.5;
+      }
+      
+      .dei-section p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+      
+      .dei-section a {
+        color: #8e24aa;
+        text-decoration: none;
+      }
+      
+      .dei-section a:hover {
+        text-decoration: underline;
+      }
+
+      /* Venue-specific enhancements */
+      .venue-highlight {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 30px;
+        border-radius: 15px;
+        border-left: 4px solid #8e24aa;
+        margin: 30px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .venue-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .venue-stat-item {
+        text-align: center;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-bottom: 3px solid #8e24aa;
+        transition: transform 0.3s ease;
+      }
+
+      .venue-stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .venue-stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #211021;
+        display: block;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      .venue-stat-label {
+        font-size: 0.9rem;
+        color: #6c757d;
+        font-weight: 500;
+      }
+
+      /* Transportation info styling */
+      .transport-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .transport-item {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .transport-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(142, 36, 170, 0.3);
+      }
+
+      .transport-item i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #d4af37;
+      }
+
+      .transport-item h4 {
+        color: white !important;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
+
+      .transport-item p {
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .dei-section {
+          padding: 40px 15px;
+        }
+        
+        .venue-highlight {
+          padding: 20px;
+          margin: 20px 0;
+        }
+        
+        .venue-stats {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+        
+        .transport-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+        
+        .venue-stat-number {
+          font-size: 2rem;
+        }
+        
+        .transport-item {
+          padding: 20px;
+        }
+        
+        .transport-item i {
+          font-size: 2rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -196,6 +382,33 @@
           <div class="section-title-container">
             <h2 class="section-title">Venue</h2>
           </div>
+          
+          <div class="venue-highlight">
+            <h3>College of Engineering Karunagappally</h3>
+            <p>
+              <strong>Established in 2000</strong> under the aegis of IHRD, the college has been a beacon of technical excellence for over two decades, contributing significantly to Kerala's engineering education landscape.
+            </p>
+          </div>
+
+          <div class="venue-stats">
+            <div class="venue-stat-item">
+              <span class="venue-stat-number">2000</span>
+              <span class="venue-stat-label">Year Established</span>
+            </div>
+            <div class="venue-stat-item">
+              <span class="venue-stat-number">₹10Cr</span>
+              <span class="venue-stat-label">TEQIP II Grant</span>
+            </div>
+            <div class="venue-stat-item">
+              <span class="venue-stat-number">24/7</span>
+              <span class="venue-stat-label">Wi-Fi Connectivity</span>
+            </div>
+            <div class="venue-stat-item">
+              <span class="venue-stat-number">NKN</span>
+              <span class="venue-stat-label">Network Integration</span>
+            </div>
+          </div>
+
           <div class="section-content">
             <h3>Overview</h3>
             <br />
@@ -263,12 +476,25 @@
             <p>
               College of Engineering Karunagappally is conveniently located in Karunagappally, Kollam district of Kerala, India, with excellent connectivity to major transportation hubs:
             </p>
-            <br />
-            <ul>
-              <li><strong>By Air:</strong> The nearest international airport is Trivandrum International Airport, approximately 85 km away.</li>
-              <li><strong>By Rail:</strong> Karunagappally Railway Station is just 3 km from the college, with regular trains connecting to major cities.</li>
-              <li><strong>By Road:</strong> The college is well-connected by road, with regular bus services from Kollam (27 km) and Kayamkulam (12 km).</li>
-            </ul>
+            
+            <div class="transport-grid">
+              <div class="transport-item">
+                <i class="fas fa-plane"></i>
+                <h4>By Air</h4>
+                <p>Trivandrum International Airport<br>Distance: 85 km</p>
+              </div>
+              <div class="transport-item">
+                <i class="fas fa-train"></i>
+                <h4>By Rail</h4>
+                <p>Karunagappally Railway Station<br>Distance: 3 km</p>
+              </div>
+              <div class="transport-item">
+                <i class="fas fa-bus"></i>
+                <h4>By Road</h4>
+                <p>Regular bus services<br>Kollam: 27 km | Kayamkulam: 12 km</p>
+              </div>
+            </div>
+            
             <br />
             <p>
               For international delegates, transportation assistance will be provided from the airport upon request. Please contact the organizing committee for arrangements.
@@ -340,19 +566,20 @@
     <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Page-specific JavaScript embedded -->
     <script>
       $(document).ready(function () {
         $("#news-slider").owlCarousel({
           items: 4,
-          loop: true, // Enable continuous loop
+          loop: true,
           margin: 20,
-          nav: true, // Show navigation arrows
+          nav: true,
           navText: [
             "<i class='fa fa-chevron-left'></i>",
             "<i class='fa fa-chevron-right'></i>",
-          ], // Custom navigation icons
-          autoplay: true, // Enable autoplay
-          autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
+          ],
+          autoplay: true,
+          autoplayTimeout: 3000,
           responsive: {
             0: {
               items: 3,
@@ -365,6 +592,68 @@
             },
           },
         });
+
+        // Venue page specific animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+
+        // Add animation to venue stats
+        document.querySelectorAll('.venue-stat-item, .transport-item').forEach((el, index) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = `all 0.6s ease ${index * 0.1}s`;
+          observer.observe(el);
+        });
+
+        // Count-up animation for venue stats
+        function animateCountUp() {
+          const statNumbers = document.querySelectorAll('.venue-stat-number');
+          statNumbers.forEach((stat) => {
+            const finalValue = stat.textContent;
+            if (!isNaN(finalValue)) {
+              const startValue = 0;
+              const duration = 2000;
+              const increment = Math.ceil(finalValue / (duration / 16));
+              
+              let currentValue = startValue;
+              const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= finalValue) {
+                  stat.textContent = finalValue;
+                  clearInterval(timer);
+                } else {
+                  stat.textContent = currentValue;
+                }
+              }, 16);
+            }
+          });
+        }
+
+        // Trigger count-up when stats come into view
+        const statsSection = document.querySelector('.venue-stats');
+        if (statsSection) {
+          const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCountUp();
+                statsObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+          
+          statsObserver.observe(statsSection);
+        }
       });
     </script>
   </body>

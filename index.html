@@ -26,11 +26,484 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
+    <!-- Link to common styles -->
     <link rel="stylesheet" href="./css/styles.css" />
     <meta
       name="description"
       content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
     />
+    <!-- Page-specific styles embedded -->
+    <style>
+      /* --------------------- CAROUSEL STYLES --------------------- */
+      .carousel {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+      }
+
+      .carousel-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.712);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding: 0 20px;
+        z-index: 10;
+      }
+
+      .carousel-title {
+        font-size: 42px;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        font-weight: bold;
+        font-family: "Montserat", sans-serif;
+        text-transform: uppercase;
+      }
+
+      .carousel-subtitle {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .carousel-date {
+        font-size: 24px;
+      }
+
+      /* Carousel Buttons */
+      .carousel-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .carousel-btn {
+        display: inline-block;
+        background-color: #8e24aa;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        border: 2px solid #8e24aa;
+      }
+
+      .carousel-btn:hover {
+        background-color: transparent;
+        color: white;
+        border-color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel-btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Carousel Responsive */
+      @media (max-width: 768px) {
+        .carousel {
+          height: auto !important;
+          min-height: 480px;
+        }
+
+        .carousel-title {
+          font-size: 18px !important;
+        }
+
+        .carousel-subtitle {
+          font-size: 14px !important;
+        }
+
+        .carousel-date {
+          font-size: 16px !important;
+        }
+
+        .carousel-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .carousel-btn {
+          width: 180px;
+          text-align: center;
+          padding: 10px 20px;
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .carousel {
+          min-height: 450px;
+        }
+
+        .carousel-title {
+          font-size: 16px !important;
+        }
+
+        .carousel-subtitle {
+          font-size: 12px !important;
+        }
+
+        .carousel-date {
+          font-size: 14px !important;
+        }
+      }
+
+      /* --------------------- IMPORTANT INFORMATION SECTION --------------------- */
+      .important-info-section {
+        background-color: #211021;
+        padding: 40px 50px;
+        margin: 20px auto;
+        max-width: 1200px;
+        border-radius: 8px;
+      }
+
+      .important-info-section h2 {
+        color: white;
+        font-size: 32px;
+        margin-bottom: 30px;
+        font-weight: normal;
+      }
+
+      .info-item {
+        color: white;
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .arrow {
+        margin-right: 5px;
+        position: absolute;
+        left: 0;
+      }
+
+      .underline {
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      .gold-link {
+        color: #d4af37;
+        text-decoration: none;
+        font-weight: normal;
+      }
+
+      .gold-link:hover {
+        color: #d4af37;
+        text-decoration: underline;
+      }
+
+      /* Chain icon for links */
+      .gold-link::after {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+
+      /* Important Info Responsive */
+      @media (max-width: 768px) {
+        .important-info-section {
+          padding: 30px 25px;
+          border-radius: 5px;
+        }
+
+        .important-info-section h2 {
+          font-size: 28px;
+        }
+
+        .info-item {
+          font-size: 16px;
+          line-height: 1.6;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .important-info-section {
+          padding: 25px 20px;
+          border-radius: 4px;
+        }
+
+        .important-info-section h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+
+        .info-item {
+          font-size: 14px;
+          padding-left: 25px;
+          margin-bottom: 20px;
+        }
+      }
+
+      /* --------------------- ABOUT SECTION STYLES --------------------- */
+      .about-section {
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .about-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      .about-content {
+        flex: 0 0 60%;
+        color: #333;
+        text-align: justify;
+        text-align-last: left;
+      }
+
+      .about-content p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      .about-logo {
+        flex: 0 0 40%;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main-logo {
+        width: 100%;
+        max-width: 450px;
+      }
+
+      /* About Section Responsive */
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 30px;
+        }
+
+        .about-section {
+          padding: 40px 20px;
+        }
+
+        .about-container {
+          flex-direction: column;
+        }
+
+        .about-content,
+        .about-logo {
+          flex: 0 0 100%;
+        }
+
+        .about-logo {
+          margin-top: 30px;
+          order: -1; /* Move logo to top on smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-title {
+          font-size: 26px;
+        }
+
+        .section-title::after {
+          width: 60px;
+        }
+
+        .about-content p {
+          font-size: 15px;
+        }
+      }
+
+      /* --------------------- ORGANISERS CAROUSEL SECTION --------------------- */
+      .carousel-s {
+        background: #211021;
+        visibility: visible;
+        opacity: 1;
+        padding-top: 80px;
+        min-height: 400px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .owl-nav {
+        display: none;
+      }
+
+      .carousel-s-title {
+        margin-bottom: 30px;
+        color: white;
+        text-align: center;
+        font-family: "montserrat", sans-serif;
+      }
+
+      /* --------------------- IMPORTANT DATES SECTION --------------------- */
+      .important-dates-section {
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .dates-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 40px;
+      }
+
+      .date-item {
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        text-align: center;
+        border: 1px solid #eee;
+      }
+
+      .date-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .date-number {
+        font-size: 64px;
+        color: #333;
+        margin-bottom: 5px;
+        font-weight: 600;
+        line-height: 1;
+      }
+
+      .date-number sup {
+        font-size: 40%;
+        top: -1.5em;
+      }
+
+      .date-month {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+
+      .date-event {
+        font-size: 18px;
+        color: #211021;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .date-status {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+
+      .status-closed {
+        color: #f44336; /* Red */
+      }
+
+      .status-notified {
+        color: #f44336; /* Red */
+      }
+
+      .status-progress {
+        color: #4caf50; /* Green */
+      }
+
+      /* Important Dates Responsive */
+      @media (max-width: 768px) {
+        .important-dates-section {
+          padding: 40px 20px;
+        }
+
+        .dates-container {
+          gap: 20px;
+        }
+
+        .date-item {
+          min-width: 45%;
+        }
+
+        .date-number {
+          font-size: 50px;
+        }
+
+        .date-month {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .date-item {
+          min-width: 100%;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .date-item {
+          min-width: 200px;
+        }
+      }
+
+      @media (min-width: 1921px) {
+        .about-section,
+        .important-info-section,
+        .important-dates-section {
+          max-width: 70%;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -45,7 +518,7 @@
         </a>
         <div class="separator"></div>
         <div class="event-info">
-          <span>September 04-06, 2026</span>
+          <span>August 28-30, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -169,7 +642,7 @@
           Conference
         </p>
         <p class="carousel-date">
-          September 04-06, 2026 | College of Engineering Karunagappally, Kerala,
+          March 20-22, 2026 | College of Engineering Karunagappally, Kerala,
           India
         </p>
 
@@ -281,7 +754,7 @@
             2026 conference are eligible to submit the revised versions as
             post-conference papers for further review and possible publication
             in the IEEE-IAS Transactions and Magazine (Awaiting
-            IEEE IAS Approval)
+            IEEE IAS Approval)
           </div>
 
           <div class="info-item">
@@ -307,7 +780,7 @@
           <div class="about-content">
             <p>
               The International Power and Renewable Energy Conference (IPRECON
-              2026) is the 4th edition of India’s first and only IEEE IAS Club
+              2026) is the 4th edition of India's first and only IEEE IAS Club
               of 6 Technical Paper Conference, organized by the IEEE Student
               Branch of the College of Engineering Karunagappally. With
               technical sponsorship from IEEE IAS and IEEE PES (awaiting final
@@ -317,16 +790,16 @@
             <p>
               IPRECON 2026 serves as a premier platform for students,
               researchers, and professionals to share cutting-edge innovations.
-              Held from September 04-06, 2026 at the College of Engineering
+              Held from August 28-30, 2026 at the College of Engineering
               Karunagappally, Kerala, India, the conference will feature
               technical sessions, keynote talks, and workshops. This edition
-              revolves around the theme “Advancing Power and Renewable Energy
-              Systems through AI, Computing, and Emerging Technologies”,
+              revolves around the theme "Advancing Power and Renewable Energy
+              Systems through AI, Computing, and Emerging Technologies",
               highlighting the fusion of power systems, renewable energy,
               electronics, artificial intelligence, and data science to shape a
               sustainable, intelligent future. All accepted papers will be
               submitted for inclusion in the IEEE Xplore® Digital Library,
-              subject to IEEE quality standards.
+              subject to IEEE quality standards.
             </p>
           </div>
 
@@ -386,28 +859,28 @@
         <div class="dates-container">
           <div class="date-item">
             <h3 class="date-number">15<sup>th</sup></h3>
-            <h4 class="date-month">September 2025</h4>
+            <h4 class="date-month">May 2025</h4>
             <p class="date-event">Paper Submission Open</p>
             <span class="date-status status-progress">(OPENING SOON)</span>
           </div>
 
           <div class="date-item">
-            <h3 class="date-number">15<sup>th</sup></h3>
-            <h4 class="date-month">December 2025</h4>
+            <h3 class="date-number">20<sup>th</sup></h3>
+            <h4 class="date-month">August 2025</h4>
             <p class="date-event">Paper Submission Closes</p>
             <span class="date-status status-closed"></span>
           </div>
 
           <div class="date-item">
-            <h3 class="date-number">30<sup>th</sup></h3>
-            <h4 class="date-month">April 2026</h4>
+            <h3 class="date-number">31<sup>st</sup></h3>
+            <h4 class="date-month">October 2025</h4>
             <p class="date-event">Notification of Acceptance</p>
             <span class="date-status status-notified"></span>
           </div>
 
           <div class="date-item">
-            <h3 class="date-number">30<sup>th</sup></h3>
-            <h4 class="date-month">June 2026</h4>
+            <h3 class="date-number">1<sup>st</sup></h3>
+            <h4 class="date-month">December 2025</h4>
             <p class="date-event">Final Camera-Ready Paper</p>
             <span class="date-status status-progress"></span>
           </div>
@@ -464,11 +937,81 @@
       </div>
     </footer>
 
+    <!-- Link to common script -->
     <script src="./scripts/script.js"></script>
     <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Page-specific JavaScript embedded -->
     <script>
+      // Index page specific carousel functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all carousel slides
+        const slides = document.querySelectorAll(".carousel-slide");
+        const totalSlides = slides.length;
+        console.log("Total slides found:", totalSlides);
+
+        // Carousel functions
+        let currentSlide = 0;
+
+        function showSlide(n) {
+          // Make sure n is within bounds
+          if (n >= totalSlides) {
+            n = 0;
+          }
+          if (n < 0) {
+            n = totalSlides - 1;
+          }
+
+          // Remove active class from all slides
+          slides.forEach((slide) => slide.classList.remove("active"));
+
+          // Add active class to the current slide
+          slides[n].classList.add("active");
+
+          // Update current slide index
+          currentSlide = n;
+        }
+
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+          showSlide(currentSlide - 1);
+        }
+
+        // Initialize carousel - ensure all 4 slides work
+        if (slides.length > 0) {
+          // Set first slide as active
+          showSlide(0);
+
+          // Change slides every 5 seconds
+          setInterval(nextSlide, 5000);
+        }
+
+        // Enhanced carousel button functionality
+        const carouselButtons = document.querySelectorAll(".carousel-btn");
+        carouselButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href === "#" || href === "") {
+              e.preventDefault();
+              // Smooth scroll to relevant section if href is just a placeholder
+              const targetSection = this.getAttribute("data-target");
+              if (targetSection) {
+                const section = document.getElementById(targetSection);
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }
+            }
+            // If href is a real URL, let it navigate normally
+          });
+        });
+      });
+
+      // Owl Carousel initialization
       $(document).ready(function () {
         $("#news-slider").owlCarousel({
           items: 4,

@@ -24,12 +24,134 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
+    <!-- Link to common styles -->
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/kerala.css" />
     <meta
       name="description"
       content="Kerala Tourism Information for IPRECON 2026 - International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
     />
+    <!-- Page-specific styles embedded -->
+    <style>
+      /*---------------------- DEI STATEMENT BASE ---------------------*/
+      .dei-section {
+        padding: 60px 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        line-height: 1.5;
+      }
+      .dei-section > hr {
+        margin: 30px 0;
+        border: none;
+        height: 1px;
+        background: #ccc;
+      }
+      .section-content {
+        text-align: justify;
+        color: #414141;
+      }
+      .section-content h3 {
+        color: #211021;
+        margin-bottom: 1rem;
+      }
+      .section-content p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+      .section-content a {
+        color: #8e24aa;
+        text-decoration: none;
+      }
+      .section-content a:hover {
+        text-decoration: underline;
+      }
+
+      /*----------------------Kerala Page---------------------*/
+      .kerala-intro-section {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .kerala-img-column {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .kerala-content-column {
+        flex: 2;
+        min-width: 300px;
+      }
+
+      .kerala-featured-img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .kerala-image-row {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+        justify-content: space-between;
+      }
+
+      .kerala-image-column {
+        flex: 1;
+        max-width: calc(33.33% - 0.67rem);
+      }
+
+      .kerala-image-column img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .kerala-image-column img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .kerala-section-title {
+        color: #211021;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      /* Mobile responsiveness */
+      @media (max-width: 768px) {
+        .kerala-intro-section {
+          flex-direction: column;
+        }
+
+        .kerala-img-column {
+          order: 1;
+          margin-bottom: 1.5rem;
+        }
+
+        .kerala-content-column {
+          order: 2;
+        }
+
+        .kerala-image-row {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .kerala-image-column {
+          max-width: 100%;
+        }
+
+        .kerala-image-column img {
+          height: 250px;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -45,7 +167,7 @@
         </a>
         <div class="separator"></div>
         <div class="event-info">
-          <span>September 04-06, 2026</span>
+          <span>August 28-30, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -480,6 +602,7 @@
       </div>
     </footer>
 
+    <!-- Link to common script -->
     <script src="./scripts/script.js"></script>
     <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
