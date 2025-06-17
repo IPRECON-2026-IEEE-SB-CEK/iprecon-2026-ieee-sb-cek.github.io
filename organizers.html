@@ -3,153 +3,672 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      IPRECON 2026 - International Power and Renewable Energy Conference
-    </title>
+    <title>Organizers - IPRECON 2026</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
-    <!-- Link to common styles -->
     <link rel="stylesheet" href="./css/styles.css" />
-    <meta
-      name="description"
-      content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
-    />
-    <!-- Page-specific styles embedded -->
     <style>
-      /*---------------------- DEI STATEMENT BASE ---------------------*/
-      .dei-section {
-        padding: 60px 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        line-height: 1.5;
-      }
-      .dei-section > hr {
-        margin: 30px 0;
-        border: none;
-        height: 1px;
-        background: #ccc;
+      /* =================================================================
+         STANDARDIZED BUTTON SYSTEM
+         ================================================================= */
+      .iprecon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        justify-content: center;
+        line-height: 1;
+        white-space: nowrap;
       }
 
-      /*----------------------Organizers page---------------------*/
-      .organizer-row {
+      .iprecon-btn.large {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        gap: 15px;
+      }
+
+      .iprecon-btn.small {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        gap: 8px;
+      }
+
+      /* PRIMARY BUTTON */
+      .iprecon-btn.primary {
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      }
+
+      .iprecon-btn.primary:hover {
+        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      /* SECONDARY BUTTON */
+      .iprecon-btn.secondary {
+        background: #d4af37;
+        color: #211021;
+        border-color: #d4af37;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .iprecon-btn.secondary:hover {
+        background: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        text-decoration: none;
+      }
+
+      /* TERTIARY BUTTON */
+      .iprecon-btn.tertiary {
+        background: transparent;
+        color: white;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
+
+      .iprecon-btn.tertiary:hover {
+        background: white;
+        color: #211021;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+
+      .iprecon-btn.tertiary.dark-bg {
+        color: #211021;
+        border-color: #211021;
+        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+      }
+
+      .iprecon-btn.tertiary.dark-bg:hover {
+        background: #211021;
+        color: white;
+        border-color: #211021;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+      }
+
+      .iprecon-btn-group {
         display: flex;
-        margin-bottom: 2rem;
-        gap: 2rem;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
         align-items: center;
       }
 
-      .organizer-row.reverse {
-        flex-direction: row-reverse;
+      /* =================================================================
+         ORGANIZERS PAGE STYLES
+         ================================================================= */
+
+      /* Hero Section */
+      .organizers-hero {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 60px 0;
+        border-bottom: 1px solid #e9ecef;
       }
 
-      .organizer-img-col {
-        flex: 1;
+      .organizers-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .organizers-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #211021;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .organizers-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background-color: #8e24aa;
+      }
+
+      .organizers-subtitle {
+        font-size: 1.3rem;
+        color: #6c757d;
+        margin-bottom: 30px;
+        line-height: 1.4;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Main Content */
+      .organizers-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .organizers-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Organizer Cards */
+      .organizer-card {
+        background: white;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        margin-bottom: 60px;
+        border: 2px solid transparent;
+      }
+
+      .organizer-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+      }
+
+      .organizer-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        border-color: #8e24aa;
+      }
+
+      /* Card Layout for Desktop */
+      .organizer-card-content {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        align-items: center;
+        min-height: 400px;
+      }
+
+      .organizer-card.reverse .organizer-card-content {
+        grid-template-columns: 1.5fr 1fr;
+      }
+
+      /* Image Section */
+      .organizer-image-section {
+        position: relative;
+        height: 100%;
+        min-height: 500px;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-width: 520px;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        padding: 50px;
       }
 
-      .organizer-content-col {
-        flex: 2;
-        min-width: 300px;
+      .organizer-card.reverse .organizer-image-section {
+        order: 2;
       }
 
-      .organizer-content-col p {
-        text-align: justify;
-        color: #414141;
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-
-      .organizer-img {
+      .organizer-image {
         width: 100%;
         max-width: 100%;
         height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
       }
 
-      .organizer-title {
+      .organizer-card:hover .organizer-image {
+        transform: scale(1.03);
+      }
+
+      /* Content Section */
+      .organizer-content-section {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .organizer-card.reverse .organizer-content-section {
+        order: 1;
+      }
+
+      .organizer-title-main {
+        font-size: 2.2rem;
         color: #211021;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
         position: relative;
-        padding-bottom: 0.5rem;
+        padding-bottom: 15px;
       }
 
-      .organizer-title::after {
+      .organizer-title-main::after {
         content: "";
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 60px;
+        width: 80px;
         height: 3px;
         background-color: #8e24aa;
       }
 
-      /* Mobile responsiveness */
-      @media (max-width: 768px) {
-        .organizer-row,
-        .organizer-row.reverse {
-          flex-direction: column;
+      .organizer-description {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      .organizer-highlights {
+        background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
+        border-radius: 12px;
+        padding: 25px;
+        margin: 25px 0;
+        border-left: 4px solid #8e24aa;
+      }
+
+      .organizer-highlights h4 {
+        color: #211021;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .organizer-highlights h4 i {
+        color: #8e24aa;
+        font-size: 1.1rem;
+      }
+
+      .highlights-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .highlights-list li {
+        padding: 8px 0;
+        padding-left: 25px;
+        position: relative;
+        color: #333;
+        line-height: 1.5;
+      }
+
+      .highlights-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #8e24aa;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      /* Action Buttons */
+      .organizer-actions {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      /* Statistics Section */
+      .organizer-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+        padding: 25px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border: 1px solid #e9ecef;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 15px 10px;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #8e24aa;
+        display: block;
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+
+      /* Special Recognition Section */
+      .recognition-section {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 50px;
+        border-radius: 20px;
+        margin: 60px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .recognition-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .recognition-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .recognition-section h3 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .recognition-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        opacity: 0.95;
+      }
+
+      .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin: 40px 0;
+      }
+
+      .award-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .award-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+      }
+
+      .award-item i {
+        font-size: 2.5rem;
+        color: #d4af37;
+        margin-bottom: 15px;
+      }
+
+      .award-item h4 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .award-item p {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        line-height: 1.4;
+        margin: 0;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: #f8f9fa;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .contact-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact-content h3 {
+        font-size: 2rem;
+        color: #211021;
+        margin-bottom: 20px;
+      }
+
+      .contact-content p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #8e24aa;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .contact-link:hover {
+        color: #211021;
+        transform: translateY(-2px);
+      }
+
+      .contact-link i {
+        font-size: 1.2rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .organizer-card-content,
+        .organizer-card.reverse .organizer-card-content {
+          grid-template-columns: 1fr;
         }
 
-        .organizer-img-col {
+        .organizer-image-section,
+        .organizer-card.reverse .organizer-image-section {
           order: 1;
-          margin-bottom: 1.5rem;
-          min-width: auto;
+          min-height: 300px;
         }
 
-        .organizer-content-col {
+        .organizer-content-section,
+        .organizer-card.reverse .organizer-content-section {
           order: 2;
-          min-width: auto;
         }
 
-        .organizer-title {
+        .awards-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .organizers-hero {
+          padding: 40px 0;
+        }
+
+        .organizers-title {
+          font-size: 2.5rem;
+        }
+
+        .organizers-title::after {
+          width: 100px;
+          height: 3px;
+        }
+
+        .organizers-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .organizer-content-section {
+          padding: 30px 25px;
+        }
+
+        .organizer-title-main {
+          font-size: 1.8rem;
           text-align: center;
         }
 
-        .organizer-title::after {
+        .organizer-title-main::after {
           left: 50%;
           transform: translateX(-50%);
         }
+
+        .organizer-image-section {
+          padding: 30px 25px;
+          min-height: 350px;
+        }
+
+        .recognition-section {
+          padding: 40px 30px;
+        }
+
+        .recognition-section h3 {
+          font-size: 2rem;
+        }
+
+        .awards-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .organizer-stats {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+          padding: 20px;
+        }
+
+        .organizer-actions {
+          justify-content: center;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+
+        .contact-link {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .organizers-title {
+          font-size: 2rem;
+        }
+
+        .organizers-title::after {
+          width: 80px;
+        }
+
+        .organizer-title-main {
+          font-size: 1.5rem;
+        }
+
+        .recognition-section {
+          padding: 30px 20px;
+        }
+
+        .recognition-section h3 {
+          font-size: 1.6rem;
+        }
+
+        .organizer-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .stat-number {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
+    <meta
+      name="description"
+      content="About the Organizers - IPRECON 2026 International Power and Renewable Energy Conference organized by IEEE Student Branch College of Engineering Karunagappally, Kerala, India"
+    />
   </head>
   <body>
     <!-- Header -->
     <div class="header-container">
       <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
+        <img
+          src="./assets/img/iprecon26 black.png"
+          alt="IPRECON 2026 Logo"
+          class="logo"
+        />
         <div class="separator"></div>
         <div class="event-info">
-          <span>August 28-30, 2026</span>
+          <span>September 04-06, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -191,14 +710,12 @@
             </div>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
+        <img
+          src="./assets/img/iprecon26 white.png"
+          alt="IPRECON 2026 Logo"
+          class="brand-logo"
+          id="brandLogo"
+        />
         <ul class="nav-items">
           <li class="nav-item"><a href="index.html">HOME</a></li>
           <li class="nav-item">
@@ -293,151 +810,236 @@
 
     <!-- Spacer for when marquee becomes fixed -->
     <div id="marquee-placeholder" style="display: none"></div>
+
     <main>
-      <!-- About Organizers Section -->
-      <section class="dei">
-        <div class="dei-section">
-          <div class="section-title-container">
-            <h2 class="section-title">About The Organizers</h2>
+      <!-- Hero Section -->
+      <section class="organizers-hero">
+        <div class="organizers-hero-content">
+          <h1 class="organizers-title">About The Organizers</h1>
+          <p class="organizers-subtitle">
+            Meet the institutions behind IPRECON 2026 - driving innovation in power and renewable energy research
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="organizers-content">
+        <div class="organizers-container">
+          
+          <!-- College of Engineering Karunagappally -->
+          <div class="organizer-card fade-in">
+            <div class="organizer-card-content">
+              <div class="organizer-image-section">
+                <img
+                  src="./assets/img/cek.webp"
+                  alt="Government College of Engineering Karunagappally"
+                  class="organizer-image"
+                />
+              </div>
+              <div class="organizer-content-section">
+                <h2 class="organizer-title-main">
+                  College of Engineering Karunagappally
+                </h2>
+                
+                <p class="organizer-description">
+                  Government College of Engineering Karunagappally (CEK) is a premier public institution of engineering and technology, located in the serene town of Karunagappally, in the north-western region of Kollam district, Kerala, India. Established in 1999 by the Government of Kerala, CEK is the second engineering college in Kollam district and the fourth under the Institute of Human Resources Development (IHRD).
+                </p>
+
+                <div class="organizer-highlights">
+                  <h4><i class="fas fa-award"></i> Accreditations & Recognition</h4>
+                  <ul class="highlights-list">
+                    <li>Affiliated with APJ Abdul Kalam Technological University (KTU)</li>
+                    <li>Approved by AICTE and accredited by NBA</li>
+                    <li>Part of World Bank-aided TEQIP since 2012</li>
+                    <li>IEEE MGA Regional Exemplary Student Branch Award - 5 consecutive years</li>
+                  </ul>
+                </div>
+
+                <p class="organizer-description">
+                  The college is affiliated with APJ Abdul Kalam Technological University (KTU), approved by AICTE, and accredited by the National Board of Accreditation (NBA)—a testament to its commitment to quality education and academic excellence. Since 2012, the institution has also been a part of the World Bank-aided TEQIP (Technical Education Quality Improvement Programme) under the Government of India.
+                </p>
+
+                <div class="organizer-stats">
+                  <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Engineering Departments</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">2000+</span>
+                    <span class="stat-label">Alumni Network</span>
+                  </div>
+                </div>
+
+                <div class="organizer-actions">
+                  <a href="https://cek.ac.in" target="_blank" class="iprecon-btn secondary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit CEK Website
+                  </a>
+                  <a href="./venue.html" class="iprecon-btn tertiary dark-bg">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Venue Details
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- First Section - Government College of Engineering Karunagappally -->
-          <div class="organizer-row">
-            <div class="organizer-img-col">
-              <img
-                src="./assets/img/cek.webp"
-                alt="Government College of Engineering Karunagappally"
-                class="organizer-img"
-              />
-            </div>
-            <div class="organizer-content-col">
-              <h3 class="organizer-title">
-                College of Engineering Karunagappally
-              </h3>
-              <p>
-                Government College of Engineering Karunagappally (CEK) is a
-                premier public institution of engineering and technology,
-                located in the serene town of Karunagappally, in the
-                north-western region of Kollam district, Kerala, India.
-                Established in 1999 by the Government of Kerala, CEK is the
-                second engineering college in Kollam district and the fourth
-                under the Institute of Human Resources Development (IHRD).
-              </p>
-              <br />
-              <p>
-                The college is affiliated with APJ Abdul Kalam Technological
-                University (KTU), approved by AICTE, and accredited by the
-                National Board of Accreditation (NBA)—a testament to its
-                commitment to quality education and academic excellence.
-              </p>
-              <br />
-              <p>
-                Since 2012, the institution has also been a part of the World
-                Bank-aided TEQIP (Technical Education Quality Improvement
-                Programme) under the Government of India, further enhancing its
-                educational infrastructure and opportunities for students.
-              </p>
-              <br />
-              <p>
-                CEK is also known for its exemplary student-led initiatives. The
-                IEEE Student Branch at CEK has brought global recognition to the
-                institution by becoming the first and only student branch in the
-                IEEE Asia-Pacific Region to win the IEEE MGA Regional Exemplary
-                Student Branch Award for five consecutive years. It is also the
-                second engineering college in the Kerala Section to receive the
-                prestigious IEEE Region 10 (Asia-Pacific) Exemplary Student
-                Branch Award.
-              </p>
-              <br />
-              <p>
-                With a legacy of excellence and a future-focused outlook, CEK
-                continues to be a beacon of technical education and innovation
-                in Kerala.
-              </p>
+          <!-- IEEE Student Branch CEK -->
+          <div class="organizer-card reverse fade-in">
+            <div class="organizer-card-content">
+              <div class="organizer-image-section">
+                <img
+                  src="./assets/img/cek.webp"
+                  alt="IEEE Student Branch CEK"
+                  class="organizer-image"
+                />
+              </div>
+              <div class="organizer-content-section">
+                <h2 class="organizer-title-main">IEEE SB CEK</h2>
+                
+                <p class="organizer-description">
+                  IEEE Student Branch College of Engineering Karunagappally (STB03951) is one of the pioneering student branches in the IEEE Kerala Section. The branch was officially established as a recognized organizational unit on 13 May 2009.
+                </p>
+
+                <p class="organizer-description">
+                  Since its inception, IEEE SB CEK has been a powerhouse of student-led innovation, technical excellence, and impactful community engagement. The branch is a recipient of several prestigious global awards, a testament to its outstanding contributions to the IEEE mission.
+                </p>
+
+                <div class="organizer-highlights">
+                  <h4><i class="fas fa-users"></i> Active Societies & Groups</h4>
+                  <ul class="highlights-list">
+                    <li>10 Active Technical Societies</li>
+                    <li>2 Affinity Groups including WIE (since 2010)</li>
+                    <li>Global IEEE volunteer leadership positions</li>
+                    <li>Regional and national level contributions</li>
+                  </ul>
+                </div>
+
+                <div class="organizer-stats">
+                  <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years Active</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Technical Societies</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Active Members</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Events Organized</span>
+                  </div>
+                </div>
+
+                <div class="organizer-actions">
+                  <a href="https://ieeesbcek.org" target="_blank" class="iprecon-btn secondary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit IEEE SB CEK
+                  </a>
+                  <a href="./committee.html" class="iprecon-btn tertiary dark-bg">
+                    <i class="fas fa-users"></i>
+                    Meet Our Team
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <hr />
+          <!-- Recognition Section -->
+          <div class="recognition-section fade-in">
+            <div class="recognition-content">
+              <h3>Global Recognition & Awards</h3>
+              <p>
+                IEEE SB CEK has achieved unprecedented recognition on the global stage, being the first and only student branch in the IEEE Asia-Pacific Region to win the IEEE MGA Regional Exemplary Student Branch Award for five consecutive years.
+              </p>
 
-          <!-- Second Section - IEEE SB CEK -->
-          <div class="organizer-row reverse">
-            <div class="organizer-img-col">
-              <img
-                src="./assets/img/cek.webp"
-                alt="IEEE Student Branch CEK"
-                class="organizer-img"
-              />
+              <div class="awards-grid">
+                <div class="award-item">
+                  <i class="fas fa-trophy"></i>
+                  <h4>IEEE MGA Regional Award</h4>
+                  <p>First & only branch in Asia-Pacific to win 5 consecutive years</p>
+                </div>
+                <div class="award-item">
+                  <i class="fas fa-medal"></i>
+                  <h4>IEEE Region 10 Award</h4>
+                  <p>Second engineering college in Kerala Section to receive this honor</p>
+                </div>
+                <div class="award-item">
+                  <i class="fas fa-star"></i>
+                  <h4>Global Leadership & Impact</h4>
+                  <p>Members serving in global IEEE positions with consistent community contributions</p>
+                </div>
+              </div>
             </div>
-            <div class="organizer-content-col">
-              <h3 class="organizer-title">IEEE SB CEK</h3>
-              <p>
-                IEEE Student Branch College of Engineering Karunagappally
-                (STB03951) is one of the pioneering student branches in the IEEE
-                Kerala Section. The branch was officially established as a
-                recognized organizational unit on 13 May 2009.
-              </p>
-              <br />
-              <p>
-                Since its inception, IEEE SB CEK has been a powerhouse of
-                student-led innovation, technical excellence, and impactful
-                community engagement. The branch is a recipient of several
-                prestigious global awards, a testament to its outstanding
-                contributions to the IEEE mission. Our vibrant community of
-                volunteers has not only made their mark at the regional and
-                national levels, but also proudly serve in various global
-                positions within IEEE, reflecting the leadership and passion
-                that define our student branch.
-              </p>
-              <br />
-              <p>
-                In 2010, IEEE SB CEK took a significant step towards inclusivity
-                by launching its Women in Engineering (WIE) Affinity Group,
-                which continues to empower and inspire women in STEM.
-              </p>
-              <br />
-              <p>
-                With a legacy built on commitment and collaboration, IEEE SB CEK
-                continues to be a beacon of technical empowerment, fostering
-                future leaders and changemakers in engineering and beyond.
-              </p>
-              <br />
-              <p>
-                Today, IEEE SB CEK proudly hosts 10 active technical societies
-                and 2 affinity groups, creating a thriving ecosystem for
-                innovation, learning, and leadership.
-              </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="organizers-container">
+          <div class="contact-content fade-in">
+            <h3>Learn More About Our Organizers</h3>
+            <p>For more information about our organizing institutions and their contributions to engineering education and research</p>
+            <div class="contact-info">
+              <a href="https://cek.ac.in" target="_blank" class="contact-link">
+                <i class="fas fa-university"></i>
+                CEK Official Website
+              </a>
+              <a href="https://ieeesbcek.org" target="_blank" class="contact-link">
+                <i class="fas fa-users"></i>
+                IEEE SB CEK
+              </a>
+              <a href="./contact.html" class="contact-link">
+                <i class="fas fa-headset"></i>
+                Contact Us
+              </a>
             </div>
           </div>
         </div>
       </section>
+
     </main>
+
     <!-- Footer section -->
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-column">
           <h3>Paper Submission</h3>
           <ul class="footer-links">
-            <li><a href="#">Call for Papers</a></li>
-            <li><a href="#">Submit a Paper</a></li>
-            <li><a href="#">Paper Template</a></li>
+            <li><a href="./call-for-papers.html">Call for Papers</a></li>
+            <li><a href="./submissions.html">Submit a Paper</a></li>
+            <li>
+              <a href="https://www.ieee.org/conferences/publishing/templates"
+                >Paper Template</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>About</h3>
           <ul class="footer-links">
-            <li><a href="#">IEEE SB CEK</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Legacy</a></li>
+            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+            <li><a href="./committee.html">Team</a></li>
+            <li><a href="./about-iprecon.html">Legacy</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>Travel and Accommodation</h3>
           <ul class="footer-links">
-            <li><a href="#">Transportation</a></li>
-            <li><a href="#">Hotels</a></li>
-            <li><a href="#">Tourism</a></li>
+            <li><a href="./venue.html">Transportation</a></li>
+            <li><a href="./accommodation.html">Hotels</a></li>
+            <li><a href="./kerala.html">Tourism</a></li>
           </ul>
         </div>
 
@@ -461,24 +1063,22 @@
       </div>
     </footer>
 
-    <!-- Link to common script -->
     <script src="./scripts/script.js"></script>
-    <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
         $("#news-slider").owlCarousel({
           items: 4,
-          loop: true, // Enable continuous loop
+          loop: true,
           margin: 20,
-          nav: true, // Show navigation arrows
+          nav: true,
           navText: [
             "<i class='fa fa-chevron-left'></i>",
             "<i class='fa fa-chevron-right'></i>",
-          ], // Custom navigation icons
-          autoplay: true, // Enable autoplay
-          autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
+          ],
+          autoplay: true,
+          autoplayTimeout: 3000,
           responsive: {
             0: {
               items: 3,
@@ -490,6 +1090,40 @@
               items: 4,
             },
           },
+        });
+
+        // Scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on("click", function (event) {
+          var target = $(this.getAttribute("href"));
+          if (target.length) {
+            event.preventDefault();
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 100,
+                },
+                1000
+              );
+          }
         });
       });
     </script>

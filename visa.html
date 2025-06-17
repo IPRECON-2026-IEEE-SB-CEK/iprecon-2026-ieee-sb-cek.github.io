@@ -3,23 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      IPRECON 2026 - International Power and Renewable Energy Conference
-    </title>
+    <title>Visa Information - IPRECON 2026</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -27,64 +17,682 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-    <meta
-      name="description"
-      content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
-    />
     <style>
-      /*---------------------- DEI/VISA STATEMENT ---------------------*/
-      .dei-section {
-        padding: 60px 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        line-height: 1.5;
+      /* =================================================================
+         STANDARDIZED BUTTON SYSTEM
+         ================================================================= */
+      .iprecon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        justify-content: center;
+        line-height: 1;
+        white-space: nowrap;
       }
-      .dei-section > hr {
-        margin: 30px 0;
-        border: none;
-        height: 1px;
-        background: #ccc;
+
+      .iprecon-btn.large {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        gap: 15px;
       }
-      .dei-sub {
-        margin: 15px 0 10px 0;
-        color: #211021;
+
+      .iprecon-btn.small {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        gap: 8px;
       }
-      .section-content {
-        text-align: justify;
-        color: #414141;
+
+      /* PRIMARY BUTTON */
+      .iprecon-btn.primary {
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
       }
-      .section-content h3 {
-        color: #211021;
-        margin-bottom: 1rem;
-      }
-      .section-content h4 {
-        color: #211021;
-        margin-bottom: 0.5rem;
-      }
-      .dei-section ul {
-        margin: 20px 0;
-        list-style-type: disc;
-        padding-left: 20px;
-        line-height: 1.5;
-      }
-      .dei-section ul ul {
-        margin: 10px 0;
-        list-style-type: circle;
-        padding-left: 30px;
-      }
-      .dei-section p {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-      .dei-section a {
-        color: #8e24aa;
+
+      .iprecon-btn.primary:hover {
+        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+        color: white;
         text-decoration: none;
       }
-      .dei-section a:hover {
+
+      /* SECONDARY BUTTON */
+      .iprecon-btn.secondary {
+        background: #d4af37;
+        color: #211021;
+        border-color: #d4af37;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .iprecon-btn.secondary:hover {
+        background: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        text-decoration: none;
+      }
+
+      /* TERTIARY BUTTON */
+      .iprecon-btn.tertiary {
+        background: transparent;
+        color: white;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
+
+      .iprecon-btn.tertiary:hover {
+        background: white;
+        color: #211021;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+
+      .iprecon-btn.tertiary.dark-bg {
+        color: #211021;
+        border-color: #211021;
+        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+      }
+
+      .iprecon-btn.tertiary.dark-bg:hover {
+        background: #211021;
+        color: white;
+        border-color: #211021;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+      }
+
+      .iprecon-btn-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      /* =================================================================
+         VISA PAGE STYLES
+         ================================================================= */
+
+      /* Hero Section */
+      .visa-hero {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 60px 0;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .visa-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .visa-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #211021;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .visa-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background-color: #8e24aa;
+      }
+
+      .visa-subtitle {
+        font-size: 1.3rem;
+        color: #6c757d;
+        margin-bottom: 30px;
+        line-height: 1.4;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .visa-highlight {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px auto;
+        max-width: 700px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .visa-highlight::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .visa-highlight-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .visa-highlight h3 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .visa-highlight h3 i {
+        color: #d4af37;
+        font-size: 1.3rem;
+      }
+
+      .visa-highlight p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 0.95;
+        font-weight: 500;
+      }
+
+      .visa-highlight .strong {
+        color: white;
+        font-weight: 700;
+      }
+
+      /* Main Content */
+      .visa-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .visa-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Content Cards */
+      .content-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 40px 0;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border-left: 6px solid #8e24aa;
+        transition: all 0.3s ease;
+      }
+
+      .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .content-card h3 {
+        color: #211021;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .content-card h3 i {
+        color: #8e24aa;
+        font-size: 1.8rem;
+      }
+
+      .content-card h4 {
+        color: #211021;
+        font-size: 1.4rem;
+        margin: 25px 0 15px 0;
+        font-weight: 600;
+      }
+
+      .content-card p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+      }
+
+      .content-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .content-card li {
+        margin-bottom: 12px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .content-card li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #8e24aa;
+        font-weight: bold;
+        font-size: 1.1rem;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content-card li ul {
+        margin: 10px 0;
+        padding-left: 20px;
+      }
+
+      .content-card li ul li::before {
+        content: "•";
+        color: #d4af37;
+        font-size: 1.2rem;
+      }
+
+      .strong {
+        color: #211021;
+        font-weight: 600;
+      }
+
+      /* Special Notice Boxes */
+      .notice-box {
+        background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+        border: 2px solid #8e24aa;
+        border-radius: 15px;
+        padding: 25px;
+        margin: 25px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .notice-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+      }
+
+      .warning-box {
+        background: linear-gradient(135deg, #fff3e0, #ffebee);
+        border: 2px solid #ff9800;
+        border-radius: 15px;
+        padding: 25px;
+        margin: 25px 0;
+        border-left: 6px solid #ff9800;
+      }
+
+      .warning-box h4 {
+        color: #e65100;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .warning-box h4 i {
+        color: #ff9800;
+        font-size: 1.1rem;
+      }
+
+      /* Process Steps */
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: 40px 0;
+      }
+
+      .step-card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .step-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+      }
+
+      .step-card:hover {
+        background: white;
+        border-color: #8e24aa;
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .step-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .step-title {
+        font-size: 1.3rem;
+        color: #211021;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .step-description {
+        color: #555;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      /* Country Lists */
+      .country-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 25px 0;
+      }
+
+      .country-item {
+        background: #f8f9fa;
+        padding: 15px 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ff6b6b;
+        font-weight: 500;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .country-item i {
+        color: #ff6b6b;
+        font-size: 1.1rem;
+      }
+
+      .eligible-country {
+        border-left-color: #4caf50;
+      }
+
+      .eligible-country i {
+        color: #4caf50;
+      }
+
+      /* Action Buttons */
+      .action-section {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 50px;
+        border-radius: 20px;
+        margin: 60px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .action-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .action-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .action-section h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .action-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.95;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: #f8f9fa;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .contact-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact-content h3 {
+        font-size: 2rem;
+        color: #211021;
+        margin-bottom: 20px;
+      }
+
+      .contact-content p {
+        font-size: 1.1rem;
+        color: #6c757d;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #8e24aa;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .contact-link:hover {
+        color: #211021;
+        transform: translateY(-2px);
+      }
+
+      .contact-link i {
+        font-size: 1.2rem;
+      }
+
+      /* Links */
+      .content-card a {
+        color: #8e24aa;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .content-card a:hover {
+        color: #211021;
         text-decoration: underline;
       }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .visa-hero {
+          padding: 40px 0;
+        }
+
+        .visa-title {
+          font-size: 2.2rem;
+        }
+
+        .visa-title::after {
+          width: 100px;
+          height: 3px;
+        }
+
+        .visa-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .visa-highlight {
+          padding: 25px 20px;
+          margin: 25px 15px;
+        }
+
+        .content-card {
+          padding: 30px 25px;
+        }
+
+        .content-card h3 {
+          font-size: 1.6rem;
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+
+        .step-card {
+          padding: 25px 20px;
+        }
+
+        .step-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
+
+        .step-number {
+          width: 50px;
+          height: 50px;
+          font-size: 1.5rem;
+        }
+
+        .action-section {
+          padding: 40px 30px;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+
+        .contact-link {
+          justify-content: center;
+        }
+
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .visa-title {
+          font-size: 1.8rem;
+        }
+
+        .visa-title::after {
+          width: 80px;
+        }
+
+        .content-card h3 {
+          font-size: 1.4rem;
+        }
+
+        .action-section {
+          padding: 30px 20px;
+        }
+
+        .action-section h3 {
+          font-size: 1.6rem;
+        }
+
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
+    <meta
+      name="description"
+      content="Visa Information for International Participants - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
+    />
   </head>
   <body>
     <!-- Header -->
@@ -99,7 +707,7 @@
         </a>
         <div class="separator"></div>
         <div class="event-info">
-          <span>August 28-30, 2026</span>
+          <span>September 04-06, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -243,260 +851,320 @@
 
     <!-- Spacer for when marquee becomes fixed -->
     <div id="marquee-placeholder" style="display: none"></div>
+
     <main>
-      <!-- About IPRECON 2026 Section -->
-      <section class="dei">
-        <div class="dei-section">
-          <div class="section-title-container">
-            <h2 class="section-title">
-              Visa Information for International Participants
-            </h2>
-          </div>
-          <div class="section-content">
-            <p>
-              We are pleased to welcome international researchers, academicians,
-              and professionals to
-              <b>IPRECON 2026</b> in Kerala, India. To facilitate your
-              participation, we have outlined the necessary visa information and
-              procedures below. Please read the following instructions carefully
-              to ensure a smooth application process.
-            </p>
-          </div>
-
-          <hr />
-
-          <div class="section-content">
-            <h3>Visa Type: e-Conference Visa</h3>
-            <br />
-            <p>
-              International participants attending the IPRECON Conference in
-              person are required to apply for an
-              <b>Indian e-Conference Visa</b>. This visa is specifically
-              intended for those visiting India for conferences, workshops, and
-              similar academic or professional gatherings.
-            </p>
-            <br />
-            <p>
-              <strong>Important:</strong> Please do not apply for a tourist
-              visa, as it is not valid for conference participation and may lead
-              to rejection or unnecessary complications and expenses.
-            </p>
-
-            <br />
-            <h4 class="dei-sub">Who is eligible for a conference VISA?</h4>
-            <p>To be eligible for a conference visa, you must:</p>
-            <ul>
-              <li>
-                Be a foreigner whose sole purpose of visiting India is to attend
-                a conference/seminar/workshop being held in India
-              </li>
-              <li>
-                Hold a valid passport and a re-entry permit if required by your
-                home country.
-              </li>
-              <li>Not be persona-non-grata to the Government of India.</li>
-              <li>Not be considered an undesirable person.</li>
-              <li>Be a person of assured financial standing.</li>
-            </ul>
-
-            <h4 class="dei-sub">What is the duration of a conference VISA?</h4>
-            <p>
-              Conference VISAS are issued for the duration of the conference and
-              the travelling time. However, delegates can combine tourism with
-              attending the conference. The maximum validity of a conference
-              visa is 6 months, subject to the usual conditions applicable for
-              granting a tourist VISA.
-            </p>
-            <p>
-              The process of obtaining a conference VISA is relatively
-              straightforward. However, it is important to follow the
-              instructions carefully and to submit all required documentation.
-              If you have any questions, you should contact the Indian Mission
-              in your home country.
-            </p>
-          </div>
-
-          <hr />
-
-          <div class="section-content">
-            <h3>Application Process</h3>
-            <br />
-            <p>To apply for the e-Conference Visa, follow the steps below:</p>
-            <br />
-            <h4 class="dei-sub">1. Complete Registration</h4>
-            <p>
-              Only participants whose papers have been accepted and who have
-              completed the full registration process will receive an official
-              <b>Conference Invitation Letter</b> from the organizing committee.
-              This letter is required for the visa application.
-            </p>
-            <br />
-            <h4 class="dei-sub">2. Prepare Required Documents</h4>
-            <p>
-              You will need to upload the following documents during the
-              application:
-            </p>
-            <ul>
-              <li>
-                <b>Passport-sized photograph</b>
-                <ul>
-                  <li>Format: JPEG</li>
-                  <li>Background: White</li>
-                  <li>Maximum file size: 1 MB</li>
-                  <li>Minimum resolution: 350 x 350 pixels</li>
-                </ul>
-              </li>
-              <li>
-                <b>Scanned copy of passport</b>
-                <ul>
-                  <li>Format: PDF</li>
-                  <li>Only the photo/bio page</li>
-                  <li>Maximum file size: 300 KB</li>
-                  <li>
-                    Please ensure the file is clear and properly compressed
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <b>Conference Invitation Letter</b>
-                <ul>
-                  <li>
-                    Issued by the IPRECON organizing committee after full
-                    registration
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <br />
-            <h4 class="dei-sub">3. Apply Online</h4>
-            <p>
-              Submit your application through the official Government of India
-              e-Visa portal:
-              <a href="https://indianvisaonline.gov.in/evisa/"
-                >https://indianvisaonline.gov.in/evisa/</a
-              >
-              Select the "e-Conference Visa" category and complete all required
-              fields.
-            </p>
-            <br />
-            <h4 class="dei-sub">4. Visa Approval and Travel</h4>
-            <p>
-              The processing time typically ranges from 12 hours to a few days.
-              Upon approval, you will receive a PDF copy of the visa via email.
-              Print this document and carry it with you during travel. Special
-              e-Visa counters are available at major Indian airports for
-              expedited immigration clearance.
-            </p>
-          </div>
-
-          <hr />
-
-          <div class="section-content">
-            <h3>Country-Specific Visa Guidelines</h3>
-            <br />
-            <h4 class="dei-sub">Invitation Letter Restrictions</h4>
-            <p>
-              As per the visa regulations of the Government of India, the
-              IPRECON organizing committee
-              <b>will not provide conference invitation letters</b>
-              to individuals holding citizenship of the following countries:
-            </p>
-            <ul>
-              <li>Pakistan</li>
-              <li>Bangladesh</li>
-              <li>Afghanistan</li>
-              <li>Iraq</li>
-              <li>Sudan</li>
-              <li>Stateless persons</li>
-            </ul>
-            <br />
-            <h4 class="dei-sub">Persons of Pakistani Origin</h4>
-            <p>
-              Individuals of <b>Pakistani origin</b>, irrespective of their
-              current citizenship, are <b>not eligible</b> to receive visa
-              invitation letters from the organizing committee. <br /><br />
-              <i>
-                Definition: "Pakistani origin" refers to individuals who
-                currently hold or previously held Pakistani citizenship, or
-                whose parents or grandparents were citizens of Pakistan.
-              </i>
-            </p>
-            <br />
-            <h4 class="dei-sub">Eligible Countries</h4>
-            <p>
-              Conference invitation letters will be issued only to participants
-              from countries listed as eligible under the Indian Government's
-              e-Visa program. The list can be viewed at:
-              <a href="https://indianvisaonline.gov.in/evisa/tvoa.html"
-                >https://indianvisaonline.gov.in/evisa/tvoa.html</a
-              >
-            </p>
-            <br />
-            <h4 class="dei-sub">Visa Exemption for Nepal and Bhutan</h4>
-            <p>
-              Citizens of <b>Nepal</b> and <b>Bhutan</b> do not require a visa
-              to enter India, in accordance with the Freedom of Movement
-              Agreement between these countries and the Republic of India.
-            </p>
-          </div>
-
-          <hr />
-
-          <div class="section-content">
-            <h3>Remote Presentation Policy</h3>
-            <br />
-            <p>
-              In alignment with our commitment to
-              <b>diversity, equity, and inclusion</b>, authors from countries or
-              backgrounds that are not eligible for Indian visas will be allowed
-              to present their papers <b>remotely via an online platform</b>.
-              This ensures that every qualified submission has the opportunity
-              to contribute to the conference, regardless of national or visa
-              limitations.
-            </p>
-          </div>
-
-          <hr />
-
-          <div class="section-content">
-            <p>
-              <b>
-                For further questions regarding visa support, please contact the
-                IPRECON visa helpdesk at:
-                <a href="mailto:support@iprecon.org">support@iprecon.org</a>
-              </b>
-            </p>
+      <!-- Hero Section -->
+      <section class="visa-hero">
+        <div class="visa-hero-content">
+          <h1 class="visa-title">Visa Information</h1>
+          <p class="visa-subtitle">
+            Complete guide for international participants attending IPRECON 2026 in Kerala, India
+          </p>
+          
+          <div class="visa-highlight">
+            <div class="visa-highlight-content">
+              <h3>
+                <i class="fas fa-passport"></i>
+                e-Conference Visa Required
+              </h3>
+              <p>
+                International participants attending IPRECON 2026 in person must apply for an 
+                <span class="strong">Indian e-Conference Visa</span>. This specialized visa is designed for 
+                conferences, workshops, and academic gatherings.
+              </p>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- Main Content -->
+      <section class="visa-content">
+        <div class="visa-container">
+          
+          <!-- Introduction Card -->
+          <div class="content-card fade-in">
+            <h3>
+              <i class="fas fa-globe"></i>
+              Welcome International Participants
+            </h3>
+            <p>
+              We are pleased to welcome international researchers, academicians, and professionals to 
+              <span class="strong">IPRECON 2026</span> in Kerala, India. To facilitate your participation, 
+              we have outlined the necessary visa information and procedures below. Please read the following 
+              instructions carefully to ensure a smooth application process.
+            </p>
+            
+            <div class="warning-box">
+              <h4>
+                <i class="fas fa-exclamation-triangle"></i>
+                Important Notice
+              </h4>
+              <p>
+                Please do not apply for a tourist visa, as it is not valid for conference participation 
+                and may lead to rejection or unnecessary complications and expenses.
+              </p>
+            </div>
+          </div>
+
+          <!-- Visa Type Information -->
+          <div class="content-card fade-in">
+            <h3>
+              <i class="fas fa-id-card"></i>
+              Visa Type: e-Conference Visa
+            </h3>
+            <p>
+              International participants attending the IPRECON Conference in person are required to apply for 
+              an <span class="strong">Indian e-Conference Visa</span>. This visa is specifically intended for 
+              those visiting India for conferences, workshops, and similar academic or professional gatherings.
+            </p>
+
+            <h4>Who is eligible for a conference VISA?</h4>
+            <p>To be eligible for a conference visa, you must:</p>
+            <ul>
+              <li>Be a foreigner whose sole purpose of visiting India is to attend a conference/seminar/workshop being held in India</li>
+              <li>Hold a valid passport and a re-entry permit if required by your home country</li>
+              <li>Not be persona-non-grata to the Government of India</li>
+              <li>Not be considered an undesirable person</li>
+              <li>Be a person of assured financial standing</li>
+            </ul>
+
+            <h4>What is the duration of a conference VISA?</h4>
+            <p>
+              Conference VISAS are issued for the duration of the conference and the travelling time. However, 
+              delegates can combine tourism with attending the conference. The maximum validity of a conference 
+              visa is 6 months, subject to the usual conditions applicable for granting a tourist VISA.
+            </p>
+            <p>
+              The process of obtaining a conference VISA is relatively straightforward. However, it is important 
+              to follow the instructions carefully and to submit all required documentation. If you have any 
+              questions, you should contact the Indian Mission in your home country.
+            </p>
+          </div>
+
+          <!-- Application Process -->
+          <div class="content-card fade-in">
+            <h3>
+              <i class="fas fa-clipboard-list"></i>
+              Application Process
+            </h3>
+            <p>To apply for the e-Conference Visa, follow the steps below:</p>
+
+            <div class="process-steps">
+              <div class="step-card">
+                <div class="step-header">
+                  <div class="step-number">1</div>
+                  <h4 class="step-title">Complete Registration</h4>
+                </div>
+                <div class="step-description">
+                  Only participants whose papers have been accepted and who have completed the full 
+                  registration process will receive an official <span class="strong">Conference Invitation Letter</span> 
+                  from the organizing committee. This letter is required for the visa application.
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-header">
+                  <div class="step-number">2</div>
+                  <h4 class="step-title">Prepare Required Documents</h4>
+                </div>
+                <div class="step-description">
+                  You will need to upload the following documents during the application:
+                  <ul>
+                    <li><span class="strong">Passport-sized photograph</span> (JPEG, white background, max 1MB, min 350x350 pixels)</li>
+                    <li><span class="strong">Scanned copy of passport</span> (PDF, photo/bio page only, max 300KB)</li>
+                    <li><span class="strong">Conference Invitation Letter</span> (issued by IPRECON organizing committee)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-header">
+                  <div class="step-number">3</div>
+                  <h4 class="step-title">Apply Online</h4>
+                </div>
+                <div class="step-description">
+                  Submit your application through the official Government of India e-Visa portal. 
+                  Select the "e-Conference Visa" category and complete all required fields.
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-header">
+                  <div class="step-number">4</div>
+                  <h4 class="step-title">Visa Approval and Travel</h4>
+                </div>
+                <div class="step-description">
+                  Processing time typically ranges from 12 hours to a few days. Upon approval, you will 
+                  receive a PDF copy via email. Print this document and carry it during travel. Special 
+                  e-Visa counters are available at major Indian airports.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Country-Specific Guidelines -->
+          <div class="content-card fade-in">
+            <h3>
+              <i class="fas fa-flag"></i>
+              Country-Specific Visa Guidelines
+            </h3>
+
+            <h4>Invitation Letter Restrictions</h4>
+            <p>
+              As per the visa regulations of the Government of India, the IPRECON organizing committee 
+              <span class="strong">will not provide conference invitation letters</span> to individuals 
+              holding citizenship of the following countries:
+            </p>
+
+            <div class="country-grid">
+              <div class="country-item">
+                <i class="fas fa-times-circle"></i>
+                Pakistan
+              </div>
+              <div class="country-item">
+                <i class="fas fa-times-circle"></i>
+                Bangladesh
+              </div>
+              <div class="country-item">
+                <i class="fas fa-times-circle"></i>
+                Afghanistan
+              </div>
+              <div class="country-item">
+                <i class="fas fa-times-circle"></i>
+                Iraq
+              </div>
+              <div class="country-item">
+                <i class="fas fa-times-circle"></i>
+                Sudan
+              </div>
+              <div class="country-item">
+                <i class="fas fa-times-circle"></i>
+                Stateless persons
+              </div>
+            </div>
+
+            <h4>Persons of Pakistani Origin</h4>
+            <div class="warning-box">
+              <h4>
+                <i class="fas fa-exclamation-triangle"></i>
+                Important Restriction
+              </h4>
+              <p>
+                Individuals of <span class="strong">Pakistani origin</span>, irrespective of their current 
+                citizenship, are <span class="strong">not eligible</span> to receive visa invitation letters 
+                from the organizing committee.
+              </p>
+              <p>
+                <em>Definition: "Pakistani origin" refers to individuals who currently hold or previously 
+                held Pakistani citizenship, or whose parents or grandparents were citizens of Pakistan.</em>
+              </p>
+            </div>
+
+            <h4>Eligible Countries</h4>
+            <p>
+              Conference invitation letters will be issued only to participants from countries listed as 
+              eligible under the Indian Government's e-Visa program.
+            </p>
+
+            <h4>Visa Exemption for Nepal and Bhutan</h4>
+            <div class="notice-box">
+              <p>
+                Citizens of <span class="strong">Nepal</span> and <span class="strong">Bhutan</span> do not 
+                require a visa to enter India, in accordance with the Freedom of Movement Agreement between 
+                these countries and the Republic of India.
+              </p>
+            </div>
+          </div>
+
+          <!-- Remote Presentation Policy -->
+          <div class="content-card fade-in">
+            <h3>
+              <i class="fas fa-video"></i>
+              Remote Presentation Policy
+            </h3>
+            <p>
+              In alignment with our commitment to <span class="strong">diversity, equity, and inclusion</span>, 
+              authors from countries or backgrounds that are not eligible for Indian visas will be allowed to 
+              present their papers <span class="strong">remotely via an online platform</span>. This ensures 
+              that every qualified submission has the opportunity to contribute to the conference, regardless 
+              of national or visa limitations.
+            </p>
+          </div>
+
+          <!-- Action Section -->
+          <div class="action-section fade-in">
+            <div class="action-content">
+              <h3>Ready to Apply?</h3>
+              <p>Visit the official Government of India e-Visa portal to begin your application</p>
+              <div class="iprecon-btn-group">
+                <a href="https://indianvisaonline.gov.in/evisa/" target="_blank" class="iprecon-btn tertiary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Apply for e-Visa
+                </a>
+                <a href="https://indianvisaonline.gov.in/evisa/tvoa.html" target="_blank" class="iprecon-btn tertiary">
+                  <i class="fas fa-list"></i>
+                  View Eligible Countries
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="visa-container">
+          <div class="contact-content fade-in">
+            <h3>Need Visa Support?</h3>
+            <p>For further questions regarding visa support, please contact the IPRECON visa helpdesk</p>
+            <div class="contact-info">
+              <a href="mailto:support@iprecon.org" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                support@iprecon.org
+              </a>
+              <a href="./contact.html" class="contact-link">
+                <i class="fas fa-headset"></i>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
+
     <!-- Footer section -->
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-column">
           <h3>Paper Submission</h3>
           <ul class="footer-links">
-            <li><a href="#">Call for Papers</a></li>
-            <li><a href="#">Submit a Paper</a></li>
-            <li><a href="#">Paper Template</a></li>
+            <li><a href="./call-for-papers.html">Call for Papers</a></li>
+            <li><a href="./submissions.html">Submit a Paper</a></li>
+            <li>
+              <a href="https://www.ieee.org/conferences/publishing/templates"
+                >Paper Template</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>About</h3>
           <ul class="footer-links">
-            <li><a href="#">IEEE SB CEK</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Legacy</a></li>
+            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+            <li><a href="./committee.html">Team</a></li>
+            <li><a href="./about-iprecon.html">Legacy</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>Travel and Accommodation</h3>
           <ul class="footer-links">
-            <li><a href="#">Transportation</a></li>
-            <li><a href="#">Hotels</a></li>
-            <li><a href="#">Tourism</a></li>
+            <li><a href="./venue.html">Transportation</a></li>
+            <li><a href="./accommodation.html">Hotels</a></li>
+            <li><a href="./kerala.html">Tourism</a></li>
           </ul>
         </div>
 
@@ -521,22 +1189,21 @@
     </footer>
 
     <script src="./scripts/script.js"></script>
-    <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
         $("#news-slider").owlCarousel({
           items: 4,
-          loop: true, // Enable continuous loop
+          loop: true,
           margin: 20,
-          nav: true, // Show navigation arrows
+          nav: true,
           navText: [
             "<i class='fa fa-chevron-left'></i>",
             "<i class='fa fa-chevron-right'></i>",
-          ], // Custom navigation icons
-          autoplay: true, // Enable autoplay
-          autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
+          ],
+          autoplay: true,
+          autoplayTimeout: 3000,
           responsive: {
             0: {
               items: 3,
@@ -548,6 +1215,40 @@
               items: 4,
             },
           },
+        });
+
+        // Scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on("click", function (event) {
+          var target = $(this.getAttribute("href"));
+          if (target.length) {
+            event.preventDefault();
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 100,
+                },
+                1000
+              );
+          }
         });
       });
     </script>

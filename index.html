@@ -360,7 +360,7 @@
 
       /* --------------------- ORGANISERS CAROUSEL SECTION --------------------- */
       .carousel-s {
-        background: #211021;
+        background: linear-gradient(135deg, #211021 0%, #1a0e1a 50%, #8e24aa 100%);
         visibility: visible;
         opacity: 1;
         padding-top: 80px;
@@ -381,125 +381,166 @@
         font-family: "montserrat", sans-serif;
       }
 
-      /* --------------------- IMPORTANT DATES SECTION --------------------- */
+      /* --------------------- IMPORTANT DATES SECTION - UPDATED TO MATCH CFP DESIGN --------------------- */
       .important-dates-section {
-        padding: 60px 0;
+        padding: 80px 0;
+        background: #f8f9fa;
+        max-width: none; /* Remove max-width to match CFP design */
+        margin: 0; /* Remove auto margin */
+      }
+
+      .important-dates-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px 20px;
+        padding: 0 20px;
       }
 
-      .dates-container {
-        display: flex;
-        flex-wrap: wrap;
+      .dates-timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 30px;
-        justify-content: center;
-        margin-top: 40px;
+        margin-top: 50px;
       }
 
-      .date-item {
-        flex: 1;
-        min-width: 250px;
-        max-width: 300px;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
+      .date-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
         text-align: center;
-        border: 1px solid #eee;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
-      .date-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      .date-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+      }
+
+      .date-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
 
       .date-number {
-        font-size: 64px;
-        color: #333;
-        margin-bottom: 5px;
-        font-weight: 600;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #211021;
+        display: block;
         line-height: 1;
+        margin-bottom: 10px;
       }
 
       .date-number sup {
-        font-size: 40%;
-        top: -1.5em;
+        font-size: 1rem;
+        top: -1em;
       }
 
       .date-month {
-        font-size: 18px;
-        color: #666;
-        margin-bottom: 20px;
-        font-weight: normal;
+        font-size: 1.1rem;
+        color: #8e24aa;
+        font-weight: 600;
+        margin-bottom: 15px;
       }
 
       .date-event {
-        font-size: 18px;
-        color: #211021;
+        font-size: 1rem;
+        color: #333;
         margin-bottom: 15px;
         font-weight: 500;
+        line-height: 1.3;
       }
 
       .date-status {
-        display: block;
-        font-size: 16px;
-        font-weight: 500;
-        margin-top: 10px;
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
       }
 
-      .status-closed {
-        color: #f44336; /* Red */
+      .date-status.upcoming {
+        background: #e8f5e8;
+        color: #2e7d32;
+        border: 1px solid #4caf50;
       }
 
-      .status-notified {
-        color: #f44336; /* Red */
+      .date-status.future {
+        background: #e3f2fd;
+        color: #1565c0;
+        border: 1px solid #2196f3;
       }
 
-      .status-progress {
-        color: #4caf50; /* Green */
+      .date-status.deadline {
+        background: #fff3e0;
+        color: #ef6c00;
+        border: 1px solid #ff9800;
+      }
+
+      .date-status.final {
+        background: #fce4ec;
+        color: #c2185b;
+        border: 1px solid #e91e63;
       }
 
       /* Important Dates Responsive */
+      @media (max-width: 1024px) {
+        .dates-timeline {
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 25px;
+        }
+      }
+
       @media (max-width: 768px) {
         .important-dates-section {
-          padding: 40px 20px;
+          padding: 60px 0;
         }
 
-        .dates-container {
+        .dates-timeline {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
           gap: 20px;
+          margin-top: 40px;
         }
 
-        .date-item {
-          min-width: 45%;
+        .date-card {
+          padding: 25px;
         }
 
         .date-number {
-          font-size: 50px;
-        }
-
-        .date-month {
-          font-size: 16px;
+          font-size: 2.5rem;
         }
       }
 
       @media (max-width: 480px) {
-        .date-item {
-          min-width: 100%;
+        .dates-timeline {
+          grid-template-columns: 1fr;
+          gap: 20px;
         }
-      }
 
-      @media (max-width: 992px) {
-        .date-item {
-          min-width: 200px;
+        .date-card {
+          padding: 25px 20px;
+        }
+
+        .date-number {
+          font-size: 2.2rem;
         }
       }
 
       @media (min-width: 1921px) {
         .about-section,
-        .important-info-section,
-        .important-dates-section {
+        .important-info-section {
+          max-width: 70%;
+        }
+
+        .important-dates-container {
           max-width: 70%;
         }
       }
@@ -850,39 +891,41 @@
         </div>
       </section>
 
-      <!-- Important Dates Section -->
+      <!-- Important Dates Section - Updated to match CFP design -->
       <section class="important-dates-section">
-        <div class="section-title-container">
-          <h2 class="section-title">Important Dates</h2>
-        </div>
-
-        <div class="dates-container">
-          <div class="date-item">
-            <h3 class="date-number">15<sup>th</sup></h3>
-            <h4 class="date-month">May 2025</h4>
-            <p class="date-event">Paper Submission Open</p>
-            <span class="date-status status-progress">(OPENING SOON)</span>
+        <div class="important-dates-container">
+          <div class="section-title-container">
+            <h2 class="section-title">Important Dates</h2>
           </div>
 
-          <div class="date-item">
-            <h3 class="date-number">20<sup>th</sup></h3>
-            <h4 class="date-month">August 2025</h4>
-            <p class="date-event">Paper Submission Closes</p>
-            <span class="date-status status-closed"></span>
-          </div>
+          <div class="dates-timeline">
+            <div class="date-card">
+              <div class="date-number">15<sup>th</sup></div>
+              <div class="date-month">May 2025</div>
+              <div class="date-event">Paper Submission Open</div>
+              <div class="date-status upcoming">Opening Soon</div>
+            </div>
 
-          <div class="date-item">
-            <h3 class="date-number">31<sup>st</sup></h3>
-            <h4 class="date-month">October 2025</h4>
-            <p class="date-event">Notification of Acceptance</p>
-            <span class="date-status status-notified"></span>
-          </div>
+            <div class="date-card">
+              <div class="date-number">20<sup>th</sup></div>
+              <div class="date-month">August 2025</div>
+              <div class="date-event">Paper Submission Closes</div>
+              <div class="date-status deadline">Deadline</div>
+            </div>
 
-          <div class="date-item">
-            <h3 class="date-number">1<sup>st</sup></h3>
-            <h4 class="date-month">December 2025</h4>
-            <p class="date-event">Final Camera-Ready Paper</p>
-            <span class="date-status status-progress"></span>
+            <div class="date-card">
+              <div class="date-number">31<sup>st</sup></div>
+              <div class="date-month">October 2025</div>
+              <div class="date-event">Notification of Acceptance</div>
+              <div class="date-status future">Results</div>
+            </div>
+
+            <div class="date-card">
+              <div class="date-number">1<sup>st</sup></div>
+              <div class="date-month">December 2025</div>
+              <div class="date-event">Final Camera-Ready Paper</div>
+              <div class="date-status final">Final Submission</div>
+            </div>
           </div>
         </div>
       </section>
@@ -1017,7 +1060,7 @@
           items: 4,
           loop: true, // Enable continuous loop
           margin: 20,
-          nav: true, // Show navigation arrows
+          nav: false, // Hide navigation arrows
           navText: [
             "<i class='fa fa-chevron-left'></i>",
             "<i class='fa fa-chevron-right'></i>",

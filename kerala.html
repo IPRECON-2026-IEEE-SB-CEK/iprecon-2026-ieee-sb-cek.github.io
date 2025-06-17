@@ -3,171 +3,564 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IPRECON 2026 - Kerala Tourism</title>
+    <title>Kerala - God's Own Country | IPRECON 2026</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
-    <!-- Link to common styles -->
     <link rel="stylesheet" href="./css/styles.css" />
-    <meta
-      name="description"
-      content="Kerala Tourism Information for IPRECON 2026 - International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
-    />
-    <!-- Page-specific styles embedded -->
     <style>
-      /*---------------------- DEI STATEMENT BASE ---------------------*/
-      .dei-section {
-        padding: 60px 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        line-height: 1.5;
+      /* =================================================================
+         STANDARDIZED BUTTON SYSTEM
+         ================================================================= */
+      .iprecon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        justify-content: center;
+        line-height: 1;
+        white-space: nowrap;
       }
-      .dei-section > hr {
-        margin: 30px 0;
-        border: none;
-        height: 1px;
-        background: #ccc;
+
+      .iprecon-btn.large {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        gap: 15px;
       }
-      .section-content {
-        text-align: justify;
-        color: #414141;
+
+      .iprecon-btn.small {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        gap: 8px;
       }
-      .section-content h3 {
-        color: #211021;
-        margin-bottom: 1rem;
+
+      /* PRIMARY BUTTON */
+      .iprecon-btn.primary {
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
       }
-      .section-content p {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-      .section-content a {
-        color: #8e24aa;
+
+      .iprecon-btn.primary:hover {
+        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+        color: white;
         text-decoration: none;
       }
-      .section-content a:hover {
-        text-decoration: underline;
+
+      /* SECONDARY BUTTON */
+      .iprecon-btn.secondary {
+        background: #d4af37;
+        color: #211021;
+        border-color: #d4af37;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
       }
 
-      /*----------------------Kerala Page---------------------*/
-      .kerala-intro-section {
-        display: flex;
-        gap: 2rem;
+      .iprecon-btn.secondary:hover {
+        background: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        text-decoration: none;
+      }
+
+      /* TERTIARY BUTTON */
+      .iprecon-btn.tertiary {
+        background: transparent;
+        color: white;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
+
+      .iprecon-btn.tertiary:hover {
+        background: white;
+        color: #211021;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+
+      .iprecon-btn.tertiary.dark-bg {
+        color: #211021;
+        border-color: #211021;
+        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+      }
+
+      .iprecon-btn.tertiary.dark-bg:hover {
+        background: #211021;
+        color: white;
+        border-color: #211021;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+      }
+
+      /* =================================================================
+         KERALA PAGE STYLES
+         ================================================================= */
+
+      /* Hero Section */
+      .kerala-hero {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 80px 0 60px 0;
+        border-bottom: 1px solid #e9ecef;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .kerala-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(142, 36, 170, 0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        z-index: 1;
+      }
+
+      .kerala-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .kerala-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #211021;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .kerala-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 4px;
+        background-color: #8e24aa;
+      }
+
+      .kerala-subtitle {
+        font-size: 1.5rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .kerala-description {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 900px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+      }
+
+      /* Main Content */
+      .kerala-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .kerala-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Featured Section */
+      .featured-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
         align-items: center;
-        margin-bottom: 2rem;
+        margin-bottom: 80px;
       }
 
-      .kerala-img-column {
-        flex: 1;
-        min-width: 300px;
+      .featured-image-container {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
       }
 
-      .kerala-content-column {
-        flex: 2;
-        min-width: 300px;
+      .featured-image-container:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
       }
 
-      .kerala-featured-img {
+      .featured-image {
         width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-
-      .kerala-image-row {
-        display: flex;
-        gap: 1rem;
-        margin: 2rem 0;
-        justify-content: space-between;
-      }
-
-      .kerala-image-column {
-        flex: 1;
-        max-width: calc(33.33% - 0.67rem);
-      }
-
-      .kerala-image-column img {
-        width: 100%;
-        height: 200px;
+        height: 400px;
         object-fit: cover;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
       }
 
-      .kerala-image-column img:hover {
-        transform: scale(1.03);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      .featured-image-container:hover .featured-image {
+        transform: scale(1.05);
       }
 
-      .kerala-section-title {
+      .featured-content h3 {
+        font-size: 2.2rem;
         color: #211021;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
+        margin-bottom: 25px;
         font-weight: 600;
+        line-height: 1.3;
       }
 
-      /* Mobile responsiveness */
+      .featured-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      /* Section Cards */
+      .section-card {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        margin: 60px 0;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border-left: 6px solid #8e24aa;
+      }
+
+      .section-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .section-card h3 {
+        font-size: 2rem;
+        color: #211021;
+        margin-bottom: 30px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .section-card h3 i {
+        color: #8e24aa;
+        font-size: 1.8rem;
+      }
+
+      .section-card p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 25px;
+        text-align: justify;
+      }
+
+      /* Image Gallery Grid */
+      .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-image {
+        transform: scale(1.05);
+      }
+
+      .gallery-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(33, 16, 33, 0.9) 0%,
+          rgba(33, 16, 33, 0.7) 50%,
+          transparent 100%
+        );
+        color: white;
+        padding: 25px 20px;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      /* Call to Action Section with Purple Gradient */
+      .cta-section {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        border-radius: 25px;
+        padding: 60px;
+        text-align: center;
+        margin: 60px 0;
+        position: relative;
+        overflow: hidden;
+        border: none;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .cta-section h3 {
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 20px;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-section h3 i {
+        color: #d4af37;
+      }
+
+      .cta-section p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 30px;
+        line-height: 1.6;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Stats Section */
+      .kerala-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+      }
+
+      .stat-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-top: 4px solid #8e24aa;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .stat-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+
+      .stat-icon i {
+        font-size: 1.8rem;
+        color: white;
+      }
+
+      .stat-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #211021;
+        margin-bottom: 10px;
+      }
+
+      .stat-description {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.4;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .featured-section {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .kerala-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       @media (max-width: 768px) {
-        .kerala-intro-section {
+        .kerala-hero {
+          padding: 60px 0 40px 0;
+        }
+
+        .kerala-title {
+          font-size: 2.5rem;
+        }
+
+        .kerala-title::after {
+          width: 120px;
+          height: 3px;
+        }
+
+        .kerala-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .kerala-description {
+          font-size: 1rem;
+        }
+
+        .section-card {
+          padding: 40px 30px;
+        }
+
+        .section-card h3 {
+          font-size: 1.6rem;
           flex-direction: column;
+          gap: 10px;
+          text-align: center;
         }
 
-        .kerala-img-column {
-          order: 1;
-          margin-bottom: 1.5rem;
+        .cta-section {
+          padding: 40px 30px;
         }
 
-        .kerala-content-column {
-          order: 2;
-        }
-
-        .kerala-image-row {
+        .cta-buttons {
           flex-direction: column;
-          gap: 1rem;
+          align-items: center;
         }
 
-        .kerala-image-column {
-          max-width: 100%;
+        .iprecon-btn {
+          width: 100%;
+          max-width: 280px;
         }
 
-        .kerala-image-column img {
-          height: 250px;
+        .image-gallery {
+          grid-template-columns: 1fr;
+          gap: 25px;
         }
+
+        .kerala-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .kerala-title {
+          font-size: 2rem;
+        }
+
+        .kerala-title::after {
+          width: 100px;
+        }
+
+        .section-card {
+          padding: 30px 20px;
+        }
+
+        .featured-image {
+          height: 300px;
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
+    <meta
+      name="description"
+      content="Discover Kerala - God's Own Country. Tourism information for IPRECON 2026 attendees visiting Kerala, India's most beautiful state."
+    />
   </head>
   <body>
     <!-- Header -->
-    <!-- Header -->
     <div class="header-container">
       <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
+        <img
+          src="./assets/img/iprecon26 black.png"
+          alt="IPRECON 2026 Logo"
+          class="logo"
+        />
         <div class="separator"></div>
         <div class="event-info">
-          <span>August 28-30, 2026</span>
+          <span>September 04-06, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -209,14 +602,12 @@
             </div>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
+        <img
+          src="./assets/img/iprecon26 white.png"
+          alt="IPRECON 2026 Logo"
+          class="brand-logo"
+          id="brandLogo"
+        />
         <ul class="nav-items">
           <li class="nav-item"><a href="index.html">HOME</a></li>
           <li class="nav-item">
@@ -311,274 +702,331 @@
 
     <!-- Spacer for when marquee becomes fixed -->
     <div id="marquee-placeholder" style="display: none"></div>
-    <main>
-      <!-- Kerala Tourism Section -->
-      <section class="dei">
-        <div class="dei-section">
-          <div class="section-title-container">
-            <h2 class="section-title">Kerala</h2>
-          </div>
 
-          <!-- Two-column intro section -->
-          <div class="kerala-intro-section">
-            <div class="kerala-img-column">
+    <main>
+      <!-- Hero Section -->
+      <section class="kerala-hero">
+        <div class="kerala-hero-content">
+          <h1 class="kerala-title">Kerala</h1>
+          <p class="kerala-subtitle">God's Own Country</p>
+          <p class="kerala-description">
+            Discover the enchanting beauty of Kerala, where pristine backwaters meet lush hill stations, ancient temples coexist with modern cities, and every corner tells a story of rich cultural heritage and natural splendor.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="kerala-content">
+        <div class="kerala-container">
+          
+          <!-- Featured Introduction -->
+          <div class="featured-section fade-in">
+            <div class="featured-image-container">
               <img
                 src="./assets/img/kerala1.jpg"
-                alt="Kerala Landscape"
-                class="kerala-featured-img"
+                alt="Kerala Landscape - God's Own Country"
+                class="featured-image"
               />
             </div>
-            <div class="kerala-content-column">
-              <h3 class="kerala-section-title">Kerala - The Green Heaven</h3>
+            <div class="featured-content">
+              <h3>Welcome to Kerala - The Green Heaven</h3>
               <p>
-                Nestled between the Arabian Sea and the Western Ghats, Kerala
-                stands as one of India's most picturesque states. The state is
-                known for its pristine air, clear blue skies, and lush
-                landscapes. Traveling across Kerala offers a glimpse into a way
-                of life that is deeply influenced by its natural beauty,
-                fostering a culture that is both serene and unhurried. Often
-                referred to as "God's Own Country," Kerala captivates visitors
-                with its breathtaking scenery, tranquil backwaters, and rich
-                cultural heritage.
+                Nestled between the Arabian Sea and the Western Ghats, Kerala stands as one of India's most picturesque states. The state is known for its pristine air, clear blue skies, and lush landscapes that create a symphony of natural beauty.
+              </p>
+              <p>
+                Traveling across Kerala offers a glimpse into a way of life that is deeply influenced by its natural beauty, fostering a culture that is both serene and unhurried. Often referred to as "God's Own Country," Kerala captivates visitors with its breathtaking scenery, tranquil backwaters, and rich cultural heritage.
               </p>
             </div>
           </div>
 
-          <hr />
+          <!-- Quick Stats -->
+          <div class="kerala-stats fade-in">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-mountain"></i>
+              </div>
+              <div class="stat-title">Hill Stations</div>
+              <div class="stat-description">Scenic retreats in the Western Ghats</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-water"></i>
+              </div>
+              <div class="stat-title">Backwaters</div>
+              <div class="stat-description">900km of interconnected waterways</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <div class="stat-title">Wildlife</div>
+              <div class="stat-description">Rich biodiversity & nature reserves</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-theater-masks"></i>
+              </div>
+              <div class="stat-title">Art Forms</div>
+              <div class="stat-description">Kathakali, Theyyam & traditional arts</div>
+            </div>
+          </div>
 
-          <div class="section-content">
-            <h3 class="kerala-section-title">Beautiful Hill Stations</h3>
+          <!-- Hill Stations Section -->
+          <div class="section-card fade-in">
+            <h3>
+              <i class="fas fa-mountain"></i>
+              Beautiful Hill Stations
+            </h3>
             <p>
-              Kerala's hill stations have long been a source of fascination for
-              travelers from diverse geographic regions. From the sprawling tea
-              plantations of Munnar to the unspoiled meadows of Vagamon, the
-              state offers numerous destinations that provide a retreat from
-              urban hustle and bustle. Enveloped by dense forests, these
-              high-altitude locations feature scenic walking trails, lush green
-              valleys, and an invigorating climate that remains pleasant
-              throughout the year, making them ideal for nature enthusiasts and
-              adventure seekers alike.
+              Kerala's hill stations have long been a source of fascination for travelers from diverse geographic regions. From the sprawling tea plantations of Munnar to the unspoiled meadows of Vagamon, the state offers numerous destinations that provide a retreat from urban hustle and bustle.
+            </p>
+            <p>
+              Enveloped by dense forests, these high-altitude locations feature scenic walking trails, lush green valleys, and an invigorating climate that remains pleasant throughout the year, making them ideal for nature enthusiasts and adventure seekers alike.
             </p>
 
-            <!-- Image row after Hill Stations section -->
-            <div class="kerala-image-row">
-              <div class="kerala-image-column">
+            <div class="image-gallery">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/munnar_teapl.jpg"
                   alt="Munnar Tea Plantations"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Munnar Tea Plantations</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/meadows_vagamon.jpg"
                   alt="Vagamon Meadows"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Vagamon Meadows</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/wayanad.jpg"
                   alt="Wayanad Hills"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Wayanad Hills</div>
               </div>
             </div>
           </div>
 
-          <hr />
-
-          <div class="section-content">
-            <h3 class="kerala-section-title">
+          <!-- Backwaters Section -->
+          <div class="section-card fade-in">
+            <h3>
+              <i class="fas fa-ship"></i>
               Blissful Beaches and Backwaters
             </h3>
             <p>
-              Renowned for their scenic charm, Kerala's backwaters comprise an
-              intricate network of rivers, lakes, canals, estuaries, and lagoons
-              that extend across the state. These serene waterways attract
-              numerous visitors annually, offering an unforgettable experience
-              of tranquility. Houseboat cruises along the backwaters provide a
-              rare opportunity to immerse oneself in nature's beauty. The
-              picturesque town of Alappuzha, often referred to as the "Venice of
-              the East," is particularly famous for its houseboat journeys,
-              allowing travelers to unwind amidst breathtaking landscapes.
+              Renowned for their scenic charm, Kerala's backwaters comprise an intricate network of rivers, lakes, canals, estuaries, and lagoons that extend across the state. These serene waterways attract numerous visitors annually, offering an unforgettable experience of tranquility.
+            </p>
+            <p>
+              Houseboat cruises along the backwaters provide a rare opportunity to immerse oneself in nature's beauty. The picturesque town of Alappuzha, often referred to as the "Venice of the East," is particularly famous for its houseboat journeys, allowing travelers to unwind amidst breathtaking landscapes.
             </p>
 
-            <!-- Image row after Beaches and Backwaters section -->
-            <div class="kerala-image-row">
-              <div class="kerala-image-column">
+            <div class="image-gallery">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/backwaters.jpg"
                   alt="Kerala Backwaters"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Kerala Backwaters</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/houseboat.jpg"
-                  alt="Kerala Houseboat"
+                  alt="Traditional Houseboat"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Traditional Houseboat</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/kovalam.jpg"
                   alt="Kovalam Beach"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Kovalam Beach</div>
               </div>
             </div>
           </div>
 
-          <hr />
-
-          <div class="section-content">
-            <h3 class="kerala-section-title">Rich Cultural Heritage</h3>
+          <!-- Cultural Heritage Section -->
+          <div class="section-card fade-in">
+            <h3>
+              <i class="fas fa-landmark"></i>
+              Rich Cultural Heritage
+            </h3>
             <p>
-              Kerala has long been a hub of global trade, with its coveted
-              spices drawing merchants from distant lands such as Phoenicia,
-              Egypt, Babylon, Assyria, and China. Over time, the region welcomed
-              traders from the Arab world and Europe—including the Portuguese,
-              Dutch, and British—who arrived following Vasco da Gama's historic
-              maritime expedition from Europe. This diverse influx of merchants
-              contributed to Kerala's unique cultural landscape, distinguishing
-              it from other parts of India.
+              Kerala has long been a hub of global trade, with its coveted spices drawing merchants from distant lands such as Phoenicia, Egypt, Babylon, Assyria, and China. Over time, the region welcomed traders from the Arab world and Europe—including the Portuguese, Dutch, and British—who arrived following Vasco da Gama's historic maritime expedition.
             </p>
             <p>
-              This rich history of trade, travel, and missionary activity led to
-              the coexistence of multiple faiths, including Hinduism, Islam,
-              Christianity, and Judaism. The harmonious cultural fabric of
-              Kerala is reflected in its revered places of worship, such as the
-              Paradesi Synagogue in Mattancherry, the Padmanabhaswamy Temple in
-              Thiruvananthapuram, the Santa Cruz Basilica in Kochi, and the
-              mosque in Munnar, all of which hold immense significance for
-              various communities.
+              This diverse influx of merchants contributed to Kerala's unique cultural landscape, distinguishing it from other parts of India. The harmonious coexistence of multiple faiths, including Hinduism, Islam, Christianity, and Judaism, is reflected in the state's revered places of worship and cultural practices.
             </p>
 
-            <!-- Image row after Cultural Heritage section -->
-            <div class="kerala-image-row">
-              <div class="kerala-image-column">
+            <div class="image-gallery">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/idappally.jpg"
-                  alt="Paradesi Synagogue"
+                  alt="Historic Synagogue"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Historic Synagogue</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/padmanabhaswami.jpg"
                   alt="Padmanabhaswamy Temple"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Padmanabhaswamy Temple</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/beemapally.jpg"
-                  alt="Fort Kochi"
+                  alt="Cultural Heritage Site"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Cultural Heritage Site</div>
               </div>
             </div>
           </div>
 
-          <hr />
-
-          <div class="section-content">
-            <h3 class="kerala-section-title">Tremendous Temple Rituals</h3>
+          <!-- Cultural Arts Section -->
+          <div class="section-card fade-in">
+            <h3>
+              <i class="fas fa-theater-masks"></i>
+              Traditional Arts and Cultural Festivals
+            </h3>
             <p>
-              Kerala is a land of arts and festivals. The southern Keralan art
-              form of Kathakali is a highly stylized and elaborate temple dance
-              that seamlessly blends mime and theatre, making it a renowned
-              cultural expression. Apart from Kathakali, the northern part of
-              Kerala is famous for Theyyam, an ancient and unique temple ritual
-              that combines dance, religion, mysticism, and ancestor worship,
-              reflecting the region's deep spiritual traditions.
+              Kerala is a land of vibrant arts and colorful festivals. The southern Keralan art form of Kathakali is a highly stylized and elaborate classical dance-drama that seamlessly blends mime, dance, music, and theatre, making it a renowned cultural expression recognized worldwide for its artistic excellence.
+            </p>
+            <p>
+              The northern part of Kerala is famous for Theyyam, an ancient and unique cultural performance that combines dance, music, and elaborate costumes, reflecting the region's rich artistic traditions. These performances showcase Kerala's diverse cultural heritage and continue to captivate audiences with their spectacular visual storytelling.
             </p>
 
-            <!-- Image row after Temple Rituals section -->
-            <div class="kerala-image-row">
-              <div class="kerala-image-column">
+            <div class="image-gallery">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/kathakali.jpg"
                   alt="Kathakali Performance"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Kathakali Performance</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/theyyam.jpg"
                   alt="Theyyam Ritual"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Theyyam Ritual</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/pooram.jpg"
                   alt="Temple Festival"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Cultural Festival</div>
               </div>
             </div>
           </div>
 
-          <hr />
-
-          <div class="section-content">
+          <!-- Final Gallery Section -->
+          <div class="section-card fade-in">
+            <h3>
+              <i class="fas fa-seedling"></i>
+              Natural Treasures
+            </h3>
             <p>
-              To sum up, Kerala is unquestionably a dream destination. The state
-              mesmerizes visitors with its old-fashioned settlements, unspoiled
-              coastline, rolling hills and valleys, lush green coconut groves,
-              and the soothing aroma of spices in the air. A visit to "God's Own
-              Country" will certainly rejuvenate your mind and soul, creating
-              cherished memories that will last a lifetime.
+              Kerala mesmerizes visitors with its old-fashioned settlements, unspoiled coastline, rolling hills and valleys, lush green coconut groves, and the soothing aroma of spices in the air. The state's commitment to sustainable tourism and environmental conservation makes it a model destination for eco-conscious travelers.
             </p>
 
-            <!-- Final image row -->
-            <div class="kerala-image-row">
-              <div class="kerala-image-column">
-                <img src="./assets/img/spice.jpg" alt="Kerala Spices" />
+            <div class="image-gallery">
+              <div class="gallery-item">
+                <img
+                  src="./assets/img/spice.jpg"
+                  alt="Kerala Spice Gardens"
+                  class="gallery-image"
+                />
+                <div class="gallery-caption">Spice Gardens</div>
               </div>
-              <div class="kerala-image-column">
+              <div class="gallery-item">
                 <img
                   src="./assets/img/cocnut.jpg"
-                  alt="Coconut Grove"
+                  alt="Coconut Groves"
+                  class="gallery-image"
                 />
+                <div class="gallery-caption">Coconut Groves</div>
               </div>
-              <div class="kerala-image-column">
-                <img src="./assets/img/sunset.jpg" alt="Kerala Sunset" />
+              <div class="gallery-item">
+                <img
+                  src="./assets/img/sunset.jpg"
+                  alt="Kerala Sunset"
+                  class="gallery-image"
+                />
+                <div class="gallery-caption">Spectacular Sunsets</div>
               </div>
             </div>
           </div>
 
-          <hr />
-
-          <div class="section-content">
+          <!-- Call to Action Section -->
+          <div class="cta-section fade-in">
+            <h3>Plan Your Kerala Experience</h3>
             <p>
-              <strong
-                >For more tourism information or to arrange pre/post-conference
-                tours, please contact:</strong
-              >
-              <a href="mailto:info@iprecon.org">info@iprecon.org</a>
+              A visit to "God's Own Country" will certainly rejuvenate your mind and soul, creating cherished memories that will last a lifetime. Whether you're attending IPRECON 2026 or extending your stay, Kerala offers countless opportunities for exploration and relaxation.
             </p>
+            
+            <div class="cta-buttons">
+              <a href="https://www.keralatourism.org/" class="iprecon-btn secondary">
+                <i class="fas fa-route"></i>
+                Kerala Tourism
+              </a>
+              <a href="./accommodation.html" class="iprecon-btn tertiary">
+                <i class="fas fa-bed"></i>
+                Accommodation
+              </a>
+            </div>
           </div>
+
         </div>
       </section>
     </main>
+
     <!-- Footer section -->
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-column">
           <h3>Paper Submission</h3>
           <ul class="footer-links">
-            <li><a href="#">Call for Papers</a></li>
-            <li><a href="#">Submit a Paper</a></li>
-            <li><a href="#">Paper Template</a></li>
+            <li><a href="./call-for-papers.html">Call for Papers</a></li>
+            <li><a href="./submissions.html">Submit a Paper</a></li>
+            <li>
+              <a href="https://www.ieee.org/conferences/publishing/templates"
+                >Paper Template</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>About</h3>
           <ul class="footer-links">
-            <li><a href="#">IEEE SB CEK</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Legacy</a></li>
+            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+            <li><a href="./committee.html">Team</a></li>
+            <li><a href="./about-iprecon.html">Legacy</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>Travel and Accommodation</h3>
           <ul class="footer-links">
-            <li><a href="#">Transportation</a></li>
-            <li><a href="#">Hotels</a></li>
-            <li><a href="#">Tourism</a></li>
+            <li><a href="./venue.html">Transportation</a></li>
+            <li><a href="./accommodation.html">Hotels</a></li>
+            <li><a href="./kerala.html">Tourism</a></li>
           </ul>
         </div>
 
@@ -602,24 +1050,22 @@
       </div>
     </footer>
 
-    <!-- Link to common script -->
     <script src="./scripts/script.js"></script>
-    <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
         $("#news-slider").owlCarousel({
           items: 4,
-          loop: true, // Enable continuous loop
+          loop: true,
           margin: 20,
-          nav: true, // Show navigation arrows
+          nav: true,
           navText: [
             "<i class='fa fa-chevron-left'></i>",
             "<i class='fa fa-chevron-right'></i>",
-          ], // Custom navigation icons
-          autoplay: true, // Enable autoplay
-          autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
+          ],
+          autoplay: true,
+          autoplayTimeout: 3000,
           responsive: {
             0: {
               items: 3,
@@ -631,6 +1077,40 @@
               items: 4,
             },
           },
+        });
+
+        // Scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on("click", function (event) {
+          var target = $(this.getAttribute("href"));
+          if (target.length) {
+            event.preventDefault();
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 100,
+                },
+                1000
+              );
+          }
         });
       });
     </script>

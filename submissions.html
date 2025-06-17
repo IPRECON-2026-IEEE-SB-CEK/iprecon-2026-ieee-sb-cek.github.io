@@ -3,21 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IPRECON 2026 - Paper Submission Guidelines</title>
+    <title>Paper Submissions - IPRECON 2026</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,163 +17,736 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
-    <meta
-      name="description"
-      content="Paper Submission Guidelines for IPRECON 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
-    />
     <style>
-      /*---------------------- DEI STATEMENT BASE ---------------------*/
-      .dei-section {
+      /* =================================================================
+         STANDARDIZED BUTTON SYSTEM
+         ================================================================= */
+      .iprecon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        justify-content: center;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .iprecon-btn.large {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        gap: 15px;
+      }
+
+      .iprecon-btn.small {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        gap: 8px;
+      }
+
+      /* PRIMARY BUTTON */
+      .iprecon-btn.primary {
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      }
+
+      .iprecon-btn.primary:hover {
+        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      /* SECONDARY BUTTON */
+      .iprecon-btn.secondary {
+        background: #d4af37;
+        color: #211021;
+        border-color: #d4af37;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .iprecon-btn.secondary:hover {
+        background: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        text-decoration: none;
+      }
+
+      /* TERTIARY BUTTON */
+      .iprecon-btn.tertiary {
+        background: transparent;
+        color: white;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
+
+      .iprecon-btn.tertiary:hover {
+        background: white;
+        color: #211021;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+
+      .iprecon-btn.tertiary.dark-bg {
+        color: #211021;
+        border-color: #211021;
+        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+      }
+
+      .iprecon-btn.tertiary.dark-bg:hover {
+        background: #211021;
+        color: white;
+        border-color: #211021;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+      }
+
+      .iprecon-btn-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      /* =================================================================
+         SUBMISSIONS PAGE STYLES
+         ================================================================= */
+
+      /* Hero Section */
+      .submissions-hero {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         padding: 60px 0;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .submissions-hero-content {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px 20px;
-        line-height: 1.5;
-      }
-      .dei-section > hr {
-        margin: 30px 0;
-        border: none;
-        height: 1px;
-        background: #ccc;
+        padding: 0 20px;
+        text-align: center;
       }
 
-      /*---------------------- SUBMISSIONS PAGE ---------------------*/
-      /* Paper Submission Page Specific Styles */
-      .submission-button-container {
+      .submissions-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #211021;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .submissions-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background-color: #8e24aa;
+      }
+
+      .submissions-subtitle {
+        font-size: 1.3rem;
+        color: #6c757d;
+        margin-bottom: 30px;
+        line-height: 1.4;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .status-highlight {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        margin: 30px auto;
+        max-width: 600px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .status-highlight::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .status-content {
+        position: relative;
+        z-index: 2;
         display: flex;
+        align-items: center;
         gap: 20px;
-        margin-top: 30px;
-        justify-content: flex-start;
+        justify-content: center;
+        text-align: center;
       }
 
-      .submission-info-container {
+      .status-icon {
+        font-size: 2rem;
+        color: #d4af37;
+      }
+
+      .status-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      /* Main Content */
+      .submissions-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .submissions-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Instructions Section */
+      .instructions-section {
+        background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
+        border-radius: 20px;
+        padding: 50px;
+        margin-bottom: 60px;
+        border-left: 6px solid #8e24aa;
+      }
+
+      .instructions-title {
+        color: #211021;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        font-weight: 600;
         display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-top: 20px;
-        align-items: flex-start;
+        align-items: center;
+        gap: 15px;
       }
 
-      .submission-info {
-        flex: 1;
-        min-width: 300px;
+      .instructions-title i {
+        color: #8e24aa;
+        font-size: 1.8rem;
       }
 
-      .submission-image {
-        flex: 1;
-        min-width: 300px;
-        max-width: 400px;
+      .instructions-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .instructions-list li {
+        margin-bottom: 20px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 1.6;
+        font-size: 1.05rem;
+        color: #555;
+      }
+
+      .instructions-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #8e24aa;
+        font-weight: bold;
+        font-size: 1.1rem;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .instructions-list .strong {
+        color: #211021;
+        font-weight: 600;
+      }
+
+      /* Submission Process Section */
+      .process-section {
+        margin: 60px 0;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+        margin-top: 40px;
+      }
+
+      .process-content {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .process-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+      }
+
+      .process-content:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        border-color: #8e24aa;
+      }
+
+      .process-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .process-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .process-icon i {
+        font-size: 2rem;
+        color: white;
+      }
+
+      .process-title {
+        font-size: 1.8rem;
+        color: #211021;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .process-steps {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .process-steps li {
+        margin-bottom: 20px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 1.6;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      .process-steps li::before {
+        content: counter(step-counter);
+        counter-increment: step-counter;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        background: #8e24aa;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .process-steps {
+        counter-reset: step-counter;
+      }
+
+      .process-steps .strong {
+        color: #211021;
+        font-weight: 600;
+      }
+
+      .process-image {
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
+        padding: 20px;
       }
 
       .cmt-image {
         width: 100%;
         max-width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
       }
 
-      .section-content h3 {
-        margin-bottom: 1.5rem;
-        color: #211021;
-        font-size: 1.5rem;
+      .cmt-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Action Buttons */
+      .action-section {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 50px;
+        border-radius: 20px;
+        margin: 60px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .action-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .action-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(108, 60, 136, 0.411);
+        z-index: 1;
+      }
+
+      .action-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .action-section h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
         font-weight: 600;
       }
 
-      .section-content {
-        margin-bottom: 2rem;
-        color: #414141;
-        text-align: justify;
+      .action-section p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.95;
       }
 
-      .section-content p {
-        margin-bottom: 1rem;
-        line-height: 1.6;
+      .action-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
       }
 
-      .submission-list {
-        padding-left: 2rem;
-        list-style-position: outside;
-      }
-
-      .submission-list li {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-
-      .carousel-btn {
-        display: inline-block;
-        background-color: #8e24aa;
+      /* Special button styling for dark background */
+      .action-section .iprecon-btn.primary {
+        background: linear-gradient(135deg, #8e24aa, #211021);
         color: white;
-        padding: 12px 24px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        border: 2px solid #8e24aa;
+        border-color: transparent;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
       }
 
-      .carousel-btn:hover {
-        background-color: transparent;
-        color: #8e24aa;
-        border-color: #8e24aa;
+      .action-section .iprecon-btn.primary:hover {
+        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
         transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+        color: white;
       }
 
-      .carousel-btn:active {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      .action-section .iprecon-btn.secondary {
+        background: #d4af37;
+        color: #211021;
+        border-color: #d4af37;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
       }
 
-      /* Mobile responsiveness */
+      .action-section .iprecon-btn.secondary:hover {
+        background: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      .action-section .iprecon-btn.tertiary {
+        background: white;
+        color: #211021;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
+
+      .action-section .iprecon-btn.tertiary:hover {
+        background: transparent;
+        color: white;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: #f8f9fa;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .contact-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .contact-content h3 {
+        font-size: 2rem;
+        color: #211021;
+        margin-bottom: 20px;
+      }
+
+      .contact-content p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #8e24aa;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .contact-link:hover {
+        color: #211021;
+        transform: translateY(-2px);
+      }
+
+      .contact-link i {
+        font-size: 1.2rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .process-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .process-image {
+          order: -1;
+        }
+      }
+
       @media (max-width: 768px) {
-        .submission-info-container {
+        .submissions-hero {
+          padding: 40px 0;
+        }
+
+        .submissions-title {
+          font-size: 2.2rem;
+        }
+
+        .submissions-title::after {
+          width: 100px;
+          height: 3px;
+        }
+
+        .submissions-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .status-content {
           flex-direction: column;
+          gap: 15px;
         }
 
-        .submission-image {
-          order: 1;
-          margin-bottom: 1.5rem;
-          max-width: 100%;
+        .status-icon {
+          font-size: 1.5rem;
         }
 
-        .submission-info {
-          order: 2;
+        .status-text {
+          font-size: 1rem;
         }
 
-        .submission-button-container {
+        .instructions-section {
+          padding: 40px 30px;
+        }
+
+        .instructions-title {
+          font-size: 1.6rem;
           flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .carousel-btn {
-          width: 100%;
-          max-width: 250px;
+          gap: 10px;
           text-align: center;
         }
+
+        .process-content {
+          padding: 30px 25px;
+        }
+
+        .process-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
+
+        .process-icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .process-icon i {
+          font-size: 1.8rem;
+        }
+
+        .process-title {
+          font-size: 1.5rem;
+        }
+
+        .action-section {
+          padding: 40px 30px;
+        }
+
+        .action-section h3 {
+          font-size: 1.6rem;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .action-section .iprecon-btn {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+
+        .contact-section h3 {
+          font-size: 1.3rem;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+
+        .contact-link {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .submissions-title {
+          font-size: 1.8rem;
+        }
+
+        .submissions-title::after {
+          width: 80px;
+        }
+
+        .instructions-section {
+          padding: 30px 20px;
+        }
+
+        .instructions-title {
+          font-size: 1.4rem;
+        }
+
+        .process-content {
+          padding: 25px 20px;
+        }
+
+        .action-section {
+          padding: 30px 20px;
+        }
+
+        .action-section h3 {
+          font-size: 1.4rem;
+        }
+
+        .action-section .iprecon-btn {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
+    <meta
+      name="description"
+      content="Paper Submission Guidelines for IPRECON 2026 - International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
+    />
   </head>
   <body>
     <!-- Header -->
     <div class="header-container">
       <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
+        <img
+          src="./assets/img/iprecon26 black.png"
+          alt="IPRECON 2026 Logo"
+          class="logo"
+        />
         <div class="separator"></div>
         <div class="event-info">
-          <span>August 28-30, 2026</span>
+          <span>September 04-06, 2026</span>
           <span>College of Engineering Karunagappally, Kerala, INDIA</span>
         </div>
       </div>
@@ -223,14 +788,12 @@
             </div>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
+        <img
+          src="./assets/img/iprecon26 white.png"
+          alt="IPRECON 2026 Logo"
+          class="brand-logo"
+          id="brandLogo"
+        />
         <ul class="nav-items">
           <li class="nav-item"><a href="index.html">HOME</a></li>
           <li class="nav-item">
@@ -325,138 +888,183 @@
 
     <!-- Spacer for when marquee becomes fixed -->
     <div id="marquee-placeholder" style="display: none"></div>
+
     <main>
-      <!-- Paper Submission Section -->
-      <section class="dei">
-        <div class="dei-section">
-          <div class="section-title-container">
-            <h2 class="section-title">Paper Submission</h2>
+      <!-- Hero Section -->
+      <section class="submissions-hero">
+        <div class="submissions-hero-content">
+          <h1 class="submissions-title">Paper Submissions</h1>
+          <p class="submissions-subtitle">
+            Submit your research paper for IPRECON 2026 - India's first IEEE IAS Club of 6 Technical Paper Conference
+          </p>
+          
+          <div class="status-highlight">
+            <div class="status-content">
+              <i class="fas fa-calendar-alt status-icon"></i>
+              <div class="status-text">
+                <strong>Submissions Opening Soon!</strong><br>Please check back on September 15, 2025
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="submissions-content">
+        <div class="submissions-container">
+          
+          <!-- Instructions Section -->
+          <div class="instructions-section fade-in">
+            <h3 class="instructions-title">
+              <i class="fas fa-clipboard-list"></i>
+              Submission Instructions
+            </h3>
+            <ul class="instructions-list">
+              <li>
+                Authors are required to use the <span class="strong">IEEE-standard two-column conference paper template</span>, which can be accessed from the IEEE website.
+              </li>
+              <li>
+                The maximum allowable length for a paper, including references, is <span class="strong">six (6) pages</span>. Additionally, the file size must not exceed <span class="strong">3 MB</span> and must be in PDF format, without encryption or password protection.
+              </li>
+              <li>
+                A <span class="strong">single-blind review process</span> will be conducted. Submissions with a high similarity index will not be considered for review.
+              </li>
+              <li>
+                All accepted papers will be submitted for inclusion in the <span class="strong">IEEE Xplore® Digital Library</span>, subject to IEEE quality standards.
+              </li>
+              <li>
+                <span class="strong">20% of the presented conference papers</span> will be eligible for further review and possible publication in IEEE IAS Periodicals.
+              </li>
+            </ul>
           </div>
 
-          <div class="section-content">
-            <h3>Instructions</h3>
-            <ol class="submission-list">
-              <li>
-                Authors are required to use the IEEE-standard two-column
-                conference paper template, which can be accessed
-                <a href="#" class="purple-link">here</a>.
-              </li>
-              <li>
-                The maximum allowable length for a paper, including references,
-                is six (6) pages. Additionally, the file size must not exceed 3
-                MB and must be in PDF format, without encryption or password
-                protection.
-              </li>
-              <li>
-                A single-blind review process will be conducted. Submissions
-                with a high similarity index will not be considered for review.
-              </li>
-            </ol>
-          </div>
+          <!-- Submission Process Section -->
+          <div class="process-section">
+            <div class="section-title-container">
+              <h2 class="section-title">Paper Submission Process</h2>
+            </div>
 
-          <div class="section-content">
-            <h3>Paper Submission Procedure</h3>
-
-            <div class="submission-info-container">
-              <div class="submission-info">
-                <ol class="submission-list">
+            <div class="process-grid">
+              <!-- Process Steps -->
+              <div class="process-content fade-in">
+                <div class="process-header">
+                  <div class="process-icon">
+                    <i class="fas fa-upload"></i>
+                  </div>
+                  <h3 class="process-title">Submission Procedure</h3>
+                </div>
+                <ol class="process-steps">
                   <li>
-                    Visit the official paper submission portal:
-                    <a
-                      href="https://cmt3.research.microsoft.com/IPRECON2026"
-                      class="purple-link"
-                      target="_blank"
-                      >Submission Link</a
-                    >
+                    Visit the official paper submission portal: <a href="https://cmt3.research.microsoft.com/IPRECON2026" class="purple-link" target="_blank">Microsoft CMT System</a>
                   </li>
                   <li>
-                    On the portal, locate the IPRECON2026 emblem. If you are a
-                    new user, please select the "Register" option at the bottom
-                    of the dialog box.
+                    On the portal, locate the IPRECON2026 emblem. If you are a new user, please select the <span class="strong">"Register"</span> option at the bottom of the dialog box.
                   </li>
                   <li>
-                    Complete the registration process by following the on-screen
-                    instructions. Upon successful registration, you will receive
-                    login credentials.
+                    Complete the registration process by following the on-screen instructions. Upon successful registration, you will receive login credentials.
                   </li>
                   <li>
-                    Log in to the system using your registered email address and
-                    password.
+                    Log in to the system using your registered email address and password.
                   </li>
                   <li>
-                    Fill out the submission form, including the paper's
-                    <b>Title, Abstract, and Author Details</b>. Ensure that all
-                    co-authors' information—such as
-                    <b>Name, Designation, Affiliation, and Country</b>—is
-                    accurately provided.
+                    Fill out the submission form, including the paper's <span class="strong">Title, Abstract, and Author Details</span>. Ensure that all co-authors' information—such as <span class="strong">Name, Designation, Affiliation, and Country</span>—is accurately provided.
                   </li>
                   <li>
-                    Please note that the Microsoft CMT system does not generate
-                    automatic confirmation emails upon paper submission.
-                    However, the submitting author has the option to notify
-                    co-authors via the submission page. To verify the
-                    submission, authors may log in again to review the uploaded
-                    file.
+                    Please note that the Microsoft CMT system does not generate automatic confirmation emails upon paper submission. However, the submitting author has the option to notify co-authors via the submission page.
                   </li>
                 </ol>
-
-                <div class="submission-button-container">
-                  <a href="#" class="carousel-btn">Submit Paper</a>
-                  <a href="#" class="carousel-btn">Download CFP</a>
-                </div>
               </div>
 
-              <div class="submission-image">
-                <!-- Replace this with your actual image of the Microsoft CMT interface -->
+              <!-- CMT Interface Image -->
+              <div class="process-image fade-in">
                 <img
                   src="./assets/img/microsoft-cmt.jpg"
-                  alt="Microsoft CMT Interface"
+                  alt="Microsoft CMT Interface Screenshot"
                   class="cmt-image"
                 />
               </div>
             </div>
           </div>
 
-          <hr />
+          <!-- Action Section -->
+          <div class="action-section fade-in">
+            <div class="action-content">
+              <h3>Ready to Submit Your Paper?</h3>
+              <p>
+                Access the submission portal and download the required templates to get started with your submission.
+              </p>
+              <div class="action-buttons">
+                <a href="https://cmt3.research.microsoft.com/IPRECON2026" target="_blank" class="iprecon-btn primary large">
+                  <i class="fas fa-upload"></i>
+                  Submit Paper
+                </a>
+                <a href="./call-for-papers.html" class="iprecon-btn secondary large">
+                  <i class="fas fa-file-alt"></i>
+                  View Call for Papers
+                </a>
+                <a href="https://www.ieee.org/conferences/publishing/templates" target="_blank" class="iprecon-btn tertiary large">
+                  <i class="fas fa-download"></i>
+                  IEEE Template
+                </a>
+              </div>
+            </div>
+          </div>
 
-          <div class="section-content">
-            <p>
-              <b>
-                For any questions about paper submission, please contact:
-                <a href="mailto:support@iprecon.org">support@iprecon.org</a>
-              </b>
-            </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="submissions-container">
+          <div class="contact-content fade-in">
+            <h3>Need Help with Your Submission?</h3>
+            <p>For any questions about paper submission, process, or requirements, please don't hesitate to contact our support team</p>
+            <div class="contact-info">
+              <a href="mailto:support@iprecon.org" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                support@iprecon.org
+              </a>
+              <a href="./contact.html" class="contact-link">
+                <i class="fas fa-headset"></i>
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
     <!-- Footer section -->
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-column">
           <h3>Paper Submission</h3>
           <ul class="footer-links">
-            <li><a href="#">Call for Papers</a></li>
-            <li><a href="#">Submit a Paper</a></li>
-            <li><a href="#">Paper Template</a></li>
+            <li><a href="./call-for-papers.html">Call for Papers</a></li>
+            <li><a href="./submissions.html">Submit a Paper</a></li>
+            <li>
+              <a href="https://www.ieee.org/conferences/publishing/templates"
+                >Paper Template</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>About</h3>
           <ul class="footer-links">
-            <li><a href="#">IEEE SB CEK</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Legacy</a></li>
+            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+            <li><a href="./committee.html">Team</a></li>
+            <li><a href="./about-iprecon.html">Legacy</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
           <h3>Travel and Accommodation</h3>
           <ul class="footer-links">
-            <li><a href="#">Transportation</a></li>
-            <li><a href="#">Hotels</a></li>
-            <li><a href="#">Tourism</a></li>
+            <li><a href="./venue.html">Transportation</a></li>
+            <li><a href="./accommodation.html">Hotels</a></li>
+            <li><a href="./kerala.html">Tourism</a></li>
           </ul>
         </div>
 
@@ -481,22 +1089,21 @@
     </footer>
 
     <script src="./scripts/script.js"></script>
-    <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
         $("#news-slider").owlCarousel({
           items: 4,
-          loop: true, // Enable continuous loop
+          loop: true,
           margin: 20,
-          nav: true, // Show navigation arrows
+          nav: true,
           navText: [
             "<i class='fa fa-chevron-left'></i>",
             "<i class='fa fa-chevron-right'></i>",
-          ], // Custom navigation icons
-          autoplay: true, // Enable autoplay
-          autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
+          ],
+          autoplay: true,
+          autoplayTimeout: 3000,
           responsive: {
             0: {
               items: 3,
@@ -508,6 +1115,40 @@
               items: 4,
             },
           },
+        });
+
+        // Scroll animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        $('a[href^="#"]').on("click", function (event) {
+          var target = $(this.getAttribute("href"));
+          if (target.length) {
+            event.preventDefault();
+            $("html, body")
+              .stop()
+              .animate(
+                {
+                  scrollTop: target.offset().top - 100,
+                },
+                1000
+              );
+          }
         });
       });
     </script>
