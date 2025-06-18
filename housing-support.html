@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Housing Support - IPRECON 2026</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: #ffffff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* =================================================================
+         STANDARDIZED BUTTON SYSTEM
+         ================================================================= */
+      .iprecon-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        justify-content: center;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .iprecon-btn.large {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        gap: 15px;
+      }
+
+      .iprecon-btn.small {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        gap: 8px;
+      }
+
+      /* PRIMARY BUTTON */
+      .iprecon-btn.primary {
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      }
+
+      .iprecon-btn.primary:hover {
+        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      /* SECONDARY BUTTON */
+      .iprecon-btn.secondary {
+        background: #d4af37;
+        color: #211021;
+        border-color: #d4af37;
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+      }
+
+      .iprecon-btn.secondary:hover {
+        background: transparent;
+        color: #d4af37;
+        border-color: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        text-decoration: none;
+      }
+
+      /* TERTIARY BUTTON */
+      .iprecon-btn.tertiary {
+        background: transparent;
+        color: white;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+      }
+
+      .iprecon-btn.tertiary:hover {
+        background: white;
+        color: #211021;
+        border-color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        text-decoration: none;
+      }
+
+      .iprecon-btn.tertiary.dark-bg {
+        color: #211021;
+        border-color: #211021;
+        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+      }
+
+      .iprecon-btn.tertiary.dark-bg:hover {
+        background: #211021;
+        color: white;
+        border-color: #211021;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+      }
+
+      .iprecon-btn-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      /* =================================================================
+         HOUSING SUPPORT PAGE STYLES
+         ================================================================= */
+
+      /* Hero Section with Dynamic Background */
+      .housing-hero {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 80px 0 60px 0;
+        border-bottom: 1px solid #e9ecef;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .housing-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(142, 36, 170, 0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        z-index: 1;
+      }
+
+      .housing-hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .housing-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #211021;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .housing-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 4px;
+        background-color: #8e24aa;
+      }
+
+      .housing-subtitle {
+        font-size: 1.5rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      /* Enhanced Highlight Box */
+      .housing-highlight {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 40px;
+        border-radius: 20px;
+        margin: 40px auto;
+        max-width: 800px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .housing-highlight::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .housing-highlight-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .housing-highlight h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .housing-highlight h3 i {
+        color: #d4af37;
+        font-size: 1.5rem;
+      }
+
+      .housing-highlight p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 1;
+        font-weight: 500;
+      }
+
+      .housing-highlight .strong {
+        color: white;
+        font-weight: 700;
+      }
+
+      /* Main Content */
+      .housing-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .housing-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Interactive Timeline for Application Process */
+      .process-timeline-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        margin: 60px 0;
+        border-radius: 25px;
+      }
+
+      .timeline-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .timeline-title {
+        font-size: 2.5rem;
+        color: #211021;
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .timeline-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #8e24aa;
+      }
+
+      .timeline-description {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .interactive-timeline {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin: 50px 0;
+        position: relative;
+      }
+
+      .interactive-timeline::before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 12.5%;
+        right: 12.5%;
+        height: 3px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+        z-index: 1;
+      }
+
+      .timeline-step {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+        border: 3px solid transparent;
+      }
+
+      .timeline-step:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        border-color: #8e24aa;
+      }
+
+      .timeline-step-number {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      }
+
+      .timeline-step-title {
+        font-size: 1.3rem;
+        color: #211021;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .timeline-step-description {
+        color: #555;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      /* Enhanced Support Cards */
+      .support-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 30px;
+        margin: 60px 0;
+      }
+
+      .support-card {
+        background: white;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        position: relative;
+        border: 3px solid transparent;
+      }
+
+      .support-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+      }
+
+      .support-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        border-color: #8e24aa;
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        padding: 40px;
+        text-align: center;
+        position: relative;
+      }
+
+      .card-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        box-shadow: 0 15px 30px rgba(142, 36, 170, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .support-card:hover .card-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .card-icon i {
+        font-size: 2.5rem;
+        color: white;
+      }
+
+      .card-title {
+        font-size: 1.8rem;
+        color: #211021;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .card-content {
+        padding: 40px;
+        background: white;
+      }
+
+      .card-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .card-content li {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        position: relative;
+        line-height: 1.6;
+        color: #555;
+        font-size: 1rem;
+      }
+
+      .card-content li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: #8e24aa;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .strong {
+        color: #211021;
+        font-weight: 700;
+      }
+
+      /* Enhanced Eligibility Section */
+      .eligibility-section {
+        background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
+        padding: 80px 0;
+        border-radius: 25px;
+        margin: 60px 0;
+      }
+
+      .eligibility-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 50px 0;
+      }
+
+      .eligibility-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 3px solid transparent;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .eligibility-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8e24aa, #d4af37);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .eligibility-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .eligibility-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        border-color: #8e24aa;
+      }
+
+      .eligibility-number {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 auto 25px;
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .eligibility-card:hover .eligibility-number {
+        transform: scale(1.1);
+      }
+
+      .eligibility-text {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+
+      /* Enhanced Notice Boxes */
+      .important-notice {
+        background: linear-gradient(135deg, #fff3e0, #ffebee);
+        border: 2px solid #ff9800;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 50px 0;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(255, 152, 0, 0.1);
+      }
+
+      .important-notice::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #ff9800, #f44336);
+      }
+
+      .notice-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .notice-icon {
+        width: 60px;
+        height: 60px;
+        background: #ff9800;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
+      }
+
+      .notice-icon i {
+        font-size: 1.8rem;
+        color: white;
+      }
+
+      .notice-title {
+        font-size: 1.8rem;
+        color: #e65100;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .notice-content {
+        color: #212529;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        font-weight: 500;
+      }
+
+      /* Status Section with Animation */
+      .status-section {
+        background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+        border: 2px solid #2196f3;
+        border-radius: 20px;
+        padding: 50px;
+        margin: 60px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .status-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #2196f3, #8e24aa);
+      }
+
+      .status-icon {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #2196f3, #1565c0);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        box-shadow: 0 15px 35px rgba(33, 150, 243, 0.3);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      .status-icon i {
+        font-size: 3rem;
+        color: white;
+      }
+
+      .status-title {
+        font-size: 2rem;
+        color: #1565c0;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .status-description {
+        font-size: 1.2rem;
+        color: #212529;
+        line-height: 1.7;
+        font-weight: 500;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Special Support Section */
+      .special-support-section {
+        background: linear-gradient(135deg, #211021, #8e24aa);
+        color: white;
+        padding: 80px 0;
+        border-radius: 25px;
+        margin: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .special-support-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .special-support-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .special-support-section h3 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .special-support-section h3 i {
+        color: #d4af37;
+        font-size: 2.2rem;
+      }
+
+      .special-support-section p {
+        font-size: 1.3rem;
+        line-height: 1.7;
+        margin: 0;
+        opacity: 1;
+        font-weight: 500;
+      }
+
+      .special-support-section .strong {
+        font-weight: 700;
+        color: white;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .contact-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .contact-content h3 {
+        font-size: 2.5rem;
+        color: #211021;
+        margin-bottom: 25px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .contact-content h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #8e24aa;
+      }
+
+      .contact-content p {
+        font-size: 1.2rem;
+        color: #6c757d;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #8e24aa;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        padding: 15px 25px;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        background: white;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-link:hover {
+        color: white;
+        background: #8e24aa;
+        border-color: #8e24aa;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.3);
+        text-decoration: none;
+      }
+
+      .contact-link i {
+        font-size: 1.3rem;
+        transition: all 0.3s ease;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .interactive-timeline {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+
+        .interactive-timeline::before {
+          display: none;
+        }
+
+        .support-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .housing-hero {
+          padding: 60px 0 40px 0;
+        }
+
+        .housing-title {
+          font-size: 2.5rem;
+        }
+
+        .housing-title::after {
+          width: 120px;
+          height: 3px;
+        }
+
+        .housing-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .housing-highlight {
+          padding: 30px 25px;
+          margin: 30px 15px;
+        }
+
+        .housing-highlight h3 {
+          font-size: 1.5rem;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .interactive-timeline {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .timeline-step {
+          padding: 25px 20px;
+        }
+
+        .timeline-step-number {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .support-card {
+          margin: 0 10px;
+        }
+
+        .card-header {
+          padding: 30px 25px;
+        }
+
+        .card-content {
+          padding: 30px 25px;
+        }
+
+        .card-icon {
+          width: 70px;
+          height: 70px;
+        }
+
+        .card-icon i {
+          font-size: 2rem;
+        }
+
+        .card-title {
+          font-size: 1.5rem;
+        }
+
+        .eligibility-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        .eligibility-card {
+          padding: 30px 25px;
+        }
+
+        .special-support-section {
+          padding: 60px 0;
+        }
+
+        .special-support-section h3 {
+          font-size: 2rem;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .special-support-section p {
+          font-size: 1.1rem;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+        }
+
+        .contact-link {
+          min-width: 250px;
+          justify-content: center;
+        }
+
+        .important-notice {
+          padding: 30px 25px;
+          margin: 40px 15px;
+        }
+
+        .notice-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
+
+        .notice-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .notice-icon i {
+          font-size: 1.5rem;
+        }
+
+        .notice-title {
+          font-size: 1.5rem;
+        }
+
+        .timeline-title {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .housing-title {
+          font-size: 2rem;
+        }
+
+        .housing-title::after {
+          width: 100px;
+        }
+
+        .timeline-title {
+          font-size: 1.8rem;
+        }
+
+        .support-card {
+          margin: 0 5px;
+        }
+
+        .card-title {
+          font-size: 1.3rem;
+        }
+
+        .special-support-section h3 {
+          font-size: 1.7rem;
+        }
+
+        .contact-link {
+          min-width: 100%;
+          max-width: 300px;
+        }
+
+        .status-icon {
+          width: 80px;
+          height: 80px;
+        }
+
+        .status-icon i {
+          font-size: 2.5rem;
+        }
+
+        .status-title {
+          font-size: 1.7rem;
+        }
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Section Title Styling */
+      .section-title {
+        font-size: 2.5rem;
+        color: #211021;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 15px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #8e24aa;
+      }
+
+      .section-description {
+        font-size: 1.2rem;
+        color: #6c757d;
+        text-align: center;
+        margin-top: 20px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 40px;
+      }
+    </style>
+    <meta
+      name="description"
+      content="Housing Support for IPRECON 2026 - Accommodation assistance for international delegates at the International Power and Renewable Energy Conference"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- Hero Section with Enhanced Design -->
+      <section class="housing-hero">
+        <div class="housing-hero-content">
+          <h1 class="housing-title">Housing Support</h1>
+          <p class="housing-subtitle">
+            Accommodation assistance for international delegates attending IPRECON 2026
+          </p>
+          
+          <div class="housing-highlight">
+            <div class="housing-highlight-content">
+              <h3>
+                <i class="fas fa-bed"></i>
+                Exclusive Support for International Delegates
+              </h3>
+              <p>
+                This housing support program is <span class="strong">exclusively available for delegates from outside India, Nepal, and Bhutan</span>, 
+                providing comfortable accommodation to ensure your focus remains on the conference and networking opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section class="housing-content">
+        <div class="housing-container">
+          
+          <!-- Important Notice with Enhanced Design -->
+          <div class="important-notice fade-in">
+            <div class="notice-header">
+              <div class="notice-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <h3 class="notice-title">Important Notice</h3>
+            </div>
+            <div class="notice-content">
+              <p><strong>This support is exclusively for delegates from outside India, Nepal, and Bhutan.</strong></p>
+              <p>Delegates from the USA, Canada, and Latin & Central America may be eligible for an additional complimentary night stay due to extended travel durations. Please contact the organizers for special assistance.</p>
+            </div>
+          </div>
+
+          <!-- Enhanced Support Overview Cards -->
+          <div class="support-grid fade-in">
+            <!-- Accommodation Details Card -->
+            <div class="support-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fas fa-hotel"></i>
+                </div>
+                <h3 class="card-title">Accommodation Details</h3>
+              </div>
+              <div class="card-content">
+                <ul>
+                  <li>Accommodation will be provided in <span class="strong">shared rooms (same gender)</span> in a 4 or 5-star facility</li>
+                  <li><span class="strong">Commutation to the venue</span> will be arranged for all hosted participants</li>
+                  <li>Accommodation will be arranged from <span class="strong">September 3rd (night) to September 7th (morning)</span></li>
+                  <li>All meals included during the stay period</li>
+                  <li>24/7 support and assistance available</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Application Status Card with Animation -->
+            <div class="support-card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3 class="card-title">Application Status</h3>
+              </div>
+              <div class="card-content">
+                <div class="status-section">
+                  <div class="status-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <h4 class="status-title">Coming Soon</h4>
+                  <p class="status-description">
+                    The application for Housing Support will open after the Acceptance Notification is released. 
+                    Stay tuned for updates!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Timeline for Application Process -->
+      <section class="process-timeline-section fade-in">
+        <div class="housing-container">
+          <div class="timeline-header">
+            <h2 class="timeline-title">Application Process</h2>
+            <p class="timeline-description">
+              Follow these simple steps when the application period opens
+            </p>
+          </div>
+
+          <div class="interactive-timeline">
+            <div class="timeline-step">
+              <div class="timeline-step-number">1</div>
+              <h4 class="timeline-step-title">Paper Acceptance</h4>
+              <p class="timeline-step-description">
+                Wait for your paper to be accepted at IPRECON 2026. Housing support is only available for accepted papers.
+              </p>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-step-number">2</div>
+              <h4 class="timeline-step-title">Complete Registration</h4>
+              <p class="timeline-step-description">
+                Complete your full conference registration and verify your IEEE membership status.
+              </p>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-step-number">3</div>
+              <h4 class="timeline-step-title">Submit Application</h4>
+              <p class="timeline-step-description">
+                Submit your housing support application with all required documentation when applications open.
+              </p>
+            </div>
+
+            <div class="timeline-step">
+              <div class="timeline-step-number">4</div>
+              <h4 class="timeline-step-title">Receive Confirmation</h4>
+              <p class="timeline-step-description">
+                Applications reviewed on first-come, first-served basis. You'll receive confirmation about your status.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enhanced Eligibility Criteria -->
+      <section class="eligibility-section">
+        <div class="housing-container">
+          <div class="timeline-header fade-in">
+            <h2 class="timeline-title">Eligibility Criteria</h2>
+            <p class="timeline-description">
+              Review the requirements below to determine your eligibility for housing support
+            </p>
+          </div>
+
+          <div class="eligibility-grid fade-in">
+            <div class="eligibility-card">
+              <div class="eligibility-number">1</div>
+              <div class="eligibility-text">
+                The applicant must have a <span class="strong">paper accepted at IPRECON 2026</span> and must complete <span class="strong">full conference registration</span>
+              </div>
+            </div>
+
+            <div class="eligibility-card">
+              <div class="eligibility-number">2</div>
+              <div class="eligibility-text">
+                The applicant must be an <span class="strong">active IEEE Student or Graduate Student Member (GSM)</span>
+              </div>
+            </div>
+
+            <div class="eligibility-card">
+              <div class="eligibility-number">3</div>
+              <div class="eligibility-text">
+                <span class="strong">Priority will be given</span> to applicants with valid <span class="strong">IEEE PES and/or IAS Memberships</span>
+              </div>
+            </div>
+
+            <div class="eligibility-card">
+              <div class="eligibility-number">4</div>
+              <div class="eligibility-text">
+                Applicants who do not wish to share accommodation may opt for <span class="strong">reimbursement of 50% of the hotel cost</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="important-notice fade-in">
+            <div class="notice-header">
+              <div class="notice-icon">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <h3 class="notice-title">Important Information</h3>
+            </div>
+            <div class="notice-content">
+              <p><span class="strong">Support is limited</span> and will be granted on a <span class="strong">first-come, first-served basis</span>, subject to fund availability.</p>
+              <p>Reimbursements can be claimed after reaching the venue and completing the registration process.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Special Support Section with Enhanced Design -->
+      <section class="special-support-section fade-in">
+        <div class="special-support-content">
+          <h3>
+            <i class="fas fa-globe-americas"></i>
+            Extended Travel Support
+          </h3>
+          <p>
+            Delegates from the <span class="strong">USA, Canada, and Latin & Central America</span> may be eligible for an additional complimentary night stay due to extended travel durations. Please contact the organizers for special assistance and to discuss your specific travel requirements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Enhanced Contact Section -->
+      <section class="contact-section">
+        <div class="housing-container">
+          <div class="contact-content fade-in">
+            <h3>Need Assistance with Housing Support?</h3>
+            <p>
+              For questions about housing support, eligibility requirements, or special accommodation needs, please contact our support team
+            </p>
+            <div class="contact-info">
+              <a href="mailto:housing@iprecon.org" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                housing@iprecon.org
+              </a>
+              <a href="mailto:support@iprecon.org" class="contact-link">
+                <i class="fas fa-headset"></i>
+                support@iprecon.org
+              </a>
+              <a href="./contact.html" class="contact-link">
+                <i class="fas fa-phone"></i>
+                Contact Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Enhanced hover effects for cards
+      document.querySelectorAll('.support-card, .eligibility-card, .timeline-step').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = this.classList.contains('timeline-step') 
+            ? 'translateY(-15px)' 
+            : this.classList.contains('support-card') 
+            ? 'translateY(-15px) scale(1.02)' 
+            : 'translateY(-10px)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Smooth scrolling for any anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
