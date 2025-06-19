@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Housing Support - IPRECON 2026</title>
+    <title>Student Travel Support - IPRECON 2026</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -275,7 +275,7 @@
       }
 
       .support-limits-section h3 {
-        color: #1565c0;
+        color: #211021;
         font-size: 2rem;
         margin-bottom: 25px;
         font-weight: 600;
@@ -285,7 +285,7 @@
       }
 
       .support-limits-section h3 i {
-        color: #2196f3;
+        color: #8e24aa;
         font-size: 1.8rem;
       }
 
@@ -339,7 +339,7 @@
         font-size: 1.1rem;
       }
 
-      /* Eligibility Section */
+      /* Eligibility Section - UPDATED FOR 2x2 GRID */
       .eligibility-section {
         background: linear-gradient(135deg, #211021, #8e24aa);
         color: white;
@@ -372,6 +372,8 @@
         display: flex;
         align-items: center;
         gap: 15px;
+        text-align: center;
+        justify-content: center;
       }
 
       .eligibility-section h3 i {
@@ -379,9 +381,10 @@
         font-size: 2rem;
       }
 
+      /* Updated 2x2 grid for 4 criteria */
       .criteria-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 25px;
         margin: 30px 0;
       }
@@ -587,7 +590,7 @@
         font-weight: 600;
       }
 
-      /* Responsive Design */
+      /* Responsive Design - UPDATED FOR 2x2 GRID */
       @media (max-width: 1024px) {
         .limits-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -595,7 +598,7 @@
         }
         
         .criteria-grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, 1fr);
           gap: 20px;
         }
       }
@@ -658,7 +661,10 @@
           text-align: center;
         }
 
-        .limits-grid,
+        .limits-grid {
+          grid-template-columns: 1fr;
+        }
+
         .criteria-grid {
           grid-template-columns: 1fr;
         }
@@ -712,6 +718,10 @@
         }
 
         .limits-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .criteria-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -903,7 +913,7 @@
         <div class="travel-hero-content">
           <h1 class="travel-title">Student Travel Support</h1>
           <p class="travel-subtitle">
-            Financial assistance for travel expenses for delegates from India, Nepal, and Bhutan attending IPRECON 2026
+            Financial assistance for travel expenses for student authors from India, Nepal, and Bhutan attending IPRECON 2026
           </p>
           
           <div class="regional-highlight">
@@ -913,7 +923,7 @@
                 Regional Student Travel Support Available
               </h3>
               <p>
-                <span class="strong">Student Travel Support is available only for Student Authors from India, Nepal, and Bhutan.</span> 
+                <span class="strong">Travel Support is available only for Student Authors from India, Nepal, and Bhutan.</span> 
                 Delegates from other countries are supported through the Student Housing Support program.
               </p>
             </div>
@@ -1006,15 +1016,16 @@
                   <div class="criteria-number">3</div>
                   <p>
                     <span class="strong">Priority will be given</span> to applicants with valid 
-                    <span class="strong">IEEE iaS and/or PES Memberships</span> in addition to their student membership.
+                    <span class="strong">IEEE IAS and/or PES Memberships</span> in addition to their student membership.
                   </p>
                 </div>
 
                 <div class="criteria-item">
                   <div class="criteria-number">4</div>
                   <p>
-                    <span class="strong">Priority will be given</span> to applicants with valid 
-                    <span class="strong">IEEE PES and/or IAS Memberships</span> in addition to their student membership.
+                    <span class="strong">Students receiving travel support from their university/Other means are not eligible</span> for this funding. 
+                    All applicants must submit a <span class="strong">declaration confirming that they are not receiving any other travel support</span>, 
+                    in order to avoid duplication of funding.
                   </p>
                 </div>
               </div>
@@ -1065,11 +1076,11 @@
             <div class="iprecon-btn-group">
               <a href="mailto:support@iprecon.org" class="iprecon-btn primary large">
                 <i class="fas fa-envelope"></i>
-                Contact Student Travel Support
+                Contact Travel Support
               </a>
               <a href="./housing-support.html" class="iprecon-btn secondary">
                 <i class="fas fa-bed"></i>
-                STUDENT HOUSING SUPPORT Info
+                Student Housing Support Info
               </a>
             </div>
           </div>
