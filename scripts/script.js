@@ -5,6 +5,7 @@
  * - Sticky navbar behavior
  * - Marquee animations and sticky behavior
  * - Responsive handling
+ * - Auto copyright year update
  */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,6 +15,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMarquee = document.querySelector(".mob-marq.marquee-container");
   const navItems = document.querySelectorAll(".nav-item");
   const brandLogo = document.getElementById("brandLogo");
+
+  /**
+   * Update copyright year automatically
+   */
+  function updateCopyrightYear() {
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.querySelector('.copyright');
+    
+    if (copyrightElement) {
+      copyrightElement.innerHTML = `Built with <i class="fas fa-heart"></i> | IEEE SB CEK © ${currentYear}`;
+    }
+  }
+
+  // Update copyright year immediately
+  updateCopyrightYear();
 
   // Create mobile menu button once
   const mobileMenuBtn = document.createElement("button");
@@ -484,5 +500,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Navbar height:", navbarHeight);
     console.log("Desktop marquee found:", !!desktopMarquee);
     console.log("Mobile marquee found:", !!mobileMarquee);
+    console.log("Copyright year updated to:", new Date().getFullYear());
   }
 });
