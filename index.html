@@ -92,6 +92,20 @@
         font-size: 24px;
       }
 
+      .hybrid-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 30px 0 10px 0;
+      }
+
+      .hybrid-label i {
+        color: #d4a931;
+      }
+
       /* Carousel Buttons */
       .carousel-buttons {
         display: flex;
@@ -360,7 +374,12 @@
 
       /* --------------------- ORGANISERS CAROUSEL SECTION --------------------- */
       .carousel-s {
-        background: linear-gradient(135deg, #211021 0%, #1a0e1a 50%, #8e24aa 100%);
+        background: linear-gradient(
+          135deg,
+          #211021 0%,
+          #1a0e1a 50%,
+          #8e24aa 100%
+        );
         visibility: visible;
         opacity: 1;
         padding-top: 80px;
@@ -632,9 +651,7 @@
           <li class="nav-item">
             <span class="nav-link">FOR AUTHORS</span>
             <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item"
-                >CALL FOR PAPERS</a
-              >
+              <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
               <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
               <a href="./important-dates.html" class="dropdown-item"
                 >IMPORTANT DATES</a
@@ -645,7 +662,7 @@
               <a href="./presentation-guidelines.html" class="dropdown-item"
                 >PRESENTATION GUIDELINES</a
               >
-               <a href="housing-support.html" class="dropdown-item"
+              <a href="housing-support.html" class="dropdown-item"
                 >STUDENT HOUSING SUPPORT</a
               >
               <a href="./travel-support.html" class="dropdown-item"
@@ -671,7 +688,9 @@
               <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
             </div>
           </li>
-          <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
+          <li class="nav-item">
+            <a href="./registration.html">REGISTRATION</a>
+          </li>
           <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
         </ul>
       </div>
@@ -692,6 +711,9 @@
           September 04-06, 2026 | College of Engineering Karunagappally, Kerala,
           India
         </p>
+        <div class="hybrid-label">
+          [<i class="fas fa-laptop"></i> HYBRID CONFERENCE ]
+        </div>
 
         <!-- Added Carousel Buttons -->
         <div class="carousel-buttons">
@@ -704,7 +726,10 @@
             data-target="registration"
             >Submit Paper</a
           >
-          <a href="./registration.html" class="carousel-btn" data-target="program"
+          <a
+            href="./registration.html"
+            class="carousel-btn"
+            data-target="program"
             >Register Now</a
           >
         </div>
@@ -800,8 +825,8 @@
             <span class="arrow">➔</span>The 20% papers presented at the IPRECON
             2026 conference are eligible to submit the revised versions as
             post-conference papers for further review and possible publication
-            in the IEEE-IAS Transactions and Magazine (Awaiting
-            IEEE IAS Approval)
+            in the IEEE-IAS Transactions and Magazine (Awaiting IEEE IAS
+            Approval)
           </div>
 
           <div class="info-item">
