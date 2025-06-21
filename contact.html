@@ -643,6 +643,7 @@
         justify-content: center;
         line-height: 1;
         white-space: nowrap;
+        cursor: pointer;
       }
 
       .quick-contact-btn-white:hover {
@@ -652,6 +653,201 @@
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         text-decoration: none;
+      }
+
+      /* =================================================================
+         PHONE NUMBERS POPUP MODAL
+         ================================================================= */
+      .phone-popup-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+      }
+
+      .phone-popup-modal.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .phone-popup-content {
+        background: white;
+        border-radius: 20px;
+        padding: 0;
+        max-width: 500px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        position: relative;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+      }
+
+      .phone-popup-modal.show .phone-popup-content {
+        transform: scale(1);
+      }
+
+      /* Close button */
+      .phone-popup-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.1);
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+        color: #666;
+      }
+
+      .phone-popup-close:hover {
+        background: rgba(0, 0, 0, 0.2);
+        color: #333;
+        transform: scale(1.1);
+      }
+
+      /* Popup header */
+      .phone-popup-header {
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        color: white;
+        padding: 30px 25px 25px 25px;
+        text-align: center;
+        position: relative;
+      }
+
+      .phone-popup-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      }
+
+      .phone-popup-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .phone-popup-title i {
+        color: #d4af37;
+        font-size: 1.6rem;
+      }
+
+      .phone-popup-subtitle {
+        font-size: 1rem;
+        opacity: 0.95;
+        position: relative;
+        z-index: 2;
+        margin: 0;
+      }
+
+      /* Phone numbers list */
+      .phone-numbers-list {
+        padding: 30px;
+      }
+
+      .phone-number-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        margin-bottom: 15px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        border-left: 4px solid #8e24aa;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .phone-number-item:hover {
+        background: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-left-color: #d4af37;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .phone-number-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .phone-number-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #8e24aa, #211021);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .phone-number-icon i {
+        font-size: 1.3rem;
+        color: white;
+      }
+
+      .phone-number-details {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .phone-number-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #211021;
+        margin-bottom: 5px;
+        line-height: 1.2;
+      }
+
+      .phone-number-value {
+        font-size: 1rem;
+        color: #8e24aa;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .phone-call-icon {
+        color: #28a745;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        margin-left: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .phone-number-item:hover .phone-call-icon {
+        transform: scale(1.2);
+        color: #25a745;
       }
 
       /* Email Card Display Control */
@@ -761,6 +957,45 @@
           max-width: 280px;
           justify-content: center;
         }
+
+        /* Popup responsive */
+        .phone-popup-content {
+          max-width: 95%;
+          margin: 15px;
+        }
+
+        .phone-popup-header {
+          padding: 25px 20px 20px 20px;
+        }
+
+        .phone-popup-title {
+          font-size: 1.5rem;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .phone-numbers-list {
+          padding: 25px 20px;
+        }
+
+        .phone-number-item {
+          padding: 18px 15px;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .phone-number-icon {
+          width: 45px;
+          height: 45px;
+        }
+
+        .phone-number-name {
+          font-size: 1rem;
+        }
+
+        .phone-number-value {
+          font-size: 0.95rem;
+        }
       }
 
       @media (max-width: 480px) {
@@ -797,6 +1032,59 @@
         .quick-contact-section {
           padding: 40px 0;
         }
+
+        /* Popup mobile */
+        .phone-popup-content {
+          max-width: 98%;
+          margin: 10px;
+          border-radius: 15px;
+        }
+
+        .phone-popup-header {
+          padding: 20px 15px 18px 15px;
+        }
+
+        .phone-popup-title {
+          font-size: 1.3rem;
+        }
+
+        .phone-popup-close {
+          width: 35px;
+          height: 35px;
+          top: 12px;
+          right: 12px;
+          font-size: 1.1rem;
+        }
+
+        .phone-numbers-list {
+          padding: 20px 15px;
+        }
+
+        .phone-number-item {
+          padding: 15px 12px;
+          margin-bottom: 12px;
+        }
+
+        .phone-number-icon {
+          width: 40px;
+          height: 40px;
+        }
+
+        .phone-number-icon i {
+          font-size: 1.1rem;
+        }
+
+        .phone-number-name {
+          font-size: 0.95rem;
+        }
+
+        .phone-number-value {
+          font-size: 0.9rem;
+        }
+
+        .phone-call-icon {
+          font-size: 1.3rem;
+        }
       }
 
       /* Animation Classes */
@@ -809,6 +1097,22 @@
       .fade-in.visible {
         opacity: 1;
         transform: translateY(0);
+      }
+
+      /* Popup animation keyframes */
+      @keyframes phonePopupSlideIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.8) translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .phone-popup-modal.show .phone-popup-content {
+        animation: phonePopupSlideIn 0.4s ease-out;
       }
     </style>
     <meta
@@ -970,6 +1274,92 @@
     <!-- Spacer for when marquee becomes fixed -->
     <div id="marquee-placeholder" style="display: none"></div>
 
+    <!-- Phone Numbers Popup Modal -->
+    <div class="phone-popup-modal" id="phonePopupModal">
+      <div class="phone-popup-content">
+        <button class="phone-popup-close" id="phonePopupClose">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="phone-popup-header">
+          <h2 class="phone-popup-title">
+            <i class="fas fa-phone"></i>
+            Contact Numbers
+          </h2>
+          <p class="phone-popup-subtitle">
+            Choose a team member to call directly
+          </p>
+        </div>
+
+        <div class="phone-numbers-list">
+          <a href="tel:+918281872617" class="phone-number-item">
+            <div class="phone-number-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="phone-number-details">
+              <div class="phone-number-name">Alan Biju</div>
+              <div class="phone-number-value">+91 82818 72617</div>
+            </div>
+            <i class="fas fa-phone phone-call-icon"></i>
+          </a>
+
+          <a href="tel:+919037106580" class="phone-number-item">
+            <div class="phone-number-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="phone-number-details">
+              <div class="phone-number-name">Abhin Jose JM</div>
+              <div class="phone-number-value">+91 90371 06580</div>
+            </div>
+            <i class="fas fa-phone phone-call-icon"></i>
+          </a>
+
+          <a href="tel:+919311401568" class="phone-number-item">
+            <div class="phone-number-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="phone-number-details">
+              <div class="phone-number-name">Celestine Geo Leslin</div>
+              <div class="phone-number-value">+91 93114 01568</div>
+            </div>
+            <i class="fas fa-phone phone-call-icon"></i>
+          </a>
+
+          <a href="tel:+916235363577" class="phone-number-item">
+            <div class="phone-number-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="phone-number-details">
+              <div class="phone-number-name">Silpa S</div>
+              <div class="phone-number-value">+91 62353 63577</div>
+            </div>
+            <i class="fas fa-phone phone-call-icon"></i>
+          </a>
+
+          <a href="tel:+917994792664" class="phone-number-item">
+            <div class="phone-number-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="phone-number-details">
+              <div class="phone-number-name">Mahima D</div>
+              <div class="phone-number-value">+91 79947 92664</div>
+            </div>
+            <i class="fas fa-phone phone-call-icon"></i>
+          </a>
+          <a href="tel:+917012530923" class="phone-number-item">
+            <div class="phone-number-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="phone-number-details">
+              <div class="phone-number-name">Namratha Suresh</div>
+              <div class="phone-number-value">+91 70125 30923</div>
+            </div>
+            <i class="fas fa-phone phone-call-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <main>
       <!-- Hero Section -->
       <section class="contact-hero">
@@ -1064,15 +1454,13 @@
                     <p><strong>Abhin Jose JM:</strong></p>
                     <p><a href="tel:+919037106580">+91 90371 06580</a></p>
                     <p><strong>Celestine Geo Leslin:</strong></p>
-                    <p><a href="tel:+9193114901568">+91 93114 01568</a></p>
-                    <!--p><strong>Ashik M:</strong></p>
-                    <p><a href="tel:+914742656250">+91 474 265 6250</a></p>
-                    <p><strong>Febin Fransis:</strong></p>
-                    <p><a href="tel:+914742656250">+91 474 265 6250</a></p-->
+                    <p><a href="tel:+919311401568">+91 93114 01568</a></p>
                     <p><strong>Silpa S:</strong></p>
                     <p><a href="tel:+916235363577">+91 62353 63577</a></p>
                     <p><strong>Mahima D:</strong></p>
                     <p><a href="tel:+917994792664">+91 79947 92664</a></p>
+                    <p><strong>Namratha Suresh:</strong></p>
+                    <p><a href="tel:+917012530923">+91 70125 30923</a></p>
                   </div>
                 </div>
 
@@ -1366,25 +1754,10 @@
           </p>
 
           <div class="quick-contact-buttons">
-            <!--a
-              href="mailto:support@iprecon.org"
-              class="quick-contact-btn-white"
-            >
-              <i class="fas fa-envelope"></i>
-              Email Support
-            </a-->
-            <a href="tel:+919562963617" class="quick-contact-btn-white">
+            <button class="quick-contact-btn-white" id="callNowBtn">
               <i class="fas fa-phone"></i>
               Call Now
-            </a>
-            <!--a
-              href="https://wa.me/919562963617"
-              target="_blank"
-              class="quick-contact-btn-white"
-            >
-              <i class="fab fa-whatsapp"></i>
-              WhatsApp
-            </a-->
+            </button>
           </div>
         </div>
       </section>
@@ -1501,6 +1874,41 @@
           observer.observe(el);
         });
 
+        // Phone Popup Modal Functionality
+        const phonePopupModal = document.getElementById('phonePopupModal');
+        const callNowBtn = document.getElementById('callNowBtn');
+        const phonePopupClose = document.getElementById('phonePopupClose');
+
+        // Show popup when "Call Now" button is clicked
+        callNowBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          phonePopupModal.classList.add('show');
+          document.body.style.overflow = 'hidden';
+        });
+
+        // Close popup when close button is clicked
+        phonePopupClose.addEventListener('click', function(e) {
+          e.preventDefault();
+          phonePopupModal.classList.remove('show');
+          document.body.style.overflow = '';
+        });
+
+        // Close popup when clicking outside the modal content
+        phonePopupModal.addEventListener('click', function(e) {
+          if (e.target === phonePopupModal) {
+            phonePopupModal.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+        });
+
+        // Close popup when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && phonePopupModal.classList.contains('show')) {
+            phonePopupModal.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+        });
+
         // Contact Form Functionality
         const contactForm = document.getElementById("contactForm");
         const submitBtn = document.getElementById("submitBtn");
@@ -1532,7 +1940,7 @@
             clearTimeout(autoHideTimer);
           }
 
-          // Set new auto-hide timer for 20 seconds
+          // Set new auto-hide timer for 5 seconds
           autoHideTimer = setTimeout(() => {
             hideSuccessMessage();
           }, 5000); // 5 seconds
@@ -1688,7 +2096,7 @@
           return isValid;
         }
 
-        // UPDATED Form submission handler
+        // Form submission handler
         contactForm.addEventListener("submit", async function (e) {
           e.preventDefault();
 
