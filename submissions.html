@@ -417,6 +417,75 @@
         box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
       }
 
+      /* =================================================================
+         CMT ACKNOWLEDGEMENT SECTION - NEW
+         ================================================================= */
+      .cmt-acknowledgement {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border: 2px solid #0078d4;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 60px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cmt-acknowledgement::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0078d4, #106ebe);
+      }
+
+      .acknowledgement-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .microsoft-logo {
+        width: 60px;
+        height: 60px;
+        background: #0078d4;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .microsoft-logo i {
+        font-size: 2rem;
+        color: white;
+      }
+
+      .acknowledgement-title {
+        font-size: 1.6rem;
+        color: #211021;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .acknowledgement-text {
+        color: #555;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        font-style: italic;
+        text-align: justify;
+      }
+
+      .acknowledgement-text strong {
+        color: #0078d4;
+        font-weight: 600;
+      }
+
       /* Action Buttons */
       .action-section {
         background: linear-gradient(135deg, #211021, #8e24aa);
@@ -581,6 +650,12 @@
         .process-image {
           order: -1;
         }
+
+        .acknowledgement-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
       }
 
       @media (max-width: 768px) {
@@ -648,6 +723,36 @@
           font-size: 1.5rem;
         }
 
+        .cmt-acknowledgement {
+          padding: 25px 20px;
+          margin: 40px 0;
+        }
+
+        .acknowledgement-header {
+          flex-direction: column;
+          text-align: center;
+          gap: 15px;
+        }
+
+        .microsoft-logo {
+          width: 50px;
+          height: 50px;
+        }
+
+        .microsoft-logo i {
+          font-size: 1.6rem;
+        }
+
+        .acknowledgement-title {
+          font-size: 1.3rem;
+          justify-content: center;
+        }
+
+        .acknowledgement-text {
+          font-size: 1rem;
+          text-align: center;
+        }
+
         .action-section {
           padding: 40px 30px;
         }
@@ -701,6 +806,19 @@
 
         .process-content {
           padding: 25px 20px;
+        }
+
+        .cmt-acknowledgement {
+          padding: 20px 15px;
+          margin: 30px 0;
+        }
+
+        .acknowledgement-title {
+          font-size: 1.2rem;
+        }
+
+        .acknowledgement-text {
+          font-size: 0.95rem;
         }
 
         .action-section {
@@ -994,6 +1112,22 @@
                 />
               </div>
             </div>
+          </div>
+
+          <!-- CMT Acknowledgement Section -->
+          <div class="cmt-acknowledgement fade-in">
+            <div class="acknowledgement-header">
+              <div class="microsoft-logo">
+                <i class="fab fa-microsoft"></i>
+              </div>
+              <h3 class="acknowledgement-title">
+                <i class="fas fa-heart"></i>
+                Microsoft CMT Acknowledgement
+              </h3>
+            </div>
+            <p class="acknowledgement-text">
+              <strong>The Microsoft CMT service was used for managing the peer-reviewing process for this conference.</strong> This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+            </p>
           </div>
 
           <!-- Action Section -->
