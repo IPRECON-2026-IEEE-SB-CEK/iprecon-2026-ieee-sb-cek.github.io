@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPRECON 2026 - Email Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .admin-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #8e24aa, #211021);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .admin-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .admin-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .admin-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .admin-card:hover {
+            border-color: #8e24aa;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8e24aa, #211021);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #211021;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8e24aa;
+            box-shadow: 0 0 0 3px rgba(142, 36, 170, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #8e24aa, #211021);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn.secondary {
+            background: #6c757d;
+        }
+
+        .btn.secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn.success {
+            background: #28a745;
+        }
+
+        .btn.success:hover {
+            background: #218838;
+        }
+
+        .btn.danger {
+            background: #dc3545;
+        }
+
+        .btn.danger:hover {
+            background: #c82333;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid;
+            font-weight: 500;
+        }
+
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border-left-color: #28a745;
+        }
+
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border-left-color: #dc3545;
+        }
+
+        .alert.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border-left-color: #17a2b8;
+        }
+
+        .status-display {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .config-section {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border: 2px solid #8e24aa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .config-section h3 {
+            color: #211021;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .required {
+            color: #dc3545;
+        }
+
+        .help-text {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-header {
+                padding: 20px;
+            }
+
+            .admin-header h1 {
+                font-size: 2rem;
+            }
+
+            .admin-card {
+                padding: 20px;
+            }
+        }
+
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <div class="admin-header">
+            <h1><i class="fas fa-envelope"></i> IPRECON 2026</h1>
+            <p>Email Subscription Management System</p>
+        </div>
+
+        <!-- Configuration Section -->
+        <div class="config-section">
+            <h3><i class="fas fa-cog"></i> Configuration</h3>
+            <div class="admin-grid">
+                <div class="form-group">
+                    <label for="workerUrl">Worker URL <span class="required">*</span></label>
+                    <input type="url" id="workerUrl" placeholder="https://your-worker.workers.dev" required>
+                    <div class="help-text">Your Cloudflare Worker deployment URL</div>
+                </div>
+                <div class="form-group">
+                    <label for="adminKey">Admin Key <span class="required">*</span></label>
+                    <input type="password" id="adminKey" placeholder="Enter your admin key" required>
+                    <div class="help-text">Secret key for admin operations</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Admin Grid -->
+        <div class="admin-grid">
+            <!-- Send Page Live Notification -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="card-title">Send "Page is Live" Notifications</h3>
+                </div>
+
+                <form id="pageLiveForm">
+                    <div class="form-group">
+                        <label for="pageName">Page Name <span class="required">*</span></label>
+                        <input type="text" id="pageName" placeholder="e.g., call-for-papers, registration" required>
+                        <div class="help-text">Must match the page name used in subscriptions</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pageUrl">Page URL <span class="required">*</span></label>
+                        <input type="url" id="pageUrl" placeholder="https://iprecon.org/call-for-papers.html" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pageTitle">Page Title</label>
+                        <input type="text" id="pageTitle" placeholder="Call for Papers">
+                        <div class="help-text">Friendly name for the page (optional)</div>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Notifications
+                    </button>
+                </form>
+
+                <div id="pageLiveStatus" class="status-display" style="display: none;"></div>
+            </div>
+
+            <!-- Test Email -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="card-title">Test Email System</h3>
+                </div>
+
+                <form id="testEmailForm">
+                    <div class="form-group">
+                        <label for="testEmail">Test Email Address <span class="required">*</span></label>
+                        <input type="email" id="testEmail" placeholder="test@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailType">Email Type</label>
+                        <select id="emailType">
+                            <option value="confirmation">Subscription Confirmation</option>
+                            <option value="live">Page Live Notification</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn success">
+                        <i class="fas fa-envelope"></i>
+                        Send Test Email
+                    </button>
+                </form>
+
+                <div id="testEmailStatus" class="status-display" style="display: none;"></div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="card-title">Quick Actions</h3>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn secondary" onclick="sendBulkNotification()">
+                        <i class="fas fa-users"></i>
+                        Send Bulk Notifications
+                    </button>
+                    <div class="help-text">Send notifications to multiple pages at once</div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn secondary" onclick="checkWorkerStatus()">
+                        <i class="fas fa-heartbeat"></i>
+                        Check Worker Status
+                    </button>
+                    <div class="help-text">Test if your worker is responding correctly</div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn secondary" onclick="clearCache()">
+                        <i class="fas fa-trash"></i>
+                        Clear Local Cache
+                    </button>
+                    <div class="help-text">Reset stored configuration</div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="card-title">Email Statistics</h3>
+                </div>
+
+                <div id="statsContainer">
+                    <p>Statistics will be displayed here after sending notifications.</p>
+                </div>
+
+                <button type="button" class="btn secondary" onclick="refreshStats()">
+                    <i class="fas fa-sync"></i>
+                    Refresh Stats
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let workerUrl = '';
+        let adminKey = '';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConfig();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Save config when changed
+            document.getElementById('workerUrl').addEventListener('input', saveConfig);
+            document.getElementById('adminKey').addEventListener('input', saveConfig);
+
+            // Form submissions
+            document.getElementById('pageLiveForm').addEventListener('submit', handlePageLiveSubmission);
+            document.getElementById('testEmailForm').addEventListener('submit', handleTestEmailSubmission);
+        }
+
+        function loadConfig() {
+            const savedWorkerUrl = localStorage.getItem('iprecon_worker_url');
+            const savedAdminKey = localStorage.getItem('iprecon_admin_key');
+
+            if (savedWorkerUrl) {
+                document.getElementById('workerUrl').value = savedWorkerUrl;
+                workerUrl = savedWorkerUrl;
+            }
+
+            if (savedAdminKey) {
+                document.getElementById('adminKey').value = savedAdminKey;
+                adminKey = savedAdminKey;
+            }
+        }
+
+        function saveConfig() {
+            workerUrl = document.getElementById('workerUrl').value.trim();
+            adminKey = document.getElementById('adminKey').value.trim();
+
+            localStorage.setItem('iprecon_worker_url', workerUrl);
+            localStorage.setItem('iprecon_admin_key', adminKey);
+        }
+
+        function validateConfig() {
+            if (!workerUrl || !adminKey) {
+                showAlert('error', 'Please enter both Worker URL and Admin Key in the configuration section.');
+                return false;
+            }
+            return true;
+        }
+
+        async function handlePageLiveSubmission(e) {
+            e.preventDefault();
+
+            if (!validateConfig()) return;
+
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const statusDiv = document.getElementById('pageLiveStatus');
+
+            const pageName = document.getElementById('pageName').value.trim();
+            const pageUrl = document.getElementById('pageUrl').value.trim();
+            const pageTitle = document.getElementById('pageTitle').value.trim();
+
+            if (!pageName || !pageUrl) {
+                showAlert('error', 'Please fill in required fields.');
+                return;
+            }
+
+            setLoading(submitBtn, true);
+            statusDiv.style.display = 'block';
+            statusDiv.textContent = 'Sending notifications...';
+
+            try {
+                const response = await fetch(`${workerUrl}/notify-live`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        page: pageName,
+                        pageUrl: pageUrl,
+                        pageTitle: pageTitle,
+                        adminKey: adminKey
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    statusDiv.textContent = `✅ Success!\nNotifications sent to ${data.stats.successful} subscribers\nFailed: ${data.stats.failed}\nTotal: ${data.stats.total}`;
+                    showAlert('success', `Notifications sent successfully to ${data.stats.successful} subscribers!`);
+                    updateStats(data.stats);
+                } else {
+                    statusDiv.textContent = `❌ Error: ${data.error}`;
+                    showAlert('error', `Failed to send notifications: ${data.error}`);
+                }
+
+            } catch (error) {
+                statusDiv.textContent = `❌ Network Error: ${error.message}`;
+                showAlert('error', `Network error: ${error.message}`);
+            } finally {
+                setLoading(submitBtn, false);
+            }
+        }
+
+        async function handleTestEmailSubmission(e) {
+            e.preventDefault();
+
+            if (!validateConfig()) return;
+
+            const form = e.target;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const statusDiv = document.getElementById('testEmailStatus');
+
+            const testEmail = document.getElementById('testEmail').value.trim();
+            const emailType = document.getElementById('emailType').value;
+
+            if (!testEmail) {
+                showAlert('error', 'Please enter a test email address.');
+                return;
+            }
+
+            setLoading(submitBtn, true);
+            statusDiv.style.display = 'block';
+            statusDiv.textContent = 'Sending test email...';
+
+            try {
+                const response = await fetch(`${workerUrl}/test-email`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: testEmail,
+                        type: emailType,
+                        adminKey: adminKey
+                    }),
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    statusDiv.textContent = `✅ Test email sent successfully to ${testEmail}`;
+                    showAlert('success', 'Test email sent successfully!');
+                } else {
+                    statusDiv.textContent = `❌ Error: ${data.error}`;
+                    showAlert('error', `Failed to send test email: ${data.error}`);
+                }
+
+            } catch (error) {
+                statusDiv.textContent = `❌ Network Error: ${error.message}`;
+                showAlert('error', `Network error: ${error.message}`);
+            } finally {
+                setLoading(submitBtn, false);
+            }
+        }
+
+        function setLoading(button, isLoading) {
+            if (isLoading) {
+                button.disabled = true;
+                const icon = button.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-spinner spinner';
+                }
+                button.style.opacity = '0.7';
+            } else {
+                button.disabled = false;
+                const icon = button.querySelector('i');
+                if (icon) {
+                    // Restore original icon based on button context
+                    if (button.closest('#pageLiveForm')) {
+                        icon.className = 'fas fa-paper-plane';
+                    } else if (button.closest('#testEmailForm')) {
+                        icon.className = 'fas fa-envelope';
+                    }
+                }
+                button.style.opacity = '1';
+            }
+        }
+
+        function showAlert(type, message) {
+            // Remove existing alerts
+            const existingAlerts = document.querySelectorAll('.alert');
+            existingAlerts.forEach(alert => alert.remove());
+
+            const alert = document.createElement('div');
+            alert.className = `alert ${type}`;
+            alert.textContent = message;
+
+            document.querySelector('.admin-container').insertBefore(alert, document.querySelector('.admin-grid'));
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.parentNode.removeChild(alert);
+                }
+            }, 5000);
+        }
+
+        function updateStats(stats) {
+            const statsContainer = document.getElementById('statsContainer');
+            statsContainer.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; text-align: center;">
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #28a745;">${stats.successful}</div>
+                        <div style="font-size: 0.9rem; color: #6c757d;">Successful</div>
+                    </div>
+                    <div style="background: #f8d7da; padding: 15px; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #dc3545;">${stats.failed}</div>
+                        <div style="font-size: 0.9rem; color: #6c757d;">Failed</div>
+                    </div>
+                    <div style="background: #d1ecf1; padding: 15px; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #17a2b8;">${stats.total}</div>
+                        <div style="font-size: 0.9rem; color: #6c757d;">Total</div>
+                    </div>
+                </div>
+                <div style="margin-top: 15px; font-size: 0.9rem; color: #6c757d;">
+                    Last updated: ${new Date().toLocaleString()}
+                </div>
+            `;
+        }
+
+        function sendBulkNotification() {
+            const pages = prompt('Enter page names separated by commas:');
+            if (pages) {
+                showAlert('info', 'Bulk notification feature coming soon!');
+            }
+        }
+
+        async function checkWorkerStatus() {
+            if (!validateConfig()) return;
+
+            try {
+                const response = await fetch(`${workerUrl}/subscribe`, {
+                    method: 'OPTIONS'
+                });
+
+                if (response.ok) {
+                    showAlert('success', '✅ Worker is responding correctly!');
+                } else {
+                    showAlert('error', `❌ Worker responded with status: ${response.status}`);
+                }
+            } catch (error) {
+                showAlert('error', `❌ Worker is not accessible: ${error.message}`);
+            }
+        }
+
+        function clearCache() {
+            localStorage.removeItem('iprecon_worker_url');
+            localStorage.removeItem('iprecon_admin_key');
+            document.getElementById('workerUrl').value = '';
+            document.getElementById('adminKey').value = '';
+            workerUrl = '';
+            adminKey = '';
+            showAlert('info', 'Local cache cleared successfully!');
+        }
+
+        function refreshStats() {
+            showAlert('info', 'Statistics refresh feature coming soon!');
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'Enter':
+                        e.preventDefault();
+                        const activeForm = document.activeElement.closest('form');
+                        if (activeForm) {
+                            activeForm.dispatchEvent(new Event('submit'));
+                        }
+                        break;
+                }
+            }
+        });
+
+        // Auto-save config on page unload
+        window.addEventListener('beforeunload', saveConfig);
