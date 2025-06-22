@@ -12,13 +12,9 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
     <link rel="stylesheet" href="./css/styles.css" />
     <style>
-      /* Coming Soon Page Specific Styles */
+      /* Your existing styles... */
       .coming-soon-section {
         padding: 80px 0;
         background: linear-gradient(
@@ -79,13 +75,8 @@
       }
 
       @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
       }
 
       .coming-soon-title {
@@ -108,89 +99,6 @@
         color: #6c757d;
         margin-bottom: 40px;
         line-height: 1.6;
-      }
-
-      .coming-soon-features {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        margin: 40px 0;
-      }
-
-      .feature-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 20px;
-        background: #f8f9fa;
-        border-radius: 10px;
-        border-left: 4px solid #8e24aa;
-        transition: all 0.3s ease;
-      }
-
-      .feature-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        background: white;
-      }
-
-      .feature-item i {
-        font-size: 1.5rem;
-        color: #8e24aa;
-        min-width: 30px;
-      }
-
-      .feature-item span {
-        font-size: 1rem;
-        color: #333;
-        font-weight: 500;
-      }
-
-      .coming-soon-actions {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 40px;
-      }
-
-      .action-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 15px 30px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .action-btn.primary {
-        background: #8e24aa;
-        color: white;
-        border-color: #8e24aa;
-      }
-
-      .action-btn.primary:hover {
-        background: transparent;
-        color: #8e24aa;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-      }
-
-      .action-btn.secondary {
-        background: transparent;
-        color: #211021;
-        border-color: #211021;
-      }
-
-      .action-btn.secondary:hover {
-        background: #211021;
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
       }
 
       .notification-signup {
@@ -252,42 +160,115 @@
         font-size: 1rem;
         outline: none;
         border: 2px solid transparent;
-        transition: border-color 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      .notification-form input:focus {
+        border-color: #d4af37;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
       }
 
       .notification-form input.error {
         border-color: #dc3545;
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+      }
+
+      .notification-form button {
+        padding: 12px 20px;
+        background: #d4af37;
+        color: #211021;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-width: 120px;
+      }
+
+      .notification-form button:hover:not(:disabled) {
+        background: #b8941f;
+        transform: scale(1.05);
+      }
+
+      .notification-form button:disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+        transform: none;
+      }
+
+      .notification-form button .fa-spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .error-message, .success-message {
+        font-size: 0.875rem;
+        margin-top: 8px;
+        margin-bottom: 0;
+        display: none;
+        font-weight: 500;
+        text-align: left;
+        position: relative;
+        z-index: 2;
       }
 
       .error-message {
-        color: #dc3545;
-        font-size: 0.875rem;
-        margin-top: 8px;
-        margin-bottom: 0;
-        display: none;
-        font-weight: 500;
-        text-align: left;
-      }
-
-      .error-message.show {
-        display: block;
+        color: #ff6b6b;
       }
 
       .success-message {
-        color: #28a745;
-        font-size: 0.875rem;
-        margin-top: 8px;
-        margin-bottom: 0;
-        display: none;
-        font-weight: 500;
-        text-align: left;
+        color: #51cf66;
       }
 
-      .success-message.show {
+      .error-message.show, .success-message.show {
         display: block;
+        animation: fadeInMessage 0.3s ease;
       }
 
-      /* Success Popup Modal */
+      @keyframes fadeInMessage {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .coming-soon-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .action-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .action-btn.primary {
+        background: #8e24aa;
+        color: white;
+        border-color: #8e24aa;
+      }
+
+      .action-btn.primary:hover {
+        background: transparent;
+        color: #8e24aa;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      }
+
+      /* Success Popup Modal - Enhanced */
       .success-popup {
         position: fixed;
         top: 0;
@@ -302,6 +283,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
       }
 
       .success-popup.show {
@@ -344,15 +326,9 @@
       }
 
       @keyframes successBounce {
-        0% {
-          transform: scale(0);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
+        0% { transform: scale(0); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
       }
 
       .success-popup h3 {
@@ -420,8 +396,63 @@
         font-style: italic;
       }
 
-      /* Responsive for popup */
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .coming-soon-content {
+          padding: 40px 30px;
+        }
+
+        .coming-soon-title {
+          font-size: 2.2rem;
+        }
+
+        .coming-soon-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .coming-soon-message {
+          font-size: 1rem;
+        }
+
+        .coming-soon-actions {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .action-btn {
+          width: 100%;
+          max-width: 250px;
+          justify-content: center;
+        }
+
+        .form-row {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .notification-form {
+          max-width: 100%;
+        }
+      }
+
       @media (max-width: 480px) {
+        .coming-soon-content {
+          padding: 30px 20px;
+        }
+
+        .coming-soon-title {
+          font-size: 1.8rem;
+        }
+
+        .coming-soon-icon {
+          width: 80px;
+          height: 80px;
+        }
+
+        .coming-soon-icon i {
+          font-size: 2rem;
+        }
+
         .success-popup-content {
           padding: 30px 20px;
         }
@@ -455,123 +486,6 @@
         }
       }
 
-      .notification-form button {
-        padding: 12px 20px;
-        background: #d4af37;
-        color: #211021;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .notification-form button:hover {
-        background: #b8941f;
-        transform: scale(1.05);
-      }
-
-      .progress-indicators {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 30px 0;
-      }
-
-      .progress-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 15px;
-        background: #f8f9fa;
-        border-radius: 25px;
-        font-size: 0.9rem;
-        color: #6c757d;
-        border: 1px solid #e9ecef;
-      }
-
-      .progress-item.active {
-        background: #e8f5e8;
-        color: #2e7d32;
-        border-color: #4caf50;
-      }
-
-      .progress-item.active i {
-        color: #4caf50;
-      }
-
-      .progress-item i {
-        color: #8e24aa;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .coming-soon-content {
-          padding: 40px 30px;
-        }
-
-        .coming-soon-title {
-          font-size: 2.2rem;
-        }
-
-        .coming-soon-subtitle {
-          font-size: 1.2rem;
-        }
-
-        .coming-soon-message {
-          font-size: 1rem;
-        }
-
-        .coming-soon-features {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .coming-soon-actions {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .action-btn {
-          width: 100%;
-          max-width: 250px;
-          justify-content: center;
-        }
-
-        .form-row {
-          flex-direction: column;
-          gap: 15px;
-        }
-
-        .notification-form {
-          max-width: 100%;
-        }
-
-        .progress-indicators {
-          flex-direction: column;
-          gap: 10px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .coming-soon-content {
-          padding: 30px 20px;
-        }
-
-        .coming-soon-title {
-          font-size: 1.8rem;
-        }
-
-        .coming-soon-icon {
-          width: 80px;
-          height: 80px;
-        }
-
-        .coming-soon-icon i {
-          font-size: 2rem;
-        }
-      }
-
       /* Animation for elements */
       .fade-in {
         opacity: 0;
@@ -579,18 +493,10 @@
         animation: fadeInUp 0.6s ease forwards;
       }
 
-      .fade-in:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .fade-in:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .fade-in:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .fade-in:nth-child(4) {
-        animation-delay: 0.4s;
-      }
+      .fade-in:nth-child(1) { animation-delay: 0.1s; }
+      .fade-in:nth-child(2) { animation-delay: 0.2s; }
+      .fade-in:nth-child(3) { animation-delay: 0.3s; }
+      .fade-in:nth-child(4) { animation-delay: 0.4s; }
 
       @keyframes fadeInUp {
         to {
@@ -642,21 +548,6 @@
                 >Click Here</a
               >
             </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              20% of the presented conference papers will be eligible for
-              further review and possible publication in IAS Periodicals.
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Presented papers from IPRECON have been posted in the IEEE Xplore®
-              Digital Library! To View
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
           </div>
         </div>
         <a href="https://iprecon.org">
@@ -676,13 +567,9 @@
               <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
               <a href="./venue.html" class="dropdown-item">VENUE</a>
               <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item"
-                >ACCOMMODATION</a
-              >
+              <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
               <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item"
-                >SPONSORS & EXHIBITORS</a
-              >
+              <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
               <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
             </div>
           </li>
@@ -690,42 +577,24 @@
           <li class="nav-item">
             <span class="nav-link">FOR AUTHORS</span>
             <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item"
-                >CALL FOR PAPERS</a
-              >
+              <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
               <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item"
-                >IMPORTANT DATES</a
-              >
-              <a href="./camera-ready.html" class="dropdown-item"
-                >CAMERA READY SUBMISSION INSTRUCTIONS</a
-              >
-              <a href="./presentation-guidelines.html" class="dropdown-item"
-                >PRESENTATION GUIDELINES</a
-              >
-               <a href="housing-support.html" class="dropdown-item"
-                >STUDENT HOUSING SUPPORT</a
-              >
-              <a href="./travel-support.html" class="dropdown-item"
-                >STUDENT TRAVEL SUPPORT</a
-              >
+              <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+              <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+              <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+              <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+              <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
             </div>
           </li>
           <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
           <li class="nav-item">
             <span class="nav-link">PROGRAM</span>
             <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item"
-                >INAUGRAL PROGRAM</a
-              >
-              <a href="./distinguished-lectures.html" class="dropdown-item"
-                >DISTINGUISHED LECTURE PROGRAM</a
-              >
+              <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+              <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
               <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
               <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item"
-                >SPECIAL SESSIONS</a
-              >
+              <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
               <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
             </div>
           </li>
@@ -741,21 +610,6 @@
         <div class="notification">
           <i class="fas fa-bell"></i>
           Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
           <a
             href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
             class="purple-link"
@@ -801,6 +655,7 @@
                       type="email"
                       placeholder="Enter your email address"
                       id="emailInput"
+                      autocomplete="email"
                     />
                   </div>
                   <button type="submit" id="notifyBtn">
@@ -917,36 +772,14 @@
     </footer>
 
     <script src="./scripts/script.js"></script>
-    <!-- Owl Carousel JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
       $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true,
-          margin: 20,
-          nav: true,
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ],
-          autoplay: true,
-          autoplayTimeout: 3000,
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
-          },
-        });
+        // Configuration - REPLACE WITH YOUR ACTUAL WORKER URL
+        const WORKER_URL = 'https://iprecon-email-collector.ieeesbcek2000.workers.dev'; // Replace with your Worker URL
+        const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
 
-        // Enhanced notification form handling with popup success
+        // Enhanced notification form handling with backend integration
         let countdownTimer;
         let countdownInterval;
 
@@ -956,10 +789,13 @@
           const email = $("#emailInput").val().trim();
           const emailInput = $("#emailInput");
           const errorMessage = $("#errorMessage");
+          const successMessage = $("#successMessage");
+          const submitButton = $(this);
 
           // Clear previous states
           emailInput.removeClass("error");
           errorMessage.removeClass("show").text("");
+          successMessage.removeClass("show").text("");
 
           // Validation
           if (!email) {
@@ -972,13 +808,39 @@
             return;
           }
 
-          // Success case - show popup
-          showSuccessPopup();
-          emailInput.val("");
+          // Show loading state
+          showLoadingState(submitButton, true);
+
+          // Send to backend
+          submitEmailToBackend(email, currentPage)
+            .then(response => {
+              showLoadingState(submitButton, false);
+              
+              if (response.success) {
+                showSuccessPopup(response.message);
+                emailInput.val("");
+                
+                // Track the submission (optional analytics)
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'email_signup', {
+                    'page': currentPage,
+                    'email_domain': email.split('@')[1]
+                  });
+                }
+              } else {
+                showError(response.error || "An error occurred. Please try again.");
+              }
+            })
+            .catch(error => {
+              showLoadingState(submitButton, false);
+              console.error('Email submission error:', error);
+              showError("Network error. Please check your connection and try again.");
+            });
 
           function showError(message) {
             emailInput.addClass("error");
             errorMessage.text(message).addClass("show");
+            successMessage.removeClass("show");
           }
 
           function isValidEmail(email) {
@@ -991,10 +853,58 @@
         $("#emailInput").on("input", function () {
           $(this).removeClass("error");
           $("#errorMessage").removeClass("show");
+          $("#successMessage").removeClass("show");
         });
 
+        // Submit email to backend
+        async function submitEmailToBackend(email, page) {
+          try {
+            const response = await fetch(WORKER_URL, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: email,
+                page: page
+              })
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            return await response.json();
+          } catch (error) {
+            console.error('Backend submission error:', error);
+            throw error;
+          }
+        }
+
+        // Show loading state on button
+        function showLoadingState(button, isLoading) {
+          const originalText = button.data('original-text') || button.html();
+          
+          if (!button.data('original-text')) {
+            button.data('original-text', originalText);
+          }
+
+          if (isLoading) {
+            button.prop('disabled', true);
+            button.html('<i class="fas fa-spinner fa-spin"></i> Subscribing...');
+          } else {
+            button.prop('disabled', false);
+            button.html(originalText);
+          }
+        }
+
         // Success popup functions
-        function showSuccessPopup() {
+        function showSuccessPopup(customMessage) {
+          // Update the success message if provided
+          if (customMessage) {
+            $("#successPopup .success-popup-content p").text(customMessage);
+          }
+          
           $("#successPopup").addClass("show");
           startCountdown();
         }
@@ -1007,6 +917,11 @@
           if (countdownInterval) {
             clearInterval(countdownInterval);
           }
+          
+          // Reset the success message to default
+          $("#successPopup .success-popup-content p").text(
+            "We'll notify you at the earliest once this page is ready. Please check your inbox regularly for updates."
+          );
         }
 
         function startCountdown() {
@@ -1037,6 +952,32 @@
 
         // Global function for close button
         window.closeSuccessPopup = closeSuccessPopup;
+
+        // Enhanced form validation with real-time feedback
+        $("#emailInput").on("blur", function() {
+          const email = $(this).val().trim();
+          if (email && !isValidEmail(email)) {
+            $(this).addClass("error");
+            $("#errorMessage").text("Please enter a valid email address.").addClass("show");
+          }
+        });
+
+        function isValidEmail(email) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(email);
+        }
+
+        // Add keyboard support for form submission
+        $("#emailInput").on("keypress", function(e) {
+          if (e.which === 13) { // Enter key
+            $("#notifyBtn").click();
+          }
+        });
+
+        // Optional: Add a subtle animation to the form on page load
+        setTimeout(function() {
+          $(".notification-signup").addClass("fade-in");
+        }, 500);
       });
     </script>
   </body>
