@@ -767,12 +767,13 @@
             authToken = data.token;
             tokenExpiry = new Date(data.expires);
 
-            // Store session data
+            // Store session data with ORIGINAL expiry time
             localStorage.setItem(
               "iprecon_admin_session",
               JSON.stringify({
                 token: authToken,
                 expires: data.expires,
+                originalExpiry: data.expires, // Store original for countdown
               })
             );
 
@@ -1284,7 +1285,16 @@
 
           if (data.success && data.valid) {
             authToken = token;
-            tokenExpiry = new Date(data.expires);
+
+            // Use ORIGINAL expiry from localStorage, not server's new expiry
+            const sessionData = localStorage.getItem("iprecon_admin_session");
+            if (sessionData) {
+              const { expires } = JSON.parse(sessionData);
+              tokenExpiry = new Date(expires); // Use stored original expiry
+            } else {
+              tokenExpiry = new Date(data.expires); // Fallback if no stored data
+            }
+
             showAdminInterface();
             onSuccessfulLogin();
           } else {
