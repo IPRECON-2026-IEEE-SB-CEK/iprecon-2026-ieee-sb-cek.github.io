@@ -1,1112 +1,1002 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Committee | IPRECON 2026</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/committee.css" />
-    <style>
-      /* Committee Page Specific Styles - Compact Version */
-      .committee-section {
-        padding: 60px 0;
-        background-color: #fafafa;
-      }
 
-      .committee-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Committee | IPRECON 2026</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/committee.css" />
+  <style>
+    /* Committee Page Specific Styles - Compact Version */
+    .committee-section {
+      padding: 60px 0;
+      background-color: #fafafa;
+    }
 
-      /* Page Title */
-      .page-title-container {
-        text-align: center;
-        margin-bottom: 50px;
-      }
+    .committee-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-      .page-title {
-        font-size: 48px;
-        color: #211021;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
-        margin: 0;
-        font-weight: 700;
-      }
+    /* Page Title */
+    .page-title-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-      .page-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 4px;
-        background-color: #8e24aa;
-      }
+    .page-title {
+      font-size: 48px;
+      color: #211021;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+      margin: 0;
+      font-weight: 700;
+    }
 
-      .committee-group {
-        margin-bottom: 60px;
-      }
+    .page-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background-color: #8e24aa;
+    }
 
-      .committee-group:last-child {
-        margin-bottom: 0;
-      }
+    .committee-group {
+      margin-bottom: 60px;
+    }
 
-      /* Grid Layout for Committee Cards - More Compact */
-      .committee-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-        justify-items: center;
-      }
+    .committee-group:last-child {
+      margin-bottom: 0;
+    }
 
-      /* Single card layout for Honorary Chair */
-      .committee-grid.single-card {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 30px auto 0;
-        justify-items: center;
-        max-width: 240px;
-      }
+    /* Grid Layout for Committee Cards - More Compact */
+    .committee-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      justify-items: center;
+    }
 
-      .committee-grid.two-cards {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        max-width: 600px;
-        margin: 30px auto 0;
-        justify-items: center;
-      }
+    /* Single card layout for Honorary Chair */
+    .committee-grid.single-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin: 30px auto 0;
+      justify-items: center;
+      max-width: 240px;
+    }
 
-      /* Three cards layout for General Chairs */
-      .committee-grid.three-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        max-width: 720px;
-        margin: 30px auto 0;
-        justify-items: center;
-      }
+    .committee-grid.two-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 600px;
+      margin: 30px auto 0;
+      justify-items: center;
+    }
 
-      /* Individual Committee Card - Compact Size */
-      .committee-card {
-        position: relative;
-        width: 100%;
-        max-width: 240px;
-        height: 300px;
-        border-radius: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        background: #fff;
-      }
+    /* Three cards layout for General Chairs */
+    .committee-grid.three-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 720px;
+      margin: 30px auto 0;
+      justify-items: center;
+    }
 
-      .committee-card:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      }
+    /* Individual Committee Card - Compact Size */
+    .committee-card {
+      position: relative;
+      width: 100%;
+      max-width: 240px;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: #fff;
+    }
 
-      /* Card Image Container */
-      .card-image {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
+    .committee-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
 
-      .card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.4s ease;
-      }
+    /* Card Image Container */
+    .card-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-      .committee-card:hover .card-image img {
-        transform: scale(1.05);
-      }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease;
+    }
 
-      /* Card Overlay - Compact */
-      .card-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(
-          to top,
+    .committee-card:hover .card-image img {
+      transform: scale(1.05);
+    }
+
+    /* Card Overlay - Compact */
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top,
           rgba(33, 16, 33, 0.95) 0%,
           rgba(33, 16, 33, 0.8) 50%,
           rgba(33, 16, 33, 0.4) 80%,
-          transparent 100%
-        );
-        padding: 18px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        min-height: 110px;
-        transition: all 0.3s ease;
+          transparent 100%);
+      padding: 18px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      min-height: 110px;
+      transition: all 0.3s ease;
+    }
+
+    /* Member Information - Compact */
+    .member-info {
+      flex: 1;
+      color: white;
+    }
+
+    .member-name {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.2;
+      color: white;
+    }
+
+    .member-position {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 2px;
+      color: #d4af37;
+      line-height: 1.2;
+    }
+
+    .member-affiliation {
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.2;
+    }
+
+    /* LinkedIn Icon - Compact */
+    .linkedin-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(142, 36, 170, 0.9);
+      border-radius: 50%;
+      opacity: 0;
+      transform: translateX(15px);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+
+    .linkedin-icon i {
+      color: white;
+      font-size: 14px;
+    }
+
+    .committee-card:hover .linkedin-icon {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .linkedin-icon:hover {
+      background: rgba(142, 36, 170, 1);
+      transform: scale(1.1);
+    }
+
+    /* Active state for clicked cards */
+    .committee-card.clicked {
+      transform: translateY(-4px) scale(1.01);
+    }
+
+    /* Responsive Design - Compact */
+    @media (max-width: 1200px) {
+
+      .committee-grid.three-cards,
+      .committee-grid.two-cards {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 520px;
+        gap: 20px;
       }
 
-      /* Member Information - Compact */
-      .member-info {
-        flex: 1;
-        color: white;
+      .committee-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 18px;
+      }
+
+      .committee-card {
+        max-width: 220px;
+        height: 280px;
+      }
+
+      .page-title {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .committee-section {
+        padding: 40px 0;
+      }
+
+      .committee-container {
+        padding: 0 15px;
+      }
+
+      .page-title-container {
+        margin-bottom: 35px;
+      }
+
+      .page-title {
+        font-size: 36px;
+      }
+
+      .page-title::after {
+        width: 100px;
+        height: 3px;
+      }
+
+      .committee-group {
+        margin-bottom: 45px;
+      }
+
+      .committee-grid,
+      .committee-grid.three-cards,
+      .committee-grid.two-cards {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin-top: 25px;
+        max-width: 100%;
+      }
+
+      .committee-grid.single-card {
+        grid-template-columns: 1fr;
+        max-width: 200px;
+        gap: 15px;
+      }
+
+      .committee-card {
+        max-width: 200px;
+        height: 260px;
       }
 
       .member-name {
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 4px;
-        line-height: 1.2;
-        color: white;
-      }
-
-      .member-position {
-        font-size: 12px;
-        font-weight: 500;
-        margin-bottom: 2px;
-        color: #d4af37;
-        line-height: 1.2;
-      }
-
-      .member-affiliation {
-        font-size: 10px;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.8);
-        line-height: 1.2;
-      }
-
-      /* LinkedIn Icon - Compact */
-      .linkedin-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 32px;
-        height: 32px;
-        background: rgba(142, 36, 170, 0.9);
-        border-radius: 50%;
-        opacity: 0;
-        transform: translateX(15px);
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        cursor: pointer;
-        flex-shrink: 0;
-        margin-left: 10px;
-      }
-
-      .linkedin-icon i {
-        color: white;
         font-size: 14px;
       }
 
-      .committee-card:hover .linkedin-icon {
-        opacity: 1;
-        transform: translateX(0);
+      .member-position {
+        font-size: 11px;
       }
 
-      .linkedin-icon:hover {
-        background: rgba(142, 36, 170, 1);
+      .member-affiliation {
+        font-size: 9px;
+      }
+
+      .card-overlay {
+        padding: 15px 12px;
+        min-height: 95px;
+      }
+
+      .linkedin-icon {
+        width: 28px;
+        height: 28px;
+        margin-left: 8px;
+      }
+
+      .linkedin-icon i {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .committee-grid,
+      .committee-grid.three-cards,
+      .committee-grid.single-card,
+      .committee-grid.two-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        max-width: 100%;
+      }
+
+      /* Force single cards to also follow the 2-column grid on small screens */
+      .committee-grid.single-card {
+        grid-template-columns: 1fr;
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .committee-card {
+        max-width: 100%;
+        height: 240px;
+      }
+
+      .page-title {
+        font-size: 30px;
+      }
+
+      .page-title::after {
+        width: 80px;
+      }
+
+      .member-name {
+        font-size: 13px;
+      }
+
+      .member-position {
+        font-size: 10px;
+      }
+
+      .member-affiliation {
+        font-size: 8px;
+      }
+
+      .card-overlay {
+        padding: 12px 10px;
+        min-height: 85px;
+      }
+
+      .linkedin-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .linkedin-icon i {
+        font-size: 11px;
+      }
+    }
+
+    /* Tablet Landscape */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .committee-grid.three-cards {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 660px;
+      }
+
+      .committee-grid.two-cards {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 440px;
+      }
+
+      .committee-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 18px;
+      }
+
+      .committee-card {
+        max-width: 210px;
+        height: 270px;
+      }
+
+      .page-title {
+        font-size: 40px;
+      }
+    }
+
+    /* Large Screens */
+    @media (min-width: 1920px) {
+      .committee-container {
+        max-width: 70%;
+      }
+
+      .committee-grid {
+        gap: 25px;
+      }
+
+      .committee-grid.three-cards {
+        gap: 30px;
+        max-width: 780px;
+      }
+
+      .committee-grid.two-cards {
+        gap: 30px;
+        max-width: 520px;
+      }
+
+      .committee-card {
+        max-width: 260px;
+        height: 320px;
+      }
+
+      .page-title {
+        font-size: 52px;
+      }
+    }
+
+    /* Accessibility Improvements */
+    .committee-card:focus {
+      outline: 3px solid #8e24aa;
+      outline-offset: 2px;
+    }
+
+    .committee-card:focus-visible {
+      outline: 3px solid #8e24aa;
+      outline-offset: 2px;
+    }
+
+    /* Ensure proper focus management */
+    .committee-card[tabindex="0"]:focus {
+      outline: 3px solid #8e24aa;
+      outline-offset: 2px;
+    }
+
+    /* Loading state for images */
+    .card-image img {
+      background-color: #f0f0f0;
+    }
+
+    /* Error state for broken images */
+    .card-image img[alt]:after {
+      content: attr(alt);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #666;
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    /* Animation for LinkedIn icon entrance */
+    @keyframes linkedinPulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
         transform: scale(1.1);
       }
 
-      /* Active state for clicked cards */
-      .committee-card.clicked {
-        transform: translateY(-4px) scale(1.01);
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .committee-card:hover .linkedin-icon:hover {
+      animation: linkedinPulse 0.6s ease-in-out;
+    }
+
+    /* Print styles */
+    @media print {
+      .committee-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
       }
 
-      /* Responsive Design - Compact */
-      @media (max-width: 1200px) {
-        .committee-grid.three-cards,
-        .committee-grid.two-cards {
-          grid-template-columns: repeat(2, 1fr);
-          max-width: 520px;
-          gap: 20px;
-        }
-
-        .committee-grid {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 18px;
-        }
-
-        .committee-card {
-          max-width: 220px;
-          height: 280px;
-        }
-
-        .page-title {
-          font-size: 42px;
-        }
+      .linkedin-icon {
+        display: none;
       }
 
-      @media (max-width: 768px) {
-        .committee-section {
-          padding: 40px 0;
-        }
+      .committee-grid {
+        gap: 10px;
+      }
+    }
 
-        .committee-container {
-          padding: 0 15px;
-        }
+    /* Reduced motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
 
-        .page-title-container {
-          margin-bottom: 35px;
-        }
-
-        .page-title {
-          font-size: 36px;
-        }
-
-        .page-title::after {
-          width: 100px;
-          height: 3px;
-        }
-
-        .committee-group {
-          margin-bottom: 45px;
-        }
-
-        .committee-grid,
-        .committee-grid.three-cards,
-        .committee-grid.two-cards {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-          gap: 15px;
-          margin-top: 25px;
-          max-width: 100%;
-        }
-
-        .committee-grid.single-card {
-          grid-template-columns: 1fr;
-          max-width: 200px;
-          gap: 15px;
-        }
-
-        .committee-card {
-          max-width: 200px;
-          height: 260px;
-        }
-
-        .member-name {
-          font-size: 14px;
-        }
-
-        .member-position {
-          font-size: 11px;
-        }
-
-        .member-affiliation {
-          font-size: 9px;
-        }
-
-        .card-overlay {
-          padding: 15px 12px;
-          min-height: 95px;
-        }
-
-        .linkedin-icon {
-          width: 28px;
-          height: 28px;
-          margin-left: 8px;
-        }
-
-        .linkedin-icon i {
-          font-size: 12px;
-        }
+      .committee-card,
+      .card-image img,
+      .linkedin-icon,
+      .card-overlay {
+        transition: none;
       }
 
-      @media (max-width: 480px) {
-        .committee-grid,
-        .committee-grid.three-cards,
-        .committee-grid.single-card,
-        .committee-grid.two-cards {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
-          max-width: 100%;
-        }
-
-        /* Force single cards to also follow the 2-column grid on small screens */
-        .committee-grid.single-card {
-          grid-template-columns: 1fr;
-          max-width: 50%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .committee-card {
-          max-width: 100%;
-          height: 240px;
-        }
-
-        .page-title {
-          font-size: 30px;
-        }
-
-        .page-title::after {
-          width: 80px;
-        }
-
-        .member-name {
-          font-size: 13px;
-        }
-
-        .member-position {
-          font-size: 10px;
-        }
-
-        .member-affiliation {
-          font-size: 8px;
-        }
-
-        .card-overlay {
-          padding: 12px 10px;
-          min-height: 85px;
-        }
-
-        .linkedin-icon {
-          width: 26px;
-          height: 26px;
-        }
-
-        .linkedin-icon i {
-          font-size: 11px;
-        }
+      .committee-card:hover {
+        transform: none;
       }
 
-      /* Tablet Landscape */
-      @media (min-width: 768px) and (max-width: 1024px) {
-        .committee-grid.three-cards {
-          grid-template-columns: repeat(3, 1fr);
-          max-width: 660px;
-        }
-
-        .committee-grid.two-cards {
-          grid-template-columns: repeat(2, 1fr);
-          max-width: 440px;
-        }
-
-        .committee-grid {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 18px;
-        }
-
-        .committee-card {
-          max-width: 210px;
-          height: 270px;
-        }
-
-        .page-title {
-          font-size: 40px;
-        }
+      .committee-card:hover .card-image img {
+        transform: none;
       }
+    }
 
-      /* Large Screens */
-      @media (min-width: 1920px) {
-        .committee-container {
-          max-width: 70%;
-        }
-
-        .committee-grid {
-          gap: 25px;
-        }
-
-        .committee-grid.three-cards {
-          gap: 30px;
-          max-width: 780px;
-        }
-
-        .committee-grid.two-cards {
-          gap: 30px;
-          max-width: 520px;
-        }
-
-        .committee-card {
-          max-width: 260px;
-          height: 320px;
-        }
-
-        .page-title {
-          font-size: 52px;
-        }
-      }
-
-      /* Accessibility Improvements */
-      .committee-card:focus {
-        outline: 3px solid #8e24aa;
-        outline-offset: 2px;
-      }
-
-      .committee-card:focus-visible {
-        outline: 3px solid #8e24aa;
-        outline-offset: 2px;
-      }
-
-      /* Ensure proper focus management */
-      .committee-card[tabindex="0"]:focus {
-        outline: 3px solid #8e24aa;
-        outline-offset: 2px;
-      }
-
-      /* Loading state for images */
-      .card-image img {
-        background-color: #f0f0f0;
-      }
-
-      /* Error state for broken images */
-      .card-image img[alt]:after {
-        content: attr(alt);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        color: #666;
-        font-size: 12px;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 8px;
-        border-radius: 4px;
-      }
-
-      /* Animation for LinkedIn icon entrance */
-      @keyframes linkedinPulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .committee-card:hover .linkedin-icon:hover {
-        animation: linkedinPulse 0.6s ease-in-out;
-      }
-
-      /* Print styles */
-      @media print {
-        .committee-card {
-          break-inside: avoid;
-          box-shadow: none;
-          border: 1px solid #ddd;
-        }
-
-        .linkedin-icon {
-          display: none;
-        }
-
-        .committee-grid {
-          gap: 10px;
-        }
-      }
-
-      /* Reduced motion for accessibility */
-      @media (prefers-reduced-motion: reduce) {
-        .committee-card,
-        .card-image img,
-        .linkedin-icon,
-        .card-overlay {
-          transition: none;
-        }
-
-        .committee-card:hover {
-          transform: none;
-        }
-
-        .committee-card:hover .card-image img {
-          transform: none;
-        }
-      }
-
-      /* High contrast mode support */
-      @media (prefers-contrast: high) {
-        .card-overlay {
-          background: linear-gradient(
-            to top,
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .card-overlay {
+        background: linear-gradient(to top,
             rgba(0, 0, 0, 0.95) 0%,
             rgba(0, 0, 0, 0.8) 50%,
             rgba(0, 0, 0, 0.4) 80%,
-            transparent 100%
-          );
-        }
-
-        .member-position {
-          color: #ffff00;
-        }
-
-        .linkedin-icon {
-          background: rgba(0, 0, 0, 0.9);
-          border: 2px solid #ffffff;
-        }
+            transparent 100%);
       }
-    </style>
-    <meta
-      name="description"
-      content="Committee Members - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
-        <div class="separator"></div>
-        <div class="event-info">
-          <span>September 04-06, 2026</span>
-          <span>College of Engineering Karunagappally, Kerala, INDIA</span>
-        </div>
-      </div>
-      <div class="header-section">
-        <span class="sponsor-label" style="visibility: hidden">Powered by</span>
-        <div class="separator"></div>
-        <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
-      </div>
-    </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="mob-marq marquee-container">
-          <div class="marquee">
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Paper Submissions Opening Soon! To View Call for Papers
-              <a
-                href="https://iprecon.org/cfp.html"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              20% of the presented conference papers will be eligible for
-              further review and possible publication in IAS Periodicals.
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Presented papers from IPRECON have been posted in the IEEE Xplore®
-              Digital Library! To View
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
-          </div>
-        </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="./index.html">HOME</a></li>
-          <li class="nav-item">
-            <span class="nav-link">ABOUT</span>
-            <div class="dropdown-content">
-              <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
-              <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
-              <a href="./venue.html" class="dropdown-item">VENUE</a>
-              <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item"
-                >ACCOMMODATION</a
-              >
-              <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item"
-                >SPONSORS & EXHIBITORS</a
-              >
-              <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
-          <li class="nav-item">
-            <span class="nav-link">FOR AUTHORS</span>
-            <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
-              <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item"
-                >IMPORTANT DATES</a
-              >
-              <a href="./camera-ready.html" class="dropdown-item"
-                >CAMERA READY SUBMISSION INSTRUCTIONS</a
-              >
-              <a href="./presentation-guidelines.html" class="dropdown-item"
-                >PRESENTATION GUIDELINES</a
-              >
-              <a href="housing-support.html" class="dropdown-item"
-                >STUDENT HOUSING SUPPORT</a
-              >
-              <a href="./travel-support.html" class="dropdown-item"
-                >STUDENT TRAVEL SUPPORT</a
-              >
-            </div>
-          </li>
-          <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
-          <li class="nav-item">
-            <span class="nav-link">PROGRAM</span>
-            <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item"
-                >INAUGRAL PROGRAM</a
-              >
-              <a href="./distinguished-lectures.html" class="dropdown-item"
-                >DISTINGUISHED LECTURE PROGRAM</a
-              >
-              <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
-              <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item"
-                >SPECIAL SESSIONS</a
-              >
-              <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="./registration.html">REGISTRATION</a>
-          </li>
-          <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
-        </ul>
-      </div>
-    </nav>
+      .member-position {
+        color: #ffff00;
+      }
 
-    <!-- Marquee -->
-    <div class="non-mob marquee-container">
-      <div class="marquee">
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://iprecon.org/cfp.html"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
+      .linkedin-icon {
+        background: rgba(0, 0, 0, 0.9);
+        border: 2px solid #ffffff;
+      }
+    }
+  </style>
+  <meta name="description"
+    content="Committee Members - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-container">
+    <div class="header-section">
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 black.png" alt="IPRECON 2026 Logo" class="logo" />
+      </a>
+      <div class="separator"></div>
+      <div class="event-info">
+        <span>September 04-06, 2026</span>
+        <span>College of Engineering Karunagappally, Kerala, INDIA</span>
       </div>
     </div>
+    <div class="header-section">
+      <span class="sponsor-label" style="visibility: hidden">Powered by</span>
+      <div class="separator"></div>
+      <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    </div>
+  </div>
 
-    <!-- Spacer for when marquee becomes fixed -->
-    <div id="marquee-placeholder" style="display: none"></div>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="mob-marq marquee-container">
+        <div class="marquee">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Paper Submissions Opening Soon! To View Call for Papers
+            <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            20% of the presented conference papers will be eligible for
+            further review and possible publication in IAS Periodicals.
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Presented papers from IPRECON have been posted in the IEEE Xplore®
+            Digital Library! To View
+            <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 white.png" alt="IPRECON 2026 Logo" class="brand-logo" id="brandLogo" />
+      </a>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="./index.html">HOME</a></li>
+        <li class="nav-item">
+          <span class="nav-link">ABOUT</span>
+          <div class="dropdown-content">
+            <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
+            <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
+            <a href="./venue.html" class="dropdown-item">VENUE</a>
+            <a href="./kerala.html" class="dropdown-item">KERALA</a>
+            <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
+            <a href="./visa.html" class="dropdown-item">VISA</a>
+            <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
+            <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
+        <li class="nav-item">
+          <span class="nav-link">FOR AUTHORS</span>
+          <div class="dropdown-content">
+            <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
+            <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
+            <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+            <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+            <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+            <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+            <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
+        <li class="nav-item">
+          <span class="nav-link">PROGRAM</span>
+          <div class="dropdown-content">
+            <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+            <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
+            <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
+            <a href="./tracks.html" class="dropdown-item">TRACKS</a>
+            <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
+            <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="./registration.html">REGISTRATION</a>
+        </li>
+        <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <main>
-      <!-- Committee Section -->
-      <section class="committee-section">
-        <div class="committee-container">
-          <!-- Page Title -->
-          <div class="page-title-container">
-            <h1 class="page-title">Committee</h1>
+  <!-- Marquee -->
+  <div class="non-mob marquee-container">
+    <div class="marquee">
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Paper Submissions Opening Soon! To View Call for Papers
+        <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        20% of the presented conference papers will be eligible for further
+        review and possible publication in IAS Periodicals.
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Presented papers from IPRECON have been posted in the IEEE Xplore®
+        Digital Library! To View
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spacer for when marquee becomes fixed -->
+  <div id="marquee-placeholder" style="display: none"></div>
+
+  <main>
+    <!-- Committee Section -->
+    <section class="committee-section">
+      <div class="committee-container">
+        <!-- Page Title -->
+        <div class="page-title-container">
+          <h1 class="page-title">Committee</h1>
+        </div>
+
+        <!-- Honorary Chair Section -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">Honorary Chair</h2>
           </div>
 
-          <!-- Honorary Chair Section -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">Honorary Chair</h2>
-            </div>
-
-            <div class="committee-grid single-card">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/avoki-m-omekanda-93730213/"
-              >
-                <div class="card-image">
-                  <img src="images/Avoki_omekanda.webp" alt="Avoki_omekanda" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Avoki M Omekanda</h3>
-                      <p class="member-position">Honorary Chair</p>
-                      <p class="member-affiliation">IEEE IAS President Elect</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+          <div class="committee-grid single-card">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/avoki-m-omekanda-93730213/">
+              <div class="card-image">
+                <img src="images/Avoki_omekanda.webp" alt="Avoki_omekanda" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Avoki M Omekanda</h3>
+                    <p class="member-position">Honorary Chair</p>
+                    <p class="member-affiliation">IEEE IAS President Elect</p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- General Chairs Section -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">General Chairs</h2>
-            </div>
-
-            <div class="committee-grid three-cards">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/alan-biju-5b9213256/"
-              >
-                <div class="card-image">
-                  <img src="images/Alan Biju.webp" alt="Alan" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Alan Biju</h3>
-                      <p class="member-position">General Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/zsofia-lilla-bango/"
-              >
-                <div class="card-image">
-                  <img src="images/zsofia.png" alt="zsofia" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Zsofia L Bango</h3>
-                      <p class="member-position">General Co-Chair</p>
-                      <p class="member-affiliation">Budapest University</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/abhin-jose-708383315/"
-              >
-                <div class="card-image">
-                  <img src="images/abhin.webp" alt="abhin" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Abhin Jose JM</h3>
-                      <p class="member-position">General Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Technical Program Committee Advisors Section -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">
-                Technical Program Committee Advisors
-              </h2>
-            </div>
-
-            <div class="committee-grid">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/ayman-el-refaie-83a61816/"
-              >
-                <div class="card-image">
-                  <img src="images/Ayman-M.-EL-Refaie.webp" alt="Ayman" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Ayman El-Refaie</h3>
-                      <!-- <p class="member-position">TPC Advisors Chair</p> -->
-                      <p class="member-affiliation">IEEE IAS President</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/shbahramirad/"
-              >
-                <div class="card-image">
-                  <img src="images/Shay-Bahramirad-2024.webp" alt="Shay" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Shay Bahramirad</h3>
-                      <!-- <p class="member-position">Technical Program Co-Chair</p> -->
-                      <p class="member-affiliation">IEEE PES President</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/mythilichaganti/"
-              >
-                <div class="card-image">
-                  <img src="images/mythili-chaganti_1.jpg" alt="Mythili" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Mythili Chaganti</h3>
-                      <!-- <p class="member-position">Publications Chair</p> -->
-                      <p class="member-affiliation">
-                        Vice President, IEEE PES Chapters & Membership
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/srikanthvpillai/"
-              >
-                <div class="card-image">
-                  <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">Chair, IEEE IAS CMD</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/richard-cselko-50190665/"
-              >
-                <div class="card-image">
-                  <img
-                    src="images/richard_czelesko.webp"
-                    alt="richard_czelesko"
-                  />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Richárd Cselkó</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">
-                        Chair, IEEE IAS Chapter and Membership Committee
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/peter-magyar-57b04b24/"
-              >
-                <div class="card-image">
-                  <img src="images/peter magyar.webp" alt="peter" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Peter Magyar</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">
-                        Former Chair, IEEE IAS CMD
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/bsmanoj/"
-              >
-                <div class="card-image">
-                  <img src="images/manoj bs.png" alt="manoj" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Prof. Manoj B.S</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">
-                        Chair, IEEE Kerala Section
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/satish-naik-banavath-85128829/"
-              >
-                <div class="card-image">
-                  <img src="images/satish.webp" alt="satish" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Satish Naik Banavath</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">
-                        Associate Professor, IIT Dharwad
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/mahajan-sagar-bhaskar-6b86a182/"
-              >
-                <div class="card-image">
-                  <img src="images/Sagar_maharjan.webp" alt="Sagar_maharjan" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Mahajan Sagar Bhaskar</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">
-                        Renewable Energy Lab, PSU
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/dr-s-albert-alexander-92590212/"
-              >
-                <div class="card-image">
-                  <img src="images/albert.webp" alt="albert" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. S Albert Alexander</h3>
-                      <!-- <p class="member-position">Publicity Chair</p> -->
-                      <p class="member-affiliation">
-                        Associate Professor, Vellore Institute of Technology
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+        </div>
 
-          <!-- TPC -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">Technical Program Committee</h2>
+        <!-- General Chairs Section -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">General Chairs</h2>
+          </div>
+
+          <div class="committee-grid three-cards">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/alan-biju-5b9213256/">
+              <div class="card-image">
+                <img src="images/Alan Biju.webp" alt="Alan" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Alan Biju</h3>
+                    <p class="member-position">General Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="committee-grid two-cards">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/celestine-geo-leslin-bb6926291/"
-              >
-                <div class="card-image">
-                  <img src="images/Celestine.webp" alt="Celestine" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Celestine Leo Leslin</h3>
-                      <p class="member-position">Technical Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/zsofia-lilla-bango/">
+              <div class="card-image">
+                <img src="images/zsofia.png" alt="zsofia" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Zsofia L Bango</h3>
+                    <p class="member-position">General Co-Chair</p>
+                    <p class="member-affiliation">Budapest University</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="committee-card">
-                <div class="card-image">
-                  <img
-                    src="images/Tofopefun-Olayiwola.webp"
-                    alt="Tofopefun-Olayiwola"
-                  />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Tofopefun Nifise Olayiwola</h3>
-                      <p class="member-position">Technical Co-Chair</p>
-                      <p class="member-affiliation">
-                        Tallinn University of Technology, Estonia
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/abhin-jose-708383315/">
+              <div class="card-image">
+                <img src="images/abhin.webp" alt="abhin" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Abhin Jose JM</h3>
+                    <p class="member-position">General Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
+        <!-- Technical Program Committee Advisors Section -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">
+              Technical Program Committee Advisors
+            </h2>
+          </div>
+
+          <div class="committee-grid">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/ayman-el-refaie-83a61816/">
+              <div class="card-image">
+                <img src="images/Ayman-M.-EL-Refaie.webp" alt="Ayman" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Ayman El-Refaie</h3>
+                    <!-- <p class="member-position">TPC Advisors Chair</p> -->
+                    <p class="member-affiliation">IEEE IAS President</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/shbahramirad/">
+              <div class="card-image">
+                <img src="images/Shay-Bahramirad-2024.webp" alt="Shay" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Shay Bahramirad</h3>
+                    <!-- <p class="member-position">Technical Program Co-Chair</p> -->
+                    <p class="member-affiliation">IEEE PES President</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/mythilichaganti/">
+              <div class="card-image">
+                <img src="images/mythili-chaganti_1.jpg" alt="Mythili" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Mythili Chaganti</h3>
+                    <!-- <p class="member-position">Publications Chair</p> -->
+                    <p class="member-affiliation">
+                      Vice President, IEEE PES Chapters & Membership
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/richard-cselko-50190665/">
+              <div class="card-image">
+                <img src="images/richard_czelesko.webp" alt="richard_czelesko" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Richárd Cselkó</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">
+                      Chair, IEEE IAS Chapter and Membership Committee
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/peter-magyar-57b04b24/">
+              <div class="card-image">
+                <img src="images/peter magyar.webp" alt="peter" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Peter Magyar</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">
+                      Former Chair, IEEE IAS CMD
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/bsmanoj/">
+              <div class="card-image">
+                <img src="images/manoj bs.png" alt="manoj" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Prof. Manoj B.S</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">
+                      Chair, IEEE Kerala Section
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/satish-naik-banavath-85128829/">
+              <div class="card-image">
+                <img src="images/satish.webp" alt="satish" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Satish Naik Banavath</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">
+                      Associate Professor, IIT Dharwad
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/mahajan-sagar-bhaskar-6b86a182/">
+              <div class="card-image">
+                <img src="images/Sagar_maharjan.webp" alt="Sagar_maharjan" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Mahajan Sagar Bhaskar</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">
+                      Renewable Energy Lab, PSU
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/dr-s-albert-alexander-92590212/">
+              <div class="card-image">
+                <img src="images/albert.webp" alt="albert" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. S Albert Alexander</h3>
+                    <!-- <p class="member-position">Publicity Chair</p> -->
+                    <p class="member-affiliation">
+                      Associate Professor, Vellore Institute of Technology
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- TPC -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">Technical Program Committee</h2>
+          </div>
+
+          <div class="committee-grid two-cards">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/celestine-geo-leslin-bb6926291/">
+              <div class="card-image">
+                <img src="images/Celestine.webp" alt="Celestine" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Celestine Leo Leslin</h3>
+                    <p class="member-position">Technical Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card">
+              <div class="card-image">
+                <img src="images/Tofopefun-Olayiwola.webp" alt="Tofopefun-Olayiwola" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Tofopefun Nifise Olayiwola</h3>
+                    <p class="member-position">Technical Co-Chair</p>
+                    <p class="member-affiliation">
+                      Tallinn University of Technology, Estonia
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
                 <div class="card-image">
                   <img src="images/andrew_freeman.webp" alt="andrew_freeman" />
                   <div class="card-overlay">
@@ -1120,207 +1010,186 @@
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- Publication -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">Publication Committee</h2>
           </div>
 
-          <!-- Publication -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">Publication Committee</h2>
+          <div class="committee-grid two-cards">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/febin-fransis-b0454534a/">
+              <div class="card-image">
+                <img src="images/febin.webp" alt="febin" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Febin Fransis</h3>
+                    <p class="member-position">Publication Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="committee-grid two-cards">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/febin-fransis-b0454534a/"
-              >
-                <div class="card-image">
-                  <img src="images/febin.webp" alt="febin" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Febin Fransis</h3>
-                      <p class="member-position">Publication Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/rajasree-r-292529350/">
+              <div class="card-image">
+                <img src="images/rajasree.jpg" alt="rajasree" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Rajasree R</h3>
+                    <p class="member-position">Publication Co-Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/rajasree-r-292529350/"
-              >
+            <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
                 <div class="card-image">
-                  <img src="images/rajasree.jpg" alt="rajasree" />
+                  <img src="images/andrew_freeman.webp" alt="andrew_freeman" />
                   <div class="card-overlay">
                     <div class="member-info">
-                      <h3 class="member-name">Rajasree R</h3>
-                      <p class="member-position">Publication Co-Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
-                <div class="card-image">
-                  <img src="images/Dummy.webp" alt="Ákos Papik" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Ákos Papik</h3>
+                      <h3 class="member-name">Andrew Freeman </h3>
                       <p class="member-position">Co-Chair 2</p>
-                      <p class="member-affiliation">Publication Chair, IYCE</p>
+                      <p class="member-affiliation">Conference Co-Director PECI</p>
                     </div>
                     <div class="linkedin-icon">
                       <i class="fab fa-linkedin"></i>
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
             </div>
+
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- Diversity -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">
+              Diversity Equity and Inclusion Committee
+            </h2>
           </div>
 
-          <!-- Diversity -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">
-                Diversity Equity and Inclusion Committee
-              </h2>
-            </div>
-
-            <div class="committee-grid two-cards">
-              <div
-                class="committee-card"
-                data-linkedin="http://linkedin.com/in/anandhu-babu-60969936a"
-              >
-                <div class="card-image">
-                  <img src="images/anandhu.jpg" alt="anandhu" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Anandhu Babu</h3>
-                      <p class="member-position">DEI Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+          <div class="committee-grid two-cards">
+            <div class="committee-card" data-linkedin="http://linkedin.com/in/anandhu-babu-60969936a">
+              <div class="card-image">
+                <img src="images/anandhu.jpg" alt="anandhu" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Anandhu Babu</h3>
+                    <p class="member-position">DEI Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
                   </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/mkoech/"
-              >
-                <div class="card-image">
-                  <img src="images/mercy.webp" alt="mercy" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Mercy Chelangat Koech</h3>
-                      <p class="member-position">DEI Co-Chair</p>
-                      <p class="member-affiliation">Researcher, UT Dallas</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Publicity -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">Publicity Committee</h2>
-            </div>
-
-            <div class="committee-grid single-card">
-              <div class="committee-card">
-                <div class="card-image">
-                  <img src="images/anfas.webp" alt="anfas" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Mohammad Anfas</h3>
-                      <p class="member-position">Publicity Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/mkoech/">
+              <div class="card-image">
+                <img src="images/mercy.webp" alt="mercy" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Mercy Chelangat Koech</h3>
+                    <p class="member-position">DEI Co-Chair</p>
+                    <p class="member-affiliation">Researcher, UT Dallas</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example9">
+                        <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
                 <div class="card-image">
-                  <img src="images/Dummy.webp" alt="Rhett" />
+                  <img src="images/andrew_freeman.webp" alt="andrew_freeman" />
                   <div class="card-overlay">
                     <div class="member-info">
-                      <h3 class="member-name">Rhett Guthrie </h3>
-                      <p class="member-position">Co-Chair</p>
-                      <p class="member-affiliation">Promotion Chair, TPEC</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
-              <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
-                <div class="card-image">
-                  <img src="images/ezter.webp" alt="ezter" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Eszter Imre </h3>
+                      <h3 class="member-name">Andrew Freeman </h3>
                       <p class="member-position">Co-Chair 2</p>
-                      <p class="member-affiliation">Publicity Chair, IYCE</p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
-
-          <!-- Finance Committee -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">Finance Committee</h2>
-            </div>
-
-            <div class="committee-grid two-cards">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/milan-m-j-31519a261/"
-              >
-                <div class="card-image">
-                  <img src="images/milan.webp" alt="milan" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Milan M J</h3>
-                      <p class="member-position">Finance Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
+                      <p class="member-affiliation">Conference Co-Director PECI</p>
                     </div>
                     <div class="linkedin-icon">
                       <i class="fab fa-linkedin"></i>
@@ -1329,466 +1198,631 @@
                 </div>
               </div>
 
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/silpa-s-a4723834b/"
-              >
-                <div class="card-image">
-                  <img src="images/silpa.jpg" alt="silpa" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Silpa S</h3>
-                      <p class="member-position">Finance Co-Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Hospitality Committee -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">Hospitality Committee</h2>
-            </div>
 
-            <div class="committee-grid single-card">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/mahima-d-429865294/"
-              >
-                <div class="card-image">
-                  <img src="images/mahima.webp" alt="mahima" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Mahima D</h3>
-                      <p class="member-position">Hospitality Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
                   </div>
                 </div>
               </div>
+            </div> -->
 
-              <!-- <div
-                class="committee-card"
-                data-linkedin="http://linkedin.com/in/anandhu-babu-60969936a"
-              >
-                <div class="card-image">
-                  <img src="images/anandhu.jpg" alt="anandhu" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Anandhu Babu</h3>
-                      <p class="member-position">Hospitality Co-Chair</p>
-                      <p class="member-affiliation">
-                        College of Engineering Karunagappally
-                      </p>
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-            </div>
-          </div>
-
-          <!-- Mentor Committee -->
-          <div class="committee-group">
-            <div class="section-title-container">
-              <h2 class="section-title">IPRECON MENTOR COMMITTEE</h2>
-            </div>
-
-            <div class="committee-grid">
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/dr-smitha-dharan-43a28550/"
-              >
-                <div class="card-image">
-                  <img src="images/Smitha Dharan .webp" alt="Smitha" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Smitha Dharan</h3>
-                      <p class="member-position">
-                        Principal, College of Engineering Karunagappally
-                      </p>
-                      <!-- <p class="member-affiliation">IEEE IAS President</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="committee-card">
-                <div class="card-image">
-                  <img src="images/Savitha k p.webp" alt="Savitha" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Prof. Savitha K P</h3>
-                      <p class="member-position">Counselor, IEEE SB CEK</p>
-                      <!-- <p class="member-affiliation">IEEE PES President</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/dr-jyothi-r-l-77b41731/"
-              >
-                <div class="card-image">
-                  <img src="images/Dr Jyothi R L.webp" alt="Jyothi" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Dr. Jyothi R L</h3>
-                      <p class="member-position">Advisor, IEEE SB CEK</p>
-                      <!-- <p class="member-affiliation">Vice President, IEEE PES Chapters & Membership</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/anandhuskumar/"
-              >
-                <div class="card-image">
-                  <img src="images/Anandhu s kumar.webp" alt="Anandhu" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Er. Anandhu S Kumar</h3>
-                      <p class="member-position">
-                        Chair, PES Member Driven Initiatives
-                      </p>
-                      <!-- <p class="member-affiliation">Chair, IEEE IAS CMD</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/akshay-krishnan/"
-              >
-                <div class="card-image">
-                  <img src="images/akshay.webp" alt="akshay" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Er. Akshay Krishnan</h3>
-                      <p class="member-position">Engineer, Carestack</p>
-                      <!-- <p class="member-affiliation">Chair, IEEE IAS Chapter and Membership Committee</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/hpr/"
-              >
-                <div class="card-image">
-                  <img src="images/Hari prasad.webp" alt="Hari" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Er. Hari Prasad</h3>
-                      <p class="member-position">
-                        Research Engineer, Minus Zero Robotics Pvt. Ltd.
-                      </p>
-                      <!-- <p class="member-affiliation">Former Chair, IEEE IAS CMD</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/harikrishnan2255/"
-              >
-                <div class="card-image">
-                  <img src="images/Hari krishnan.webp" alt="Hari_K" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Hari Krishnan A</h3>
-                      <p class="member-position">
-                        Software Developer, Kennedys iQ
-                      </p>
-                      <!-- <p class="member-affiliation"></p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/cliffincletus2000/"
-              >
-                <div class="card-image">
-                  <img src="images/Cliffin cletus.webp" alt="Cliffin Cletus" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Cliffin Cletus</h3>
-                      <p class="member-position">
-                        Software Developer, Agile Growth Hackers
-                      </p>
-                      <!-- <p class="member-affiliation">Associate Professor, IIT Dharwad</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="committee-card"
-                data-linkedin="https://www.linkedin.com/in/alister-clietus-cek-npy/"
-              >
-                <div class="card-image">
-                  <img src="images/alister.jpg" alt="Alister Cletus" />
-                  <div class="card-overlay">
-                    <div class="member-info">
-                      <h3 class="member-name">Alister Clietus</h3>
-                      <p class="member-position">
-                        Cybersecurity Engineer, Interland Technology Services
-                        Pvt. Ltd
-                      </p>
-                      <!-- <p class="member-affiliation">Associate Professor, IIT Dharwad</p> -->
-                    </div>
-                    <div class="linkedin-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- Footer section -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Paper Submission</h3>
-          <ul class="footer-links">
-            <li><a href="./cfp.html">Call for Papers</a></li>
-            <li><a href="./submissions.html">Submit a Paper</a></li>
-            <li>
-              <a href="https://www.ieee.org/conferences/publishing/templates"
-                >Paper Template</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
-            <li><a href="./committee.html">Team</a></li>
-            <li><a href="./about-iprecon.html">Legacy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Travel and Accommodation</h3>
-          <ul class="footer-links">
-            <li><a href="./venue.html">Transportation</a></li>
-            <li><a href="./accommodation.html">Hotels</a></li>
-            <li><a href="./kerala.html">Tourism</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <div class="social-icons">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/ieeeceksb/"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/ieeesbcek/"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/ieee_sb_cek"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
+        <!-- Publicity -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">Publicity Committee</h2>
           </div>
-          <div class="copyright">
-            Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+
+          <div class="committee-grid single-card">
+            <div class="committee-card">
+              <div class="card-image">
+                <img src="images/anfas.webp" alt="anfas" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Mohammad Anfas</h3>
+                    <p class="member-position">Publicity Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
+                <div class="card-image">
+                  <img src="images/andrew_freeman.webp" alt="andrew_freeman" />
+                  <div class="card-overlay">
+                    <div class="member-info">
+                      <h3 class="member-name">Andrew Freeman </h3>
+                      <p class="member-position">Co-Chair 2</p>
+                      <p class="member-affiliation">Conference Co-Director PECI</p>
+                    </div>
+                    <div class="linkedin-icon">
+                      <i class="fab fa-linkedin"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- Finance Committee -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">Finance Committee</h2>
+          </div>
+
+          <div class="committee-grid two-cards">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/milan-m-j-31519a261/">
+              <div class="card-image">
+                <img src="images/milan.webp" alt="milan" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Milan M J</h3>
+                    <p class="member-position">Finance Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/silpa-s-a4723834b/">
+              <div class="card-image">
+                <img src="images/silpa.jpg" alt="silpa" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Silpa S</h3>
+                    <p class="member-position">Finance Co-Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                        <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
+                <div class="card-image">
+                  <img src="images/andrew_freeman.webp" alt="andrew_freeman" />
+                  <div class="card-overlay">
+                    <div class="member-info">
+                      <h3 class="member-name">Andrew Freeman </h3>
+                      <p class="member-position">Co-Chair 2</p>
+                      <p class="member-affiliation">Conference Co-Director PECI</p>
+                    </div>
+                    <div class="linkedin-icon">
+                      <i class="fab fa-linkedin"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- Hospitality Committee -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">Hospitality Committee</h2>
+          </div>
+
+          <div class="committee-grid single-card">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/mahima-d-429865294/">
+              <div class="card-image">
+                <img src="images/mahima.webp" alt="mahima" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Mahima D</h3>
+                    <p class="member-position">Hospitality Chair</p>
+                    <p class="member-affiliation">
+                      College of Engineering Karunagappally
+                    </p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="committee-card" data-linkedin="https://www.linkedin.com/in/example10">
+                <div class="card-image">
+                  <img src="images/andrew_freeman.webp" alt="andrew_freeman" />
+                  <div class="card-overlay">
+                    <div class="member-info">
+                      <h3 class="member-name">Andrew Freeman </h3>
+                      <p class="member-position">Co-Chair 2</p>
+                      <p class="member-affiliation">Conference Co-Director PECI</p>
+                    </div>
+                    <div class="linkedin-icon">
+                      <i class="fab fa-linkedin"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/srikanthvpillai/">
+              <div class="card-image">
+                <img src="images/srikanthpillai.webp" alt="srikanthpillai" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Srikanth Vasudevan Pillai</h3>
+                    <p class="member-affiliation">Chair, IEEE IAS CMD</p>
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+
+        <!-- Mentor Committee -->
+        <div class="committee-group">
+          <div class="section-title-container">
+            <h2 class="section-title">IPRECON MENTOR COMMITTEE</h2>
+          </div>
+
+          <div class="committee-grid">
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/dr-smitha-dharan-43a28550/">
+              <div class="card-image">
+                <img src="images/Smitha Dharan .webp" alt="Smitha" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Smitha Dharan</h3>
+                    <p class="member-position">
+                      Principal, College of Engineering Karunagappally
+                    </p>
+                    <!-- <p class="member-affiliation">IEEE IAS President</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card">
+              <div class="card-image">
+                <img src="images/Savitha k p.webp" alt="Savitha" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Prof. Savitha K P</h3>
+                    <p class="member-position">Counselor, IEEE SB CEK</p>
+                    <!-- <p class="member-affiliation">IEEE PES President</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/dr-jyothi-r-l-77b41731/">
+              <div class="card-image">
+                <img src="images/Dr Jyothi R L.webp" alt="Jyothi" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Dr. Jyothi R L</h3>
+                    <p class="member-position">Advisor, IEEE SB CEK</p>
+                    <!-- <p class="member-affiliation">Vice President, IEEE PES Chapters & Membership</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/anandhuskumar/">
+              <div class="card-image">
+                <img src="images/Anandhu s kumar.webp" alt="Anandhu" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Er. Anandhu S Kumar</h3>
+                    <p class="member-position">
+                      Chair, PES Member Driven Initiatives
+                    </p>
+                    <!-- <p class="member-affiliation">Chair, IEEE IAS CMD</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/akshay-krishnan/">
+              <div class="card-image">
+                <img src="images/akshay.webp" alt="akshay" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Er. Akshay Krishnan</h3>
+                    <p class="member-position">Engineer, Carestack</p>
+                    <!-- <p class="member-affiliation">Chair, IEEE IAS Chapter and Membership Committee</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/hpr/">
+              <div class="card-image">
+                <img src="images/Hari prasad.webp" alt="Hari" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Er. Hari Prasad</h3>
+                    <p class="member-position">
+                      Research Engineer, Minus Zero Robotics Pvt. Ltd.
+                    </p>
+                    <!-- <p class="member-affiliation">Former Chair, IEEE IAS CMD</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/harikrishnan2255/">
+              <div class="card-image">
+                <img src="images/Hari krishnan.webp" alt="Hari_K" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Hari Krishnan A</h3>
+                    <p class="member-position">
+                      Software Developer, Kennedys iQ
+                    </p>
+                    <!-- <p class="member-affiliation"></p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/cliffincletus2000/">
+              <div class="card-image">
+                <img src="images/Cliffin cletus.webp" alt="Cliffin Cletus" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Cliffin Cletus</h3>
+                    <p class="member-position">
+                      Software Developer, Agile Growth Hackers
+                    </p>
+                    <!-- <p class="member-affiliation">Associate Professor, IIT Dharwad</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="committee-card" data-linkedin="https://www.linkedin.com/in/alister-clietus-cek-npy/">
+              <div class="card-image">
+                <img src="images/alister.jpg" alt="Alister Cletus" />
+                <div class="card-overlay">
+                  <div class="member-info">
+                    <h3 class="member-name">Alister Clietus</h3>
+                    <p class="member-position">
+                      Cybersecurity Engineer, Interland Technology Services
+                      Pvt. Ltd
+                    </p>
+                    <!-- <p class="member-affiliation">Associate Professor, IIT Dharwad</p> -->
+                  </div>
+                  <div class="linkedin-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="./scripts/script.js"></script>
-    <!-- Committee Page JavaScript -->
-    <script src="./scripts/committee.js"></script>
-    <!-- Owl Carousel JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true,
-          margin: 20,
-          nav: true,
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ],
-          autoplay: true,
-          autoplayTimeout: 3000,
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Paper Submission</h3>
+        <ul class="footer-links">
+          <li><a href="./cfp.html">Call for Papers</a></li>
+          <li><a href="./submissions.html">Submit a Paper</a></li>
+          <li>
+            <a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+          <li><a href="./committee.html">Team</a></li>
+          <li><a href="./about-iprecon.html">Legacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Travel and Accommodation</h3>
+        <ul class="footer-links">
+          <li><a href="./venue.html">Transportation</a></li>
+          <li><a href="./accommodation.html">Hotels</a></li>
+          <li><a href="./kerala.html">Tourism</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <div class="social-icons">
+          <a target="_blank" href="https://www.facebook.com/ieeeceksb/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/ieeesbcek/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a target="_blank" href="https://www.instagram.com/ieee_sb_cek" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
+  <!-- Committee Page JavaScript -->
+  <script src="./scripts/committee.js"></script>
+  <!-- Owl Carousel JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#news-slider").owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>",
+        ],
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 3,
           },
-        });
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+        },
       });
-      // Committee Page JavaScript
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get all committee cards
-        const committeeCards = document.querySelectorAll(".committee-card");
+    });
+    // Committee Page JavaScript
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all committee cards
+      const committeeCards = document.querySelectorAll(".committee-card");
 
-        // Add click event listeners to each card
-        committeeCards.forEach((card) => {
-          // Make cards focusable for accessibility
-          card.setAttribute("tabindex", "0");
-          card.setAttribute("role", "button");
-          card.setAttribute("aria-label", "View LinkedIn profile");
+      // Add click event listeners to each card
+      committeeCards.forEach((card) => {
+        // Make cards focusable for accessibility
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", "View LinkedIn profile");
 
-          // Click event for the entire card
-          card.addEventListener("click", function (e) {
+        // Click event for the entire card
+        card.addEventListener("click", function (e) {
+          e.preventDefault();
+          handleCardClick(this);
+        });
+
+        // Keyboard accessibility
+        card.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             handleCardClick(this);
-          });
-
-          // Keyboard accessibility
-          card.addEventListener("keydown", function (e) {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              handleCardClick(this);
-            }
-          });
-
-          // LinkedIn icon specific click handler
-          const linkedinIcon = card.querySelector(".linkedin-icon");
-          if (linkedinIcon) {
-            linkedinIcon.addEventListener("click", function (e) {
-              e.stopPropagation(); // Prevent card click
-              handleCardClick(card);
-            });
           }
-
-          // Add hover effects for better UX
-          card.addEventListener("mouseenter", function () {
-            this.style.zIndex = "10";
-          });
-
-          card.addEventListener("mouseleave", function () {
-            this.style.zIndex = "1";
-          });
         });
 
-        // Function to handle card clicks
-        function handleCardClick(card) {
-          const linkedinUrl = card.getAttribute("data-linkedin");
-          const memberName = card.querySelector(".member-name").textContent;
-
-          if (linkedinUrl && linkedinUrl !== "#") {
-            // Add visual feedback
-            card.classList.add("clicked");
-
-            // Remove the class after animation
-            setTimeout(() => {
-              card.classList.remove("clicked");
-            }, 200);
-
-            // Open LinkedIn profile in new tab
-            window.open(linkedinUrl, "_blank", "noopener,noreferrer");
-
-            // Analytics tracking (if you have analytics setup)
-            if (typeof gtag !== "undefined") {
-              gtag("event", "committee_linkedin_click", {
-                committee_member: memberName,
-                linkedin_url: linkedinUrl,
-              });
-            }
-          } else {
-            // Show a message if no LinkedIn URL is provided
-            showToast(`LinkedIn profile not available for ${memberName}`);
-          }
+        // LinkedIn icon specific click handler
+        const linkedinIcon = card.querySelector(".linkedin-icon");
+        if (linkedinIcon) {
+          linkedinIcon.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent card click
+            handleCardClick(card);
+          });
         }
 
-        // Simple toast notification function
-        function showToast(message) {
-          // Check if toast container exists, if not create it
-          let toastContainer = document.querySelector(".toast-container");
-          if (!toastContainer) {
-            toastContainer = document.createElement("div");
-            toastContainer.className = "toast-container";
-            toastContainer.style.cssText = `
+        // Add hover effects for better UX
+        card.addEventListener("mouseenter", function () {
+          this.style.zIndex = "10";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.zIndex = "1";
+        });
+      });
+
+      // Function to handle card clicks
+      function handleCardClick(card) {
+        const linkedinUrl = card.getAttribute("data-linkedin");
+        const memberName = card.querySelector(".member-name").textContent;
+
+        if (linkedinUrl && linkedinUrl !== "#") {
+          // Add visual feedback
+          card.classList.add("clicked");
+
+          // Remove the class after animation
+          setTimeout(() => {
+            card.classList.remove("clicked");
+          }, 200);
+
+          // Open LinkedIn profile in new tab
+          window.open(linkedinUrl, "_blank", "noopener,noreferrer");
+
+          // Analytics tracking (if you have analytics setup)
+          if (typeof gtag !== "undefined") {
+            gtag("event", "committee_linkedin_click", {
+              committee_member: memberName,
+              linkedin_url: linkedinUrl,
+            });
+          }
+        } else {
+          // Show a message if no LinkedIn URL is provided
+          showToast(`LinkedIn profile not available for ${memberName}`);
+        }
+      }
+
+      // Simple toast notification function
+      function showToast(message) {
+        // Check if toast container exists, if not create it
+        let toastContainer = document.querySelector(".toast-container");
+        if (!toastContainer) {
+          toastContainer = document.createElement("div");
+          toastContainer.className = "toast-container";
+          toastContainer.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
                 z-index: 10000;
                 pointer-events: none;
             `;
-            document.body.appendChild(toastContainer);
-          }
+          document.body.appendChild(toastContainer);
+        }
 
-          // Create toast element
-          const toast = document.createElement("div");
-          toast.className = "toast";
-          toast.textContent = message;
-          toast.style.cssText = `
+        // Create toast element
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.textContent = message;
+        toast.style.cssText = `
             background: #333;
             color: white;
             padding: 12px 20px;
@@ -1803,108 +1837,108 @@
             word-wrap: break-word;
         `;
 
-          toastContainer.appendChild(toast);
+        toastContainer.appendChild(toast);
 
-          // Animate in
+        // Animate in
+        setTimeout(() => {
+          toast.style.opacity = "1";
+          toast.style.transform = "translateX(0)";
+        }, 10);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transform = "translateX(100%)";
           setTimeout(() => {
-            toast.style.opacity = "1";
-            toast.style.transform = "translateX(0)";
-          }, 10);
+            if (toast.parentNode) {
+              toast.parentNode.removeChild(toast);
+            }
+          }, 300);
+        }, 3000);
+      }
 
-          // Remove after 3 seconds
-          setTimeout(() => {
-            toast.style.opacity = "0";
-            toast.style.transform = "translateX(100%)";
-            setTimeout(() => {
-              if (toast.parentNode) {
-                toast.parentNode.removeChild(toast);
-              }
-            }, 300);
-          }, 3000);
+      // Fixed Lazy loading for images
+      function setupLazyLoading() {
+        const images = document.querySelectorAll(".card-image img");
+
+        if ("IntersectionObserver" in window) {
+          const imageObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  const cardImage = img.parentElement;
+
+                  // Show loading spinner
+                  cardImage.classList.add("loading");
+
+                  // Create a new image to test loading
+                  const newImg = new Image();
+
+                  newImg.onload = function () {
+                    // Image loaded successfully
+                    img.src = this.src;
+                    cardImage.classList.remove("loading");
+                    cardImage.classList.add("loaded");
+                  };
+
+                  newImg.onerror = function () {
+                    // Image failed to load
+                    cardImage.classList.remove("loading");
+                    cardImage.classList.add("error");
+
+                    // Set a placeholder image
+                    img.src =
+                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+PC9zdmc+";
+                  };
+
+                  // Start loading the image
+                  newImg.src = img.getAttribute("src");
+
+                  // Stop observing this image
+                  observer.unobserve(img);
+                }
+              });
+            },
+            {
+              rootMargin: "50px 0px", // Start loading 50px before the image comes into view
+              threshold: 0.1,
+            }
+          );
+
+          images.forEach((img) => {
+            // Initially hide the image until it's loaded
+            img.style.opacity = "0";
+            imageObserver.observe(img);
+          });
+        } else {
+          // Fallback for browsers that don't support IntersectionObserver
+          images.forEach((img) => {
+            const cardImage = img.parentElement;
+            cardImage.classList.add("loading");
+
+            img.onload = function () {
+              cardImage.classList.remove("loading");
+              cardImage.classList.add("loaded");
+              this.style.opacity = "1";
+            };
+
+            img.onerror = function () {
+              cardImage.classList.remove("loading");
+              cardImage.classList.add("error");
+              this.src =
+                "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+PC9zdmc+";
+            };
+          });
         }
+      }
 
-        // Fixed Lazy loading for images
-        function setupLazyLoading() {
-          const images = document.querySelectorAll(".card-image img");
+      // Initialize lazy loading
+      setupLazyLoading();
 
-          if ("IntersectionObserver" in window) {
-            const imageObserver = new IntersectionObserver(
-              (entries, observer) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const cardImage = img.parentElement;
-
-                    // Show loading spinner
-                    cardImage.classList.add("loading");
-
-                    // Create a new image to test loading
-                    const newImg = new Image();
-
-                    newImg.onload = function () {
-                      // Image loaded successfully
-                      img.src = this.src;
-                      cardImage.classList.remove("loading");
-                      cardImage.classList.add("loaded");
-                    };
-
-                    newImg.onerror = function () {
-                      // Image failed to load
-                      cardImage.classList.remove("loading");
-                      cardImage.classList.add("error");
-
-                      // Set a placeholder image
-                      img.src =
-                        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+PC9zdmc+";
-                    };
-
-                    // Start loading the image
-                    newImg.src = img.getAttribute("src");
-
-                    // Stop observing this image
-                    observer.unobserve(img);
-                  }
-                });
-              },
-              {
-                rootMargin: "50px 0px", // Start loading 50px before the image comes into view
-                threshold: 0.1,
-              }
-            );
-
-            images.forEach((img) => {
-              // Initially hide the image until it's loaded
-              img.style.opacity = "0";
-              imageObserver.observe(img);
-            });
-          } else {
-            // Fallback for browsers that don't support IntersectionObserver
-            images.forEach((img) => {
-              const cardImage = img.parentElement;
-              cardImage.classList.add("loading");
-
-              img.onload = function () {
-                cardImage.classList.remove("loading");
-                cardImage.classList.add("loaded");
-                this.style.opacity = "1";
-              };
-
-              img.onerror = function () {
-                cardImage.classList.remove("loading");
-                cardImage.classList.add("error");
-                this.src =
-                  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBhdmFpbGFibGU8L3RleHQ+PC9zdmc+";
-              };
-            });
-          }
-        }
-
-        // Initialize lazy loading
-        setupLazyLoading();
-
-        // Add CSS for loading states
-        const style = document.createElement("style");
-        style.textContent = `
+      // Add CSS for loading states
+      const style = document.createElement("style");
+      style.textContent = `
         .card-image.loading::after {
             content: '';
             position: absolute;
@@ -1968,54 +2002,55 @@
             z-index: 1;
         }
     `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
 
-        // Add keyboard navigation between cards
-        function setupKeyboardNavigation() {
-          const cards = Array.from(committeeCards);
+      // Add keyboard navigation between cards
+      function setupKeyboardNavigation() {
+        const cards = Array.from(committeeCards);
 
-          document.addEventListener("keydown", function (e) {
-            if (e.target.classList.contains("committee-card")) {
-              const currentIndex = cards.indexOf(e.target);
+        document.addEventListener("keydown", function (e) {
+          if (e.target.classList.contains("committee-card")) {
+            const currentIndex = cards.indexOf(e.target);
 
-              switch (e.key) {
-                case "ArrowRight":
-                case "ArrowDown":
-                  e.preventDefault();
-                  const nextIndex = (currentIndex + 1) % cards.length;
-                  cards[nextIndex].focus();
-                  break;
+            switch (e.key) {
+              case "ArrowRight":
+              case "ArrowDown":
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % cards.length;
+                cards[nextIndex].focus();
+                break;
 
-                case "ArrowLeft":
-                case "ArrowUp":
-                  e.preventDefault();
-                  const prevIndex =
-                    currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
-                  cards[prevIndex].focus();
-                  break;
+              case "ArrowLeft":
+              case "ArrowUp":
+                e.preventDefault();
+                const prevIndex =
+                  currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
+                cards[prevIndex].focus();
+                break;
 
-                case "Home":
-                  e.preventDefault();
-                  cards[0].focus();
-                  break;
+              case "Home":
+                e.preventDefault();
+                cards[0].focus();
+                break;
 
-                case "End":
-                  e.preventDefault();
-                  cards[cards.length - 1].focus();
-                  break;
-              }
+              case "End":
+                e.preventDefault();
+                cards[cards.length - 1].focus();
+                break;
             }
-          });
-        }
+          }
+        });
+      }
 
-        setupKeyboardNavigation();
+      setupKeyboardNavigation();
 
-        console.log(
-          "Committee page initialized with",
-          committeeCards.length,
-          "committee members"
-        );
-      });
-    </script>
-  </body>
+      console.log(
+        "Committee page initialized with",
+        committeeCards.length,
+        "committee members"
+      );
+    });
+  </script>
+</body>
+
 </html>
