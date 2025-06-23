@@ -1,102 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      IPRECON 2026 - International Power and Renewable Energy Conference
-    </title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <!-- Link to common styles -->
-    <link rel="stylesheet" href="./css/styles.css" />
-    <meta
-      name="description"
-      content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India"
-    />
-    <!-- Page-specific styles embedded -->
-    <style>
-      /* --------------------- CAROUSEL STYLES --------------------- */
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    IPRECON 2026 - International Power and Renewable Energy Conference
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.cdnfonts.com/css/aquire?styles=58838,58840,58839" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- Link to common styles -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <meta name="description"
+    content="International Power and Renewable Energy Conference 2026 - The IEEE Club of 6 Technical Paper Conference hosted at College of Engineering Karunagappally, Kerala, India" />
+  <!-- Page-specific styles embedded -->
+  <style>
+    /* --------------------- CAROUSEL STYLES --------------------- */
+    .carousel {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.712);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 10;
+    }
+
+    .carousel-title {
+      font-size: 42px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      font-weight: bold;
+      font-family: "Montserat", sans-serif;
+      text-transform: uppercase;
+    }
+
+    .carousel-subtitle {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .carousel-date {
+      font-size: 24px;
+    }
+
+    .hybrid-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 30px 0 10px 0;
+    }
+
+    .hybrid-label i {
+      color: #d4a931;
+    }
+
+    /* Carousel Buttons */
+    .carousel-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .carousel-btn {
+      display: inline-block;
+      background-color: #8e24aa;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      border: 2px solid #8e24aa;
+    }
+
+    .carousel-btn:hover {
+      background-color: transparent;
+      color: white;
+      border-color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Carousel Responsive */
+    @media (max-width: 768px) {
       .carousel {
-        position: relative;
-        height: 500px;
-        overflow: hidden;
-      }
-
-      .carousel-slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .carousel-slide.active {
-        opacity: 1;
-      }
-
-      .carousel-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.712);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-        padding: 0 20px;
-        z-index: 10;
+        height: auto !important;
+        min-height: 480px;
       }
 
       .carousel-title {
-        font-size: 42px;
-        margin-bottom: 20px;
-        line-height: 1.3;
-        font-weight: bold;
-        font-family: "Montserat", sans-serif;
-        text-transform: uppercase;
+        font-size: 18px !important;
       }
 
       .carousel-subtitle {
-        font-size: 20px;
-        margin-bottom: 20px;
+        font-size: 14px !important;
       }
 
       .carousel-date {
-        font-size: 24px;
+        font-size: 16px !important;
+      }
+
+      .carousel-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .carousel-btn {
+        width: 180px;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 12px;
       }
 
       .hybrid-label {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-size: 1.2rem;
+        font-size: 0.8rem;
         font-weight: 600;
         color: #ffffff;
         margin: 30px 0 10px 0;
@@ -105,719 +171,572 @@
       .hybrid-label i {
         color: #d4a931;
       }
+    }
 
-      /* Carousel Buttons */
-      .carousel-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 30px;
+    @media (max-width: 480px) {
+      .carousel {
+        min-height: 450px;
       }
 
-      .carousel-btn {
-        display: inline-block;
-        background-color: #8e24aa;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        border: 2px solid #8e24aa;
+      .carousel-title {
+        font-size: 16px !important;
       }
 
-      .carousel-btn:hover {
-        background-color: transparent;
-        color: white;
-        border-color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      .carousel-subtitle {
+        font-size: 12px !important;
       }
 
-      .carousel-btn:active {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      .carousel-date {
+        font-size: 14px !important;
       }
+    }
 
-      /* Carousel Responsive */
-      @media (max-width: 768px) {
-        .carousel {
-          height: auto !important;
-          min-height: 480px;
-        }
+    /* --------------------- IMPORTANT INFORMATION SECTION --------------------- */
+    .important-info-section {
+      background-color: #211021;
+      padding: 40px 50px;
+      margin: 20px auto;
+      max-width: 1200px;
+      border-radius: 8px;
+    }
 
-        .carousel-title {
-          font-size: 18px !important;
-        }
+    .important-info-section h2 {
+      color: white;
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
 
-        .carousel-subtitle {
-          font-size: 14px !important;
-        }
+    .info-item {
+      color: white;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 30px;
+    }
 
-        .carousel-date {
-          font-size: 16px !important;
-        }
+    .info-item:last-child {
+      margin-bottom: 0;
+    }
 
-        .carousel-buttons {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
+    .arrow {
+      margin-right: 5px;
+      position: absolute;
+      left: 0;
+    }
 
-        .carousel-btn {
-          width: 180px;
-          text-align: center;
-          padding: 10px 20px;
-          font-size: 12px;
-        }
-        .hybrid-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: #ffffff;
-          margin: 30px 0 10px 0;
-        }
+    .underline {
+      text-decoration: underline;
+      font-weight: bold;
+    }
 
-        .hybrid-label i {
-          color: #d4a931;
-        }
-      }
+    .gold-link {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: normal;
+    }
 
-      @media (max-width: 480px) {
-        .carousel {
-          min-height: 450px;
-        }
+    .gold-link:hover {
+      color: #d4af37;
+      text-decoration: underline;
+    }
 
-        .carousel-title {
-          font-size: 16px !important;
-        }
+    /* Chain icon for links */
+    .gold-link::after {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
 
-        .carousel-subtitle {
-          font-size: 12px !important;
-        }
-
-        .carousel-date {
-          font-size: 14px !important;
-        }
-      }
-
-      /* --------------------- IMPORTANT INFORMATION SECTION --------------------- */
+    /* Important Info Responsive */
+    @media (max-width: 768px) {
       .important-info-section {
-        background-color: #211021;
-        padding: 40px 50px;
-        margin: 20px auto;
-        max-width: 1200px;
-        border-radius: 8px;
+        padding: 30px 25px;
+        border-radius: 5px;
       }
 
       .important-info-section h2 {
-        color: white;
-        font-size: 32px;
-        margin-bottom: 30px;
-        font-weight: normal;
+        font-size: 28px;
       }
 
       .info-item {
-        color: white;
-        font-size: 18px;
-        line-height: 1.8;
-        margin-bottom: 25px;
-        position: relative;
-        padding-left: 30px;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .important-info-section {
+        padding: 25px 20px;
+        border-radius: 4px;
       }
 
-      .info-item:last-child {
-        margin-bottom: 0;
+      .important-info-section h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
       }
 
-      .arrow {
-        margin-right: 5px;
-        position: absolute;
-        left: 0;
+      .info-item {
+        font-size: 14px;
+        padding-left: 25px;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* --------------------- ABOUT SECTION STYLES --------------------- */
+    .about-section {
+      padding: 60px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .about-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .about-content {
+      flex: 0 0 60%;
+      color: #333;
+      text-align: justify;
+      text-align-last: left;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .about-logo {
+      flex: 0 0 40%;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-logo {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    /* About Section Responsive */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 30px;
       }
 
-      .underline {
-        text-decoration: underline;
-        font-weight: bold;
-      }
-
-      .gold-link {
-        color: #d4af37;
-        text-decoration: none;
-        font-weight: normal;
-      }
-
-      .gold-link:hover {
-        color: #d4af37;
-        text-decoration: underline;
-      }
-
-      /* Chain icon for links */
-      .gold-link::after {
-        content: "";
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-
-      /* Important Info Responsive */
-      @media (max-width: 768px) {
-        .important-info-section {
-          padding: 30px 25px;
-          border-radius: 5px;
-        }
-
-        .important-info-section h2 {
-          font-size: 28px;
-        }
-
-        .info-item {
-          font-size: 16px;
-          line-height: 1.6;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .important-info-section {
-          padding: 25px 20px;
-          border-radius: 4px;
-        }
-
-        .important-info-section h2 {
-          font-size: 24px;
-          margin-bottom: 20px;
-        }
-
-        .info-item {
-          font-size: 14px;
-          padding-left: 25px;
-          margin-bottom: 20px;
-        }
-      }
-
-      /* --------------------- ABOUT SECTION STYLES --------------------- */
       .about-section {
-        padding: 60px 0;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 60px 20px;
+        padding: 40px 20px;
       }
 
       .about-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .about-content {
-        flex: 0 0 60%;
-        color: #333;
-        text-align: justify;
-        text-align-last: left;
-      }
-
-      .about-content p {
-        margin-bottom: 20px;
-        line-height: 1.6;
-        font-size: 16px;
+      .about-content,
+      .about-logo {
+        flex: 0 0 100%;
       }
 
       .about-logo {
-        flex: 0 0 40%;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin-top: 30px;
+        order: -1;
+        /* Move logo to top on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 26px;
       }
 
-      .main-logo {
-        width: 100%;
-        max-width: 450px;
+      .section-title::after {
+        width: 60px;
       }
 
-      /* About Section Responsive */
-      @media (max-width: 768px) {
-        .section-title {
-          font-size: 30px;
-        }
-
-        .about-section {
-          padding: 40px 20px;
-        }
-
-        .about-container {
-          flex-direction: column;
-        }
-
-        .about-content,
-        .about-logo {
-          flex: 0 0 100%;
-        }
-
-        .about-logo {
-          margin-top: 30px;
-          order: -1; /* Move logo to top on smaller screens */
-        }
+      .about-content p {
+        font-size: 15px;
       }
+    }
 
-      @media (max-width: 480px) {
-        .section-title {
-          font-size: 26px;
-        }
-
-        .section-title::after {
-          width: 60px;
-        }
-
-        .about-content p {
-          font-size: 15px;
-        }
-      }
-
-      /* --------------------- ORGANISERS CAROUSEL SECTION --------------------- */
-      .carousel-s {
-        background: linear-gradient(
-          135deg,
+    /* --------------------- ORGANISERS CAROUSEL SECTION --------------------- */
+    .carousel-s {
+      background: linear-gradient(135deg,
           #211021 0%,
           #1a0e1a 50%,
-          #8e24aa 100%
-        );
-        visibility: visible;
-        opacity: 1;
-        padding-top: 80px;
-        min-height: 400px;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
+          #8e24aa 100%);
+      visibility: visible;
+      opacity: 1;
+      padding-top: 80px;
+      min-height: 400px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
 
-      .owl-nav {
-        display: none;
-      }
+    .owl-nav {
+      display: none;
+    }
 
-      .carousel-s-title {
-        margin-bottom: 30px;
-        color: white;
-        text-align: center;
-        font-family: "montserrat", sans-serif;
-      }
+    .carousel-s-title {
+      margin-bottom: 30px;
+      color: white;
+      text-align: center;
+      font-family: "montserrat", sans-serif;
+    }
 
-      /* --------------------- IMPORTANT DATES SECTION - UPDATED TO MATCH CFP DESIGN --------------------- */
+    /* --------------------- IMPORTANT DATES SECTION - UPDATED TO MATCH CFP DESIGN --------------------- */
+    .important-dates-section {
+      padding: 80px 0;
+      background: #f8f9fa;
+      max-width: none;
+      /* Remove max-width to match CFP design */
+      margin: 0;
+      /* Remove auto margin */
+    }
+
+    .important-dates-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .dates-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .date-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .date-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8e24aa, #d4af37);
+    }
+
+    .date-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .date-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #211021;
+      display: block;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .date-number sup {
+      font-size: 1rem;
+      top: -1em;
+    }
+
+    .date-month {
+      font-size: 1.1rem;
+      color: #8e24aa;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .date-event {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .date-status {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .date-status.upcoming {
+      background: #e8f5e8;
+      color: #2e7d32;
+      border: 1px solid #4caf50;
+    }
+
+    .date-status.future {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: 1px solid #2196f3;
+    }
+
+    .date-status.deadline {
+      background: #fff3e0;
+      color: #ef6c00;
+      border: 1px solid #ff9800;
+    }
+
+    .date-status.final {
+      background: #fce4ec;
+      color: #c2185b;
+      border: 1px solid #e91e63;
+    }
+
+    /* Important Dates Responsive */
+    @media (max-width: 1024px) {
+      .dates-timeline {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 768px) {
       .important-dates-section {
-        padding: 80px 0;
-        background: #f8f9fa;
-        max-width: none; /* Remove max-width to match CFP design */
-        margin: 0; /* Remove auto margin */
-      }
-
-      .important-dates-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+        padding: 60px 0;
       }
 
       .dates-timeline {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
       }
 
       .date-card {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .date-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #8e24aa, #d4af37);
-      }
-
-      .date-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        padding: 25px;
       }
 
       .date-number {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #211021;
-        display: block;
-        line-height: 1;
-        margin-bottom: 10px;
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .dates-timeline {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .date-number sup {
-        font-size: 1rem;
-        top: -1em;
+      .date-card {
+        padding: 25px 20px;
       }
 
-      .date-month {
-        font-size: 1.1rem;
-        color: #8e24aa;
-        font-weight: 600;
-        margin-bottom: 15px;
+      .date-number {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (min-width: 1921px) {
+
+      .about-section,
+      .important-info-section {
+        max-width: 70%;
       }
 
-      .date-event {
-        font-size: 1rem;
-        color: #333;
-        margin-bottom: 15px;
-        font-weight: 500;
-        line-height: 1.3;
+      .important-dates-container {
+        max-width: 70%;
       }
+    }
+  </style>
+</head>
 
-      .date-status {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
+<body>
+  <!-- Header -->
+  <div class="header-container">
+    <div class="header-section">
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 black.png" alt="IPRECON 2026 Logo" class="logo" />
+      </a>
+      <div class="separator"></div>
+      <div class="event-info">
+        <span>September 04-06, 2026</span>
+        <span>College of Engineering Karunagappally, Kerala, INDIA</span>
+      </div>
+    </div>
+    <div class="header-section">
+      <span class="sponsor-label" style="visibility: hidden">Powered by</span>
+      <div class="separator"></div>
+      <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    </div>
+  </div>
 
-      .date-status.upcoming {
-        background: #e8f5e8;
-        color: #2e7d32;
-        border: 1px solid #4caf50;
-      }
-
-      .date-status.future {
-        background: #e3f2fd;
-        color: #1565c0;
-        border: 1px solid #2196f3;
-      }
-
-      .date-status.deadline {
-        background: #fff3e0;
-        color: #ef6c00;
-        border: 1px solid #ff9800;
-      }
-
-      .date-status.final {
-        background: #fce4ec;
-        color: #c2185b;
-        border: 1px solid #e91e63;
-      }
-
-      /* Important Dates Responsive */
-      @media (max-width: 1024px) {
-        .dates-timeline {
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 25px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .important-dates-section {
-          padding: 60px 0;
-        }
-
-        .dates-timeline {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 20px;
-          margin-top: 40px;
-        }
-
-        .date-card {
-          padding: 25px;
-        }
-
-        .date-number {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .dates-timeline {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .date-card {
-          padding: 25px 20px;
-        }
-
-        .date-number {
-          font-size: 2.2rem;
-        }
-      }
-
-      @media (min-width: 1921px) {
-        .about-section,
-        .important-info-section {
-          max-width: 70%;
-        }
-
-        .important-dates-container {
-          max-width: 70%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
-        <div class="separator"></div>
-        <div class="event-info">
-          <span>September 04-06, 2026</span>
-          <span>College of Engineering Karunagappally, Kerala, INDIA</span>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="mob-marq marquee-container">
+        <div class="marquee">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Paper Submissions Opening Soon! To View Call for Papers
+            <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            20% of the presented conference papers will be eligible for
+            further review and possible publication in IAS Periodicals.
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Presented papers from IPRECON have been posted in the IEEE Xplore®
+            Digital Library! To View
+            <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
+          </div>
         </div>
       </div>
-      <div class="header-section">
-        <span class="sponsor-label" style="visibility: hidden">Powered by</span>
-        <div class="separator"></div>
-        <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 white.png" alt="IPRECON 2026 Logo" class="brand-logo" id="brandLogo" />
+      </a>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="./index.html">HOME</a></li>
+        <li class="nav-item">
+          <span class="nav-link">ABOUT</span>
+          <div class="dropdown-content">
+            <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
+            <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
+            <a href="./venue.html" class="dropdown-item">VENUE</a>
+            <a href="./kerala.html" class="dropdown-item">KERALA</a>
+            <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
+            <a href="./visa.html" class="dropdown-item">VISA</a>
+            <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
+            <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
+        <li class="nav-item">
+          <span class="nav-link">FOR AUTHORS</span>
+          <div class="dropdown-content">
+            <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
+            <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
+            <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+            <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+            <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+            <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+            <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
+        <li class="nav-item">
+          <span class="nav-link">PROGRAM</span>
+          <div class="dropdown-content">
+            <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+            <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
+            <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
+            <a href="./tracks.html" class="dropdown-item">TRACKS</a>
+            <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
+            <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="./registration.html">REGISTRATION</a>
+        </li>
+        <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <!-- Fixed overlay with text that stays in place -->
+    <div class="carousel-overlay">
+      <h1 class="carousel-title">
+        2026 International Power and Renewable Energy Conference (IPRECON)
+      </h1>
+      <p class="carousel-subtitle">
+        4th edition of India's first and only IEEE Club of 6 Technical Paper
+        Conference
+      </p>
+      <p class="carousel-date">
+        September 04-06, 2026 | College of Engineering Karunagappally, Kerala,
+        India
+      </p>
+      <div class="hybrid-label">
+        [<i class="fas fa-laptop"></i> HYBRID CONFERENCE ]
+      </div>
+
+      <!-- Added Carousel Buttons -->
+      <div class="carousel-buttons">
+        <a href="./cfp.html" class="carousel-btn" data-target="submissions">Call for Papers</a>
+        <a href="./submissions.html" class="carousel-btn" data-target="registration">Submit Paper</a>
+        <a href="./registration.html" class="carousel-btn" data-target="program">Register Now</a>
       </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="mob-marq marquee-container">
-          <div class="marquee">
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Paper Submissions Opening Soon! To View Call for Papers
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              20% of the presented conference papers will be eligible for
-              further review and possible publication in IAS Periodicals.
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Presented papers from IPRECON have been posted in the IEEE Xplore®
-              Digital Library! To View
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
-          </div>
-        </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="./index.html">HOME</a></li>
-          <li class="nav-item">
-            <span class="nav-link">ABOUT</span>
-            <div class="dropdown-content">
-              <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
-              <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
-              <a href="./venue.html" class="dropdown-item">VENUE</a>
-              <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item"
-                >ACCOMMODATION</a
-              >
-              <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item"
-                >SPONSORS & EXHIBITORS</a
-              >
-              <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
-          <li class="nav-item">
-            <span class="nav-link">FOR AUTHORS</span>
-            <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
-              <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item"
-                >IMPORTANT DATES</a
-              >
-              <a href="./camera-ready.html" class="dropdown-item"
-                >CAMERA READY SUBMISSION INSTRUCTIONS</a
-              >
-              <a href="./presentation-guidelines.html" class="dropdown-item"
-                >PRESENTATION GUIDELINES</a
-              >
-              <a href="housing-support.html" class="dropdown-item"
-                >STUDENT HOUSING SUPPORT</a
-              >
-              <a href="./travel-support.html" class="dropdown-item"
-                >STUDENT TRAVEL SUPPORT</a
-              >
-            </div>
-          </li>
-          <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
-          <li class="nav-item">
-            <span class="nav-link">PROGRAM</span>
-            <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item"
-                >INAUGRAL PROGRAM</a
-              >
-              <a href="./distinguished-lectures.html" class="dropdown-item"
-                >DISTINGUISHED LECTURE PROGRAM</a
-              >
-              <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
-              <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item"
-                >SPECIAL SESSIONS</a
-              >
-              <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a href="./registration.html">REGISTRATION</a>
-          </li>
-          <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
-        </ul>
+    <!-- Background slides that change -->
+    <div class="carousel-slide active" style="background-image: url('./assets/img/slide4.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('./assets/img/slide5.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('./assets/img/slide6.jpg')"></div>
+    <div class="carousel-slide" style="background-image: url('./assets/img/slide7.jpg')"></div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="non-mob marquee-container">
+    <div class="marquee">
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Paper Submissions Opening Soon! To View Call for Papers
+        <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
       </div>
-    </nav>
-
-    <!-- Carousel -->
-    <div class="carousel">
-      <!-- Fixed overlay with text that stays in place -->
-      <div class="carousel-overlay">
-        <h1 class="carousel-title">
-          2026 International Power and Renewable Energy Conference (IPRECON)
-        </h1>
-        <p class="carousel-subtitle">
-          4th edition of India's first and only IEEE Club of 6 Technical Paper
-          Conference
-        </p>
-        <p class="carousel-date">
-          September 04-06, 2026 | College of Engineering Karunagappally, Kerala,
-          India
-        </p>
-        <div class="hybrid-label">
-          [<i class="fas fa-laptop"></i> HYBRID CONFERENCE ]
-        </div>
-
-        <!-- Added Carousel Buttons -->
-        <div class="carousel-buttons">
-          <a href="./cfp.html" class="carousel-btn" data-target="submissions"
-            >Call for Papers</a
-          >
-          <a
-            href="./submissions.html"
-            class="carousel-btn"
-            data-target="registration"
-            >Submit Paper</a
-          >
-          <a
-            href="./registration.html"
-            class="carousel-btn"
-            data-target="program"
-            >Register Now</a
-          >
-        </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        20% of the presented conference papers will be eligible for further
+        review and possible publication in IAS Periodicals.
       </div>
-
-      <!-- Background slides that change -->
-      <div
-        class="carousel-slide active"
-        style="background-image: url('./assets/img/slide4.jpg')"
-      ></div>
-      <div
-        class="carousel-slide"
-        style="background-image: url('./assets/img/slide5.jpg')"
-      ></div>
-      <div
-        class="carousel-slide"
-        style="background-image: url('./assets/img/slide6.jpg')"
-      ></div>
-      <div
-        class="carousel-slide"
-        style="background-image: url('./assets/img/slide7.jpg')"
-      ></div>
-    </div>
-
-    <!-- Marquee -->
-    <div class="non-mob marquee-container">
-      <div class="marquee">
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Presented papers from IPRECON have been posted in the IEEE Xplore®
+        Digital Library! To View
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
       </div>
     </div>
+  </div>
 
-    <!-- Spacer for when marquee becomes fixed -->
-    <div id="marquee-placeholder" style="display: none"></div>
-    <main>
-      <!-- Important Information Section - Exact Match -->
-      <section class="important-info-section">
-        <div class="important-info-container">
-          <h2>Important information</h2>
+  <!-- Spacer for when marquee becomes fixed -->
+  <div id="marquee-placeholder" style="display: none"></div>
+  <main>
+    <!-- Important Information Section - Exact Match -->
+    <section class="important-info-section">
+      <div class="important-info-container">
+        <h2>Important information</h2>
 
-          <div class="info-item">
-            <span class="arrow">➔</span>Paper Submissions Opening Soon!
-          </div>
+        <div class="info-item">
+          <span class="arrow">➔</span>Paper Submissions Opening Soon!
+        </div>
 
-          <div class="info-item">
-            <span class="arrow">➔</span>IPRECON 2026 is committed to diversity,
-            equity, and inclusion without boundaries. To ensure accessibility,
-            the conference will be held in hybrid mode. To learn more about our
-            DEI commitment
-            <a href="./dei.html" class="gold-link">Click Here</a>
-          </div>
+        <div class="info-item">
+          <span class="arrow">➔</span>IPRECON 2026 is committed to diversity,
+          equity, and inclusion without boundaries. To ensure accessibility,
+          the conference will be held in hybrid mode. To learn more about our
+          DEI commitment
+          <a href="./dei.html" class="gold-link">Click Here</a>
+        </div>
 
-          <!--div class="info-item">
+        <!--div class="info-item">
             <span class="arrow">➔</span>Attendee & Author Registration Closed!
             <span class="arrow">➔</span>To Read the Presentation Guidelines!
             <a href="./#" class="gold-link">Click Here</a>
@@ -834,310 +753,287 @@
             To Submit <a href="./#" class="gold-link">Click Here!</a>
           </div-->
 
-          <div class="info-item">
-            <span class="arrow">➔</span>The 20% papers presented at the IPRECON
-            2026 conference are eligible to submit the revised versions as
-            post-conference papers for further review and possible publication
-            in the IEEE-IAS Transactions and Magazine (Awaiting IEEE IAS
-            Approval)
-          </div>
-
-          <div class="info-item">
-            <span class="arrow">➔</span>The digital proceedings from previous
-            editions of IPRECON are available in the IEEE Xplore® Digital
-            Library. To View
-            <a
-              href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-              class="gold-link"
-              >Click Here</a
-            >
-          </div>
+        <div class="info-item">
+          <span class="arrow">➔</span>The 20% papers presented at the IPRECON
+          2026 conference are eligible to submit the revised versions as
+          post-conference papers for further review and possible publication
+          in the IEEE-IAS Transactions and Magazine (Awaiting IEEE IAS
+          Approval)
         </div>
-      </section>
 
-      <!-- About IPRECON 2026 Section -->
-      <section class="about-section">
+        <div class="info-item">
+          <span class="arrow">➔</span>The digital proceedings from previous
+          editions of IPRECON are available in the IEEE Xplore® Digital
+          Library. To View
+          <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="gold-link">Click Here</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About IPRECON 2026 Section -->
+    <section class="about-section">
+      <div class="section-title-container">
+        <h2 class="section-title">About</h2>
+      </div>
+
+      <div class="about-container">
+        <div class="about-content">
+          <p>
+            The International Power and Renewable Energy Conference (IPRECON
+            2026) is the 4th edition of India's first and only IEEE IAS Club
+            of 6 Technical Paper Conference, organized by the IEEE Student
+            Branch of the College of Engineering Karunagappally. With
+            technical sponsorship from IEEE IAS and IEEE PES (awaiting final
+            approval)
+          </p>
+
+          <p>
+            IPRECON 2026 serves as a premier platform for students,
+            researchers, and professionals to share cutting-edge innovations.
+            Held from September 04-06, 2026 at the College of Engineering
+            Karunagappally, Kerala, India, the conference will feature
+            technical sessions, keynote talks, and workshops. This edition
+            revolves around the theme "Advancing Power and Renewable Energy
+            Systems through AI, Computing, and Emerging Technologies",
+            highlighting the fusion of power systems, renewable energy,
+            electronics, artificial intelligence, and data science to shape a
+            sustainable, intelligent future. All accepted papers will be
+            submitted for inclusion in the IEEE Xplore® Digital Library,
+            subject to IEEE quality standards.
+          </p>
+        </div>
+
+        <div class="about-logo">
+          <img src="./assets/img/iprecon black.png" alt="IPRECON 2026 Logo" class="main-logo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel-s" id="carousel">
+      <div class="container-fluid">
         <div class="section-title-container">
-          <h2 class="section-title">About</h2>
+          <h2 class="section-title carousel-s-title">Our Organisers</h2>
         </div>
-
-        <div class="about-container">
-          <div class="about-content">
-            <p>
-              The International Power and Renewable Energy Conference (IPRECON
-              2026) is the 4th edition of India's first and only IEEE IAS Club
-              of 6 Technical Paper Conference, organized by the IEEE Student
-              Branch of the College of Engineering Karunagappally. With
-              technical sponsorship from IEEE IAS and IEEE PES (awaiting final
-              approval)
-            </p>
-
-            <p>
-              IPRECON 2026 serves as a premier platform for students,
-              researchers, and professionals to share cutting-edge innovations.
-              Held from September 04-06, 2026 at the College of Engineering
-              Karunagappally, Kerala, India, the conference will feature
-              technical sessions, keynote talks, and workshops. This edition
-              revolves around the theme "Advancing Power and Renewable Energy
-              Systems through AI, Computing, and Emerging Technologies",
-              highlighting the fusion of power systems, renewable energy,
-              electronics, artificial intelligence, and data science to shape a
-              sustainable, intelligent future. All accepted papers will be
-              submitted for inclusion in the IEEE Xplore® Digital Library,
-              subject to IEEE quality standards.
-            </p>
-          </div>
-
-          <div class="about-logo">
-            <img
-              src="./assets/img/iprecon black.png"
-              alt="IPRECON 2026 Logo"
-              class="main-logo"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="carousel-s" id="carousel">
-        <div class="container-fluid">
-          <div class="section-title-container">
-            <h2 class="section-title carousel-s-title">Our Organisers</h2>
-          </div>
-          <div class="roww">
-            <div class="col-md-12">
-              <div id="news-slider" class="owl-carousel">
-                <div class="post-slide">
-                  <div class="post-img">
-                    <img src="./carousel images/IEEEnbg-01.png" alt="" />
-                  </div>
+        <div class="roww">
+          <div class="col-md-12">
+            <div id="news-slider" class="owl-carousel">
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src="./carousel images/IEEEnbg-01.png" alt="" />
                 </div>
+              </div>
 
-                <div class="post-slide">
-                  <div class="post-img">
-                    <img src="./carousel images/Collegenbg-01.png" alt="" />
-                  </div>
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src="./carousel images/Collegenbg-01.png" alt="" />
                 </div>
+              </div>
 
-                <div class="post-slide">
-                  <div class="post-img">
-                    <img src="./carousel images/IEEESBCEKnbg-01.png" alt="" />
-                  </div>
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src="./carousel images/IEEESBCEKnbg-01.png" alt="" />
                 </div>
+              </div>
 
-                <div class="post-slide">
-                  <div class="post-img">
-                    <img src="./carousel images/IASCMD.png" alt="" />
-                  </div>
+              <div class="post-slide">
+                <div class="post-img">
+                  <img src="./carousel images/IASCMD.png" alt="" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Important Dates Section - Updated to match CFP design -->
-      <section class="important-dates-section">
-        <div class="important-dates-container">
-          <div class="section-title-container">
-            <h2 class="section-title">Important Dates</h2>
+    <!-- Important Dates Section - Updated to match CFP design -->
+    <section class="important-dates-section">
+      <div class="important-dates-container">
+        <div class="section-title-container">
+          <h2 class="section-title">Important Dates</h2>
+        </div>
+
+        <div class="dates-timeline">
+          <div class="date-card">
+            <div class="date-number">15<sup>th</sup></div>
+            <div class="date-month">September 2025</div>
+            <div class="date-event">Paper Submission Open</div>
+            <div class="date-status upcoming">Opening Soon</div>
           </div>
 
-          <div class="dates-timeline">
-            <div class="date-card">
-              <div class="date-number">15<sup>th</sup></div>
-              <div class="date-month">September 2025</div>
-              <div class="date-event">Paper Submission Open</div>
-              <div class="date-status upcoming">Opening Soon</div>
-            </div>
-
-            <div class="date-card">
-              <div class="date-number">15<sup>th</sup></div>
-              <div class="date-month">December 2025</div>
-              <div class="date-event">Paper Submission Closes</div>
-              <div class="date-status deadline">Deadline</div>
-            </div>
-
-            <div class="date-card">
-              <div class="date-number">30<sup>th</sup></div>
-              <div class="date-month">April 2026</div>
-              <div class="date-event">Notification of Acceptance</div>
-              <div class="date-status future">Results</div>
-            </div>
-
-            <div class="date-card">
-              <div class="date-number">30<sup>th</sup></div>
-              <div class="date-month">June 2026</div>
-              <div class="date-event">Final Camera-Ready Paper</div>
-              <div class="date-status final">Final Submission</div>
-            </div>
+          <div class="date-card">
+            <div class="date-number">15<sup>th</sup></div>
+            <div class="date-month">December 2025</div>
+            <div class="date-event">Paper Submission Closes</div>
+            <div class="date-status deadline">Deadline</div>
           </div>
-        </div>
-      </section>
-    </main>
-    <!-- Footer section -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Paper Submission</h3>
-          <ul class="footer-links">
-            <li><a href="./cfp.html">Call for Papers</a></li>
-            <li><a href="./submissions.html">Submit a Paper</a></li>
-            <li>
-              <a href="https://www.ieee.org/conferences/publishing/templates"
-                >Paper Template</a
-              >
-            </li>
-          </ul>
-        </div>
 
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
-            <li><a href="./committee.html">Team</a></li>
-            <li><a href="./about-iprecon.html">Legacy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Travel and Accommodation</h3>
-          <ul class="footer-links">
-            <li><a href="./venue.html">Transportation</a></li>
-            <li><a href="./accommodation.html">Hotels</a></li>
-            <li><a href="./kerala.html">Tourism</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <div class="social-icons">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/ieeeceksb/"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/ieeesbcek/"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/ieee_sb_cek"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
+          <div class="date-card">
+            <div class="date-number">30<sup>th</sup></div>
+            <div class="date-month">April 2026</div>
+            <div class="date-event">Notification of Acceptance</div>
+            <div class="date-status future">Results</div>
           </div>
-          <div class="copyright">
-            Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+
+          <div class="date-card">
+            <div class="date-number">30<sup>th</sup></div>
+            <div class="date-month">June 2026</div>
+            <div class="date-event">Final Camera-Ready Paper</div>
+            <div class="date-status final">Final Submission</div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Paper Submission</h3>
+        <ul class="footer-links">
+          <li><a href="./cfp.html">Call for Papers</a></li>
+          <li><a href="./submissions.html">Submit a Paper</a></li>
+          <li>
+            <a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Link to common script -->
-    <script src="./scripts/script.js"></script>
-    <!-- Owl Carousel JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- Page-specific JavaScript embedded -->
-    <script>
-      // Index page specific carousel functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get all carousel slides
-        const slides = document.querySelectorAll(".carousel-slide");
-        const totalSlides = slides.length;
-        console.log("Total slides found:", totalSlides);
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+          <li><a href="./committee.html">Team</a></li>
+          <li><a href="./about-iprecon.html">Legacy</a></li>
+        </ul>
+      </div>
 
-        // Carousel functions
-        let currentSlide = 0;
+      <div class="footer-column">
+        <h3>Travel and Accommodation</h3>
+        <ul class="footer-links">
+          <li><a href="./venue.html">Transportation</a></li>
+          <li><a href="./accommodation.html">Hotels</a></li>
+          <li><a href="./kerala.html">Tourism</a></li>
+        </ul>
+      </div>
 
-        function showSlide(n) {
-          // Make sure n is within bounds
-          if (n >= totalSlides) {
-            n = 0;
-          }
-          if (n < 0) {
-            n = totalSlides - 1;
-          }
+      <div class="footer-column">
+        <div class="social-icons">
+          <a target="_blank" href="https://www.facebook.com/ieeeceksb/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/ieeesbcek/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a target="_blank" href="https://www.instagram.com/ieee_sb_cek" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+        </div>
+      </div>
+    </div>
+  </footer>
 
-          // Remove active class from all slides
-          slides.forEach((slide) => slide.classList.remove("active"));
+  <!-- Link to common script -->
+  <script src="./scripts/script.js"></script>
+  <!-- Owl Carousel JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- Page-specific JavaScript embedded -->
+  <script>
+    // Index page specific carousel functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all carousel slides
+      const slides = document.querySelectorAll(".carousel-slide");
+      const totalSlides = slides.length;
+      console.log("Total slides found:", totalSlides);
 
-          // Add active class to the current slide
-          slides[n].classList.add("active");
+      // Carousel functions
+      let currentSlide = 0;
 
-          // Update current slide index
-          currentSlide = n;
+      function showSlide(n) {
+        // Make sure n is within bounds
+        if (n >= totalSlides) {
+          n = 0;
+        }
+        if (n < 0) {
+          n = totalSlides - 1;
         }
 
-        function nextSlide() {
-          showSlide(currentSlide + 1);
-        }
+        // Remove active class from all slides
+        slides.forEach((slide) => slide.classList.remove("active"));
 
-        function prevSlide() {
-          showSlide(currentSlide - 1);
-        }
+        // Add active class to the current slide
+        slides[n].classList.add("active");
 
-        // Initialize carousel - ensure all 4 slides work
-        if (slides.length > 0) {
-          // Set first slide as active
-          showSlide(0);
+        // Update current slide index
+        currentSlide = n;
+      }
 
-          // Change slides every 5 seconds
-          setInterval(nextSlide, 5000);
-        }
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
 
-        // Enhanced carousel button functionality
-        const carouselButtons = document.querySelectorAll(".carousel-btn");
-        carouselButtons.forEach((button) => {
-          button.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            if (href === "#" || href === "") {
-              e.preventDefault();
-              // Smooth scroll to relevant section if href is just a placeholder
-              const targetSection = this.getAttribute("data-target");
-              if (targetSection) {
-                const section = document.getElementById(targetSection);
-                if (section) {
-                  section.scrollIntoView({ behavior: "smooth" });
-                }
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+
+      // Initialize carousel - ensure all 4 slides work
+      if (slides.length > 0) {
+        // Set first slide as active
+        showSlide(0);
+
+        // Change slides every 5 seconds
+        setInterval(nextSlide, 5000);
+      }
+
+      // Enhanced carousel button functionality
+      const carouselButtons = document.querySelectorAll(".carousel-btn");
+      carouselButtons.forEach((button) => {
+        button.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href === "#" || href === "") {
+            e.preventDefault();
+            // Smooth scroll to relevant section if href is just a placeholder
+            const targetSection = this.getAttribute("data-target");
+            if (targetSection) {
+              const section = document.getElementById(targetSection);
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
               }
             }
-            // If href is a real URL, let it navigate normally
-          });
+          }
+          // If href is a real URL, let it navigate normally
         });
       });
+    });
 
-      // Owl Carousel initialization
-      $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true, // Enable continuous loop
-          margin: 20,
-          nav: false, // Hide navigation arrows
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ], // Custom navigation icons
-          autoplay: true, // Enable autoplay
-          autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
+    // Owl Carousel initialization
+    $(document).ready(function () {
+      $("#news-slider").owlCarousel({
+        items: 4,
+        loop: true, // Enable continuous loop
+        margin: 20,
+        nav: false, // Hide navigation arrows
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>",
+        ], // Custom navigation icons
+        autoplay: true, // Enable autoplay
+        autoplayTimeout: 3000, // Autoplay interval in milliseconds (3 seconds in this example)
+        responsive: {
+          0: {
+            items: 3,
           },
-        });
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+        },
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>

@@ -1,1401 +1,1347 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Presentation Guidelines - IPRECON 2026</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-      /* =================================================================
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentation Guidelines - IPRECON 2026</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    /* =================================================================
          STANDARDIZED BUTTON SYSTEM
          ================================================================= */
-      .iprecon-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 15px 30px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        justify-content: center;
-        line-height: 1;
-        white-space: nowrap;
-        box-sizing: border-box;
-      }
+    .iprecon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      justify-content: center;
+      line-height: 1;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
 
-      .iprecon-btn.large {
-        padding: 18px 40px;
-        font-size: 1.1rem;
-        gap: 15px;
-      }
+    .iprecon-btn.large {
+      padding: 18px 40px;
+      font-size: 1.1rem;
+      gap: 15px;
+    }
 
-      .iprecon-btn.small {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-        gap: 8px;
-      }
+    .iprecon-btn.small {
+      padding: 12px 25px;
+      font-size: 0.9rem;
+      gap: 8px;
+    }
 
-      /* PRIMARY BUTTON */
-      .iprecon-btn.primary {
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        border-color: transparent;
-        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-      }
+    /* PRIMARY BUTTON */
+    .iprecon-btn.primary {
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+    }
 
-      .iprecon-btn.primary:hover {
-        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
-        color: white;
-        text-decoration: none;
-      }
+    .iprecon-btn.primary:hover {
+      background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+      color: white;
+      text-decoration: none;
+    }
 
-      /* SECONDARY BUTTON */
-      .iprecon-btn.secondary {
-        background: #d4af37;
-        color: #211021;
-        border-color: #d4af37;
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-      }
+    /* SECONDARY BUTTON */
+    .iprecon-btn.secondary {
+      background: #d4af37;
+      color: #211021;
+      border-color: #d4af37;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
 
-      .iprecon-btn.secondary:hover {
-        background: transparent;
-        color: #d4af37;
-        border-color: #d4af37;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-        text-decoration: none;
-      }
+    .iprecon-btn.secondary:hover {
+      background: transparent;
+      color: #d4af37;
+      border-color: #d4af37;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      text-decoration: none;
+    }
 
-      /* TERTIARY BUTTON */
-      .iprecon-btn.tertiary {
-        background: transparent;
-        color: white;
-        border-color: white;
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-      }
+    /* TERTIARY BUTTON */
+    .iprecon-btn.tertiary {
+      background: transparent;
+      color: white;
+      border-color: white;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    }
 
-      .iprecon-btn.tertiary:hover {
-        background: white;
-        color: #211021;
-        border-color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        text-decoration: none;
-      }
+    .iprecon-btn.tertiary:hover {
+      background: white;
+      color: #211021;
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
 
-      .iprecon-btn.tertiary.dark-bg {
-        color: #211021;
-        border-color: #211021;
-        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
-      }
+    .iprecon-btn.tertiary.dark-bg {
+      color: #211021;
+      border-color: #211021;
+      box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+    }
 
-      .iprecon-btn.tertiary.dark-bg:hover {
-        background: #211021;
-        color: white;
-        border-color: #211021;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
-      }
+    .iprecon-btn.tertiary.dark-bg:hover {
+      background: #211021;
+      color: white;
+      border-color: #211021;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+    }
 
-      .iprecon-btn-group {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+    .iprecon-btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-      /* =================================================================
+    /* =================================================================
          PRESENTATION GUIDELINES PAGE STYLES
          ================================================================= */
 
-      /* Hero Section */
-      .presentation-hero {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 60px 0;
-        border-bottom: 1px solid #e9ecef;
+    /* Hero Section */
+    .presentation-hero {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 60px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .presentation-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .presentation-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #211021;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .presentation-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background-color: #8e24aa;
+    }
+
+    .presentation-subtitle {
+      font-size: 1.3rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .deadline-highlight {
+      background: linear-gradient(135deg, #211021, #8e24aa);
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 600px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .deadline-highlight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
+
+    .deadline-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .deadline-icon {
+      font-size: 2rem;
+      color: #d4af37;
+    }
+
+    .deadline-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .presentation-content {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .presentation-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* General Guidelines Section */
+    .general-guidelines {
+      background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
+      border-radius: 20px;
+      padding: 50px;
+      margin-bottom: 60px;
+      border-left: 6px solid #8e24aa;
+      text-align: center;
+    }
+
+    .general-guidelines h3 {
+      color: #211021;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .general-guidelines h3 i {
+      color: #8e24aa;
+      font-size: 1.8rem;
+    }
+
+    /* 2x2 Grid for Desktop */
+    .guidelines-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .guideline-item {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #8e24aa;
+      text-align: left;
+    }
+
+    .guideline-item h4 {
+      color: #211021;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .guideline-item h4 i {
+      color: #8e24aa;
+      font-size: 1rem;
+    }
+
+    .guideline-item p {
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Presentation Type Cards - Stacked Vertically */
+    .presentation-types {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .presentation-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      border: 2px solid transparent;
+      max-width: 100%;
+    }
+
+    .presentation-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #8e24aa, #d4af37);
+    }
+
+    .presentation-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      border-color: #8e24aa;
+    }
+
+    .presentation-card-header {
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .presentation-card-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .presentation-card-icon i {
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    .presentation-card-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .presentation-card-content {
+      padding: 40px;
+    }
+
+    .presentation-card-content h4 {
+      color: #211021;
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    /* Improved spacing for presentation cards */
+    .presentation-card-content p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    /* FIXED ARROW ALIGNMENT AND TEXT FORMATTING */
+    .guidelines-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .guidelines-list li {
+      margin-bottom: 18px;
+      padding-left: 0;
+      position: relative;
+      line-height: 1.7;
+      color: #555;
+      display: block;
+      padding-left: 30px;
+    }
+
+    .guidelines-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #8e24aa;
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+    }
+
+    .guidelines-list li strong {
+      color: #211021;
+      font-weight: 600;
+    }
+
+    /* Fix spacing around strong/bold text */
+    .guidelines-list li strong {
+      margin: 0 1px;
+    }
+
+    /* Important Notice Section */
+    .important-notice {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #ff9800;
+      margin: 60px 0;
+    }
+
+    .important-notice h3 {
+      color: #211021;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .important-notice h3 i {
+      color: #ff9800;
+      font-size: 1.8rem;
+    }
+
+    .notice-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .notice-item {
+      background: #fff3e0;
+      border: 1px solid #ff9800;
+      border-radius: 12px;
+      padding: 25px;
+      border-left: 4px solid #ff9800;
+    }
+
+    .notice-item h4 {
+      color: #e65100;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .notice-item p {
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Video Requirements Section - Icon-based 2+3 Layout */
+    .video-requirements {
+      background: linear-gradient(135deg, #211021, #8e24aa);
+      color: white;
+      padding: 50px;
+      border-radius: 20px;
+      margin: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-requirements::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
+
+    .video-requirements-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-requirements h3 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .video-requirements h3 i {
+      color: #d4af37;
+      font-size: 2rem;
+    }
+
+    /* Enhanced 2+3 Grid Layout with Better Styling */
+    .requirements-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .requirements-grid-second-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .requirement-item {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 35px 30px;
+      border-radius: 20px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(15px);
+      text-align: center;
+      transition: all 0.3s ease;
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .requirement-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #d4af37, #f4d03f);
+    }
+
+    .requirement-item:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-8px);
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .requirement-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      border: 3px solid #d4af37;
+      transition: all 0.3s ease;
+    }
+
+    .requirement-item:hover .requirement-icon {
+      transform: scale(1.1);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.4), rgba(212, 175, 55, 0.2));
+    }
+
+    .requirement-icon i {
+      font-size: 2rem;
+      color: #d4af37;
+    }
+
+    .requirement-item h4 {
+      color: #d4af37;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .requirement-item p {
+      color: white;
+      margin: 0;
+      opacity: 0.95;
+      line-height: 1.5;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Action Buttons */
+    .action-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .action-section .iprecon-btn-group {
+      margin-top: 20px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #f8f9fa;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-content h3 {
+      font-size: 2rem;
+      color: #211021;
+      margin-bottom: 20px;
+    }
+
+    .contact-content p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: #211021;
+      transform: translateY(-2px);
+    }
+
+    .contact-link i {
+      font-size: 1.2rem;
+    }
+
+    /* Responsive Design - ENHANCED */
+
+    /* Tablet-specific styles (1024px and below) */
+    @media (max-width: 1024px) {
+
+      /* FIXED: Important Notice section - Force single column on tablets */
+      .notice-highlights {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        max-width: 600px;
+        margin: 30px auto;
       }
 
-      .presentation-hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        text-align: center;
+      .general-guidelines {
+        padding: 40px 30px;
+      }
+
+      .guidelines-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .presentation-hero {
+        padding: 40px 0;
       }
 
       .presentation-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #211021;
-        margin-bottom: 15px;
-        line-height: 1.2;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
+        font-size: 2.5rem;
       }
 
       .presentation-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 4px;
-        background-color: #8e24aa;
+        width: 100px;
+        height: 3px;
       }
 
       .presentation-subtitle {
-        font-size: 1.3rem;
-        color: #6c757d;
-        margin-bottom: 30px;
-        line-height: 1.4;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .deadline-highlight {
-        background: linear-gradient(135deg, #211021, #8e24aa);
-        color: white;
-        padding: 25px;
-        border-radius: 15px;
-        margin: 30px auto;
-        max-width: 600px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .deadline-highlight::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        font-size: 1.1rem;
       }
 
       .deadline-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
       }
 
-      .deadline-icon {
-        font-size: 2rem;
-        color: #d4af37;
-      }
-
-      .deadline-text {
-        font-size: 1.2rem;
-        font-weight: 600;
-      }
-
-      /* Main Content */
-      .presentation-content {
-        padding: 80px 0;
-        background: white;
-      }
-
-      .presentation-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* General Guidelines Section */
       .general-guidelines {
-        background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
-        border-radius: 20px;
-        padding: 50px;
-        margin-bottom: 60px;
-        border-left: 6px solid #8e24aa;
-        text-align: center;
+        padding: 30px 25px;
       }
 
       .general-guidelines h3 {
-        color: #211021;
-        font-size: 2rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .general-guidelines h3 i {
-        color: #8e24aa;
-        font-size: 1.8rem;
-      }
-
-      /* 2x2 Grid for Desktop */
-      .guidelines-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin: 30px 0;
-      }
-
-      .guideline-item {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-left: 4px solid #8e24aa;
-        text-align: left;
-      }
-
-      .guideline-item h4 {
-        color: #211021;
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
+        font-size: 1.6rem;
+        flex-direction: column;
         gap: 10px;
       }
 
-      .guideline-item h4 i {
-        color: #8e24aa;
-        font-size: 1rem;
+      /* Mobile: Single column for guidelines */
+      .guidelines-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
-      .guideline-item p {
-        color: #555;
-        line-height: 1.6;
-        margin: 0;
-        font-size: 0.95rem;
-      }
-
-      /* Presentation Type Cards - Stacked Vertically */
-      .presentation-types {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin: 60px 0;
-      }
-
-      .presentation-card {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        position: relative;
-        border: 2px solid transparent;
+      /* FIXED: Button responsive styles for mobile */
+      .iprecon-btn {
+        min-width: 200px;
         max-width: 100%;
-      }
-
-      .presentation-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 6px;
-        background: linear-gradient(90deg, #8e24aa, #d4af37);
-      }
-
-      .presentation-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-        border-color: #8e24aa;
-      }
-
-      .presentation-card-header {
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        padding: 30px;
+        padding: 14px 25px;
+        font-size: 0.95rem;
+        white-space: normal;
         text-align: center;
-      }
-
-      .presentation-card-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 20px;
       }
 
-      .presentation-card-icon i {
-        font-size: 2.5rem;
-        color: white;
-      }
-
-      .presentation-card-title {
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin: 0;
-      }
-
-      .presentation-card-content {
-        padding: 40px;
-      }
-
-      .presentation-card-content h4 {
-        color: #211021;
-        font-size: 1.3rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-      }
-
-      /* Improved spacing for presentation cards */
-      .presentation-card-content p {
-        color: #555;
-        line-height: 1.7;
-        margin-bottom: 20px;
+      .iprecon-btn.large {
+        padding: 16px 30px;
         font-size: 1rem;
       }
 
-      /* FIXED ARROW ALIGNMENT AND TEXT FORMATTING */
-      .guidelines-list {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-      }
-
-      .guidelines-list li {
-        margin-bottom: 18px;
-        padding-left: 0;
-        position: relative;
-        line-height: 1.7;
-        color: #555;
-        display: block;
-        padding-left: 30px;
-      }
-
-      .guidelines-list li::before {
-        content: "→";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #8e24aa;
-        font-weight: bold;
-        font-size: 1.1rem;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        flex-shrink: 0;
-      }
-
-      .guidelines-list li strong {
-        color: #211021;
-        font-weight: 600;
-      }
-
-      /* Fix spacing around strong/bold text */
-      .guidelines-list li strong {
-        margin: 0 1px;
-      }
-
-      /* Important Notice Section */
-      .important-notice {
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        border-left: 6px solid #ff9800;
-        margin: 60px 0;
-      }
-
-      .important-notice h3 {
-        color: #211021;
-        font-size: 2rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .important-notice h3 i {
-        color: #ff9800;
-        font-size: 1.8rem;
-      }
-
-      .notice-highlights {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-      }
-
-      .notice-item {
-        background: #fff3e0;
-        border: 1px solid #ff9800;
-        border-radius: 12px;
-        padding: 25px;
-        border-left: 4px solid #ff9800;
-      }
-
-      .notice-item h4 {
-        color: #e65100;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-      }
-
-      .notice-item p {
-        color: #333;
-        line-height: 1.6;
-        margin: 0;
-      }
-
-      /* Video Requirements Section - Icon-based 2+3 Layout */
-      .video-requirements {
-        background: linear-gradient(135deg, #211021, #8e24aa);
-        color: white;
-        padding: 50px;
-        border-radius: 20px;
-        margin: 60px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .video-requirements::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-      }
-
-      .video-requirements-content {
-        position: relative;
-        z-index: 2;
-      }
-
-      .video-requirements h3 {
-        font-size: 2.2rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .video-requirements h3 i {
-        color: #d4af37;
-        font-size: 2rem;
-      }
-
-      /* Enhanced 2+3 Grid Layout with Better Styling */
-      .requirements-grid {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin: 40px 0 20px 0;
-        flex-wrap: wrap;
-      }
-
-      .requirements-grid-second-row {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin: 20px 0 40px 0;
-        flex-wrap: wrap;
-      }
-
-      .requirement-item {
-        background: rgba(255, 255, 255, 0.15);
-        padding: 35px 30px;
-        border-radius: 20px;
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        backdrop-filter: blur(15px);
-        text-align: center;
-        transition: all 0.3s ease;
-        width: 280px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .requirement-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #d4af37, #f4d03f);
-      }
-
-      .requirement-item:hover {
-        background: rgba(255, 255, 255, 0.25);
-        transform: translateY(-8px);
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-      }
-
-      .requirement-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1));
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        border: 3px solid #d4af37;
-        transition: all 0.3s ease;
-      }
-
-      .requirement-item:hover .requirement-icon {
-        transform: scale(1.1);
-        background: linear-gradient(135deg, rgba(212, 175, 55, 0.4), rgba(212, 175, 55, 0.2));
-      }
-
-      .requirement-icon i {
-        font-size: 2rem;
-        color: #d4af37;
-      }
-
-      .requirement-item h4 {
-        color: #d4af37;
-        font-size: 1.2rem;
-        margin-bottom: 12px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
-
-      .requirement-item p {
-        color: white;
-        margin: 0;
-        opacity: 0.95;
-        line-height: 1.5;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-
-      /* Action Buttons */
       .action-section {
-        text-align: center;
-        margin: 40px 0;
+        margin: 30px 0;
+        padding: 0 10px;
       }
 
-      .action-section .iprecon-btn-group {
-        margin-top: 20px;
-      }
-
-      /* Contact Section */
-      .contact-section {
-        background: #f8f9fa;
-        padding: 60px 0;
-        text-align: center;
-      }
-
-      .contact-content {
-        max-width: 800px;
+      .action-section .iprecon-btn {
+        width: 100%;
+        max-width: 320px;
         margin: 0 auto;
       }
 
-      .contact-content h3 {
-        font-size: 2rem;
-        color: #211021;
-        margin-bottom: 20px;
+      .presentation-types {
+        gap: 30px;
       }
 
-      .contact-content p {
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 30px;
-        line-height: 1.6;
+      .presentation-card-content {
+        padding: 30px 25px;
+      }
+
+      .video-requirements {
+        padding: 40px 30px;
+      }
+
+      .video-requirements h3 {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      /* Mobile: Single column for requirements - UPDATED */
+      .requirements-grid,
+      .requirements-grid-second-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .requirement-item {
+        width: 100%;
+        max-width: 320px;
+        padding: 30px 25px;
+      }
+
+      .important-notice {
+        padding: 30px 25px;
+      }
+
+      .important-notice h3 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .notice-highlights {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
 
       .contact-info {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
       }
 
       .contact-link {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #8e24aa;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .presentation-title {
+        font-size: 2rem;
       }
 
-      .contact-link:hover {
-        color: #211021;
-        transform: translateY(-2px);
+      .presentation-title::after {
+        width: 80px;
       }
 
-      .contact-link i {
-        font-size: 1.2rem;
+      .general-guidelines h3 {
+        font-size: 1.4rem;
       }
 
-      /* Responsive Design - ENHANCED */
-      
-      /* Tablet-specific styles (1024px and below) */
-      @media (max-width: 1024px) {
-        /* FIXED: Important Notice section - Force single column on tablets */
-        .notice-highlights {
-          grid-template-columns: 1fr !important;
-          gap: 20px;
-          max-width: 600px;
-          margin: 30px auto;
-        }
-        
-        .general-guidelines {
-          padding: 40px 30px;
-        }
-        
-        .guidelines-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
+      .video-requirements h3 {
+        font-size: 1.5rem;
       }
 
-      @media (max-width: 768px) {
-        .presentation-hero {
-          padding: 40px 0;
-        }
-
-        .presentation-title {
-          font-size: 2.5rem;
-        }
-
-        .presentation-title::after {
-          width: 100px;
-          height: 3px;
-        }
-
-        .presentation-subtitle {
-          font-size: 1.1rem;
-        }
-
-        .deadline-content {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .general-guidelines {
-          padding: 30px 25px;
-        }
-
-        .general-guidelines h3 {
-          font-size: 1.6rem;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        /* Mobile: Single column for guidelines */
-        .guidelines-grid {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        /* FIXED: Button responsive styles for mobile */
-        .iprecon-btn {
-          min-width: 200px;
-          max-width: 100%;
-          padding: 14px 25px;
-          font-size: 0.95rem;
-          white-space: normal;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .iprecon-btn.large {
-          padding: 16px 30px;
-          font-size: 1rem;
-        }
-
-        .action-section {
-          margin: 30px 0;
-          padding: 0 10px;
-        }
-
-        .action-section .iprecon-btn {
-          width: 100%;
-          max-width: 320px;
-          margin: 0 auto;
-        }
-
-        .presentation-types {
-          gap: 30px;
-        }
-
-        .presentation-card-content {
-          padding: 30px 25px;
-        }
-
-        .video-requirements {
-          padding: 40px 30px;
-        }
-
-        .video-requirements h3 {
-          font-size: 1.8rem;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        /* Mobile: Single column for requirements - UPDATED */
-        .requirements-grid,
-        .requirements-grid-second-row {
-          flex-direction: column;
-          align-items: center;
-          gap: 25px;
-        }
-
-        .requirement-item {
-          width: 100%;
-          max-width: 320px;
-          padding: 30px 25px;
-        }
-
-        .important-notice {
-          padding: 30px 25px;
-        }
-
-        .important-notice h3 {
-          font-size: 1.6rem;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .notice-highlights {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        .contact-info {
-          flex-direction: column;
-          gap: 20px;
-          align-items: center;
-        }
-
-        .contact-link {
-          justify-content: center;
-        }
+      .important-notice h3 {
+        font-size: 1.4rem;
       }
 
-      @media (max-width: 480px) {
-        .presentation-title {
-          font-size: 2rem;
-        }
-
-        .presentation-title::after {
-          width: 80px;
-        }
-
-        .general-guidelines h3 {
-          font-size: 1.4rem;
-        }
-
-        .video-requirements h3 {
-          font-size: 1.5rem;
-        }
-
-        .important-notice h3 {
-          font-size: 1.4rem;
-        }
-
-        /* FIXED: Ensure buttons work properly on small mobile */
-        .iprecon-btn {
-          min-width: 180px;
-          padding: 12px 20px;
-          font-size: 0.9rem;
-        }
-
-        .iprecon-btn.large {
-          padding: 14px 25px;
-          font-size: 0.95rem;
-        }
-
-        .action-section .iprecon-btn {
-          width: 100%;
-          max-width: 280px;
-        }
+      /* FIXED: Ensure buttons work properly on small mobile */
+      .iprecon-btn {
+        min-width: 180px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
       }
 
-      /* Animation Classes */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
+      .iprecon-btn.large {
+        padding: 14px 25px;
+        font-size: 0.95rem;
       }
 
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
+      .action-section .iprecon-btn {
+        width: 100%;
+        max-width: 280px;
       }
-    </style>
-    <meta
-      name="description"
-      content="Presentation Guidelines for IPRECON 2026 - International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
-        <div class="separator"></div>
-        <div class="event-info">
-          <span>September 04-06, 2026</span>
-          <span>College of Engineering Karunagappally, Kerala, INDIA</span>
-        </div>
-      </div>
-      <div class="header-section">
-        <span class="sponsor-label" style="visibility: hidden">Powered by</span>
-        <div class="separator"></div>
-        <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <meta name="description"
+    content="Presentation Guidelines for IPRECON 2026 - International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-container">
+    <div class="header-section">
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 black.png" alt="IPRECON 2026 Logo" class="logo" />
+      </a>
+      <div class="separator"></div>
+      <div class="event-info">
+        <span>September 04-06, 2026</span>
+        <span>College of Engineering Karunagappally, Kerala, INDIA</span>
       </div>
     </div>
+    <div class="header-section">
+      <span class="sponsor-label" style="visibility: hidden">Powered by</span>
+      <div class="separator"></div>
+      <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    </div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="mob-marq marquee-container">
-          <div class="marquee">
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Paper Submissions Opening Soon! To View Call for Papers
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              20% of the presented conference papers will be eligible for
-              further review and possible publication in IAS Periodicals.
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Presented papers from IPRECON have been posted in the IEEE Xplore®
-              Digital Library! To View
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="mob-marq marquee-container">
+        <div class="marquee">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Paper Submissions Opening Soon! To View Call for Papers
+            <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            20% of the presented conference papers will be eligible for
+            further review and possible publication in IAS Periodicals.
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Presented papers from IPRECON have been posted in the IEEE Xplore®
+            Digital Library! To View
+            <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="./index.html">HOME</a></li>
-          <li class="nav-item">
-            <span class="nav-link">ABOUT</span>
-            <div class="dropdown-content">
-              <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
-              <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
-              <a href="./venue.html" class="dropdown-item">VENUE</a>
-              <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item"
-                >ACCOMMODATION</a
-              >
-              <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item"
-                >SPONSORS & EXHIBITORS</a
-              >
-              <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
-          <li class="nav-item">
-            <span class="nav-link">FOR AUTHORS</span>
-            <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item"
-                >CALL FOR PAPERS</a
-              >
-              <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item"
-                >IMPORTANT DATES</a
-              >
-              <a href="./camera-ready.html" class="dropdown-item"
-                >CAMERA READY SUBMISSION INSTRUCTIONS</a
-              >
-              <a href="./presentation-guidelines.html" class="dropdown-item"
-                >PRESENTATION GUIDELINES</a
-              >
-               <a href="housing-support.html" class="dropdown-item"
-                >STUDENT HOUSING SUPPORT</a
-              >
-              <a href="./travel-support.html" class="dropdown-item"
-                >STUDENT TRAVEL SUPPORT</a
-              >
-            </div>
-          </li>
-          <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
-          <li class="nav-item">
-            <span class="nav-link">PROGRAM</span>
-            <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item"
-                >INAUGRAL PROGRAM</a
-              >
-              <a href="./distinguished-lectures.html" class="dropdown-item"
-                >DISTINGUISHED LECTURE PROGRAM</a
-              >
-              <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
-              <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item"
-                >SPECIAL SESSIONS</a
-              >
-              <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
-          <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
-        </ul>
       </div>
-    </nav>
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 white.png" alt="IPRECON 2026 Logo" class="brand-logo" id="brandLogo" />
+      </a>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="./index.html">HOME</a></li>
+        <li class="nav-item">
+          <span class="nav-link">ABOUT</span>
+          <div class="dropdown-content">
+            <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
+            <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
+            <a href="./venue.html" class="dropdown-item">VENUE</a>
+            <a href="./kerala.html" class="dropdown-item">KERALA</a>
+            <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
+            <a href="./visa.html" class="dropdown-item">VISA</a>
+            <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
+            <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
+        <li class="nav-item">
+          <span class="nav-link">FOR AUTHORS</span>
+          <div class="dropdown-content">
+            <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
+            <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
+            <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+            <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+            <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+            <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+            <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
+        <li class="nav-item">
+          <span class="nav-link">PROGRAM</span>
+          <div class="dropdown-content">
+            <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+            <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
+            <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
+            <a href="./tracks.html" class="dropdown-item">TRACKS</a>
+            <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
+            <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
+        <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Marquee -->
-    <div class="non-mob marquee-container">
-      <div class="marquee">
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
+  <!-- Marquee -->
+  <div class="non-mob marquee-container">
+    <div class="marquee">
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Paper Submissions Opening Soon! To View Call for Papers
+        <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        20% of the presented conference papers will be eligible for further
+        review and possible publication in IAS Periodicals.
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Presented papers from IPRECON have been posted in the IEEE Xplore®
+        Digital Library! To View
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
       </div>
     </div>
+  </div>
 
-    <!-- Spacer for when marquee becomes fixed -->
-    <div id="marquee-placeholder" style="display: none"></div>
+  <!-- Spacer for when marquee becomes fixed -->
+  <div id="marquee-placeholder" style="display: none"></div>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="presentation-hero">
-        <div class="presentation-hero-content">
-          <h1 class="presentation-title">Presentation Guidelines</h1>
-          <p class="presentation-subtitle">
-            Essential guidelines for preparing and submitting your conference presentation
-          </p>
-          
-          <div class="deadline-highlight">
-            <div class="deadline-content">
-              <i class="fas fa-calendar-alt deadline-icon"></i>
-              <div class="deadline-text">
-                <strong>Submission Deadline: August 15, 2026</strong>
-              </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="presentation-hero">
+      <div class="presentation-hero-content">
+        <h1 class="presentation-title">Presentation Guidelines</h1>
+        <p class="presentation-subtitle">
+          Essential guidelines for preparing and submitting your conference presentation
+        </p>
+
+        <div class="deadline-highlight">
+          <div class="deadline-content">
+            <i class="fas fa-calendar-alt deadline-icon"></i>
+            <div class="deadline-text">
+              <strong>Submission Deadline: August 15, 2026</strong>
             </div>
           </div>
-
-          <p style="font-style: italic; color: #6c757d; margin-top: 20px;">
-            Please review the guidelines carefully before submission.
-          </p>
         </div>
-      </section>
 
-      <!-- Main Content -->
-      <section class="presentation-content">
-        <div class="presentation-container">
-          
-          <!-- General Guidelines Section -->
-          <div class="general-guidelines fade-in">
-            <h3>
-              <i class="fas fa-clipboard-list"></i>
-              General Presentation Guidelines
-            </h3>
-            
-            <div class="guidelines-grid">
-              <div class="guideline-item">
-                <h4><i class="fas fa-file-powerpoint"></i> Template Required</h4>
-                <p>Authors must use the provided presentation template for consistency</p>
-              </div>
-              <div class="guideline-item">
-                <h4><i class="fas fa-ban"></i> Logo Restrictions</h4>
-                <p>Inclusion of logos from other organizations or institutions is strictly prohibited</p>
-              </div>
-              <div class="guideline-item">
-                <h4><i class="fas fa-layer-group"></i> No Overlapping</h4>
-                <p>Content should not overlap with conference title or logos in the template</p>
-              </div>
-              <div class="guideline-item">
-                <h4><i class="fas fa-clock"></i> Submission Deadline</h4>
-                <p><strong>August 15, 2026</strong> - No extensions will be granted</p>
-              </div>
+        <p style="font-style: italic; color: #6c757d; margin-top: 20px;">
+          Please review the guidelines carefully before submission.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="presentation-content">
+      <div class="presentation-container">
+
+        <!-- General Guidelines Section -->
+        <div class="general-guidelines fade-in">
+          <h3>
+            <i class="fas fa-clipboard-list"></i>
+            General Presentation Guidelines
+          </h3>
+
+          <div class="guidelines-grid">
+            <div class="guideline-item">
+              <h4><i class="fas fa-file-powerpoint"></i> Template Required</h4>
+              <p>Authors must use the provided presentation template for consistency</p>
             </div>
-
-            <div class="action-section">
-              <a href="./#" class="iprecon-btn secondary large">
-                <i class="fas fa-download"></i>
-                Download Presentation Template
-              </a>
+            <div class="guideline-item">
+              <h4><i class="fas fa-ban"></i> Logo Restrictions</h4>
+              <p>Inclusion of logos from other organizations or institutions is strictly prohibited</p>
+            </div>
+            <div class="guideline-item">
+              <h4><i class="fas fa-layer-group"></i> No Overlapping</h4>
+              <p>Content should not overlap with conference title or logos in the template</p>
+            </div>
+            <div class="guideline-item">
+              <h4><i class="fas fa-clock"></i> Submission Deadline</h4>
+              <p><strong>August 15, 2026</strong> - No extensions will be granted</p>
             </div>
           </div>
 
-          <!-- Presentation Types -->
-          <div class="presentation-types fade-in">
-            
-            <!-- In-Person Presentations -->
-            <div class="presentation-card">
-              <div class="presentation-card-header">
-                <div class="presentation-card-icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <h3 class="presentation-card-title">In-Person Presentations</h3>
-              </div>
-              <div class="presentation-card-content">
-                <h4>Physical Presentation Guidelines:</h4>
-                
-                <ul class="guidelines-list">
-                  <li>To avoid technical issues related to compatibility between laptops and projectors, authors must <strong>prepare and submit their presentation files in advance</strong></li>
-                  <li>Each presentation should be a maximum of <strong>12 minutes</strong>, allowing <strong>3 minutes for live discussion</strong> (Total: 15 minutes)</li>
-                  <li>Only the provided template must be used for preparing the presentation</li>
-                  <li>Presentations should be submitted in <strong>.pptx format</strong> only</li>
-                  <li>A presentation will only be accepted if it adheres to all guidelines and if the listed authors have <strong>completed registration</strong> in advance</li>
-                  <li><strong>Cancellation of tickets is not permitted</strong> if the presenters' details and presentation files have not been submitted</li>
-                  <li>Authors must upload their presentation file to a cloud drive and submit the <strong>editable</strong> link in the form below for download access</li>
-                </ul>
+          <div class="action-section">
+            <a href="./#" class="iprecon-btn secondary large">
+              <i class="fas fa-download"></i>
+              Download Presentation Template
+            </a>
+          </div>
+        </div>
 
-                <div class="action-section">
-                  <div class="iprecon-btn-group">
-                    <a href="./#" class="iprecon-btn primary">
-                      <i class="fas fa-upload"></i>
-                      Submit Presentation & Details
-                    </a>
-                  </div>
-                </div>
+        <!-- Presentation Types -->
+        <div class="presentation-types fade-in">
+
+          <!-- In-Person Presentations -->
+          <div class="presentation-card">
+            <div class="presentation-card-header">
+              <div class="presentation-card-icon">
+                <i class="fas fa-users"></i>
               </div>
+              <h3 class="presentation-card-title">In-Person Presentations</h3>
             </div>
+            <div class="presentation-card-content">
+              <h4>Physical Presentation Guidelines:</h4>
 
-            <!-- Virtual Presentations -->
-            <div class="presentation-card">
-              <div class="presentation-card-header">
-                <div class="presentation-card-icon">
-                  <i class="fas fa-video"></i>
-                </div>
-                <h3 class="presentation-card-title">Virtual Presentations</h3>
-              </div>
-              <div class="presentation-card-content">
-                <h4>Online Presentation Guidelines:</h4>
-                
-                <ul class="guidelines-list">
-                  <li>To prevent technical disruptions, authors are required to <strong>pre-record</strong> their presentations, which will be played during the session</li>
-                  <li>Each recorded video should be <strong>12 minutes</strong> long, with <strong>3 minutes allocated for live discussion</strong> (Total: 15 minutes)</li>
-                  <li>Authors must <strong>keep their video on</strong> while presenting and maintain clear visibility throughout</li>
-                  <li>Video presentations must be submitted in <strong>.mp4 format</strong> only</li>
-                  <li>Recommended software for recording: <strong>OBS Studio, Zoom, Webex, Google Meet</strong></li>
-                  <li>The presenter's video (picture-in-picture) must <strong>not obstruct any logos</strong> in the provided template</li>
-                  <li>Video presentations will only be accepted if they adhere to all guidelines and if the listed authors have <strong>completed registration</strong> in advance</li>
-                  <li><strong>Cancellation of tickets is not permitted</strong> if the presenters' details and video presentations have not been submitted</li>
-                  <li>Authors must upload their video presentation file to a cloud drive and submit the <strong>editable</strong> link in the form below for download access</li>
-                </ul>
+              <ul class="guidelines-list">
+                <li>To avoid technical issues related to compatibility between laptops and projectors, authors must
+                  <strong>prepare and submit their presentation files in advance</strong></li>
+                <li>Each presentation should be a maximum of <strong>12 minutes</strong>, allowing <strong>3 minutes for
+                    live discussion</strong> (Total: 15 minutes)</li>
+                <li>Only the provided template must be used for preparing the presentation</li>
+                <li>Presentations should be submitted in <strong>.pptx format</strong> only</li>
+                <li>A presentation will only be accepted if it adheres to all guidelines and if the listed authors have
+                  <strong>completed registration</strong> in advance</li>
+                <li><strong>Cancellation of tickets is not permitted</strong> if the presenters' details and
+                  presentation files have not been submitted</li>
+                <li>Authors must upload their presentation file to a cloud drive and submit the
+                  <strong>editable</strong> link in the form below for download access</li>
+              </ul>
 
-                <div class="action-section">
-                  <div class="iprecon-btn-group">
-                    <a href="./#" class="iprecon-btn primary">
-                      <i class="fas fa-video"></i>
-                      Submit Video & Details
-                    </a>
-                  </div>
+              <div class="action-section">
+                <div class="iprecon-btn-group">
+                  <a href="./#" class="iprecon-btn primary">
+                    <i class="fas fa-upload"></i>
+                    Submit Presentation & Details
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Important Notice Section - Moved Above Video Requirements -->
-          <div class="important-notice fade-in">
-            <h3>
-              <i class="fas fa-exclamation-triangle"></i>
-              Important Notice
-            </h3>
-            
-            <div class="notice-highlights">
-              <div class="notice-item">
-                <h4>Multiple Authors</h4>
-                <p>If a paper has multiple authors, only those listed in the submission form as presenters will be eligible to present. However, all listed presenters <strong>must be registered in advance</strong>.</p>
+          <!-- Virtual Presentations -->
+          <div class="presentation-card">
+            <div class="presentation-card-header">
+              <div class="presentation-card-icon">
+                <i class="fas fa-video"></i>
               </div>
-              
-              <div class="notice-item">
-                <h4>Certificate Requirements</h4>
-                <p>It is <strong>not mandatory</strong> for all authors to present, but <strong>only those who actively participate in the Q&A session will receive a "Certificate of Presentation."</strong></p>
-              </div>
-              
-              <div class="notice-item">
-                <h4>Co-Author Registration</h4>
-                <p>Co-authors (co-presenters) listed in the form must have a <strong>valid co-author registration</strong> and must be present during both the video presentation and the Q&A session to receive the certificate.</p>
+              <h3 class="presentation-card-title">Virtual Presentations</h3>
+            </div>
+            <div class="presentation-card-content">
+              <h4>Online Presentation Guidelines:</h4>
+
+              <ul class="guidelines-list">
+                <li>To prevent technical disruptions, authors are required to <strong>pre-record</strong> their
+                  presentations, which will be played during the session</li>
+                <li>Each recorded video should be <strong>12 minutes</strong> long, with <strong>3 minutes allocated for
+                    live discussion</strong> (Total: 15 minutes)</li>
+                <li>Authors must <strong>keep their video on</strong> while presenting and maintain clear visibility
+                  throughout</li>
+                <li>Video presentations must be submitted in <strong>.mp4 format</strong> only</li>
+                <li>Recommended software for recording: <strong>OBS Studio, Zoom, Webex, Google Meet</strong></li>
+                <li>The presenter's video (picture-in-picture) must <strong>not obstruct any logos</strong> in the
+                  provided template</li>
+                <li>Video presentations will only be accepted if they adhere to all guidelines and if the listed authors
+                  have <strong>completed registration</strong> in advance</li>
+                <li><strong>Cancellation of tickets is not permitted</strong> if the presenters' details and video
+                  presentations have not been submitted</li>
+                <li>Authors must upload their video presentation file to a cloud drive and submit the
+                  <strong>editable</strong> link in the form below for download access</li>
+              </ul>
+
+              <div class="action-section">
+                <div class="iprecon-btn-group">
+                  <a href="./#" class="iprecon-btn primary">
+                    <i class="fas fa-video"></i>
+                    Submit Video & Details
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Video Requirements Section - Enhanced with Icons -->
-          <div class="video-requirements fade-in">
-            <div class="video-requirements-content">
-              <h3>
-                <i class="fas fa-cog"></i>
-                Video Format Requirements
-              </h3>
-              
-              <!-- First Row: 2 Items -->
-              <div class="requirements-grid">
-                <div class="requirement-item">
-                  <div class="requirement-icon">
-                    <i class="fas fa-clock"></i>
-                  </div>
-                  <h4>Duration</h4>
-                  <p>12 minutes maximum</p>
-                </div>
-                <div class="requirement-item">
-                  <div class="requirement-icon">
-                    <i class="fas fa-desktop"></i>
-                  </div>
-                  <h4>Resolution</h4>
-                  <p>1920x1080 (Full HD) or 1280x720 (HD)</p>
-                </div>
-              </div>
+        <!-- Important Notice Section - Moved Above Video Requirements -->
+        <div class="important-notice fade-in">
+          <h3>
+            <i class="fas fa-exclamation-triangle"></i>
+            Important Notice
+          </h3>
 
-              <!-- Second Row: 3 Items -->
-              <div class="requirements-grid-second-row">
-                <div class="requirement-item">
-                  <div class="requirement-icon">
-                    <i class="fas fa-file-video"></i>
-                  </div>
-                  <h4>File Format</h4>
-                  <p>MP4 with H.264/H.265 video codec</p>
-                </div>
-                <div class="requirement-item">
-                  <div class="requirement-icon">
-                    <i class="fas fa-volume-up"></i>
-                  </div>
-                  <h4>Audio</h4>
-                  <p>AAC audio codec, 44.1 kHz, stereo</p>
-                </div>
-                <div class="requirement-item">
-                  <div class="requirement-icon">
-                    <i class="fas fa-hdd"></i>
-                  </div>
-                  <h4>File Size</h4>
-                  <p>Maximum 500 MB</p>
-                </div>
-              </div>
-              
-              <p style="text-align: center; margin-top: 30px; opacity: 0.95;">
-                For any technical issues with video recording or submission, please contact our technical support team.
+          <div class="notice-highlights">
+            <div class="notice-item">
+              <h4>Multiple Authors</h4>
+              <p>If a paper has multiple authors, only those listed in the submission form as presenters will be
+                eligible to present. However, all listed presenters <strong>must be registered in advance</strong>.</p>
+            </div>
+
+            <div class="notice-item">
+              <h4>Certificate Requirements</h4>
+              <p>It is <strong>not mandatory</strong> for all authors to present, but <strong>only those who actively
+                  participate in the Q&A session will receive a "Certificate of Presentation."</strong></p>
+            </div>
+
+            <div class="notice-item">
+              <h4>Co-Author Registration</h4>
+              <p>Co-authors (co-presenters) listed in the form must have a <strong>valid co-author registration</strong>
+                and must be present during both the video presentation and the Q&A session to receive the certificate.
               </p>
             </div>
           </div>
-
         </div>
-      </section>
 
-      <!-- Contact Section -->
-      <section class="contact-section">
-        <div class="presentation-container">
-          <div class="contact-content fade-in">
-            <h3>Need Help with Presentations?</h3>
-            <p>For any questions about presentation guidelines, technical requirements, or submission process</p>
-            <div class="contact-info">
-              <a href="./mailto:support@iprecon.org" class="contact-link">
-                <i class="fas fa-envelope"></i>
-                support@iprecon.org
-              </a>
-              <a href="./contact.html" class="contact-link">
-                <i class="fas fa-headset"></i>
-                Contact Us
-              </a>
+        <!-- Video Requirements Section - Enhanced with Icons -->
+        <div class="video-requirements fade-in">
+          <div class="video-requirements-content">
+            <h3>
+              <i class="fas fa-cog"></i>
+              Video Format Requirements
+            </h3>
+
+            <!-- First Row: 2 Items -->
+            <div class="requirements-grid">
+              <div class="requirement-item">
+                <div class="requirement-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <h4>Duration</h4>
+                <p>12 minutes maximum</p>
+              </div>
+              <div class="requirement-item">
+                <div class="requirement-icon">
+                  <i class="fas fa-desktop"></i>
+                </div>
+                <h4>Resolution</h4>
+                <p>1920x1080 (Full HD) or 1280x720 (HD)</p>
+              </div>
             </div>
+
+            <!-- Second Row: 3 Items -->
+            <div class="requirements-grid-second-row">
+              <div class="requirement-item">
+                <div class="requirement-icon">
+                  <i class="fas fa-file-video"></i>
+                </div>
+                <h4>File Format</h4>
+                <p>MP4 with H.264/H.265 video codec</p>
+              </div>
+              <div class="requirement-item">
+                <div class="requirement-icon">
+                  <i class="fas fa-volume-up"></i>
+                </div>
+                <h4>Audio</h4>
+                <p>AAC audio codec, 44.1 kHz, stereo</p>
+              </div>
+              <div class="requirement-item">
+                <div class="requirement-icon">
+                  <i class="fas fa-hdd"></i>
+                </div>
+                <h4>File Size</h4>
+                <p>Maximum 500 MB</p>
+              </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px; opacity: 0.95;">
+              For any technical issues with video recording or submission, please contact our technical support team.
+            </p>
           </div>
         </div>
-      </section>
 
-    </main>
+      </div>
+    </section>
 
-    <!-- Footer section -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Paper Submission</h3>
-          <ul class="footer-links">
-            <li><a href="./cfp.html">Call for Papers</a></li>
-            <li><a href="./submissions.html">Submit a Paper</a></li>
-            <li>
-              <a href="https://www.ieee.org/conferences/publishing/templates"
-                >Paper Template</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
-            <li><a href="./committee.html">Team</a></li>
-            <li><a href="./about-iprecon.html">Legacy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Travel and Accommodation</h3>
-          <ul class="footer-links">
-            <li><a href="./venue.html">Transportation</a></li>
-            <li><a href="./accommodation.html">Hotels</a></li>
-            <li><a href="./kerala.html">Tourism</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <div class="social-icons">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/ieeeceksb/"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/ieeesbcek/"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/ieee_sb_cek"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-          <div class="copyright">
-            Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="presentation-container">
+        <div class="contact-content fade-in">
+          <h3>Need Help with Presentations?</h3>
+          <p>For any questions about presentation guidelines, technical requirements, or submission process</p>
+          <div class="contact-info">
+            <a href="./mailto:support@iprecon.org" class="contact-link">
+              <i class="fas fa-envelope"></i>
+              support@iprecon.org
+            </a>
+            <a href="./contact.html" class="contact-link">
+              <i class="fas fa-headset"></i>
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="./scripts/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true,
-          margin: 20,
-          nav: true,
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ],
-          autoplay: true,
-          autoplayTimeout: 3000,
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Paper Submission</h3>
+        <ul class="footer-links">
+          <li><a href="./cfp.html">Call for Papers</a></li>
+          <li><a href="./submissions.html">Submit a Paper</a></li>
+          <li>
+            <a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+          <li><a href="./committee.html">Team</a></li>
+          <li><a href="./about-iprecon.html">Legacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Travel and Accommodation</h3>
+        <ul class="footer-links">
+          <li><a href="./venue.html">Transportation</a></li>
+          <li><a href="./accommodation.html">Hotels</a></li>
+          <li><a href="./kerala.html">Tourism</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <div class="social-icons">
+          <a target="_blank" href="https://www.facebook.com/ieeeceksb/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/ieeesbcek/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a target="_blank" href="https://www.instagram.com/ieee_sb_cek" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#news-slider").owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>",
+        ],
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 3,
           },
-        });
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+        },
+      });
 
-        // Scroll animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        }, observerOptions);
-
-        document.querySelectorAll(".fade-in").forEach((el) => {
-          observer.observe(el);
-        });
-
-        // Smooth scrolling for anchor links
-        $('a[href^="#"]').on("click", function (event) {
-          var target = $(this.getAttribute("href"));
-          if (target.length) {
-            event.preventDefault();
-            $("html, body")
-              .stop()
-              .animate(
-                {
-                  scrollTop: target.offset().top - 100,
-                },
-                1000
-              );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
           }
         });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
       });
-    </script>
-  </body>
+
+      // Smooth scrolling for anchor links
+      $('a[href^="#"]').on("click", function (event) {
+        var target = $(this.getAttribute("href"));
+        if (target.length) {
+          event.preventDefault();
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: target.offset().top - 100,
+              },
+              1000
+            );
+        }
+      });
+    });
+  </script>
+</body>
 </html>

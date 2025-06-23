@@ -1,2249 +1,2143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - IPRECON 2026</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-      /* =================================================================
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - IPRECON 2026</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    /* =================================================================
          STANDARDIZED BUTTON SYSTEM
          ================================================================= */
-      .iprecon-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 15px 30px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        cursor: pointer;
-        font-family: "Montserrat", sans-serif;
-        text-align: center;
-        justify-content: center;
-        line-height: 1;
-        white-space: nowrap;
-      }
+    .iprecon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      justify-content: center;
+      line-height: 1;
+      white-space: nowrap;
+    }
 
-      .iprecon-btn.large {
-        padding: 18px 40px;
-        font-size: 1.1rem;
-        gap: 15px;
-      }
+    .iprecon-btn.large {
+      padding: 18px 40px;
+      font-size: 1.1rem;
+      gap: 15px;
+    }
 
-      .iprecon-btn.small {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-        gap: 8px;
-      }
+    .iprecon-btn.small {
+      padding: 12px 25px;
+      font-size: 0.9rem;
+      gap: 8px;
+    }
 
-      /* PRIMARY BUTTON */
-      .iprecon-btn.primary {
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        border-color: transparent;
-        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-      }
+    /* PRIMARY BUTTON */
+    .iprecon-btn.primary {
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+    }
 
-      .iprecon-btn.primary:hover {
-        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
-        color: white;
-        text-decoration: none;
-      }
+    .iprecon-btn.primary:hover {
+      background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+      color: white;
+      text-decoration: none;
+    }
 
-      /* SECONDARY BUTTON */
-      .iprecon-btn.secondary {
-        background: #d4af37;
-        color: #211021;
-        border-color: #d4af37;
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-      }
+    /* SECONDARY BUTTON */
+    .iprecon-btn.secondary {
+      background: #d4af37;
+      color: #211021;
+      border-color: #d4af37;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
 
-      .iprecon-btn.secondary:hover {
-        background: transparent;
-        color: #d4af37;
-        border-color: #d4af37;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-        text-decoration: none;
-      }
+    .iprecon-btn.secondary:hover {
+      background: transparent;
+      color: #d4af37;
+      border-color: #d4af37;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      text-decoration: none;
+    }
 
-      /* TERTIARY BUTTON */
-      .iprecon-btn.tertiary {
-        background: transparent;
-        color: white;
-        border-color: white;
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-      }
+    /* TERTIARY BUTTON */
+    .iprecon-btn.tertiary {
+      background: transparent;
+      color: white;
+      border-color: white;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    }
 
-      .iprecon-btn.tertiary:hover {
-        background: white;
-        color: #211021;
-        border-color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        text-decoration: none;
-      }
+    .iprecon-btn.tertiary:hover {
+      background: white;
+      color: #211021;
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
 
-      .iprecon-btn.tertiary.dark-bg {
-        color: #211021;
-        border-color: #211021;
-        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
-      }
+    .iprecon-btn.tertiary.dark-bg {
+      color: #211021;
+      border-color: #211021;
+      box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+    }
 
-      .iprecon-btn.tertiary.dark-bg:hover {
-        background: #211021;
-        color: white;
-        border-color: #211021;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
-      }
+    .iprecon-btn.tertiary.dark-bg:hover {
+      background: #211021;
+      color: white;
+      border-color: #211021;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+    }
 
-      .iprecon-btn-group {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+    .iprecon-btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-      /* =================================================================
+    /* =================================================================
          CONTACT PAGE STYLES
          ================================================================= */
 
-      /* Hero Section */
-      .contact-hero {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 60px 0;
-        border-bottom: 1px solid #e9ecef;
+    /* Hero Section */
+    .contact-hero {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 60px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .contact-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #211021;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .contact-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background-color: #8e24aa;
+    }
+
+    .contact-subtitle {
+      font-size: 1.3rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Main Content */
+    .contact-content {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .contact-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Two Column Layout */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Left Column - Contact Information */
+    .contact-info-section {
+      background: #f8f9fa;
+      border-radius: 20px;
+      padding: 40px;
+      height: fit-content;
+    }
+
+    /* Right Column Layout */
+    .contact-form-column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Additional Info Cards Below Form */
+    .additional-contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .info-section-title {
+      font-size: 2rem;
+      color: #211021;
+      margin-bottom: 30px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .info-section-title i {
+      color: #8e24aa;
+      font-size: 1.8rem;
+    }
+
+    /* Map Section */
+    .map-section {
+      margin-bottom: 40px;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 3px solid #8e24aa;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Contact Info Cards */
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .contact-info-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid #8e24aa;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-info-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .contact-info-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-info-icon i {
+      font-size: 1.3rem;
+      color: white;
+    }
+
+    .contact-info-title {
+      font-size: 1.2rem;
+      color: #211021;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .contact-info-details {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .contact-info-details a {
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info-details a:hover {
+      color: #211021;
+      text-decoration: underline;
+    }
+
+    .contact-info-details p {
+      margin: 5px 0;
+    }
+
+    /* Right Column - Contact Form */
+    .contact-form-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border: 2px solid #f1f1f1;
+    }
+
+    .form-section-title {
+      font-size: 2rem;
+      color: #211021;
+      margin-bottom: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .form-section-title i {
+      color: #8e24aa;
+      font-size: 1.8rem;
+    }
+
+    .form-description {
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* Form Styling */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-label i {
+      color: #8e24aa;
+      font-size: 0.9rem;
+    }
+
+    .form-label .required {
+      color: #e74c3c;
+      font-size: 0.8rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      padding: 15px;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: "Montserrat", sans-serif;
+      background: #f8f9fa;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: #8e24aa;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(142, 36, 170, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.5;
+    }
+
+    .character-count {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #6c757d;
+      margin-top: 5px;
+    }
+
+    .character-count.warning {
+      color: #f39c12;
+    }
+
+    .character-count.error {
+      color: #e74c3c;
+    }
+
+    /* Form Validation */
+    .form-input.error,
+    .form-select.error,
+    .form-textarea.error {
+      border-color: #e74c3c;
+      background: #fdf2f2;
+    }
+
+    .error-message {
+      color: #e74c3c;
+      font-size: 0.85rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .error-message.show {
+      display: block;
+    }
+
+    /* Success/Loading States */
+    .form-submit-area {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .form-submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-submit-btn:hover:not(:disabled) {
+      background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+    }
+
+    .form-submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-submit-btn .loading-spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      border-top: 2px solid currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .form-submit-btn.loading .loading-spinner {
+      display: block;
+    }
+
+    .form-submit-btn.loading .btn-text {
+      display: none;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
       }
 
-      .contact-hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        text-align: center;
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .form-note {
+      background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
+      border-left: 4px solid #8e24aa;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Success Message */
+    .success-message {
+      display: none;
+      background: linear-gradient(135deg, #d4edda, #c3e6cb);
+      border: 1px solid #28a745;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: slideInFromTop 0.5s ease-out;
+    }
+
+    .success-message h3 {
+      color: #155724;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .success-message p {
+      color: #155724;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    @keyframes slideInFromTop {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
       }
 
-      .contact-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #211021;
-        margin-bottom: 15px;
-        line-height: 1.2;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .contact-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 4px;
-        background-color: #8e24aa;
-      }
+    /* Quick Contact Section */
+    .quick-contact-section {
+      background: linear-gradient(135deg, #211021, #8e24aa);
+      color: white;
+      padding: 60px 0;
+      margin-top: 60px;
+      position: relative;
+      overflow: hidden;
+    }
 
-      .contact-subtitle {
-        font-size: 1.3rem;
-        color: #6c757d;
-        margin-bottom: 30px;
-        line-height: 1.4;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    .quick-contact-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
 
-      /* Main Content */
-      .contact-content {
-        padding: 80px 0;
-        background: white;
-      }
+    .quick-contact-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-      .contact-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+    .quick-contact-title {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
 
-      /* Two Column Layout */
+    .quick-contact-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      opacity: 0.95;
+      line-height: 1.6;
+    }
+
+    .quick-contact-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .quick-contact-btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 30px;
+      background: white;
+      color: #211021;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid white;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      justify-content: center;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .quick-contact-btn-white:hover {
+      background: transparent;
+      color: white;
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
+
+    /* =================================================================
+         PHONE NUMBERS POPUP MODAL
+         ================================================================= */
+    .phone-popup-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .phone-popup-modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .phone-popup-content {
+      background: white;
+      border-radius: 20px;
+      padding: 0;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+    }
+
+    .phone-popup-modal.show .phone-popup-content {
+      transform: scale(1);
+    }
+
+    /* Close button */
+    .phone-popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .phone-popup-close:hover {
+      background: rgba(0, 0, 0, 0.2);
+      color: #333;
+      transform: scale(1.1);
+    }
+
+    /* Popup header */
+    .phone-popup-header {
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      padding: 30px 25px 25px 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .phone-popup-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
+
+    .phone-popup-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .phone-popup-title i {
+      color: #d4af37;
+      font-size: 1.6rem;
+    }
+
+    .phone-popup-subtitle {
+      font-size: 1rem;
+      opacity: 0.95;
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+
+    /* Phone numbers list */
+    .phone-numbers-list {
+      padding: 30px;
+    }
+
+    .phone-number-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      margin-bottom: 15px;
+      background: #f8f9fa;
+      border-radius: 15px;
+      border-left: 4px solid #8e24aa;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .phone-number-item:hover {
+      background: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-left-color: #d4af37;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .phone-number-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .phone-number-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .phone-number-icon i {
+      font-size: 1.3rem;
+      color: white;
+    }
+
+    .phone-number-details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .phone-number-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #211021;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+
+    .phone-number-value {
+      font-size: 1rem;
+      color: #8e24aa;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .phone-call-icon {
+      color: #28a745;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .phone-number-item:hover .phone-call-icon {
+      transform: scale(1.2);
+      color: #25a745;
+    }
+
+    /* Email Card Display Control */
+    .email-card-mobile {
+      display: none;
+    }
+
+    .email-card-desktop {
+      display: block;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
       .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      /* Left Column - Contact Information */
-      .contact-info-section {
-        background: #f8f9fa;
-        border-radius: 20px;
-        padding: 40px;
-        height: fit-content;
-      }
-
-      /* Right Column Layout */
-      .contact-form-column {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 40px;
       }
 
-      /* Additional Info Cards Below Form */
+      .contact-info-section {
+        order: 2;
+      }
+
+      .contact-form-column {
+        order: 1;
+      }
+
       .additional-contact-cards {
-        display: flex;
+        order: 3;
+      }
+
+      /* Show mobile email card, hide desktop one */
+      .email-card-mobile {
+        display: block;
+      }
+
+      .email-card-desktop {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 40px 0;
+      }
+
+      .contact-title {
+        font-size: 2.5rem;
+      }
+
+      .contact-title::after {
+        width: 100px;
+        height: 3px;
+      }
+
+      .contact-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .contact-content {
+        padding: 60px 0;
+      }
+
+      .contact-info-section,
+      .contact-form-section {
+        padding: 30px 25px;
+      }
+
+      .info-section-title,
+      .form-section-title {
+        font-size: 1.6rem;
         flex-direction: column;
-        gap: 25px;
-      }
-
-      .info-section-title {
-        font-size: 2rem;
-        color: #211021;
-        margin-bottom: 30px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .info-section-title i {
-        color: #8e24aa;
-        font-size: 1.8rem;
-      }
-
-      /* Map Section */
-      .map-section {
-        margin-bottom: 40px;
+        gap: 10px;
+        text-align: center;
       }
 
       .map-container {
-        width: 100%;
-        height: 300px;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        border: 3px solid #8e24aa;
-      }
-
-      .map-container iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      /* Contact Info Cards */
-      .contact-info-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-      }
-
-      .contact-info-card {
-        background: white;
-        border-radius: 15px;
-        padding: 25px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        border-left: 4px solid #8e24aa;
-      }
-
-      .contact-info-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-      }
-
-      .contact-info-header {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 15px;
-      }
-
-      .contact-info-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .contact-info-icon i {
-        font-size: 1.3rem;
-        color: white;
-      }
-
-      .contact-info-title {
-        font-size: 1.2rem;
-        color: #211021;
-        font-weight: 600;
-        margin: 0;
-      }
-
-      .contact-info-details {
-        color: #555;
-        line-height: 1.6;
-      }
-
-      .contact-info-details a {
-        color: #8e24aa;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-
-      .contact-info-details a:hover {
-        color: #211021;
-        text-decoration: underline;
-      }
-
-      .contact-info-details p {
-        margin: 5px 0;
-      }
-
-      /* Right Column - Contact Form */
-      .contact-form-section {
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        border: 2px solid #f1f1f1;
-      }
-
-      .form-section-title {
-        font-size: 2rem;
-        color: #211021;
-        margin-bottom: 20px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .form-section-title i {
-        color: #8e24aa;
-        font-size: 1.8rem;
-      }
-
-      .form-description {
-        color: #666;
-        margin-bottom: 30px;
-        line-height: 1.6;
-        font-size: 1.05rem;
-      }
-
-      /* Form Styling */
-      .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+        height: 250px;
       }
 
       .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .form-group.full-width {
-        grid-column: 1 / -1;
-      }
-
-      .form-label {
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 8px;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .form-label i {
-        color: #8e24aa;
-        font-size: 0.9rem;
-      }
-
-      .form-label .required {
-        color: #e74c3c;
-        font-size: 0.8rem;
+        grid-template-columns: 1fr;
+        gap: 15px;
       }
 
       .form-input,
       .form-select,
       .form-textarea {
-        padding: 15px;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        font-family: "Montserrat", sans-serif;
-        background: #f8f9fa;
-      }
-
-      .form-input:focus,
-      .form-select:focus,
-      .form-textarea:focus {
-        outline: none;
-        border-color: #8e24aa;
-        background: white;
-        box-shadow: 0 0 0 3px rgba(142, 36, 170, 0.1);
-      }
-
-      .form-textarea {
-        resize: vertical;
-        min-height: 120px;
-        line-height: 1.5;
-      }
-
-      .character-count {
-        text-align: right;
-        font-size: 0.85rem;
-        color: #6c757d;
-        margin-top: 5px;
-      }
-
-      .character-count.warning {
-        color: #f39c12;
-      }
-
-      .character-count.error {
-        color: #e74c3c;
-      }
-
-      /* Form Validation */
-      .form-input.error,
-      .form-select.error,
-      .form-textarea.error {
-        border-color: #e74c3c;
-        background: #fdf2f2;
-      }
-
-      .error-message {
-        color: #e74c3c;
-        font-size: 0.85rem;
-        margin-top: 5px;
-        display: none;
-      }
-
-      .error-message.show {
-        display: block;
-      }
-
-      /* Success/Loading States */
-      .form-submit-area {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
+        padding: 12px;
       }
 
       .form-submit-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        padding: 18px 40px;
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .form-submit-btn:hover:not(:disabled) {
-        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
-      }
-
-      .form-submit-btn:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-        transform: none;
-      }
-
-      .form-submit-btn .loading-spinner {
-        display: none;
-        width: 20px;
-        height: 20px;
-        border: 2px solid transparent;
-        border-top: 2px solid currentColor;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      .form-submit-btn.loading .loading-spinner {
-        display: block;
-      }
-
-      .form-submit-btn.loading .btn-text {
-        display: none;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      .form-note {
-        background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
-        border-left: 4px solid #8e24aa;
-        padding: 15px;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        color: #555;
-        line-height: 1.5;
-      }
-
-      /* Success Message */
-      .success-message {
-        display: none;
-        background: linear-gradient(135deg, #d4edda, #c3e6cb);
-        border: 1px solid #28a745;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      .success-message.show {
-        display: block;
-        animation: slideInFromTop 0.5s ease-out;
-      }
-
-      .success-message h3 {
-        color: #155724;
-        margin-bottom: 10px;
-        font-size: 1.3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-      }
-
-      .success-message p {
-        color: #155724;
-        margin: 0;
-        line-height: 1.5;
-      }
-
-      @keyframes slideInFromTop {
-        0% {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Quick Contact Section */
-      .quick-contact-section {
-        background: linear-gradient(135deg, #211021, #8e24aa);
-        color: white;
-        padding: 60px 0;
-        margin-top: 60px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .quick-contact-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-      }
-
-      .quick-contact-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
+        padding: 16px 35px;
+        font-size: 1rem;
       }
 
       .quick-contact-title {
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-        font-weight: 600;
-      }
-
-      .quick-contact-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 40px;
-        opacity: 0.95;
-        line-height: 1.6;
+        font-size: 1.8rem;
       }
 
       .quick-contact-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .quick-contact-btn-white {
-        display: inline-flex;
+        flex-direction: column;
         align-items: center;
-        gap: 12px;
-        padding: 15px 30px;
-        background: white;
-        color: #211021;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        border: 2px solid white;
-        font-family: "Montserrat", sans-serif;
-        text-align: center;
-        justify-content: center;
-        line-height: 1;
-        white-space: nowrap;
-        cursor: pointer;
       }
 
-      .quick-contact-btn-white:hover {
-        background: transparent;
-        color: white;
-        border-color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        text-decoration: none;
-      }
-
-      /* =================================================================
-         PHONE NUMBERS POPUP MODAL
-         ================================================================= */
-      .phone-popup-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
+      .quick-contact-btn {
         width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        align-items: center;
+        max-width: 280px;
         justify-content: center;
-        z-index: 9999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
       }
 
-      .phone-popup-modal.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
+      /* Popup responsive */
       .phone-popup-content {
-        background: white;
-        border-radius: 20px;
-        padding: 0;
-        max-width: 500px;
-        width: 90%;
-        max-height: 90vh;
-        overflow-y: auto;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        position: relative;
-        transform: scale(0.9);
-        transition: transform 0.3s ease;
-        overflow: hidden;
+        max-width: 95%;
+        margin: 15px;
       }
 
-      .phone-popup-modal.show .phone-popup-content {
-        transform: scale(1);
-      }
-
-      /* Close button */
-      .phone-popup-close {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        background: rgba(0, 0, 0, 0.1);
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.3s ease;
-        font-size: 1.2rem;
-        color: #666;
-      }
-
-      .phone-popup-close:hover {
-        background: rgba(0, 0, 0, 0.2);
-        color: #333;
-        transform: scale(1.1);
-      }
-
-      /* Popup header */
       .phone-popup-header {
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        padding: 30px 25px 25px 25px;
-        text-align: center;
-        position: relative;
-      }
-
-      .phone-popup-header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        padding: 25px 20px 20px 20px;
       }
 
       .phone-popup-title {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-        font-weight: 600;
-        position: relative;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 10px;
       }
 
-      .phone-popup-title i {
-        color: #d4af37;
-        font-size: 1.6rem;
-      }
-
-      .phone-popup-subtitle {
-        font-size: 1rem;
-        opacity: 0.95;
-        position: relative;
-        z-index: 2;
-        margin: 0;
-      }
-
-      /* Phone numbers list */
       .phone-numbers-list {
-        padding: 30px;
+        padding: 25px 20px;
       }
 
       .phone-number-item {
-        display: flex;
+        padding: 18px 15px;
+        flex-direction: row;
         align-items: center;
-        gap: 15px;
-        padding: 20px;
-        margin-bottom: 15px;
-        background: #f8f9fa;
-        border-radius: 15px;
-        border-left: 4px solid #8e24aa;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .phone-number-item:hover {
-        background: white;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        border-left-color: #d4af37;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .phone-number-item:last-child {
-        margin-bottom: 0;
       }
 
       .phone-number-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      .phone-number-icon i {
-        font-size: 1.3rem;
-        color: white;
-      }
-
-      .phone-number-details {
-        flex: 1;
-        min-width: 0;
+        width: 45px;
+        height: 45px;
       }
 
       .phone-number-name {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #211021;
-        margin-bottom: 5px;
-        line-height: 1.2;
+        font-size: 1rem;
       }
 
       .phone-number-value {
-        font-size: 1rem;
-        color: #8e24aa;
-        font-weight: 500;
-        margin: 0;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-title {
+        font-size: 2rem;
+      }
+
+      .contact-title::after {
+        width: 80px;
+      }
+
+      .contact-info-section,
+      .contact-form-section {
+        padding: 25px 20px;
+      }
+
+      .info-section-title,
+      .form-section-title {
+        font-size: 1.4rem;
+      }
+
+      .contact-info-card {
+        padding: 20px;
+      }
+
+      .map-container {
+        height: 200px;
+      }
+
+      .quick-contact-title {
+        font-size: 1.6rem;
+      }
+
+      .quick-contact-section {
+        padding: 40px 0;
+      }
+
+      /* Popup mobile */
+      .phone-popup-content {
+        max-width: 98%;
+        margin: 10px;
+        border-radius: 15px;
+      }
+
+      .phone-popup-header {
+        padding: 20px 15px 18px 15px;
+      }
+
+      .phone-popup-title {
+        font-size: 1.3rem;
+      }
+
+      .phone-popup-close {
+        width: 35px;
+        height: 35px;
+        top: 12px;
+        right: 12px;
+        font-size: 1.1rem;
+      }
+
+      .phone-numbers-list {
+        padding: 20px 15px;
+      }
+
+      .phone-number-item {
+        padding: 15px 12px;
+        margin-bottom: 12px;
+      }
+
+      .phone-number-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .phone-number-icon i {
+        font-size: 1.1rem;
+      }
+
+      .phone-number-name {
+        font-size: 0.95rem;
+      }
+
+      .phone-number-value {
+        font-size: 0.9rem;
       }
 
       .phone-call-icon {
-        color: #28a745;
-        font-size: 1.5rem;
-        flex-shrink: 0;
-        margin-left: 10px;
-        transition: all 0.3s ease;
+        font-size: 1.3rem;
       }
+    }
 
-      .phone-number-item:hover .phone-call-icon {
-        transform: scale(1.2);
-        color: #25a745;
-      }
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
 
-      /* Email Card Display Control */
-      .email-card-mobile {
-        display: none;
-      }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-      .email-card-desktop {
-        display: block;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .contact-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-
-        .contact-info-section {
-          order: 2;
-        }
-
-        .contact-form-column {
-          order: 1;
-        }
-
-        .additional-contact-cards {
-          order: 3;
-        }
-
-        /* Show mobile email card, hide desktop one */
-        .email-card-mobile {
-          display: block;
-        }
-
-        .email-card-desktop {
-          display: none;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .contact-hero {
-          padding: 40px 0;
-        }
-
-        .contact-title {
-          font-size: 2.5rem;
-        }
-
-        .contact-title::after {
-          width: 100px;
-          height: 3px;
-        }
-
-        .contact-subtitle {
-          font-size: 1.1rem;
-        }
-
-        .contact-content {
-          padding: 60px 0;
-        }
-
-        .contact-info-section,
-        .contact-form-section {
-          padding: 30px 25px;
-        }
-
-        .info-section-title,
-        .form-section-title {
-          font-size: 1.6rem;
-          flex-direction: column;
-          gap: 10px;
-          text-align: center;
-        }
-
-        .map-container {
-          height: 250px;
-        }
-
-        .form-row {
-          grid-template-columns: 1fr;
-          gap: 15px;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-          padding: 12px;
-        }
-
-        .form-submit-btn {
-          padding: 16px 35px;
-          font-size: 1rem;
-        }
-
-        .quick-contact-title {
-          font-size: 1.8rem;
-        }
-
-        .quick-contact-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .quick-contact-btn {
-          width: 100%;
-          max-width: 280px;
-          justify-content: center;
-        }
-
-        /* Popup responsive */
-        .phone-popup-content {
-          max-width: 95%;
-          margin: 15px;
-        }
-
-        .phone-popup-header {
-          padding: 25px 20px 20px 20px;
-        }
-
-        .phone-popup-title {
-          font-size: 1.5rem;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .phone-numbers-list {
-          padding: 25px 20px;
-        }
-
-        .phone-number-item {
-          padding: 18px 15px;
-          flex-direction: row;
-          align-items: center;
-        }
-
-        .phone-number-icon {
-          width: 45px;
-          height: 45px;
-        }
-
-        .phone-number-name {
-          font-size: 1rem;
-        }
-
-        .phone-number-value {
-          font-size: 0.95rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .contact-title {
-          font-size: 2rem;
-        }
-
-        .contact-title::after {
-          width: 80px;
-        }
-
-        .contact-info-section,
-        .contact-form-section {
-          padding: 25px 20px;
-        }
-
-        .info-section-title,
-        .form-section-title {
-          font-size: 1.4rem;
-        }
-
-        .contact-info-card {
-          padding: 20px;
-        }
-
-        .map-container {
-          height: 200px;
-        }
-
-        .quick-contact-title {
-          font-size: 1.6rem;
-        }
-
-        .quick-contact-section {
-          padding: 40px 0;
-        }
-
-        /* Popup mobile */
-        .phone-popup-content {
-          max-width: 98%;
-          margin: 10px;
-          border-radius: 15px;
-        }
-
-        .phone-popup-header {
-          padding: 20px 15px 18px 15px;
-        }
-
-        .phone-popup-title {
-          font-size: 1.3rem;
-        }
-
-        .phone-popup-close {
-          width: 35px;
-          height: 35px;
-          top: 12px;
-          right: 12px;
-          font-size: 1.1rem;
-        }
-
-        .phone-numbers-list {
-          padding: 20px 15px;
-        }
-
-        .phone-number-item {
-          padding: 15px 12px;
-          margin-bottom: 12px;
-        }
-
-        .phone-number-icon {
-          width: 40px;
-          height: 40px;
-        }
-
-        .phone-number-icon i {
-          font-size: 1.1rem;
-        }
-
-        .phone-number-name {
-          font-size: 0.95rem;
-        }
-
-        .phone-number-value {
-          font-size: 0.9rem;
-        }
-
-        .phone-call-icon {
-          font-size: 1.3rem;
-        }
-      }
-
-      /* Animation Classes */
-      .fade-in {
+    /* Popup animation keyframes */
+    @keyframes phonePopupSlideIn {
+      0% {
         opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
+        transform: scale(0.8) translateY(-20px);
       }
 
-      .fade-in.visible {
+      100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1) translateY(0);
       }
+    }
 
-      /* Popup animation keyframes */
-      @keyframes phonePopupSlideIn {
-        0% {
-          opacity: 0;
-          transform: scale(0.8) translateY(-20px);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
-      }
+    .phone-popup-modal.show .phone-popup-content {
+      animation: phonePopupSlideIn 0.4s ease-out;
+    }
+  </style>
+  <meta name="description"
+    content="Contact IPRECON 2026 - Get in touch with the International Power and Renewable Energy Conference team at College of Engineering Karunagappally, Kerala, India" />
+</head>
 
-      .phone-popup-modal.show .phone-popup-content {
-        animation: phonePopupSlideIn 0.4s ease-out;
-      }
-    </style>
-    <meta
-      name="description"
-      content="Contact IPRECON 2026 - Get in touch with the International Power and Renewable Energy Conference team at College of Engineering Karunagappally, Kerala, India"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
-        <div class="separator"></div>
-        <div class="event-info">
-          <span>September 04-06, 2026</span>
-          <span>College of Engineering Karunagappally, Kerala, INDIA</span>
-        </div>
-      </div>
-      <div class="header-section">
-        <span class="sponsor-label" style="visibility: hidden">Powered by</span>
-        <div class="separator"></div>
-        <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+<body>
+  <!-- Header -->
+  <div class="header-container">
+    <div class="header-section">
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 black.png" alt="IPRECON 2026 Logo" class="logo" />
+      </a>
+      <div class="separator"></div>
+      <div class="event-info">
+        <span>September 04-06, 2026</span>
+        <span>College of Engineering Karunagappally, Kerala, INDIA</span>
       </div>
     </div>
+    <div class="header-section">
+      <span class="sponsor-label" style="visibility: hidden">Powered by</span>
+      <div class="separator"></div>
+      <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    </div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="mob-marq marquee-container">
-          <div class="marquee">
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Paper Submissions Opening Soon! To View Call for Papers
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="mob-marq marquee-container">
+        <div class="marquee">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Paper Submissions Opening Soon! To View Call for Papers
+            <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
+      </div>
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 white.png" alt="IPRECON 2026 Logo" class="brand-logo" id="brandLogo" />
+      </a>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="./index.html">HOME</a></li>
+        <li class="nav-item">
+          <span class="nav-link">ABOUT</span>
+          <div class="dropdown-content">
+            <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
+            <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
+            <a href="./venue.html" class="dropdown-item">VENUE</a>
+            <a href="./kerala.html" class="dropdown-item">KERALA</a>
+            <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
+            <a href="./visa.html" class="dropdown-item">VISA</a>
+            <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
+            <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
+        <li class="nav-item">
+          <span class="nav-link">FOR AUTHORS</span>
+          <div class="dropdown-content">
+            <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
+            <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
+            <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+            <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+            <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+            <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+            <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
+        <li class="nav-item">
+          <span class="nav-link">PROGRAM</span>
+          <div class="dropdown-content">
+            <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+            <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
+            <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
+            <a href="./tracks.html" class="dropdown-item">TRACKS</a>
+            <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
+            <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
+        <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Marquee -->
+  <div class="non-mob marquee-container">
+    <div class="marquee">
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Paper Submissions Opening Soon! To View Call for Papers
+        <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        20% of the presented conference papers will be eligible for further
+        review and possible publication in IAS Periodicals.
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Presented papers from IPRECON have been posted in the IEEE Xplore®
+        Digital Library! To View
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spacer for when marquee becomes fixed -->
+  <div id="marquee-placeholder" style="display: none"></div>
+
+  <!-- Phone Numbers Popup Modal -->
+  <div class="phone-popup-modal" id="phonePopupModal">
+    <div class="phone-popup-content">
+      <button class="phone-popup-close" id="phonePopupClose">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="phone-popup-header">
+        <h2 class="phone-popup-title">
+          <i class="fas fa-phone"></i>
+          Contact Numbers
+        </h2>
+        <p class="phone-popup-subtitle">
+          Choose a team member to call directly
+        </p>
+      </div>
+
+      <div class="phone-numbers-list">
+        <a href="tel:+918281872617" class="phone-number-item">
+          <div class="phone-number-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="phone-number-details">
+            <div class="phone-number-name">Alan Biju</div>
+            <div class="phone-number-value">+91 82818 72617</div>
+          </div>
+          <i class="fas fa-phone phone-call-icon"></i>
         </a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="./index.html">HOME</a></li>
-          <li class="nav-item">
-            <span class="nav-link">ABOUT</span>
-            <div class="dropdown-content">
-              <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
-              <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
-              <a href="./venue.html" class="dropdown-item">VENUE</a>
-              <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
-              <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
-              <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
-          <li class="nav-item">
-            <span class="nav-link">FOR AUTHORS</span>
-            <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
-              <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
-              <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
-              <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
-              <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
-              <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
-          <li class="nav-item">
-            <span class="nav-link">PROGRAM</span>
-            <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
-              <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
-              <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
-              <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
-              <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
-          <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <!-- Marquee -->
-    <div class="non-mob marquee-container">
-      <div class="marquee">
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
+        <a href="tel:+919037106580" class="phone-number-item">
+          <div class="phone-number-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="phone-number-details">
+            <div class="phone-number-name">Abhin Jose JM</div>
+            <div class="phone-number-value">+91 90371 06580</div>
+          </div>
+          <i class="fas fa-phone phone-call-icon"></i>
+        </a>
+
+        <a href="tel:+919311401568" class="phone-number-item">
+          <div class="phone-number-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="phone-number-details">
+            <div class="phone-number-name">Celestine Geo Leslin</div>
+            <div class="phone-number-value">+91 93114 01568</div>
+          </div>
+          <i class="fas fa-phone phone-call-icon"></i>
+        </a>
+
+        <a href="tel:+917012530923" class="phone-number-item">
+          <div class="phone-number-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="phone-number-details">
+            <div class="phone-number-name">Namratha Suresh</div>
+            <div class="phone-number-value">+91 70125 30923</div>
+          </div>
+          <i class="fas fa-phone phone-call-icon"></i>
+        </a>
+
+        <a href="tel:+916235363577" class="phone-number-item">
+          <div class="phone-number-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="phone-number-details">
+            <div class="phone-number-name">Silpa S</div>
+            <div class="phone-number-value">+91 62353 63577</div>
+          </div>
+          <i class="fas fa-phone phone-call-icon"></i>
+        </a>
+
+        <a href="tel:+917994792664" class="phone-number-item">
+          <div class="phone-number-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="phone-number-details">
+            <div class="phone-number-name">Mahima D</div>
+            <div class="phone-number-value">+91 79947 92664</div>
+          </div>
+          <i class="fas fa-phone phone-call-icon"></i>
+        </a>
       </div>
     </div>
+  </div>
 
-    <!-- Spacer for when marquee becomes fixed -->
-    <div id="marquee-placeholder" style="display: none"></div>
-
-    <!-- Phone Numbers Popup Modal -->
-    <div class="phone-popup-modal" id="phonePopupModal">
-      <div class="phone-popup-content">
-        <button class="phone-popup-close" id="phonePopupClose">
-          <i class="fas fa-times"></i>
-        </button>
-        
-        <div class="phone-popup-header">
-          <h2 class="phone-popup-title">
-            <i class="fas fa-phone"></i>
-            Contact Numbers
-          </h2>
-          <p class="phone-popup-subtitle">
-            Choose a team member to call directly
-          </p>
-        </div>
-
-        <div class="phone-numbers-list">
-          <a href="tel:+918281872617" class="phone-number-item">
-            <div class="phone-number-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="phone-number-details">
-              <div class="phone-number-name">Alan Biju</div>
-              <div class="phone-number-value">+91 82818 72617</div>
-            </div>
-            <i class="fas fa-phone phone-call-icon"></i>
-          </a>
-
-          <a href="tel:+919037106580" class="phone-number-item">
-            <div class="phone-number-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="phone-number-details">
-              <div class="phone-number-name">Abhin Jose JM</div>
-              <div class="phone-number-value">+91 90371 06580</div>
-            </div>
-            <i class="fas fa-phone phone-call-icon"></i>
-          </a>
-
-          <a href="tel:+919311401568" class="phone-number-item">
-            <div class="phone-number-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="phone-number-details">
-              <div class="phone-number-name">Celestine Geo Leslin</div>
-              <div class="phone-number-value">+91 93114 01568</div>
-            </div>
-            <i class="fas fa-phone phone-call-icon"></i>
-          </a>
-
-          <a href="tel:+917012530923" class="phone-number-item">
-            <div class="phone-number-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="phone-number-details">
-              <div class="phone-number-name">Namratha Suresh</div>
-              <div class="phone-number-value">+91 70125 30923</div>
-            </div>
-            <i class="fas fa-phone phone-call-icon"></i>
-          </a>
-
-          <a href="tel:+916235363577" class="phone-number-item">
-            <div class="phone-number-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="phone-number-details">
-              <div class="phone-number-name">Silpa S</div>
-              <div class="phone-number-value">+91 62353 63577</div>
-            </div>
-            <i class="fas fa-phone phone-call-icon"></i>
-          </a>
-
-          <a href="tel:+917994792664" class="phone-number-item">
-            <div class="phone-number-icon">
-              <i class="fas fa-user"></i>
-            </div>
-            <div class="phone-number-details">
-              <div class="phone-number-name">Mahima D</div>
-              <div class="phone-number-value">+91 79947 92664</div>
-            </div>
-            <i class="fas fa-phone phone-call-icon"></i>
-          </a>
-        </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <h1 class="contact-title">Contact Us</h1>
+        <p class="contact-subtitle">
+          Get in touch with the IPRECON 2026 organizing committee. We're here
+          to assist you with any questions or concerns.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="contact-hero">
-        <div class="contact-hero-content">
-          <h1 class="contact-title">Contact Us</h1>
-          <p class="contact-subtitle">
-            Get in touch with the IPRECON 2026 organizing committee. We're here
-            to assist you with any questions or concerns.
-          </p>
-        </div>
-      </section>
+    <!-- Main Content -->
+    <section class="contact-content">
+      <div class="contact-container">
+        <div class="contact-grid">
+          <!-- Left Column - Contact Information -->
+          <div class="contact-info-section fade-in">
+            <h2 class="info-section-title">
+              <i class="fas fa-map-marker-alt"></i>
+              Contact Information
+            </h2>
 
-      <!-- Main Content -->
-      <section class="contact-content">
-        <div class="contact-container">
-          <div class="contact-grid">
-            <!-- Left Column - Contact Information -->
-            <div class="contact-info-section fade-in">
-              <h2 class="info-section-title">
-                <i class="fas fa-map-marker-alt"></i>
-                Contact Information
-              </h2>
-
-              <!-- Map Section -->
-              <div class="map-section">
-                <div class="map-container">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4432.489710044096!2d76.55441247552321!3d9.064586290998184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06047ba58e1ba5%3A0x34bf71aaecc5a798!2sCollege%20of%20Engineering%20Karunagappally!5e1!3m2!1sen!2sin!4v1750512745673!5m2!1sen!2sin"
-                    width="600"
-                    height="300"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="College of Engineering Karunagappally Location"
-                  >
-                  </iframe>
-                </div>
-              </div>
-
-              <!-- Contact Info Cards -->
-              <div class="contact-info-cards">
-                <!-- Address Card -->
-                <div class="contact-info-card">
-                  <div class="contact-info-header">
-                    <div class="contact-info-icon">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="contact-info-title">Address</h3>
-                  </div>
-                  <div class="contact-info-details">
-                    <p>
-                      <strong>College of Engineering Karunagappally</strong>
-                    </p>
-                    <p>Karunagappally, Kollam</p>
-                    <p>Kerala 690518, India</p>
-                  </div>
-                </div>
-
-                <!-- Office Hours Card -->
-                <div class="contact-info-card">
-                  <div class="contact-info-header">
-                    <div class="contact-info-icon">
-                      <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="contact-info-title">Support Availability</h3>
-                  </div>
-                  <div class="contact-info-details">
-                    <p>
-                      <strong>Monday - Saturday:</strong> 9:00 AM - 9:00 PM IST
-                    </p>
-                    <p
-                      style="margin-top: 10px; color: #8e24aa; font-weight: 500"
-                    >
-                      <i class="fas fa-info-circle"></i> Emergency support
-                      available 24/7 via email
-                    </p>
-                  </div>
-                </div>
-
-                <!-- Phone Card -->
-                <div class="contact-info-card">
-                  <div class="contact-info-header">
-                    <div class="contact-info-icon">
-                      <i class="fas fa-phone"></i>
-                    </div>
-                    <h3 class="contact-info-title">Phone Numbers</h3>
-                  </div>
-                  <div class="contact-info-details">
-                    <p><strong>Alan Biju:</strong></p>
-                    <p><a href="tel:+918281872617">+91 82818 72617</a></p>
-                    <p><strong>Abhin Jose JM:</strong></p>
-                    <p><a href="tel:+919037106580">+91 90371 06580</a></p>
-                    <p><strong>Celestine Geo Leslin:</strong></p>
-                    <p><a href="tel:+919311401568">+91 93114 01568</a></p>
-                    <p><strong>Namratha Suresh:</strong></p>
-                    <p><a href="tel:+917012530923">+91 70125 30923</a></p>
-                    <p><strong>Silpa S:</strong></p>
-                    <p><a href="tel:+916235363577">+91 62353 63577</a></p>
-                    <p><strong>Mahima D:</strong></p>
-                    <p><a href="tel:+917994792664">+91 79947 92664</a></p>
-                  </div>
-                </div>
-
-                <!-- Email Card - Mobile will show here -->
-                <div class="contact-info-card email-card-mobile">
-                  <div class="contact-info-header">
-                    <div class="contact-info-icon">
-                      <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3 class="contact-info-title">Email Addresses</h3>
-                  </div>
-                  <div class="contact-info-details">
-                    <p><strong>General Inquiries:</strong></p>
-                    <p>
-                      <a href="mailto:info@iprecon.org">info@iprecon.org</a>
-                    </p>
-                    <p><strong>Paper Submissions:</strong></p>
-                    <p>
-                      <a href="mailto:support@iprecon.org"
-                        >support@iprecon.org</a
-                      >
-                    </p>
-                    <p><strong>Registration Support:</strong></p>
-                    <p>
-                      <a href="mailto:registrations@iprecon.org"
-                        >registrations@iprecon.org</a
-                      >
-                    </p>
-                  </div>
-                </div>
+            <!-- Map Section -->
+            <div class="map-section">
+              <div class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4432.489710044096!2d76.55441247552321!3d9.064586290998184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06047ba58e1ba5%3A0x34bf71aaecc5a798!2sCollege%20of%20Engineering%20Karunagappally!5e1!3m2!1sen!2sin!4v1750512745673!5m2!1sen!2sin"
+                  width="600" height="300" style="border: 0" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade" title="College of Engineering Karunagappally Location">
+                </iframe>
               </div>
             </div>
 
-            <!-- Right Column - Contact Form and Additional Info -->
-            <div class="contact-form-column fade-in">
-              <!-- Contact Form Section -->
-              <div class="contact-form-section">
-                <h2 class="form-section-title">
-                  <i class="fas fa-paper-plane"></i>
-                  Send us a Message
-                </h2>
-                <p class="form-description">
-                  Have a question or need assistance? Fill out the form below
-                  and we'll get back to you as soon as possible.
-                </p>
-
-                <!-- Success Message -->
-                <div class="success-message" id="successMessage">
-                  <h3>
-                    <i class="fas fa-check-circle"></i> Message Sent
-                    Successfully!
-                  </h3>
+            <!-- Contact Info Cards -->
+            <div class="contact-info-cards">
+              <!-- Address Card -->
+              <div class="contact-info-card">
+                <div class="contact-info-header">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <h3 class="contact-info-title">Address</h3>
+                </div>
+                <div class="contact-info-details">
                   <p>
-                    Thank you for contacting us. We'll respond to your inquiry
-                    within 24 hours.
+                    <strong>College of Engineering Karunagappally</strong>
+                  </p>
+                  <p>Karunagappally, Kollam</p>
+                  <p>Kerala 690518, India</p>
+                </div>
+              </div>
+
+              <!-- Office Hours Card -->
+              <div class="contact-info-card">
+                <div class="contact-info-header">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <h3 class="contact-info-title">Support Availability</h3>
+                </div>
+                <div class="contact-info-details">
+                  <p>
+                    <strong>Monday - Saturday:</strong> 9:00 AM - 9:00 PM IST
+                  </p>
+                  <p style="margin-top: 10px; color: #8e24aa; font-weight: 500">
+                    <i class="fas fa-info-circle"></i> Emergency support
+                    available 24/7 via email
                   </p>
                 </div>
-
-                <!-- Contact Form -->
-                <form class="contact-form" id="contactForm" novalidate>
-                  <!-- Name and Organization Row -->
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="fullName" class="form-label">
-                        <i class="fas fa-user"></i>
-                        Full Name <span class="required">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        name="fullName"
-                        class="form-input"
-                        placeholder="Full Name"
-                        required
-                      />
-                      <div class="error-message" id="fullNameError">
-                        Please enter your full name
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="organization" class="form-label">
-                        <i class="fas fa-building"></i>
-                        Organization/Institution <span class="required">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="organization"
-                        name="organization"
-                        class="form-input"
-                        placeholder="Company/University"
-                        required
-                      />
-                      <div class="error-message" id="organizationError">
-                        Please enter your organization/institution
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Email and Phone Row -->
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="email" class="form-label">
-                        <i class="fas fa-envelope"></i>
-                        Email Address <span class="required">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-input"
-                        placeholder="johdoe@example.com"
-                        required
-                      />
-                      <div class="error-message" id="emailError">
-                        Please enter a valid email address
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="phone" class="form-label">
-                        <i class="fas fa-phone"></i>
-                        Phone Number <span class="required">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        class="form-input"
-                        placeholder="+91 8139861033"
-                        required
-                      />
-                      <div class="error-message" id="phoneError">
-                        Please enter your phone number
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Subject -->
-                  <div class="form-row">
-                    <div class="form-group full-width">
-                      <label for="subject" class="form-label">
-                        <i class="fas fa-tag"></i>
-                        Subject <span class="required">*</span>
-                      </label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        class="form-select"
-                        required
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="paper-submission">
-                          Paper Submission
-                        </option>
-                        <option value="registration">
-                          Registration Support
-                        </option>
-                        <option value="accommodation">Accommodation</option>
-                        <option value="travel">Travel Information</option>
-                        <option value="sponsorship">
-                          Sponsorship Opportunities
-                        </option>
-                        <option value="media">Media & Press</option>
-                        <option value="technical">Technical Issues</option>
-                        <option value="other">Other</option>
-                      </select>
-                      <div class="error-message" id="subjectError">
-                        Please select a subject
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Custom Subject Field (appears when "Other" is selected) -->
-                  <div
-                    class="form-row"
-                    id="customSubjectRow"
-                    style="display: none"
-                  >
-                    <div class="form-group full-width">
-                      <label for="customSubject" class="form-label">
-                        <i class="fas fa-edit"></i>
-                        Please specify your subject
-                        <span class="required">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="customSubject"
-                        name="customSubject"
-                        class="form-input"
-                        placeholder="Enter your custom subject"
-                        maxlength="100"
-                      />
-                      <div class="error-message" id="customSubjectError">
-                        Please enter your custom subject
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Message -->
-                  <div class="form-row">
-                    <div class="form-group full-width">
-                      <label for="message" class="form-label">
-                        <i class="fas fa-comment"></i>
-                        Message <span class="required">*</span>
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        class="form-textarea"
-                        placeholder="Please describe your inquiry or question in detail..."
-                        maxlength="1000"
-                        required
-                      ></textarea>
-                      <div class="character-count" id="characterCount">
-                        0 / 1000 characters
-                      </div>
-                      <div class="error-message" id="messageError">
-                        Please enter your message (minimum 10 characters)
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Submit Area -->
-                  <div class="form-submit-area">
-                    <button
-                      type="submit"
-                      class="form-submit-btn"
-                      id="submitBtn"
-                    >
-                      <div class="loading-spinner"></div>
-                      <span class="btn-text">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                      </span>
-                    </button>
-
-                    <div class="form-note">
-                      <i class="fas fa-info-circle"></i>
-                      We typically respond to inquiries within 24 hours during
-                      business days. For urgent matters, please call our support
-                      line.
-                    </div>
-                  </div>
-                </form>
               </div>
 
-              <!-- Additional Contact Cards Below Form -->
-              <div class="additional-contact-cards">
-                <!-- Email Card - Desktop only -->
-                <div class="contact-info-card email-card-desktop">
-                  <div class="contact-info-header">
-                    <div class="contact-info-icon">
-                      <i class="fas fa-envelope"></i>
+              <!-- Phone Card -->
+              <div class="contact-info-card">
+                <div class="contact-info-header">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <h3 class="contact-info-title">Phone Numbers</h3>
+                </div>
+                <div class="contact-info-details">
+                  <p><strong>Alan Biju:</strong></p>
+                  <p><a href="tel:+918281872617">+91 82818 72617</a></p>
+                  <p><strong>Abhin Jose JM:</strong></p>
+                  <p><a href="tel:+919037106580">+91 90371 06580</a></p>
+                  <p><strong>Celestine Geo Leslin:</strong></p>
+                  <p><a href="tel:+919311401568">+91 93114 01568</a></p>
+                  <p><strong>Namratha Suresh:</strong></p>
+                  <p><a href="tel:+917012530923">+91 70125 30923</a></p>
+                  <p><strong>Silpa S:</strong></p>
+                  <p><a href="tel:+916235363577">+91 62353 63577</a></p>
+                  <p><strong>Mahima D:</strong></p>
+                  <p><a href="tel:+917994792664">+91 79947 92664</a></p>
+                </div>
+              </div>
+
+              <!-- Email Card - Mobile will show here -->
+              <div class="contact-info-card email-card-mobile">
+                <div class="contact-info-header">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h3 class="contact-info-title">Email Addresses</h3>
+                </div>
+                <div class="contact-info-details">
+                  <p><strong>General Inquiries:</strong></p>
+                  <p>
+                    <a href="mailto:info@iprecon.org">info@iprecon.org</a>
+                  </p>
+                  <p><strong>Paper Submissions:</strong></p>
+                  <p>
+                    <a href="mailto:support@iprecon.org">support@iprecon.org</a>
+                  </p>
+                  <p><strong>Registration Support:</strong></p>
+                  <p>
+                    <a href="mailto:registrations@iprecon.org">registrations@iprecon.org</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Contact Form and Additional Info -->
+          <div class="contact-form-column fade-in">
+            <!-- Contact Form Section -->
+            <div class="contact-form-section">
+              <h2 class="form-section-title">
+                <i class="fas fa-paper-plane"></i>
+                Send us a Message
+              </h2>
+              <p class="form-description">
+                Have a question or need assistance? Fill out the form below
+                and we'll get back to you as soon as possible.
+              </p>
+
+              <!-- Success Message -->
+              <div class="success-message" id="successMessage">
+                <h3>
+                  <i class="fas fa-check-circle"></i> Message Sent
+                  Successfully!
+                </h3>
+                <p>
+                  Thank you for contacting us. We'll respond to your inquiry
+                  within 24 hours.
+                </p>
+              </div>
+
+              <!-- Contact Form -->
+              <form class="contact-form" id="contactForm" novalidate>
+                <!-- Name and Organization Row -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fullName" class="form-label">
+                      <i class="fas fa-user"></i>
+                      Full Name <span class="required">*</span>
+                    </label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Full Name"
+                      required />
+                    <div class="error-message" id="fullNameError">
+                      Please enter your full name
                     </div>
-                    <h3 class="contact-info-title">Email Addresses</h3>
                   </div>
-                  <div class="contact-info-details">
-                    <p><strong>General Inquiries:</strong></p>
-                    <p>
-                      <a href="mailto:info@iprecon.org">info@iprecon.org</a>
-                    </p>
-                    <p><strong>Paper Submissions:</strong></p>
-                    <p>
-                      <a href="mailto:support@iprecon.org"
-                        >support@iprecon.org</a
-                      >
-                    </p>
-                    <p><strong>Registration Support:</strong></p>
-                    <p>
-                      <a href="mailto:registrations@iprecon.org"
-                        >registrations@iprecon.org</a
-                      >
-                    </p>
+
+                  <div class="form-group">
+                    <label for="organization" class="form-label">
+                      <i class="fas fa-building"></i>
+                      Organization/Institution <span class="required">*</span>
+                    </label>
+                    <input type="text" id="organization" name="organization" class="form-input"
+                      placeholder="Company/University" required />
+                    <div class="error-message" id="organizationError">
+                      Please enter your organization/institution
+                    </div>
                   </div>
+                </div>
+
+                <!-- Email and Phone Row -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email" class="form-label">
+                      <i class="fas fa-envelope"></i>
+                      Email Address <span class="required">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="johdoe@example.com"
+                      required />
+                    <div class="error-message" id="emailError">
+                      Please enter a valid email address
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone" class="form-label">
+                      <i class="fas fa-phone"></i>
+                      Phone Number <span class="required">*</span>
+                    </label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 8139861033"
+                      required />
+                    <div class="error-message" id="phoneError">
+                      Please enter your phone number
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-row">
+                  <div class="form-group full-width">
+                    <label for="subject" class="form-label">
+                      <i class="fas fa-tag"></i>
+                      Subject <span class="required">*</span>
+                    </label>
+                    <select id="subject" name="subject" class="form-select" required>
+                      <option value="">Select a subject</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="paper-submission">
+                        Paper Submission
+                      </option>
+                      <option value="registration">
+                        Registration Support
+                      </option>
+                      <option value="accommodation">Accommodation</option>
+                      <option value="travel">Travel Information</option>
+                      <option value="sponsorship">
+                        Sponsorship Opportunities
+                      </option>
+                      <option value="media">Media & Press</option>
+                      <option value="technical">Technical Issues</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <div class="error-message" id="subjectError">
+                      Please select a subject
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Custom Subject Field (appears when "Other" is selected) -->
+                <div class="form-row" id="customSubjectRow" style="display: none">
+                  <div class="form-group full-width">
+                    <label for="customSubject" class="form-label">
+                      <i class="fas fa-edit"></i>
+                      Please specify your subject
+                      <span class="required">*</span>
+                    </label>
+                    <input type="text" id="customSubject" name="customSubject" class="form-input"
+                      placeholder="Enter your custom subject" maxlength="100" />
+                    <div class="error-message" id="customSubjectError">
+                      Please enter your custom subject
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="form-row">
+                  <div class="form-group full-width">
+                    <label for="message" class="form-label">
+                      <i class="fas fa-comment"></i>
+                      Message <span class="required">*</span>
+                    </label>
+                    <textarea id="message" name="message" class="form-textarea"
+                      placeholder="Please describe your inquiry or question in detail..." maxlength="1000"
+                      required></textarea>
+                    <div class="character-count" id="characterCount">
+                      0 / 1000 characters
+                    </div>
+                    <div class="error-message" id="messageError">
+                      Please enter your message (minimum 10 characters)
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Area -->
+                <div class="form-submit-area">
+                  <button type="submit" class="form-submit-btn" id="submitBtn">
+                    <div class="loading-spinner"></div>
+                    <span class="btn-text">
+                      <i class="fas fa-paper-plane"></i>
+                      Send Message
+                    </span>
+                  </button>
+
+                  <div class="form-note">
+                    <i class="fas fa-info-circle"></i>
+                    We typically respond to inquiries within 24 hours during
+                    business days. For urgent matters, please call our support
+                    line.
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Additional Contact Cards Below Form -->
+            <div class="additional-contact-cards">
+              <!-- Email Card - Desktop only -->
+              <div class="contact-info-card email-card-desktop">
+                <div class="contact-info-header">
+                  <div class="contact-info-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h3 class="contact-info-title">Email Addresses</h3>
+                </div>
+                <div class="contact-info-details">
+                  <p><strong>General Inquiries:</strong></p>
+                  <p>
+                    <a href="mailto:info@iprecon.org">info@iprecon.org</a>
+                  </p>
+                  <p><strong>Paper Submissions:</strong></p>
+                  <p>
+                    <a href="mailto:support@iprecon.org">support@iprecon.org</a>
+                  </p>
+                  <p><strong>Registration Support:</strong></p>
+                  <p>
+                    <a href="mailto:registrations@iprecon.org">registrations@iprecon.org</a>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Quick Contact Section -->
-      <section class="quick-contact-section">
-        <div class="quick-contact-content">
-          <h2 class="quick-contact-title">Need Immediate Assistance?</h2>
-          <p class="quick-contact-subtitle">
-            For urgent inquiries or immediate support, reach out to us directly
-            through these channels.
-          </p>
+    <!-- Quick Contact Section -->
+    <section class="quick-contact-section">
+      <div class="quick-contact-content">
+        <h2 class="quick-contact-title">Need Immediate Assistance?</h2>
+        <p class="quick-contact-subtitle">
+          For urgent inquiries or immediate support, reach out to us directly
+          through these channels.
+        </p>
 
-          <div class="quick-contact-buttons">
-            <button class="quick-contact-btn-white" id="callNowBtn">
-              <i class="fas fa-phone"></i>
-              Call Now
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer section -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Paper Submission</h3>
-          <ul class="footer-links">
-            <li><a href="./cfp.html">Call for Papers</a></li>
-            <li><a href="./submissions.html">Submit a Paper</a></li>
-            <li>
-              <a href="https://www.ieee.org/conferences/publishing/templates"
-                >Paper Template</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
-            <li><a href="./committee.html">Team</a></li>
-            <li><a href="./about-iprecon.html">Legacy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Travel and Accommodation</h3>
-          <ul class="footer-links">
-            <li><a href="./venue.html">Transportation</a></li>
-            <li><a href="./accommodation.html">Hotels</a></li>
-            <li><a href="./kerala.html">Tourism</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <div class="social-icons">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/ieeeceksb/"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/ieeesbcek/"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/ieee_sb_cek"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-          <div class="copyright">
-            Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
-          </div>
+        <div class="quick-contact-buttons">
+          <button class="quick-contact-btn-white" id="callNowBtn">
+            <i class="fas fa-phone"></i>
+            Call Now
+          </button>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="./scripts/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true,
-          margin: 20,
-          nav: true,
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ],
-          autoplay: true,
-          autoplayTimeout: 3000,
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Paper Submission</h3>
+        <ul class="footer-links">
+          <li><a href="./cfp.html">Call for Papers</a></li>
+          <li><a href="./submissions.html">Submit a Paper</a></li>
+          <li>
+            <a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+          <li><a href="./committee.html">Team</a></li>
+          <li><a href="./about-iprecon.html">Legacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Travel and Accommodation</h3>
+        <ul class="footer-links">
+          <li><a href="./venue.html">Transportation</a></li>
+          <li><a href="./accommodation.html">Hotels</a></li>
+          <li><a href="./kerala.html">Tourism</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <div class="social-icons">
+          <a target="_blank" href="https://www.facebook.com/ieeeceksb/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/ieeesbcek/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a target="_blank" href="https://www.instagram.com/ieee_sb_cek" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#news-slider").owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>",
+        ],
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 3,
           },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+        },
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
         });
+      }, observerOptions);
 
-        // Scroll animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        }, observerOptions);
+      // Phone Popup Modal Functionality
+      const phonePopupModal = document.getElementById('phonePopupModal');
+      const callNowBtn = document.getElementById('callNowBtn');
+      const phonePopupClose = document.getElementById('phonePopupClose');
 
-        document.querySelectorAll(".fade-in").forEach((el) => {
-          observer.observe(el);
-        });
+      // Show popup when "Call Now" button is clicked
+      callNowBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        phonePopupModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
 
-        // Phone Popup Modal Functionality
-        const phonePopupModal = document.getElementById('phonePopupModal');
-        const callNowBtn = document.getElementById('callNowBtn');
-        const phonePopupClose = document.getElementById('phonePopupClose');
+      // Close popup when close button is clicked
+      phonePopupClose.addEventListener('click', function (e) {
+        e.preventDefault();
+        phonePopupModal.classList.remove('show');
+        document.body.style.overflow = '';
+      });
 
-        // Show popup when "Call Now" button is clicked
-        callNowBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          phonePopupModal.classList.add('show');
-          document.body.style.overflow = 'hidden';
-        });
-
-        // Close popup when close button is clicked
-        phonePopupClose.addEventListener('click', function(e) {
-          e.preventDefault();
+      // Close popup when clicking outside the modal content
+      phonePopupModal.addEventListener('click', function (e) {
+        if (e.target === phonePopupModal) {
           phonePopupModal.classList.remove('show');
           document.body.style.overflow = '';
+        }
+      });
+
+      // Close popup when pressing Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && phonePopupModal.classList.contains('show')) {
+          phonePopupModal.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Contact Form Functionality
+      const contactForm = document.getElementById("contactForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const successMessage = document.getElementById("successMessage");
+      const messageTextarea = document.getElementById("message");
+      const characterCount = document.getElementById("characterCount");
+
+      // Your Cloudflare Worker URL - UPDATE THIS WITH YOUR ACTUAL WORKER URL
+      const WORKER_URL =
+        "https://iprecon-contact-form-worker.ieeesbcek2000.workers.dev";
+
+      // Variable to track auto-hide timer
+      let autoHideTimer = null;
+
+      // Function to show success message with auto-hide
+      function showSuccessMessage() {
+        // Show success message
+        successMessage.classList.add("show");
+        contactForm.style.display = "none";
+
+        // Scroll to success message
+        successMessage.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
         });
 
-        // Close popup when clicking outside the modal content
-        phonePopupModal.addEventListener('click', function(e) {
-          if (e.target === phonePopupModal) {
-            phonePopupModal.classList.remove('show');
-            document.body.style.overflow = '';
-          }
-        });
-
-        // Close popup when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && phonePopupModal.classList.contains('show')) {
-            phonePopupModal.classList.remove('show');
-            document.body.style.overflow = '';
-          }
-        });
-
-        // Contact Form Functionality
-        const contactForm = document.getElementById("contactForm");
-        const submitBtn = document.getElementById("submitBtn");
-        const successMessage = document.getElementById("successMessage");
-        const messageTextarea = document.getElementById("message");
-        const characterCount = document.getElementById("characterCount");
-
-        // Your Cloudflare Worker URL - UPDATE THIS WITH YOUR ACTUAL WORKER URL
-        const WORKER_URL =
-          "https://iprecon-contact-form-worker.ieeesbcek2000.workers.dev";
-
-        // Variable to track auto-hide timer
-        let autoHideTimer = null;
-
-        // Function to show success message with auto-hide
-        function showSuccessMessage() {
-          // Show success message
-          successMessage.classList.add("show");
-          contactForm.style.display = "none";
-
-          // Scroll to success message
-          successMessage.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-          });
-
-          // Clear any existing timer
-          if (autoHideTimer) {
-            clearTimeout(autoHideTimer);
-          }
-
-          // Set new auto-hide timer for 5 seconds
-          autoHideTimer = setTimeout(() => {
-            hideSuccessMessage();
-          }, 5000); // 5 seconds
+        // Clear any existing timer
+        if (autoHideTimer) {
+          clearTimeout(autoHideTimer);
         }
 
-        // Function to hide success message
-        function hideSuccessMessage() {
-          successMessage.classList.remove("show");
-          contactForm.style.display = ""; // Reset to default display
+        // Set new auto-hide timer for 5 seconds
+        autoHideTimer = setTimeout(() => {
+          hideSuccessMessage();
+        }, 5000); // 5 seconds
+      }
 
-          // Clear timer
-          if (autoHideTimer) {
-            clearTimeout(autoHideTimer);
-            autoHideTimer = null;
-          }
+      // Function to hide success message
+      function hideSuccessMessage() {
+        successMessage.classList.remove("show");
+        contactForm.style.display = ""; // Reset to default display
+
+        // Clear timer
+        if (autoHideTimer) {
+          clearTimeout(autoHideTimer);
+          autoHideTimer = null;
+        }
+      }
+
+      // Character counter for message textarea
+      messageTextarea.addEventListener("input", function () {
+        const currentLength = this.value.length;
+        const maxLength = this.getAttribute("maxlength");
+        characterCount.textContent = `${currentLength} / ${maxLength} characters`;
+
+        // Change color based on character count
+        characterCount.classList.remove("warning", "error");
+        if (currentLength > maxLength * 0.8) {
+          characterCount.classList.add("warning");
+        }
+        if (currentLength >= maxLength) {
+          characterCount.classList.add("error");
+        }
+      });
+
+      // Form validation functions
+      function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function showError(fieldId, message) {
+        const field = document.getElementById(fieldId);
+        const errorDiv = document.getElementById(fieldId + "Error");
+
+        field.classList.add("error");
+        errorDiv.textContent = message;
+        errorDiv.classList.add("show");
+      }
+
+      function clearError(fieldId) {
+        const field = document.getElementById(fieldId);
+        const errorDiv = document.getElementById(fieldId + "Error");
+
+        field.classList.remove("error");
+        errorDiv.classList.remove("show");
+      }
+
+      function validateForm() {
+        let isValid = true;
+
+        // Clear all previous errors
+        [
+          "fullName",
+          "email",
+          "organization",
+          "phone",
+          "subject",
+          "message",
+          "customSubject",
+        ].forEach(clearError);
+
+        // Validate full name
+        const fullName = document.getElementById("fullName").value.trim();
+        if (!fullName) {
+          showError("fullName", "Please enter your full name");
+          isValid = false;
+        } else if (fullName.length < 2) {
+          showError("fullName", "Name must be at least 2 characters long");
+          isValid = false;
         }
 
-        // Character counter for message textarea
-        messageTextarea.addEventListener("input", function () {
-          const currentLength = this.value.length;
-          const maxLength = this.getAttribute("maxlength");
-          characterCount.textContent = `${currentLength} / ${maxLength} characters`;
-
-          // Change color based on character count
-          characterCount.classList.remove("warning", "error");
-          if (currentLength > maxLength * 0.8) {
-            characterCount.classList.add("warning");
-          }
-          if (currentLength >= maxLength) {
-            characterCount.classList.add("error");
-          }
-        });
-
-        // Form validation functions
-        function validateEmail(email) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(email);
+        // Validate email
+        const email = document.getElementById("email").value.trim();
+        if (!email) {
+          showError("email", "Please enter your email address");
+          isValid = false;
+        } else if (!validateEmail(email)) {
+          showError("email", "Please enter a valid email address");
+          isValid = false;
         }
 
-        function showError(fieldId, message) {
-          const field = document.getElementById(fieldId);
-          const errorDiv = document.getElementById(fieldId + "Error");
-
-          field.classList.add("error");
-          errorDiv.textContent = message;
-          errorDiv.classList.add("show");
-        }
-
-        function clearError(fieldId) {
-          const field = document.getElementById(fieldId);
-          const errorDiv = document.getElementById(fieldId + "Error");
-
-          field.classList.remove("error");
-          errorDiv.classList.remove("show");
-        }
-
-        function validateForm() {
-          let isValid = true;
-
-          // Clear all previous errors
-          [
-            "fullName",
-            "email",
+        // Validate organization
+        const organization = document
+          .getElementById("organization")
+          .value.trim();
+        if (!organization) {
+          showError(
             "organization",
-            "phone",
-            "subject",
-            "message",
-            "customSubject",
-          ].forEach(clearError);
-
-          // Validate full name
-          const fullName = document.getElementById("fullName").value.trim();
-          if (!fullName) {
-            showError("fullName", "Please enter your full name");
-            isValid = false;
-          } else if (fullName.length < 2) {
-            showError("fullName", "Name must be at least 2 characters long");
-            isValid = false;
-          }
-
-          // Validate email
-          const email = document.getElementById("email").value.trim();
-          if (!email) {
-            showError("email", "Please enter your email address");
-            isValid = false;
-          } else if (!validateEmail(email)) {
-            showError("email", "Please enter a valid email address");
-            isValid = false;
-          }
-
-          // Validate organization
-          const organization = document
-            .getElementById("organization")
-            .value.trim();
-          if (!organization) {
-            showError(
-              "organization",
-              "Please enter your organization/institution"
-            );
-            isValid = false;
-          } else if (organization.length < 2) {
-            showError(
-              "organization",
-              "Organization/institution must be at least 2 characters long"
-            );
-            isValid = false;
-          }
-
-          // Validate phone
-          const phone = document.getElementById("phone").value.trim();
-          if (!phone) {
-            showError("phone", "Please enter your phone number");
-            isValid = false;
-          } else if (phone.length < 10) {
-            showError("phone", "Please enter a valid phone number");
-            isValid = false;
-          }
-
-          // Validate subject
-          const subject = document.getElementById("subject").value;
-          if (!subject) {
-            showError("subject", "Please select a subject");
-            isValid = false;
-          }
-
-          // Validate custom subject if "Other" is selected
-          if (subject === "other") {
-            const customSubject = document
-              .getElementById("customSubject")
-              .value.trim();
-            if (!customSubject) {
-              showError("customSubject", "Please enter your custom subject");
-              isValid = false;
-            } else if (customSubject.length < 3) {
-              showError(
-                "customSubject",
-                "Custom subject must be at least 3 characters long"
-              );
-              isValid = false;
-            }
-          }
-
-          // Validate message
-          const message = document.getElementById("message").value.trim();
-          if (!message) {
-            showError("message", "Please enter your message");
-            isValid = false;
-          } else if (message.length < 10) {
-            showError("message", "Message must be at least 10 characters long");
-            isValid = false;
-          }
-
-          return isValid;
+            "Please enter your organization/institution"
+          );
+          isValid = false;
+        } else if (organization.length < 2) {
+          showError(
+            "organization",
+            "Organization/institution must be at least 2 characters long"
+          );
+          isValid = false;
         }
 
-        // Form submission handler
-        contactForm.addEventListener("submit", async function (e) {
-          e.preventDefault();
+        // Validate phone
+        const phone = document.getElementById("phone").value.trim();
+        if (!phone) {
+          showError("phone", "Please enter your phone number");
+          isValid = false;
+        } else if (phone.length < 10) {
+          showError("phone", "Please enter a valid phone number");
+          isValid = false;
+        }
 
-          // Validate form
-          if (!validateForm()) {
-            // Scroll to first error
-            const firstError = document.querySelector(
-              ".form-input.error, .form-select.error, .form-textarea.error"
+        // Validate subject
+        const subject = document.getElementById("subject").value;
+        if (!subject) {
+          showError("subject", "Please select a subject");
+          isValid = false;
+        }
+
+        // Validate custom subject if "Other" is selected
+        if (subject === "other") {
+          const customSubject = document
+            .getElementById("customSubject")
+            .value.trim();
+          if (!customSubject) {
+            showError("customSubject", "Please enter your custom subject");
+            isValid = false;
+          } else if (customSubject.length < 3) {
+            showError(
+              "customSubject",
+              "Custom subject must be at least 3 characters long"
             );
-            if (firstError) {
-              firstError.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-              });
-              firstError.focus();
-            }
-            return;
+            isValid = false;
           }
+        }
 
-          // Show loading state
-          submitBtn.classList.add("loading");
-          submitBtn.disabled = true;
+        // Validate message
+        const message = document.getElementById("message").value.trim();
+        if (!message) {
+          showError("message", "Please enter your message");
+          isValid = false;
+        } else if (message.length < 10) {
+          showError("message", "Message must be at least 10 characters long");
+          isValid = false;
+        }
 
-          try {
-            // Collect form data
-            const formData = {
-              fullName: document.getElementById("fullName").value.trim(),
-              email: document.getElementById("email").value.trim(),
-              organization: document
-                .getElementById("organization")
-                .value.trim(),
-              phone: document.getElementById("phone").value.trim(),
-              subject: document.getElementById("subject").value,
-              customSubject: document
-                .getElementById("customSubject")
-                .value.trim(),
-              message: document.getElementById("message").value.trim(),
-              timestamp: new Date().toISOString(),
-            };
+        return isValid;
+      }
 
-            // Send data to Cloudflare Worker
-            const response = await fetch(WORKER_URL, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(formData),
+      // Form submission handler
+      contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Validate form
+        if (!validateForm()) {
+          // Scroll to first error
+          const firstError = document.querySelector(
+            ".form-input.error, .form-select.error, .form-textarea.error"
+          );
+          if (firstError) {
+            firstError.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
             });
-
-            const result = await response.json();
-
-            if (result.success) {
-              // Show success message with auto-hide functionality
-              showSuccessMessage();
-
-              // Reset form
-              contactForm.reset();
-              characterCount.textContent = "0 / 1000 characters";
-              characterCount.classList.remove("warning", "error");
-
-              // Hide custom subject field if it was visible
-              const customSubjectRow =
-                document.getElementById("customSubjectRow");
-              customSubjectRow.style.display = "none";
-              document
-                .getElementById("customSubject")
-                .removeAttribute("required");
-            } else {
-              // Show error message
-              throw new Error(result.error || "Failed to send message");
-            }
-          } catch (error) {
-            console.error("Form submission error:", error);
-
-            // Show user-friendly error message
-            alert(
-              "Sorry, there was an error sending your message. Please try again or contact us directly at info@iprecon.org"
-            );
-          } finally {
-            // Hide loading state
-            submitBtn.classList.remove("loading");
-            submitBtn.disabled = false;
+            firstError.focus();
           }
-        });
+          return;
+        }
 
-        // Real-time validation event handlers
-        document
-          .getElementById("fullName")
-          .addEventListener("blur", function () {
-            const value = this.value.trim();
-            if (value && value.length >= 2) {
-              clearError("fullName");
-            }
+        // Show loading state
+        submitBtn.classList.add("loading");
+        submitBtn.disabled = true;
+
+        try {
+          // Collect form data
+          const formData = {
+            fullName: document.getElementById("fullName").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            organization: document
+              .getElementById("organization")
+              .value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            subject: document.getElementById("subject").value,
+            customSubject: document
+              .getElementById("customSubject")
+              .value.trim(),
+            message: document.getElementById("message").value.trim(),
+            timestamp: new Date().toISOString(),
+          };
+
+          // Send data to Cloudflare Worker
+          const response = await fetch(WORKER_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
           });
 
-        document.getElementById("email").addEventListener("blur", function () {
-          const value = this.value.trim();
-          if (value && validateEmail(value)) {
-            clearError("email");
-          }
-        });
+          const result = await response.json();
 
-        // Subject dropdown change handler - show/hide custom subject field
-        document
-          .getElementById("subject")
-          .addEventListener("change", function () {
+          if (result.success) {
+            // Show success message with auto-hide functionality
+            showSuccessMessage();
+
+            // Reset form
+            contactForm.reset();
+            characterCount.textContent = "0 / 1000 characters";
+            characterCount.classList.remove("warning", "error");
+
+            // Hide custom subject field if it was visible
             const customSubjectRow =
               document.getElementById("customSubjectRow");
-            const customSubjectInput = document.getElementById("customSubject");
-
-            if (this.value === "other") {
-              customSubjectRow.style.display = "block";
-              customSubjectInput.setAttribute("required", "true");
-              // Smooth slide down animation
-              customSubjectRow.style.opacity = "0";
-              customSubjectRow.style.transform = "translateY(-10px)";
-              setTimeout(() => {
-                customSubjectRow.style.transition = "all 0.3s ease";
-                customSubjectRow.style.opacity = "1";
-                customSubjectRow.style.transform = "translateY(0)";
-              }, 10);
-            } else {
-              customSubjectRow.style.display = "none";
-              customSubjectInput.removeAttribute("required");
-              customSubjectInput.value = "";
-              clearError("customSubject");
-            }
-
-            if (this.value) {
-              clearError("subject");
-            }
-          });
-
-        document
-          .getElementById("message")
-          .addEventListener("blur", function () {
-            const value = this.value.trim();
-            if (value && value.length >= 10) {
-              clearError("message");
-            }
-          });
-
-        // Optional: Add click handler to manually close success message
-        successMessage.addEventListener("click", function (e) {
-          // Only close if clicking on the success message itself, not its contents
-          if (e.target === successMessage) {
-            hideSuccessMessage();
+            customSubjectRow.style.display = "none";
+            document
+              .getElementById("customSubject")
+              .removeAttribute("required");
+          } else {
+            // Show error message
+            throw new Error(result.error || "Failed to send message");
           }
-        });
+        } catch (error) {
+          console.error("Form submission error:", error);
 
-        // Optional: Add escape key handler to close success message
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && successMessage.classList.contains("show")) {
-            hideSuccessMessage();
-          }
-        });
-
-        // Smooth scrolling for anchor links
-        $('a[href^="#"]').on("click", function (event) {
-          var target = $(this.getAttribute("href"));
-          if (target.length) {
-            event.preventDefault();
-            $("html, body")
-              .stop()
-              .animate(
-                {
-                  scrollTop: target.offset().top - 100,
-                },
-                1000
-              );
-          }
-        });
+          // Show user-friendly error message
+          alert(
+            "Sorry, there was an error sending your message. Please try again or contact us directly at info@iprecon.org"
+          );
+        } finally {
+          // Hide loading state
+          submitBtn.classList.remove("loading");
+          submitBtn.disabled = false;
+        }
       });
-    </script>
-  </body>
+
+      // Real-time validation event handlers
+      document
+        .getElementById("fullName")
+        .addEventListener("blur", function () {
+          const value = this.value.trim();
+          if (value && value.length >= 2) {
+            clearError("fullName");
+          }
+        });
+
+      document.getElementById("email").addEventListener("blur", function () {
+        const value = this.value.trim();
+        if (value && validateEmail(value)) {
+          clearError("email");
+        }
+      });
+
+      // Subject dropdown change handler - show/hide custom subject field
+      document
+        .getElementById("subject")
+        .addEventListener("change", function () {
+          const customSubjectRow =
+            document.getElementById("customSubjectRow");
+          const customSubjectInput = document.getElementById("customSubject");
+
+          if (this.value === "other") {
+            customSubjectRow.style.display = "block";
+            customSubjectInput.setAttribute("required", "true");
+            // Smooth slide down animation
+            customSubjectRow.style.opacity = "0";
+            customSubjectRow.style.transform = "translateY(-10px)";
+            setTimeout(() => {
+              customSubjectRow.style.transition = "all 0.3s ease";
+              customSubjectRow.style.opacity = "1";
+              customSubjectRow.style.transform = "translateY(0)";
+            }, 10);
+          } else {
+            customSubjectRow.style.display = "none";
+            customSubjectInput.removeAttribute("required");
+            customSubjectInput.value = "";
+            clearError("customSubject");
+          }
+
+          if (this.value) {
+            clearError("subject");
+          }
+        });
+
+      document
+        .getElementById("message")
+        .addEventListener("blur", function () {
+          const value = this.value.trim();
+          if (value && value.length >= 10) {
+            clearError("message");
+          }
+        });
+
+      // Optional: Add click handler to manually close success message
+      successMessage.addEventListener("click", function (e) {
+        // Only close if clicking on the success message itself, not its contents
+        if (e.target === successMessage) {
+          hideSuccessMessage();
+        }
+      });
+
+      // Optional: Add escape key handler to close success message
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && successMessage.classList.contains("show")) {
+          hideSuccessMessage();
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      $('a[href^="#"]').on("click", function (event) {
+        var target = $(this.getAttribute("href"));
+        if (target.length) {
+          event.preventDefault();
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: target.offset().top - 100,
+              },
+              1000
+            );
+        }
+      });
+    });
+  </script>
+</body>
 </html>

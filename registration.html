@@ -1,2582 +1,2528 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration - IPRECON 2026</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-          /* Registration Page Specific Styles */
-          .registration-hero {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 60px 0;
-            border-bottom: 1px solid #e9ecef;
-          }
-
-          .registration-hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-          }
-
-          .registration-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #211021;
-            margin-bottom: 15px;
-            line-height: 1.2;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-          }
-
-          .registration-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background-color: #8e24aa;
-          }
-
-          .registration-subtitle {
-            font-size: 1.3rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-            line-height: 1.4;
-          }
-
-          /* Clean Call for Papers style for registration details */
-          .registration-details {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            align-items: center;
-          }
-
-          .detail-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #6c757d;
-            font-size: 1rem;
-            font-weight: 500;
-          }
-
-          .detail-item i {
-            color: #8e24aa;
-            font-size: 1rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-          }
-
-          .detail-item strong {
-            color: #333;
-            font-weight: 600;
-          }
-
-          /* Important Notice styling */
-          .detail-item.important-notice {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #6c757d;
-            font-size: 1rem;
-            font-weight: 500;
-            justify-content: center;
-            flex-wrap: nowrap;
-            line-height: 1.4;
-          }
-
-          .detail-item.important-notice i {
-            color: #8e24aa;
-            font-size: 1rem;
-            flex-shrink: 0;
-            align-self: flex-start;
-            margin-top: 1px;
-          }
-
-          .detail-item.important-notice strong {
-            color: #211021;
-            font-weight: 600;
-          }
-
-          .detail-item.important-notice span {
-            display: inline-block;
-            text-align: center;
-            flex: 1;
-          }
-
-          /* Remove the separate currency-notice since we're combining */
-          .currency-notice {
-            display: none;
-          }
-
-          /* Main Content */
-          .registration-content {
-            padding: 20px 0 20px 0;
-            background: white;
-          }
-
-          .registration-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-          }
-
-          /* Important Notes */
-          .registration-notes {
-            background: linear-gradient(135deg, #211021, #8e24aa);
-            color: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-            position: relative;
-            overflow: hidden;
-          }
-
-          .registration-notes::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-          }
-
-          .registration-notes h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-          }
-
-          .registration-notes ul {
-            list-style: none;
-            padding: 0;
-            position: relative;
-            z-index: 2;
-          }
-
-          .registration-notes li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            line-height: 1.5;
-          }
-
-          .registration-notes li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 1.1rem;
-          }
-
-          /* No Show Policy Notice */
-          .no-show-policy {
-            display: flex;
-            max-width: 1000px;
-            margin: 20px auto 15px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 1px solid #8e24aa;
-          }
-
-          .no-show-policy-header {
-            background: linear-gradient(135deg, #8e24aa, #211021);
-            padding: 25px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-width: 180px;
-            flex-shrink: 0;
-          }
-
-          .no-show-policy-icon {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-          }
-
-          .no-show-policy-label {
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 1.3;
-          }
-
-          .no-show-policy-content {
-            flex: 1;
-            padding: 25px 20px;
-            background: white;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            color: #333;
-            line-height: 1.5;
-          }
-
-          /* Fee Table Section */
-          .fee-section {
-            margin: 50px 0;
-          }
-
-          .section-title {
-            font-size: 2.5rem;
-            color: #211021;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-          }
-
-          .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #8e24aa;
-          }
-
-          /* Modern Card-based Fee Structure */
-          .fee-cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-          }
-
-          .fee-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-          }
-
-          .fee-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8e24aa, #d4af37);
-          }
-
-          .fee-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: #8e24aa;
-          }
-
-          .fee-card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-          }
-
-          .fee-card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8e24aa, #211021);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-          }
-
-          .fee-card-icon i {
-            font-size: 1.8rem;
-            color: white;
-          }
-
-          .fee-card-title {
-            font-size: 1.4rem;
-            color: #211021;
-            font-weight: 600;
-            line-height: 1.3;
-            margin: 0;
-          }
-
-          /* Pricing Table within Cards */
-          .pricing-table {
-            width: 100%;
-          }
-
-          .pricing-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 15px;
-            text-align: center;
-          }
-
-          .price-type {
-            font-size: 0.9rem;
-            font-weight: 600;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-          }
-
-          .price-type.early-bird {
-            background: #e8f5e8;
-            color: #2e7d32;
-            border: 1px solid #4caf50;
-          }
-
-          .price-type.regular {
-            background: #f3e5f5;
-            color: #7b1fa2;
-            border: 1px solid #8e24aa;
-          }
-
-          .price-type small {
-            font-size: 0.75rem;
-            opacity: 0.8;
-          }
-
-          .pricing-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #f1f1f1;
-            gap: 10px;
-          }
-
-          .pricing-row:last-child {
-            border-bottom: none;
-          }
-
-          .pricing-row.foreign {
-            background: #f8f9fa;
-          }
-
-          .membership-type {
-            font-weight: 500;
-            color: #333;
-            font-size: 0.95rem;
-            padding: 5px 0;
-          }
-
-          .price {
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-align: center;
-            padding: 8px;
-            border-radius: 6px;
-          }
-
-          .early-price {
-            background: #e8f5e8;
-            color: #2e7d32;
-          }
-
-          .regular-price {
-            background: #f3e5f5;
-            color: #7b1fa2;
-          }
-
-          /* Additional Fees Section */
-          .additional-fees-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-          }
-
-          .additional-fee-card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid transparent;
-          }
-
-          .additional-fee-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff9800, #d4af37);
-          }
-
-          .penalty-card::before {
-            background: linear-gradient(90deg, #f44336, #e91e63);
-          }
-
-          .additional-fee-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-          }
-
-          .additional-pricing {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-          }
-
-          .additional-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #ff9800;
-          }
-
-          .currency {
-            font-weight: 500;
-            color: #333;
-          }
-
-          .amount {
-            font-weight: 700;
-            color: #ff9800;
-            font-size: 1.1rem;
-          }
-
-          .penalty-info {
-            text-align: center;
-          }
-
-          .penalty-info p {
-            color: #666;
-            margin-bottom: 15px;
-          }
-
-          .penalty-amount {
-            background: #ffebee;
-            color: #c62828;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: 1px solid #f44336;
-          }
-
-          /* Guidelines and Detailed Sections */
-          .guidelines-section,
-          .coauthor-section,
-          .policy-section,
-          .steps-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-left: 4px solid #8e24aa;
-          }
-
-          .guidelines-title {
-            font-size: 1.8rem;
-            color: #211021;
-            margin-bottom: 25px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-          }
-
-          .guidelines-title i {
-            color: #8e24aa;
-            font-size: 1.5rem;
-          }
-
-          .guidelines-content {
-            color: #555;
-            line-height: 1.6;
-          }
-
-          .guidelines-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-          }
-
-          .guidelines-list li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            line-height: 1.6;
-          }
-
-          .guidelines-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: #8e24aa;
-            font-weight: bold;
-            font-size: 1.1rem;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-
-          .notice-box {
-            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
-            border: 1px solid #8e24aa;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            position: relative;
-          }
-
-          .important-note {
-            background: #fff3e0;
-            border: 1px solid #ff9800;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #ff9800;
-          }
-
-          .email-link {
-            color: #8e24aa;
-            text-decoration: none;
-            font-weight: 600;
-          }
-
-          .email-link:hover {
-            color: #211021;
-            text-decoration: underline;
-          }
-
-          /* Registration Steps */
-          .step-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-          }
-
-          .step-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-          }
-
-          .step-card:hover {
-            background: white;
-            border-color: #8e24aa;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-          }
-
-          .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #8e24aa, #211021);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            flex-shrink: 0;
-          }
-
-          .step-content {
-            flex: 1;
-          }
-
-          .step-content h4 {
-            font-size: 1.2rem;
-            color: #211021;
-            margin-bottom: 10px;
-            font-weight: 600;
-          }
-
-          .step-content p {
-            color: #666;
-            line-height: 1.5;
-            margin: 0;
-          }
-
-          /* Action Buttons */
-          .registration-hero-actions {
-            text-align: center;
-            margin: 30px 0 20px 0;
-          }
-
-          .registration-actions {
-            display: none; /* Hide the old registration actions */
-          }
-
-          .register-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, #8e24aa, #211021);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-            cursor: pointer;
-            border: none;
-          }
-
-          .register-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
-            color: white;
-          }
-
-          .register-btn i {
-            font-size: 1.3rem;
-          }
-
-          /* Contact Section */
-          .contact-section {
-            background: #f8f9fa;
-            padding: 20px 0 60px 0;
-            margin-top: 50px;
-          }
-
-          .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-          }
-
-          .contact-content h3 {
-            font-size: 2rem;
-            color: #211021;
-            margin-bottom: 20px;
-          }
-
-          .contact-content p {
-            font-size: 1.1rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-          }
-
-          .contact-info {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-          }
-
-          .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #8e24aa;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-          }
-
-          .contact-link:hover {
-            color: #211021;
-            transform: translateY(-2px);
-          }
-
-          .contact-link i {
-            font-size: 1.2rem;
-          }
-
-          /* Warning Popup Modal Styles */
-          .warning-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-          }
-
-          .warning-modal.show {
-            opacity: 1;
-            visibility: visible;
-          }
-
-          .warning-modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 50px 40px;
-            max-width: 600px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-            max-height: 90vh;
-            overflow-y: auto;
-          }
-
-          .warning-modal.show .warning-modal-content {
-            transform: scale(1);
-          }
-
-          .warning-modal-content::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #ff9800, #f44336);
-          }
-
-          .warning-icon {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #ff9800, #f44336);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            animation: warningPulse 2s ease-in-out infinite;
-            position: relative;
-          }
-
-          .warning-icon::after {
-            content: "";
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border: 2px solid rgba(255, 152, 0, 0.3);
-            border-radius: 50%;
-            animation: warningRipple 2s ease-out infinite;
-          }
-
-          .warning-icon i {
-            font-size: 3rem;
-            color: white;
-            position: relative;
-            z-index: 2;
-          }
-
-          @keyframes warningPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-          }
-
-          @keyframes warningRipple {
-            0% { 
-              transform: scale(0.8); 
-              opacity: 1; 
-            }
-            100% { 
-              transform: scale(1.2); 
-              opacity: 0; 
-            }
-          }
-
-          .warning-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #211021;
-            margin-bottom: 20px;
-            line-height: 1.3;
-          }
-
-          .warning-message {
-            font-size: 1.2rem;
-            color: #6c757d;
-            margin-bottom: 30px;
-            line-height: 1.6;
-          }
-
-          .warning-highlight {
-            background: linear-gradient(135deg, #fff3e0, #ffebee);
-            border-left: 4px solid #ff9800;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            text-align: left;
-          }
-
-          .warning-highlight h4 {
-            color: #e65100;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-          }
-
-          .warning-highlight ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
-
-          .warning-highlight li {
-            padding: 5px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #333;
-            font-size: 0.95rem;
-            line-height: 1.4;
-          }
-
-          .warning-highlight li::before {
-            content: "⚠️";
-            position: absolute;
-            left: 0;
-            top: 3px;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-
-          .warning-actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-          }
-
-          .warning-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid;
-            cursor: pointer;
-          }
-
-          .warning-btn.primary {
-            background: #8e24aa;
-            color: white;
-            border-color: #8e24aa;
-          }
-
-          .warning-btn.primary:hover {
-            background: #7b1f96;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-          }
-
-          .warning-btn.secondary {
-            background: transparent;
-            color: #6c757d;
-            border-color: #dee2e6;
-          }
-
-          .warning-btn.secondary:hover {
-            background: #f8f9fa;
-            color: #495057;
-            transform: translateY(-2px);
-          }
-
-          .scroll-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #8e24aa;
-            font-size: 0.9rem;
-            margin-top: 15px;
-            animation: scrollBounce 2s ease-in-out infinite;
-          }
-
-          @keyframes scrollBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-          }
-
-          /* Terms Checkbox Section */
-          .terms-section {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border: 2px solid #8e24aa;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            text-align: center;
-          }
-
-          .terms-checkbox-container {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: nowrap;
-            text-align: left;
-          }
-
-          .custom-checkbox {
-            position: relative;
-            display: inline-block;
-            flex-shrink: 0;
-          }
-
-          .custom-checkbox input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-          }
-
-          .checkbox-mark {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background: white;
-            border: 2px solid #8e24aa;
-            border-radius: 4px;
-            position: relative;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            flex-shrink: 0;
-          }
-
-          .custom-checkbox input:checked ~ .checkbox-mark {
-            background: #8e24aa;
-            transform: scale(1.1);
-          }
-
-          .custom-checkbox input:checked ~ .checkbox-mark::after {
-            content: "✓";
-            position: absolute;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
-
-          .terms-text {
-            font-size: 1.1rem;
-            color: #333;
-            font-weight: 500;
-          }
-
-          .terms-register-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 40px;
-            background: linear-gradient(135deg, #8e24aa, #211021);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-            cursor: pointer;
-            border: none;
-            opacity: 0.5;
-            transform: scale(0.95);
-            pointer-events: none;
-          }
-
-          .terms-register-btn.enabled {
-            opacity: 1;
-            transform: scale(1);
-            pointer-events: all;
-          }
-
-          .terms-register-btn.enabled:hover {
-            background: linear-gradient(135deg, #7b1f96, #1a0e1a);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
-          }
-
-          /* Responsive Design */
-          @media (max-width: 1024px) {
-            .registration-details {
-              gap: 30px;
-            }
-            
-            .warning-modal-content {
-              max-width: 90%;
-              padding: 40px 30px;
-            }
-
-            .warning-title {
-              font-size: 2rem;
-            }
-
-            .warning-message {
-              font-size: 1.1rem;
-            }
-
-            .no-show-policy-content {
-              flex-direction: column;
-              text-align: center;
-            }
-
-            .no-show-policy-description {
-              text-align: center;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .registration-hero {
-              padding: 40px 0;
-            }
-
-            .registration-title {
-              font-size: 2.5rem;
-            }
-
-            .registration-subtitle {
-              font-size: 1.1rem;
-            }
-
-            .registration-details {
-              flex-direction: column;
-              gap: 15px;
-              align-items: center;
-              text-align: center;
-            }
-
-            .detail-item {
-              font-size: 0.95rem;
-              justify-content: center;
-              text-align: center;
-            }
-
-            .detail-item.important-notice {
-              align-items: center;
-              text-align: center;
-              justify-content: center;
-              gap: 6px;
-              flex-wrap: nowrap;
-              padding: 0 10px;
-              font-size: 0.9rem;
-            }
-
-            .detail-item.important-notice i {
-              flex-shrink: 0;
-              align-self: flex-start;
-              margin-top: 1px;
-            }
-
-            .detail-item.important-notice span {
-              text-align: center;
-              line-height: 1.3;
-              flex: 1;
-            }
-
-            .detail-item.important-notice strong {
-              text-align: center;
-            }
-
-            .registration-hero-actions {
-              margin: 25px 0 15px 0;
-            }
-
-            .register-btn {
-              padding: 16px 32px;
-              font-size: 1rem;
-            }
-
-            .no-show-policy {
-              flex-direction: column;
-              margin: 40px 15px 12px 15px;
-            }
-
-            .no-show-policy-header {
-              flex-direction: row;
-              align-items: center;
-              gap: 12px;
-              padding: 18px 20px;
-              min-width: auto;
-            }
-
-            .no-show-policy-icon {
-              font-size: 1.5rem;
-              margin-bottom: 0;
-            }
-
-            .no-show-policy-label {
-              font-size: 0.95rem;
-            }
-
-            .no-show-policy-content {
-              padding: 18px 20px;
-              font-size: 0.95rem;
-            }
-
-            .registration-notes,
-            .guidelines-section,
-            .coauthor-section,
-            .policy-section,
-            .steps-section {
-              padding: 30px 20px;
-            }
-
-            .guidelines-title {
-              font-size: 1.5rem;
-            }
-
-            .section-title {
-              font-size: 2rem;
-            }
-
-            .contact-info {
-              flex-direction: column;
-              gap: 20px;
-              align-items: center;
-            }
-
-            .contact-link {
-              justify-content: center;
-            }
-
-            .contact-section {
-              padding: 15px 0 50px 0;
-            }
-
-            .contact-section {
-              padding: 15px 0 40px 0;
-            }
-
-            .step-cards {
-              grid-template-columns: 1fr;
-            }
-
-            .step-card {
-              flex-direction: row;
-              text-align: left;
-              align-items: flex-start;
-              gap: 15px;
-              padding: 22px;
-            }
-
-            .step-number {
-              width: 45px;
-              height: 45px;
-              font-size: 1.3rem;
-              flex-shrink: 0;
-            }
-
-            .step-content {
-              flex: 1;
-            }
-
-            .step-content h4 {
-              font-size: 1.1rem;
-              margin-bottom: 8px;
-              text-align: left;
-            }
-
-            .step-content p {
-              font-size: 0.9rem;
-              text-align: left;
-              line-height: 1.4;
-            }
-
-            .warning-modal-content {
-              padding: 35px 25px;
-              margin: 15px;
-              border-radius: 15px;
-              max-width: 95%;
-            }
-
-            .warning-icon {
-              width: 80px;
-              height: 80px;
-              margin-bottom: 25px;
-            }
-
-            .warning-icon i {
-              font-size: 2.5rem;
-            }
-
-            .warning-title {
-              font-size: 1.8rem;
-              margin-bottom: 18px;
-              line-height: 1.2;
-            }
-
-            .warning-message {
-              font-size: 1rem;
-              margin-bottom: 25px;
-            }
-
-            .warning-highlight {
-              padding: 18px;
-              margin: 18px 0;
-            }
-
-            .warning-highlight h4 {
-              font-size: 1rem;
-              margin-bottom: 12px;
-            }
-
-            .warning-highlight li {
-              font-size: 0.9rem;
-              padding: 6px 0;
-            }
-
-            .scroll-indicator {
-              font-size: 0.85rem;
-              margin-top: 20px;
-            }
-
-            .warning-actions {
-              flex-direction: column;
-              align-items: center;
-              gap: 15px;
-              margin-top: 25px;
-            }
-
-            .warning-btn {
-              width: 100%;
-              max-width: 280px;
-              justify-content: center;
-              padding: 14px 25px;
-              font-size: 0.95rem;
-            }
-
-            .terms-checkbox-container {
-              flex-direction: row;
-              gap: 12px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              text-align: left;
-              padding: 0 10px;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .registration-title {
-              font-size: 2rem;
-            }
-
-            .detail-item {
-              font-size: 0.9rem;
-              justify-content: center;
-              text-align: center;
-            }
-
-            .detail-item.important-notice {
-              align-items: center;
-              text-align: center;
-              justify-content: center;
-              gap: 5px;
-              flex-wrap: nowrap;
-              padding: 0 5px;
-              font-size: 0.85rem;
-            }
-
-            .detail-item.important-notice i {
-              flex-shrink: 0;
-              align-self: flex-start;
-              margin-top: 1px;
-            }
-
-            .detail-item.important-notice span {
-              text-align: center;
-              line-height: 1.3;
-              flex: 1;
-            }
-
-            .register-btn {
-              padding: 15px 30px;
-              font-size: 1rem;
-            }
-
-            .no-show-policy {
-              margin: 30px 10px 10px 10px;
-              flex-direction: column;
-            }
-
-            .no-show-policy-header {
-              flex-direction: row;
-              align-items: center;
-              gap: 10px;
-              padding: 15px 18px;
-              min-width: auto;
-            }
-
-            .no-show-policy-icon {
-              font-size: 1.3rem;
-              margin-bottom: 0;
-            }
-
-            .no-show-policy-label {
-              font-size: 0.9rem;
-              line-height: 1.2;
-            }
-
-            .no-show-policy-content {
-              padding: 15px 18px;
-              font-size: 0.9rem;
-              line-height: 1.4;
-            }
-
-            .registration-notes h3,
-            .guidelines-title {
-              font-size: 1.3rem;
-              flex-direction: column;
-              gap: 10px;
-              text-align: center;
-            }
-
-            .section-title {
-              font-size: 1.8rem;
-            }
-
-            .fee-cards-container {
-                grid-template-columns: 1fr;
-            }
-
-            .warning-modal-content {
-              padding: 25px 20px;
-              margin: 10px;
-              border-radius: 12px;
-              max-width: 98%;
-            }
-
-            .warning-icon {
-              width: 70px;
-              height: 70px;
-              margin-bottom: 20px;
-            }
-
-            .warning-icon::after {
-              width: 90px;
-              height: 90px;
-            }
-
-            .warning-icon i {
-              font-size: 2rem;
-            }
-
-            .warning-title {
-              font-size: 1.6rem;
-              margin-bottom: 15px;
-            }
-
-            .warning-message {
-              font-size: 0.95rem;
-              margin-bottom: 20px;
-              line-height: 1.5;
-            }
-
-            .warning-highlight {
-              padding: 15px;
-              margin: 15px 0;
-            }
-
-            .warning-highlight h4 {
-              font-size: 0.95rem;
-              margin-bottom: 10px;
-            }
-
-            .warning-highlight li {
-              font-size: 0.85rem;
-              padding: 5px 0;
-              padding-left: 22px;
-            }
-
-            .scroll-indicator {
-              font-size: 0.8rem;
-              margin-top: 15px;
-              gap: 6px;
-            }
-
-            .warning-actions {
-              margin-top: 20px;
-              gap: 12px;
-            }
-
-            .warning-btn {
-              max-width: 100%;
-              padding: 12px 20px;
-              font-size: 0.9rem;
-            }
-
-            .terms-text {
-              font-size: 1rem;
-              text-align: left;
-              line-height: 1.4;
-            }
-
-            .checkbox-mark {
-              width: 20px;
-              height: 20px;
-              flex-shrink: 0;
-            }
-
-            .custom-checkbox input:checked ~ .checkbox-mark::after {
-              font-size: 14px;
-            }
-
-            .terms-checkbox-container {
-              flex-direction: row;
-              gap: 10px;
-              align-items: flex-start;
-              justify-content: flex-start;
-              text-align: left;
-              padding: 0 5px;
-            }
-
-            .contact-info {
-              flex-direction: column;
-              gap: 15px;
-              align-items: center;
-            }
-
-            .contact-link {
-              justify-content: center;
-            }
-          }
-
-          /* Animation Classes */
-          .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-          }
-
-          .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-          }
-    </style>
-    <meta
-      name="description"
-      content="Registration - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
-        <div class="separator"></div>
-        <div class="event-info">
-          <span>September 04-06, 2026</span>
-          <span>College of Engineering Karunagappally, Kerala, INDIA</span>
-        </div>
-      </div>
-      <div class="header-section">
-        <span class="sponsor-label" style="visibility: hidden">Powered by</span>
-        <div class="separator"></div>
-        <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration - IPRECON 2026</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    /* Registration Page Specific Styles */
+    .registration-hero {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 60px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .registration-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .registration-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #211021;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .registration-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background-color: #8e24aa;
+    }
+
+    .registration-subtitle {
+      font-size: 1.3rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+      line-height: 1.4;
+    }
+
+    /* Clean Call for Papers style for registration details */
+    .registration-details {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6c757d;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .detail-item i {
+      color: #8e24aa;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .detail-item strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    /* Important Notice styling */
+    .detail-item.important-notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6c757d;
+      font-size: 1rem;
+      font-weight: 500;
+      justify-content: center;
+      flex-wrap: nowrap;
+      line-height: 1.4;
+    }
+
+    .detail-item.important-notice i {
+      color: #8e24aa;
+      font-size: 1rem;
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-top: 1px;
+    }
+
+    .detail-item.important-notice strong {
+      color: #211021;
+      font-weight: 600;
+    }
+
+    .detail-item.important-notice span {
+      display: inline-block;
+      text-align: center;
+      flex: 1;
+    }
+
+    /* Remove the separate currency-notice since we're combining */
+    .currency-notice {
+      display: none;
+    }
+
+    /* Main Content */
+    .registration-content {
+      padding: 20px 0 20px 0;
+      background: white;
+    }
+
+    .registration-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Important Notes */
+    .registration-notes {
+      background: linear-gradient(135deg, #211021, #8e24aa);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .registration-notes::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
+
+    .registration-notes h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .registration-notes ul {
+      list-style: none;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .registration-notes li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .registration-notes li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* No Show Policy Notice */
+    .no-show-policy {
+      display: flex;
+      max-width: 1000px;
+      margin: 20px auto 15px auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid #8e24aa;
+    }
+
+    .no-show-policy-header {
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-width: 180px;
+      flex-shrink: 0;
+    }
+
+    .no-show-policy-icon {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .no-show-policy-label {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .no-show-policy-content {
+      flex: 1;
+      padding: 25px 20px;
+      background: white;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Fee Table Section */
+    .fee-section {
+      margin: 50px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #211021;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #8e24aa;
+    }
+
+    /* Modern Card-based Fee Structure */
+    .fee-cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .fee-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    .fee-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8e24aa, #d4af37);
+    }
+
+    .fee-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: #8e24aa;
+    }
+
+    .fee-card-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .fee-card-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fee-card-icon i {
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .fee-card-title {
+      font-size: 1.4rem;
+      color: #211021;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    /* Pricing Table within Cards */
+    .pricing-table {
+      width: 100%;
+    }
+
+    .pricing-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .price-type {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .price-type.early-bird {
+      background: #e8f5e8;
+      color: #2e7d32;
+      border: 1px solid #4caf50;
+    }
+
+    .price-type.regular {
+      background: #f3e5f5;
+      color: #7b1fa2;
+      border: 1px solid #8e24aa;
+    }
+
+    .price-type small {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f1f1;
+      gap: 10px;
+    }
+
+    .pricing-row:last-child {
+      border-bottom: none;
+    }
+
+    .pricing-row.foreign {
+      background: #f8f9fa;
+    }
+
+    .membership-type {
+      font-weight: 500;
+      color: #333;
+      font-size: 0.95rem;
+      padding: 5px 0;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .early-price {
+      background: #e8f5e8;
+      color: #2e7d32;
+    }
+
+    .regular-price {
+      background: #f3e5f5;
+      color: #7b1fa2;
+    }
+
+    /* Additional Fees Section */
+    .additional-fees-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .additional-fee-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    .additional-fee-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #ff9800, #d4af37);
+    }
+
+    .penalty-card::before {
+      background: linear-gradient(90deg, #f44336, #e91e63);
+    }
+
+    .additional-fee-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .additional-pricing {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .additional-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #ff9800;
+    }
+
+    .currency {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .amount {
+      font-weight: 700;
+      color: #ff9800;
+      font-size: 1.1rem;
+    }
+
+    .penalty-info {
+      text-align: center;
+    }
+
+    .penalty-info p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .penalty-amount {
+      background: #ffebee;
+      color: #c62828;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: 1px solid #f44336;
+    }
+
+    /* Guidelines and Detailed Sections */
+    .guidelines-section,
+    .coauthor-section,
+    .policy-section,
+    .steps-section {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 40px 0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #8e24aa;
+    }
+
+    .guidelines-title {
+      font-size: 1.8rem;
+      color: #211021;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .guidelines-title i {
+      color: #8e24aa;
+      font-size: 1.5rem;
+    }
+
+    .guidelines-content {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .guidelines-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .guidelines-list li {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .guidelines-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #8e24aa;
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .notice-box {
+      background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+      border: 1px solid #8e24aa;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .important-note {
+      background: #fff3e0;
+      border: 1px solid #ff9800;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid #ff9800;
+    }
+
+    .email-link {
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .email-link:hover {
+      color: #211021;
+      text-decoration: underline;
+    }
+
+    /* Registration Steps */
+    .step-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .step-card {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 25px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .step-card:hover {
+      background: white;
+      border-color: #8e24aa;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h4 {
+      font-size: 1.2rem;
+      color: #211021;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .step-content p {
+      color: #666;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Action Buttons */
+    .registration-hero-actions {
+      text-align: center;
+      margin: 30px 0 20px 0;
+    }
+
+    .registration-actions {
+      display: none;
+      /* Hide the old registration actions */
+    }
+
+    .register-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      cursor: pointer;
+      border: none;
+    }
+
+    .register-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+      color: white;
+    }
+
+    .register-btn i {
+      font-size: 1.3rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #f8f9fa;
+      padding: 20px 0 60px 0;
+      margin-top: 50px;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-content h3 {
+      font-size: 2rem;
+      color: #211021;
+      margin-bottom: 20px;
+    }
+
+    .contact-content p {
+      font-size: 1.1rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: #211021;
+      transform: translateY(-2px);
+    }
+
+    .contact-link i {
+      font-size: 1.2rem;
+    }
+
+    /* Warning Popup Modal Styles */
+    .warning-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .warning-modal.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .warning-modal-content {
+      background: white;
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      overflow: hidden;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .warning-modal.show .warning-modal-content {
+      transform: scale(1);
+    }
+
+    .warning-modal-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ff9800, #f44336);
+    }
+
+    .warning-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #ff9800, #f44336);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      animation: warningPulse 2s ease-in-out infinite;
+      position: relative;
+    }
+
+    .warning-icon::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border: 2px solid rgba(255, 152, 0, 0.3);
+      border-radius: 50%;
+      animation: warningRipple 2s ease-out infinite;
+    }
+
+    .warning-icon i {
+      font-size: 3rem;
+      color: white;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes warningPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes warningRipple {
+      0% {
+        transform: scale(0.8);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .warning-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #211021;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .warning-message {
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .warning-highlight {
+      background: linear-gradient(135deg, #fff3e0, #ffebee);
+      border-left: 4px solid #ff9800;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .warning-highlight h4 {
+      color: #e65100;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .warning-highlight ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .warning-highlight li {
+      padding: 5px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .warning-highlight li::before {
+      content: "⚠️";
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .warning-actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .warning-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid;
+      cursor: pointer;
+    }
+
+    .warning-btn.primary {
+      background: #8e24aa;
+      color: white;
+      border-color: #8e24aa;
+    }
+
+    .warning-btn.primary:hover {
+      background: #7b1f96;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+    }
+
+    .warning-btn.secondary {
+      background: transparent;
+      color: #6c757d;
+      border-color: #dee2e6;
+    }
+
+    .warning-btn.secondary:hover {
+      background: #f8f9fa;
+      color: #495057;
+      transform: translateY(-2px);
+    }
+
+    .scroll-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #8e24aa;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Terms Checkbox Section */
+    .terms-section {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      border: 2px solid #8e24aa;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .terms-checkbox-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: nowrap;
+      text-align: left;
+    }
+
+    .custom-checkbox {
+      position: relative;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .custom-checkbox input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .checkbox-mark {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border: 2px solid #8e24aa;
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .custom-checkbox input:checked~.checkbox-mark {
+      background: #8e24aa;
+      transform: scale(1.1);
+    }
+
+    .custom-checkbox input:checked~.checkbox-mark::after {
+      content: "✓";
+      position: absolute;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .terms-text {
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .terms-register-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+      cursor: pointer;
+      border: none;
+      opacity: 0.5;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+
+    .terms-register-btn.enabled {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: all;
+    }
+
+    .terms-register-btn.enabled:hover {
+      background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .registration-details {
+        gap: 30px;
+      }
+
+      .warning-modal-content {
+        max-width: 90%;
+        padding: 40px 30px;
+      }
+
+      .warning-title {
+        font-size: 2rem;
+      }
+
+      .warning-message {
+        font-size: 1.1rem;
+      }
+
+      .no-show-policy-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .no-show-policy-description {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .registration-hero {
+        padding: 40px 0;
+      }
+
+      .registration-title {
+        font-size: 2.5rem;
+      }
+
+      .registration-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .registration-details {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+      }
+
+      .detail-item {
+        font-size: 0.95rem;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .detail-item.important-notice {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: nowrap;
+        padding: 0 10px;
+        font-size: 0.9rem;
+      }
+
+      .detail-item.important-notice i {
+        flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: 1px;
+      }
+
+      .detail-item.important-notice span {
+        text-align: center;
+        line-height: 1.3;
+        flex: 1;
+      }
+
+      .detail-item.important-notice strong {
+        text-align: center;
+      }
+
+      .registration-hero-actions {
+        margin: 25px 0 15px 0;
+      }
+
+      .register-btn {
+        padding: 16px 32px;
+        font-size: 1rem;
+      }
+
+      .no-show-policy {
+        flex-direction: column;
+        margin: 40px 15px 12px 15px;
+      }
+
+      .no-show-policy-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 20px;
+        min-width: auto;
+      }
+
+      .no-show-policy-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+
+      .no-show-policy-label {
+        font-size: 0.95rem;
+      }
+
+      .no-show-policy-content {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+      }
+
+      .registration-notes,
+      .guidelines-section,
+      .coauthor-section,
+      .policy-section,
+      .steps-section {
+        padding: 30px 20px;
+      }
+
+      .guidelines-title {
+        font-size: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .contact-link {
+        justify-content: center;
+      }
+
+      .contact-section {
+        padding: 15px 0 50px 0;
+      }
+
+      .contact-section {
+        padding: 15px 0 40px 0;
+      }
+
+      .step-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .step-card {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 22px;
+      }
+
+      .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+      }
+
+      .step-content {
+        flex: 1;
+      }
+
+      .step-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      .step-content p {
+        font-size: 0.9rem;
+        text-align: left;
+        line-height: 1.4;
+      }
+
+      .warning-modal-content {
+        padding: 35px 25px;
+        margin: 15px;
+        border-radius: 15px;
+        max-width: 95%;
+      }
+
+      .warning-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 25px;
+      }
+
+      .warning-icon i {
+        font-size: 2.5rem;
+      }
+
+      .warning-title {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+        line-height: 1.2;
+      }
+
+      .warning-message {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+
+      .warning-highlight {
+        padding: 18px;
+        margin: 18px 0;
+      }
+
+      .warning-highlight h4 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+      }
+
+      .warning-highlight li {
+        font-size: 0.9rem;
+        padding: 6px 0;
+      }
+
+      .scroll-indicator {
+        font-size: 0.85rem;
+        margin-top: 20px;
+      }
+
+      .warning-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .warning-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 14px 25px;
+        font-size: 0.95rem;
+      }
+
+      .terms-checkbox-container {
+        flex-direction: row;
+        gap: 12px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .registration-title {
+        font-size: 2rem;
+      }
+
+      .detail-item {
+        font-size: 0.9rem;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .detail-item.important-notice {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+        padding: 0 5px;
+        font-size: 0.85rem;
+      }
+
+      .detail-item.important-notice i {
+        flex-shrink: 0;
+        align-self: flex-start;
+        margin-top: 1px;
+      }
+
+      .detail-item.important-notice span {
+        text-align: center;
+        line-height: 1.3;
+        flex: 1;
+      }
+
+      .register-btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+      }
+
+      .no-show-policy {
+        margin: 30px 10px 10px 10px;
+        flex-direction: column;
+      }
+
+      .no-show-policy-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 18px;
+        min-width: auto;
+      }
+
+      .no-show-policy-icon {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+      }
+
+      .no-show-policy-label {
+        font-size: 0.9rem;
+        line-height: 1.2;
+      }
+
+      .no-show-policy-content {
+        padding: 15px 18px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .registration-notes h3,
+      .guidelines-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .fee-cards-container {
+        grid-template-columns: 1fr;
+      }
+
+      .warning-modal-content {
+        padding: 25px 20px;
+        margin: 10px;
+        border-radius: 12px;
+        max-width: 98%;
+      }
+
+      .warning-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+      }
+
+      .warning-icon::after {
+        width: 90px;
+        height: 90px;
+      }
+
+      .warning-icon i {
+        font-size: 2rem;
+      }
+
+      .warning-title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+      }
+
+      .warning-message {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .warning-highlight {
+        padding: 15px;
+        margin: 15px 0;
+      }
+
+      .warning-highlight h4 {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+      }
+
+      .warning-highlight li {
+        font-size: 0.85rem;
+        padding: 5px 0;
+        padding-left: 22px;
+      }
+
+      .scroll-indicator {
+        font-size: 0.8rem;
+        margin-top: 15px;
+        gap: 6px;
+      }
+
+      .warning-actions {
+        margin-top: 20px;
+        gap: 12px;
+      }
+
+      .warning-btn {
+        max-width: 100%;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+
+      .terms-text {
+        font-size: 1rem;
+        text-align: left;
+        line-height: 1.4;
+      }
+
+      .checkbox-mark {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+      }
+
+      .custom-checkbox input:checked~.checkbox-mark::after {
+        font-size: 14px;
+      }
+
+      .terms-checkbox-container {
+        flex-direction: row;
+        gap: 10px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 0 5px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .contact-link {
+        justify-content: center;
+      }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <meta name="description"
+    content="Registration - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-container">
+    <div class="header-section">
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 black.png" alt="IPRECON 2026 Logo" class="logo" />
+      </a>
+      <div class="separator"></div>
+      <div class="event-info">
+        <span>September 04-06, 2026</span>
+        <span>College of Engineering Karunagappally, Kerala, INDIA</span>
       </div>
     </div>
+    <div class="header-section">
+      <span class="sponsor-label" style="visibility: hidden">Powered by</span>
+      <div class="separator"></div>
+      <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    </div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="mob-marq marquee-container">
-          <div class="marquee">
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Paper Submissions Opening Soon! To View Call for Papers
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              20% of the presented conference papers will be eligible for
-              further review and possible publication in IAS Periodicals.
-            </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Presented papers from IPRECON have been posted in the IEEE Xplore®
-              Digital Library! To View
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
-            </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="mob-marq marquee-container">
+        <div class="marquee">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Paper Submissions Opening Soon! To View Call for Papers
+            <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            20% of the presented conference papers will be eligible for
+            further review and possible publication in IAS Periodicals.
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Presented papers from IPRECON have been posted in the IEEE Xplore®
+            Digital Library! To View
+            <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="./index.html">HOME</a></li>
-          <li class="nav-item">
-            <span class="nav-link">ABOUT</span>
-            <div class="dropdown-content">
-              <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
-              <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
-              <a href="./venue.html" class="dropdown-item">VENUE</a>
-              <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item"
-                >ACCOMMODATION</a
-              >
-              <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item"
-                >SPONSORS & EXHIBITORS</a
-              >
-              <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
-          <li class="nav-item">
-            <span class="nav-link">FOR AUTHORS</span>
-            <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item"
-                >CALL FOR PAPERS</a
-              >
-              <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item"
-                >IMPORTANT DATES</a
-              >
-              <a href="./camera-ready.html" class="dropdown-item"
-                >CAMERA READY SUBMISSION INSTRUCTIONS</a
-              >
-              <a href="./presentation-guidelines.html" class="dropdown-item"
-                >PRESENTATION GUIDELINES</a
-              >
-               <a href="housing-support.html" class="dropdown-item"
-                >STUDENT HOUSING SUPPORT</a
-              >
-              <a href="./travel-support.html" class="dropdown-item"
-                >STUDENT TRAVEL SUPPORT</a
-              >
-            </div>
-          </li>
-          <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
-          <li class="nav-item">
-            <span class="nav-link">PROGRAM</span>
-            <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item"
-                >INAUGRAL PROGRAM</a
-              >
-              <a href="./distinguished-lectures.html" class="dropdown-item"
-                >DISTINGUISHED LECTURE PROGRAM</a
-              >
-              <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
-              <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item"
-                >SPECIAL SESSIONS</a
-              >
-              <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
-          <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
-        </ul>
       </div>
-    </nav>
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 white.png" alt="IPRECON 2026 Logo" class="brand-logo" id="brandLogo" />
+      </a>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="./index.html">HOME</a></li>
+        <li class="nav-item">
+          <span class="nav-link">ABOUT</span>
+          <div class="dropdown-content">
+            <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
+            <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
+            <a href="./venue.html" class="dropdown-item">VENUE</a>
+            <a href="./kerala.html" class="dropdown-item">KERALA</a>
+            <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
+            <a href="./visa.html" class="dropdown-item">VISA</a>
+            <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
+            <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
+        <li class="nav-item">
+          <span class="nav-link">FOR AUTHORS</span>
+          <div class="dropdown-content">
+            <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
+            <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
+            <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+            <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+            <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+            <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+            <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
+        <li class="nav-item">
+          <span class="nav-link">PROGRAM</span>
+          <div class="dropdown-content">
+            <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+            <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
+            <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
+            <a href="./tracks.html" class="dropdown-item">TRACKS</a>
+            <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
+            <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
+        <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Marquee -->
-    <div class="non-mob marquee-container">
-      <div class="marquee">
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
-        </div>
+  <!-- Marquee -->
+  <div class="non-mob marquee-container">
+    <div class="marquee">
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Paper Submissions Opening Soon! To View Call for Papers
+        <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        20% of the presented conference papers will be eligible for further
+        review and possible publication in IAS Periodicals.
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Presented papers from IPRECON have been posted in the IEEE Xplore®
+        Digital Library! To View
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
       </div>
     </div>
+  </div>
 
-    <!-- Spacer for when marquee becomes fixed -->
-    <div id="marquee-placeholder" style="display: none"></div>
+  <!-- Spacer for when marquee becomes fixed -->
+  <div id="marquee-placeholder" style="display: none"></div>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="registration-hero">
-        <div class="registration-hero-content">
-          <h1 class="registration-title">Registration Details</h1>
-          <p class="registration-subtitle">
-            (Read the Registration Guidelines Carefully Before Registering)
-          </p>
+  <main>
+    <!-- Hero Section -->
+    <section class="registration-hero">
+      <div class="registration-hero-content">
+        <h1 class="registration-title">Registration Details</h1>
+        <p class="registration-subtitle">
+          (Read the Registration Guidelines Carefully Before Registering)
+        </p>
 
-          <div class="registration-details">
-            <div class="detail-item">
-              <i class="fas fa-calendar-check"></i>
-              <span><strong>Early Bird Deadline: 31 May 2026</strong></span>
-            </div>
-            <div class="detail-item">
-              <i class="fas fa-clock"></i>
-              <span><strong>Regular Fee: From 1 June 2026</strong></span>
-            </div>
-            <div class="detail-item important-notice">
-              <i class="fas fa-exclamation-triangle"></i>
-              <span><strong>Important:</strong> Indian, Bhutan & Nepal delegates must pay in INR or Ngultrum</span>
-            </div>
+        <div class="registration-details">
+          <div class="detail-item">
+            <i class="fas fa-calendar-check"></i>
+            <span><strong>Early Bird Deadline: 31 May 2026</strong></span>
           </div>
-
-          <!-- Registration Action Button -->
-          <div class="registration-hero-actions">
-            <button class="register-btn" id="registerBtn">
-              <i class="fas fa-user-plus"></i>
-              Register Now
-            </button>
+          <div class="detail-item">
+            <i class="fas fa-clock"></i>
+            <span><strong>Regular Fee: From 1 June 2026</strong></span>
           </div>
-
-          <!-- NEW: No Show Policy Notice -->
-          <div class="no-show-policy">
-            <div class="no-show-policy-header">
-              <i class="fas fa-user-times no-show-policy-icon"></i>
-              <div class="no-show-policy-label">IEEE No Show Policy</div>
-            </div>
-            <div class="no-show-policy-content">
-              Each accepted paper included in the final program is expected to have at least one author present the paper at the conference (in case of both virtual and physical attendee). Non-presented paper will not be submitted to IEEE Xplore® digital library as per IEEE no-show policy.
-            </div>
-          </div>
-
-          <div class="currency-notice">
-            <div class="notice-content">
-              <i class="fas fa-exclamation-triangle"></i>
-              <span
-                ><strong>Important:</strong> Indian, Bhutan & Nepal delegates
-                must pay in INR or Ngultrum</span
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Warning Modal -->
-      <div class="warning-modal" id="warningModal">
-        <div class="warning-modal-content">
-          <div class="warning-icon">
+          <div class="detail-item important-notice">
             <i class="fas fa-exclamation-triangle"></i>
+            <span><strong>Important:</strong> Indian, Bhutan & Nepal delegates must pay in INR or Ngultrum</span>
           </div>
-          
-          <h2 class="warning-title">Please Read Guidelines First!</h2>
-          
-          <p class="warning-message">
-            Before proceeding with registration, it's essential to read and understand all the registration guidelines, terms, and conditions listed below.
-          </p>
+        </div>
 
-          <div class="warning-highlight">
-            <h4>Important Points to Review:</h4>
-            <ul>
-              <li>Registration fees and payment methods</li>
-              <li>Paper submission requirements</li>
-              <li>Cancellation and refund policies</li>
-              <li>IEEE membership verification process</li>
-              <li>Terms and conditions for acceptance</li>
-            </ul>
+        <!-- Registration Action Button -->
+        <div class="registration-hero-actions">
+          <button class="register-btn" id="registerBtn">
+            <i class="fas fa-user-plus"></i>
+            Register Now
+          </button>
+        </div>
+
+        <!-- NEW: No Show Policy Notice -->
+        <div class="no-show-policy">
+          <div class="no-show-policy-header">
+            <i class="fas fa-user-times no-show-policy-icon"></i>
+            <div class="no-show-policy-label">IEEE No Show Policy</div>
           </div>
-
-          <div class="scroll-indicator">
-            <i class="fas fa-arrow-down"></i>
-            <span>Scroll down to read all guidelines and find the registration button</span>
+          <div class="no-show-policy-content">
+            Each accepted paper included in the final program is expected to have at least one author present the paper
+            at the conference (in case of both virtual and physical attendee). Non-presented paper will not be submitted
+            to IEEE Xplore® digital library as per IEEE no-show policy.
           </div>
+        </div>
 
-          <div class="warning-actions">
-            <button class="warning-btn primary" id="closeWarningBtn">
-              <i class="fas fa-book-reader"></i>
-              I'll Read the Guidelines
-            </button>
-            <button class="warning-btn secondary" id="cancelWarningBtn">
-              <i class="fas fa-times"></i>
-              Cancel
-            </button>
+        <div class="currency-notice">
+          <div class="notice-content">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span><strong>Important:</strong> Indian, Bhutan & Nepal delegates
+              must pay in INR or Ngultrum</span>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Registration Content -->
-      <section class="registration-content">
-        <div class="registration-container">
-          <!-- Fee Structure -->
-          <div class="fee-section">
-            <h2 class="section-title">Registration Fees</h2>
-
-            <!-- Modern Card Layout -->
-            <div class="fee-cards-container">
-              <!-- Author - Student -->
-              <div class="fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-user-graduate"></i>
-                  </div>
-                  <h3 class="fee-card-title">Author – Student</h3>
-                </div>
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <div class="price-type early-bird">
-                      Early Bird<br /><small>(by 31 May 2026)</small>
-                    </div>
-                    <div class="price-type regular">
-                      Regular<br /><small>(from 1 June 2026)</small>
-                    </div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">IEEE Member</div>
-                    <div class="price early-price">₹4,999</div>
-                    <div class="price regular-price">₹6,999</div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">Non-IEEE</div>
-                    <div class="price early-price">₹6,999</div>
-                    <div class="price regular-price">₹8,999</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign IEEE</div>
-                    <div class="price early-price">$150</div>
-                    <div class="price regular-price">$200</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign Non-IEEE</div>
-                    <div class="price early-price">$175</div>
-                    <div class="price regular-price">$225</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Author - Academia/Industry -->
-              <div class="fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-briefcase"></i>
-                  </div>
-                  <h3 class="fee-card-title">Author – Academia / Industry</h3>
-                </div>
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <div class="price-type early-bird">
-                      Early Bird<br /><small>(by 31 May 2026)</small>
-                    </div>
-                    <div class="price-type regular">
-                      Regular<br /><small>(from 1 June 2026)</small>
-                    </div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">IEEE Member</div>
-                    <div class="price early-price">₹7,999</div>
-                    <div class="price regular-price">₹9,999</div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">Non-IEEE</div>
-                    <div class="price early-price">₹9,999</div>
-                    <div class="price regular-price">₹11,999</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign IEEE</div>
-                    <div class="price early-price">$190</div>
-                    <div class="price regular-price">$240</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign Non-IEEE</div>
-                    <div class="price early-price">$240</div>
-                    <div class="price regular-price">$290</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Co-Author - Student -->
-              <div class="fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-users"></i>
-                  </div>
-                  <h3 class="fee-card-title">Co-Author – Student</h3>
-                </div>
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <div class="price-type early-bird">
-                      Early Bird<br /><small>(by 31 May 2026)</small>
-                    </div>
-                    <div class="price-type regular">
-                      Regular<br /><small>(from 1 June 2026)</small>
-                    </div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">IEEE Member</div>
-                    <div class="price early-price">₹2,999</div>
-                    <div class="price regular-price">₹4,999</div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">Non-IEEE</div>
-                    <div class="price early-price">₹3,999</div>
-                    <div class="price regular-price">₹5,999</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign IEEE</div>
-                    <div class="price early-price">$130</div>
-                    <div class="price regular-price">$180</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign Non-IEEE</div>
-                    <div class="price early-price">$155</div>
-                    <div class="price regular-price">$205</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Co-Author - Academia/Industry -->
-              <div class="fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-user-tie"></i>
-                  </div>
-                  <h3 class="fee-card-title">
-                    Co-Author – Academia / Industry
-                  </h3>
-                </div>
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <div class="price-type early-bird">
-                      Early Bird<br /><small>(by 31 May 2026)</small>
-                    </div>
-                    <div class="price-type regular">
-                      Regular<br /><small>(from 1 June 2026)</small>
-                    </div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">IEEE Member</div>
-                    <div class="price early-price">₹3,999</div>
-                    <div class="price regular-price">₹5,999</div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">Non-IEEE</div>
-                    <div class="price early-price">₹5,999</div>
-                    <div class="price regular-price">₹7,999</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign IEEE</div>
-                    <div class="price early-price">$170</div>
-                    <div class="price regular-price">$220</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign Non-IEEE</div>
-                    <div class="price early-price">$220</div>
-                    <div class="price regular-price">$270</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Attendee - Student -->
-              <div class="fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-ticket-alt"></i>
-                  </div>
-                  <h3 class="fee-card-title">Attendee – Student</h3>
-                </div>
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <div class="price-type early-bird">
-                      Early Bird<br /><small>(by 31 May 2026)</small>
-                    </div>
-                    <div class="price-type regular">
-                      Regular<br /><small>(from 1 June 2026)</small>
-                    </div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">IEEE Member</div>
-                    <div class="price early-price">₹2,499</div>
-                    <div class="price regular-price">₹3,499</div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">Non-IEEE</div>
-                    <div class="price early-price">₹3,499</div>
-                    <div class="price regular-price">₹4,499</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign IEEE</div>
-                    <div class="price early-price">$40</div>
-                    <div class="price regular-price">$60</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign Non-IEEE</div>
-                    <div class="price early-price">$60</div>
-                    <div class="price regular-price">$80</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Attendee - Academia/Industry -->
-              <div class="fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-id-badge"></i>
-                  </div>
-                  <h3 class="fee-card-title">Attendee – Academia / Industry</h3>
-                </div>
-                <div class="pricing-table">
-                  <div class="pricing-header">
-                    <div class="price-type early-bird">
-                      Early Bird<br /><small>(by 31 May 2026)</small>
-                    </div>
-                    <div class="price-type regular">
-                      Regular<br /><small>(from 1 June 2026)</small>
-                    </div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">IEEE Member</div>
-                    <div class="price early-price">₹7,499</div>
-                    <div class="price regular-price">₹8,499</div>
-                  </div>
-                  <div class="pricing-row">
-                    <div class="membership-type">Non-IEEE</div>
-                    <div class="price early-price">₹8,499</div>
-                    <div class="price regular-price">₹9,499</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign IEEE</div>
-                    <div class="price early-price">$130</div>
-                    <div class="price regular-price">$180</div>
-                  </div>
-                  <div class="pricing-row foreign">
-                    <div class="membership-type">Foreign Non-IEEE</div>
-                    <div class="price early-price">$160</div>
-                    <div class="price regular-price">$210</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Additional Fees Cards -->
-            <div class="additional-fees-section">
-              <div class="additional-fee-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-file-alt"></i>
-                  </div>
-                  <h3 class="fee-card-title">Additional Pages</h3>
-                </div>
-                <div class="additional-pricing">
-                  <div class="additional-price">
-                    <span class="currency">Indian Delegates</span>
-                    <span class="amount">₹1,000 per page</span>
-                  </div>
-                  <div class="additional-price">
-                    <span class="currency">Foreign Delegates</span>
-                    <span class="amount">$25 per page</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="additional-fee-card penalty-card fade-in">
-                <div class="fee-card-header">
-                  <div class="fee-card-icon">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </div>
-                  <h3 class="fee-card-title">Verification Penalty</h3>
-                </div>
-                <div class="penalty-info">
-                  <p>Failure to upload valid IEEE membership or student ID:</p>
-                  <div class="penalty-amount">
-                    ₹1,000 / $25 + difference in fee
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Important Information Section - Moved Below Pricing -->
-          <div class="registration-notes fade-in">
-            <h3>
-              <i class="fas fa-info-circle"></i>
-              Important Information
-            </h3>
-            <ul>
-              <li>The conference will be held in Hybrid Mode.</li>
-              <li>
-                The maximum page limit is six pages including references. No
-                author biography at the end.
-              </li>
-              <li>
-                In case additional pages are necessary, pages up to 8 pages are
-                permitted subject to payment of ₹1,000 ($25) extra per each
-                additional page.
-              </li>
-              <li>
-                The details regarding the platform for the virtual attendees of
-                the conference and how to access it will be provided via E-mail,
-                after registration.
-              </li>
-              <li>
-                Attendee Registration includes access to all technical sessions
-                and keynotes.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Registration Guidelines for Authors -->
-          <div class="guidelines-section fade-in">
-            <h3 class="guidelines-title">
-              <i class="fas fa-user-edit"></i>
-              Registration Guidelines For Authors
-            </h3>
-            <div class="guidelines-content">
-              <ul class="guidelines-list">
-                <li>
-                  Each paper must be covered by a full IEEE member or Non-Member
-                  registration fee by one of the authors
-                </li>
-                <li>
-                  IEEE members are requested to provide the IEEE membership
-                  number and upload IEEE Membership Card during the online
-                  registration process, if registering under IEEE category. IEEE
-                  Membership validation will be done after registration, failing
-                  which they will be required to pay the applicable balance
-                  registration fee of the relevant category
-                </li>
-                <li>
-                  Students need to upload their valid student ID card during
-                  registration process, if registering under student category
-                  failing which they will be required to pay the applicable
-                  balance registration fee of the relevant category
-                </li>
-                <li>
-                  Please keep a copy of the transaction ID, generated by the
-                  payment gateway as well as by your bank. You may need these
-                  later if you need to track your payment/registration
-                </li>
-                <li>
-                  All correspondence regarding your registration for IPRECON
-                  2026 should contain your Paper ID, and registration
-                  confirmation number
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Registration Conditions for Co-Authors -->
-          <div class="coauthor-section fade-in">
-            <h3 class="guidelines-title">
-              <i class="fas fa-users"></i>
-              Registration Conditions For Co-Authors (Co-Presenters)
-            </h3>
-            <div class="notice-box">
-              <p>
-                <strong>Notice:</strong> All the co-authors (co-presenter) will
-                be given full access to all the sessions and the conference.
-                IPRECON 2026 Organizing Committee will provide you with all the
-                session links in case of virtual attendee.
-              </p>
-              <br>
-              <p>
-                This registration is only for those co-authors (co-presenter)
-                who wish to present the paper and acquire a presentation
-                certificate.
-              </p>
-            </div>
-            <div class="guidelines-content">
-              <h4>Co-Authors (Co-Presenter) Guidelines:</h4>
-              <ul class="guidelines-list">
-                <li>
-                  This registration is only applicable to authors/co-authors who
-                  are willing to present the paper and avail a presentation
-                  certificate
-                </li>
-                <li>
-                  This registration is valid only if the paper is already
-                  registered with a primary author
-                </li>
-                <li>
-                  This co-author (co-presenter) can avail the presentation
-                  certificate only if he/she actively engages in the Q/A session
-                  after the video presentation of the paper
-                </li>
-                <li>
-                  This payment for the co-author (co-presenter) registration is
-                  non-refundable
-                </li>
-                <li>
-                  The co-author needs to attach the payment receipt of the
-                  primary registered author for that paper to complete the
-                  co-author (co-presenter) registration
-                </li>
-              </ul>
-
-              <h4>Required Documents for Co-Author Registration:</h4>
-              <ul class="guidelines-list">
-                <li>Name of the primary registered author</li>
-                <li>Transaction Receipt of the primary registered author</li>
-                <li>Paper ID of submitted paper</li>
-                <li>IEEE membership (if IEEE Member category is chosen)</li>
-                <li>
-                  Student ID card (if Student category is chosen) - Given ID
-                  should be valid for the year 2026
-                </li>
-              </ul>
-
-              <div class="important-note">
-                <p>
-                  <strong>Important:</strong> The author/co-author
-                  (co-presenter) can present the paper either together or one
-                  author can present. But both authors need to attend the
-                  conference either physically or virtually at the paper
-                  presentation session and also actively engage in the Q/A
-                  sessions.
-                </p>
-                <br>
-                <p>
-                  If you are not satisfying any of the conditions mentioned
-                  above, IPRECON 2026 Organizing Committee has the right to hold
-                  the co-author's (co-presenters) certificate of presentation
-                  and the registration will be invalid.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cancellation and No Show Policy -->
-          <div class="policy-section fade-in">
-            <h3 class="guidelines-title">
-              <i class="fas fa-ban"></i>
-              Cancellation and No Show Policy
-            </h3>
-            <div class="guidelines-content">
-              <ul class="guidelines-list">
-                <li>
-                  In case an author wants to cancel the registration, refund of
-                  registration fee will be made after deduction of cancellation
-                  charge (50% of the registration fees), if written notification
-                  is received before 15th August 2026. No refunds will be made
-                  after this date
-                </li>
-                <li>
-                  Cancellation must be notified to the organizers in writing by
-                  sending e-mail to
-                  <a href="./mailto:support@iprecon.org" class="email-link"
-                    >support@iprecon.org</a
-                  >
-                </li>
-                <li>
-                  All bank service charges and all administration fees will be
-                  deducted from the refund. Note that for administrative
-                  reasons, refund will be done only after the conference
-                </li>
-                <li>
-                  Each accepted paper included in the final program is expected
-                  to have at least one author present the paper at the
-                  conference (in case of both virtual and physical attendee).
-                  Non-presented paper will not be submitted to IEEE Xplore®
-                  digital library as per IEEE no-show policy
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Registration Steps -->
-          <div class="steps-section fade-in">
-            <h3 class="guidelines-title">
-              <i class="fas fa-list-ol"></i>
-              Registration Steps
-            </h3>
-            <div class="guidelines-content">
-              <p>There are three steps in the registration process:</p>
-
-              <div class="step-cards">
-                <div class="step-card">
-                  <div class="step-number">1</div>
-                  <div class="step-content">
-                    <h4>Choose Registration</h4>
-                    <p>
-                      Click on the 'Register Now' option and choose your
-                      registration as per category. Buy one registration for
-                      registering one paper. Buy additional registrations for
-                      registering additional papers. Over length manuscripts in
-                      excess of six pages is allowed after paying ₹1000 for each
-                      additional page (for foreign authors, it is $25/additional
-                      page).
-                    </p>
-                  </div>
-                </div>
-
-                <div class="step-card">
-                  <div class="step-number">2</div>
-                  <div class="step-content">
-                    <h4>Enter Buyer Details</h4>
-                    <p>
-                      Enter buyer details (Buyer name, Email, Phone number,
-                      etc). Anyone can buy the registration ticket. Please note
-                      that the invoice will be given in the name of the buyer.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="step-card">
-                  <div class="step-number">3</div>
-                  <div class="step-content">
-                    <h4>Enter Attendee Details</h4>
-                    <p>
-                      Enter attendee details. The first attendee is considered
-                      as the registering author. Please take extreme care to
-                      provide correct paper ID. Click 'Continue' and check all
-                      the information provided in the payment page, then click
-                      'Proceed to Pay'.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Terms and Conditions Acceptance Section -->
-          <div class="terms-section fade-in">
-            <h3 class="guidelines-title">
-              <i class="fas fa-clipboard-check"></i>
-              Terms and Conditions
-            </h3>
-            
-            <div class="terms-checkbox-container">
-              <label class="custom-checkbox">
-                <input type="checkbox" id="termsCheckbox">
-                <span class="checkbox-mark"></span>
-              </label>
-              <span class="terms-text">
-                I have read and understood all the registration guidelines, terms, and conditions mentioned above, and I agree to comply with them.
-              </span>
-            </div>
-
-            <button class="terms-register-btn" id="finalRegisterBtn">
-              <i class="fas fa-check-circle"></i>
-              Registration Portal Opening Soon
-            </button>
-          </div>
+    <!-- Warning Modal -->
+    <div class="warning-modal" id="warningModal">
+      <div class="warning-modal-content">
+        <div class="warning-icon">
+          <i class="fas fa-exclamation-triangle"></i>
         </div>
-      </section>
 
-      <!-- Contact Section -->
-      <section class="contact-section">
-        <div class="registration-container">
-          <div class="contact-content">
-            <h3>Need Help with Registration?</h3>
-            <p>
-              For any questions regarding registration process, fees, or payment
-              methods, please don't hesitate to contact us.
-            </p>
-            <div class="contact-info">
-              <a href="./mailto:support@iprecon.org" class="contact-link">
-                <i class="fas fa-envelope"></i>
-                support@iprecon.org
-              </a>
-              <a href="./tel:+919562963617" class="contact-link">
-                <i class="fas fa-phone"></i>
-                +91 95629 62617
-              </a>
-              <a href="https://iprecon.org" class="contact-link">
-                <i class="fas fa-globe"></i>
-                iprecon.org
-              </a>
+        <h2 class="warning-title">Please Read Guidelines First!</h2>
+
+        <p class="warning-message">
+          Before proceeding with registration, it's essential to read and understand all the registration guidelines,
+          terms, and conditions listed below.
+        </p>
+
+        <div class="warning-highlight">
+          <h4>Important Points to Review:</h4>
+          <ul>
+            <li>Registration fees and payment methods</li>
+            <li>Paper submission requirements</li>
+            <li>Cancellation and refund policies</li>
+            <li>IEEE membership verification process</li>
+            <li>Terms and conditions for acceptance</li>
+          </ul>
+        </div>
+
+        <div class="scroll-indicator">
+          <i class="fas fa-arrow-down"></i>
+          <span>Scroll down to read all guidelines and find the registration button</span>
+        </div>
+
+        <div class="warning-actions">
+          <button class="warning-btn primary" id="closeWarningBtn">
+            <i class="fas fa-book-reader"></i>
+            I'll Read the Guidelines
+          </button>
+          <button class="warning-btn secondary" id="cancelWarningBtn">
+            <i class="fas fa-times"></i>
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Content -->
+    <section class="registration-content">
+      <div class="registration-container">
+        <!-- Fee Structure -->
+        <div class="fee-section">
+          <h2 class="section-title">Registration Fees</h2>
+
+          <!-- Modern Card Layout -->
+          <div class="fee-cards-container">
+            <!-- Author - Student -->
+            <div class="fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="fee-card-title">Author – Student</h3>
+              </div>
+              <div class="pricing-table">
+                <div class="pricing-header">
+                  <div class="price-type early-bird">
+                    Early Bird<br /><small>(by 31 May 2026)</small>
+                  </div>
+                  <div class="price-type regular">
+                    Regular<br /><small>(from 1 June 2026)</small>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">IEEE Member</div>
+                  <div class="price early-price">₹4,999</div>
+                  <div class="price regular-price">₹6,999</div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">Non-IEEE</div>
+                  <div class="price early-price">₹6,999</div>
+                  <div class="price regular-price">₹8,999</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign IEEE</div>
+                  <div class="price early-price">$150</div>
+                  <div class="price regular-price">$200</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign Non-IEEE</div>
+                  <div class="price early-price">$175</div>
+                  <div class="price regular-price">$225</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Author - Academia/Industry -->
+            <div class="fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="fee-card-title">Author – Academia / Industry</h3>
+              </div>
+              <div class="pricing-table">
+                <div class="pricing-header">
+                  <div class="price-type early-bird">
+                    Early Bird<br /><small>(by 31 May 2026)</small>
+                  </div>
+                  <div class="price-type regular">
+                    Regular<br /><small>(from 1 June 2026)</small>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">IEEE Member</div>
+                  <div class="price early-price">₹7,999</div>
+                  <div class="price regular-price">₹9,999</div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">Non-IEEE</div>
+                  <div class="price early-price">₹9,999</div>
+                  <div class="price regular-price">₹11,999</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign IEEE</div>
+                  <div class="price early-price">$190</div>
+                  <div class="price regular-price">$240</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign Non-IEEE</div>
+                  <div class="price early-price">$240</div>
+                  <div class="price regular-price">$290</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Co-Author - Student -->
+            <div class="fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="fee-card-title">Co-Author – Student</h3>
+              </div>
+              <div class="pricing-table">
+                <div class="pricing-header">
+                  <div class="price-type early-bird">
+                    Early Bird<br /><small>(by 31 May 2026)</small>
+                  </div>
+                  <div class="price-type regular">
+                    Regular<br /><small>(from 1 June 2026)</small>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">IEEE Member</div>
+                  <div class="price early-price">₹2,999</div>
+                  <div class="price regular-price">₹4,999</div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">Non-IEEE</div>
+                  <div class="price early-price">₹3,999</div>
+                  <div class="price regular-price">₹5,999</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign IEEE</div>
+                  <div class="price early-price">$130</div>
+                  <div class="price regular-price">$180</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign Non-IEEE</div>
+                  <div class="price early-price">$155</div>
+                  <div class="price regular-price">$205</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Co-Author - Academia/Industry -->
+            <div class="fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="fee-card-title">
+                  Co-Author – Academia / Industry
+                </h3>
+              </div>
+              <div class="pricing-table">
+                <div class="pricing-header">
+                  <div class="price-type early-bird">
+                    Early Bird<br /><small>(by 31 May 2026)</small>
+                  </div>
+                  <div class="price-type regular">
+                    Regular<br /><small>(from 1 June 2026)</small>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">IEEE Member</div>
+                  <div class="price early-price">₹3,999</div>
+                  <div class="price regular-price">₹5,999</div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">Non-IEEE</div>
+                  <div class="price early-price">₹5,999</div>
+                  <div class="price regular-price">₹7,999</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign IEEE</div>
+                  <div class="price early-price">$170</div>
+                  <div class="price regular-price">$220</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign Non-IEEE</div>
+                  <div class="price early-price">$220</div>
+                  <div class="price regular-price">$270</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Attendee - Student -->
+            <div class="fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-ticket-alt"></i>
+                </div>
+                <h3 class="fee-card-title">Attendee – Student</h3>
+              </div>
+              <div class="pricing-table">
+                <div class="pricing-header">
+                  <div class="price-type early-bird">
+                    Early Bird<br /><small>(by 31 May 2026)</small>
+                  </div>
+                  <div class="price-type regular">
+                    Regular<br /><small>(from 1 June 2026)</small>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">IEEE Member</div>
+                  <div class="price early-price">₹2,499</div>
+                  <div class="price regular-price">₹3,499</div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">Non-IEEE</div>
+                  <div class="price early-price">₹3,499</div>
+                  <div class="price regular-price">₹4,499</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign IEEE</div>
+                  <div class="price early-price">$40</div>
+                  <div class="price regular-price">$60</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign Non-IEEE</div>
+                  <div class="price early-price">$60</div>
+                  <div class="price regular-price">$80</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Attendee - Academia/Industry -->
+            <div class="fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-id-badge"></i>
+                </div>
+                <h3 class="fee-card-title">Attendee – Academia / Industry</h3>
+              </div>
+              <div class="pricing-table">
+                <div class="pricing-header">
+                  <div class="price-type early-bird">
+                    Early Bird<br /><small>(by 31 May 2026)</small>
+                  </div>
+                  <div class="price-type regular">
+                    Regular<br /><small>(from 1 June 2026)</small>
+                  </div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">IEEE Member</div>
+                  <div class="price early-price">₹7,499</div>
+                  <div class="price regular-price">₹8,499</div>
+                </div>
+                <div class="pricing-row">
+                  <div class="membership-type">Non-IEEE</div>
+                  <div class="price early-price">₹8,499</div>
+                  <div class="price regular-price">₹9,499</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign IEEE</div>
+                  <div class="price early-price">$130</div>
+                  <div class="price regular-price">$180</div>
+                </div>
+                <div class="pricing-row foreign">
+                  <div class="membership-type">Foreign Non-IEEE</div>
+                  <div class="price early-price">$160</div>
+                  <div class="price regular-price">$210</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Fees Cards -->
+          <div class="additional-fees-section">
+            <div class="additional-fee-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="fee-card-title">Additional Pages</h3>
+              </div>
+              <div class="additional-pricing">
+                <div class="additional-price">
+                  <span class="currency">Indian Delegates</span>
+                  <span class="amount">₹1,000 per page</span>
+                </div>
+                <div class="additional-price">
+                  <span class="currency">Foreign Delegates</span>
+                  <span class="amount">$25 per page</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="additional-fee-card penalty-card fade-in">
+              <div class="fee-card-header">
+                <div class="fee-card-icon">
+                  <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 class="fee-card-title">Verification Penalty</h3>
+              </div>
+              <div class="penalty-info">
+                <p>Failure to upload valid IEEE membership or student ID:</p>
+                <div class="penalty-amount">
+                  ₹1,000 / $25 + difference in fee
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- Footer section -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Paper Submission</h3>
-          <ul class="footer-links">
-            <li><a href="./cfp.html">Call for Papers</a></li>
-            <li><a href="./submissions.html">Submit a Paper</a></li>
+        <!-- Important Information Section - Moved Below Pricing -->
+        <div class="registration-notes fade-in">
+          <h3>
+            <i class="fas fa-info-circle"></i>
+            Important Information
+          </h3>
+          <ul>
+            <li>The conference will be held in Hybrid Mode.</li>
             <li>
-              <a href="https://www.ieee.org/conferences/publishing/templates"
-                >Paper Template</a
-              >
+              The maximum page limit is six pages including references. No
+              author biography at the end.
+            </li>
+            <li>
+              In case additional pages are necessary, pages up to 8 pages are
+              permitted subject to payment of ₹1,000 ($25) extra per each
+              additional page.
+            </li>
+            <li>
+              The details regarding the platform for the virtual attendees of
+              the conference and how to access it will be provided via E-mail,
+              after registration.
+            </li>
+            <li>
+              Attendee Registration includes access to all technical sessions
+              and keynotes.
             </li>
           </ul>
         </div>
 
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
-            <li><a href="./committee.html">Team</a></li>
-            <li><a href="./about-iprecon.html">Legacy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Travel and Accommodation</h3>
-          <ul class="footer-links">
-            <li><a href="./venue.html">Transportation</a></li>
-            <li><a href="./accommodation.html">Hotels</a></li>
-            <li><a href="./kerala.html">Tourism</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <div class="social-icons">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/ieeeceksb/"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"
-              ><i class="fab fa-x-twitter"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/company/ieeesbcek/"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/ieee_sb_cek"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
+        <!-- Registration Guidelines for Authors -->
+        <div class="guidelines-section fade-in">
+          <h3 class="guidelines-title">
+            <i class="fas fa-user-edit"></i>
+            Registration Guidelines For Authors
+          </h3>
+          <div class="guidelines-content">
+            <ul class="guidelines-list">
+              <li>
+                Each paper must be covered by a full IEEE member or Non-Member
+                registration fee by one of the authors
+              </li>
+              <li>
+                IEEE members are requested to provide the IEEE membership
+                number and upload IEEE Membership Card during the online
+                registration process, if registering under IEEE category. IEEE
+                Membership validation will be done after registration, failing
+                which they will be required to pay the applicable balance
+                registration fee of the relevant category
+              </li>
+              <li>
+                Students need to upload their valid student ID card during
+                registration process, if registering under student category
+                failing which they will be required to pay the applicable
+                balance registration fee of the relevant category
+              </li>
+              <li>
+                Please keep a copy of the transaction ID, generated by the
+                payment gateway as well as by your bank. You may need these
+                later if you need to track your payment/registration
+              </li>
+              <li>
+                All correspondence regarding your registration for IPRECON
+                2026 should contain your Paper ID, and registration
+                confirmation number
+              </li>
+            </ul>
           </div>
-          <div class="copyright">
-            Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+        </div>
+
+        <!-- Registration Conditions for Co-Authors -->
+        <div class="coauthor-section fade-in">
+          <h3 class="guidelines-title">
+            <i class="fas fa-users"></i>
+            Registration Conditions For Co-Authors (Co-Presenters)
+          </h3>
+          <div class="notice-box">
+            <p>
+              <strong>Notice:</strong> All the co-authors (co-presenter) will
+              be given full access to all the sessions and the conference.
+              IPRECON 2026 Organizing Committee will provide you with all the
+              session links in case of virtual attendee.
+            </p>
+            <br>
+            <p>
+              This registration is only for those co-authors (co-presenter)
+              who wish to present the paper and acquire a presentation
+              certificate.
+            </p>
+          </div>
+          <div class="guidelines-content">
+            <h4>Co-Authors (Co-Presenter) Guidelines:</h4>
+            <ul class="guidelines-list">
+              <li>
+                This registration is only applicable to authors/co-authors who
+                are willing to present the paper and avail a presentation
+                certificate
+              </li>
+              <li>
+                This registration is valid only if the paper is already
+                registered with a primary author
+              </li>
+              <li>
+                This co-author (co-presenter) can avail the presentation
+                certificate only if he/she actively engages in the Q/A session
+                after the video presentation of the paper
+              </li>
+              <li>
+                This payment for the co-author (co-presenter) registration is
+                non-refundable
+              </li>
+              <li>
+                The co-author needs to attach the payment receipt of the
+                primary registered author for that paper to complete the
+                co-author (co-presenter) registration
+              </li>
+            </ul>
+
+            <h4>Required Documents for Co-Author Registration:</h4>
+            <ul class="guidelines-list">
+              <li>Name of the primary registered author</li>
+              <li>Transaction Receipt of the primary registered author</li>
+              <li>Paper ID of submitted paper</li>
+              <li>IEEE membership (if IEEE Member category is chosen)</li>
+              <li>
+                Student ID card (if Student category is chosen) - Given ID
+                should be valid for the year 2026
+              </li>
+            </ul>
+
+            <div class="important-note">
+              <p>
+                <strong>Important:</strong> The author/co-author
+                (co-presenter) can present the paper either together or one
+                author can present. But both authors need to attend the
+                conference either physically or virtually at the paper
+                presentation session and also actively engage in the Q/A
+                sessions.
+              </p>
+              <br>
+              <p>
+                If you are not satisfying any of the conditions mentioned
+                above, IPRECON 2026 Organizing Committee has the right to hold
+                the co-author's (co-presenters) certificate of presentation
+                and the registration will be invalid.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cancellation and No Show Policy -->
+        <div class="policy-section fade-in">
+          <h3 class="guidelines-title">
+            <i class="fas fa-ban"></i>
+            Cancellation and No Show Policy
+          </h3>
+          <div class="guidelines-content">
+            <ul class="guidelines-list">
+              <li>
+                In case an author wants to cancel the registration, refund of
+                registration fee will be made after deduction of cancellation
+                charge (50% of the registration fees), if written notification
+                is received before 15th August 2026. No refunds will be made
+                after this date
+              </li>
+              <li>
+                Cancellation must be notified to the organizers in writing by
+                sending e-mail to
+                <a href="./mailto:support@iprecon.org" class="email-link">support@iprecon.org</a>
+              </li>
+              <li>
+                All bank service charges and all administration fees will be
+                deducted from the refund. Note that for administrative
+                reasons, refund will be done only after the conference
+              </li>
+              <li>
+                Each accepted paper included in the final program is expected
+                to have at least one author present the paper at the
+                conference (in case of both virtual and physical attendee).
+                Non-presented paper will not be submitted to IEEE Xplore®
+                digital library as per IEEE no-show policy
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Registration Steps -->
+        <div class="steps-section fade-in">
+          <h3 class="guidelines-title">
+            <i class="fas fa-list-ol"></i>
+            Registration Steps
+          </h3>
+          <div class="guidelines-content">
+            <p>There are three steps in the registration process:</p>
+
+            <div class="step-cards">
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Choose Registration</h4>
+                  <p>
+                    Click on the 'Register Now' option and choose your
+                    registration as per category. Buy one registration for
+                    registering one paper. Buy additional registrations for
+                    registering additional papers. Over length manuscripts in
+                    excess of six pages is allowed after paying ₹1000 for each
+                    additional page (for foreign authors, it is $25/additional
+                    page).
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Enter Buyer Details</h4>
+                  <p>
+                    Enter buyer details (Buyer name, Email, Phone number,
+                    etc). Anyone can buy the registration ticket. Please note
+                    that the invoice will be given in the name of the buyer.
+                  </p>
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Enter Attendee Details</h4>
+                  <p>
+                    Enter attendee details. The first attendee is considered
+                    as the registering author. Please take extreme care to
+                    provide correct paper ID. Click 'Continue' and check all
+                    the information provided in the payment page, then click
+                    'Proceed to Pay'.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms and Conditions Acceptance Section -->
+        <div class="terms-section fade-in">
+          <h3 class="guidelines-title">
+            <i class="fas fa-clipboard-check"></i>
+            Terms and Conditions
+          </h3>
+
+          <div class="terms-checkbox-container">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="termsCheckbox">
+              <span class="checkbox-mark"></span>
+            </label>
+            <span class="terms-text">
+              I have read and understood all the registration guidelines, terms, and conditions mentioned above, and I
+              agree to comply with them.
+            </span>
+          </div>
+
+          <button class="terms-register-btn" id="finalRegisterBtn">
+            <i class="fas fa-check-circle"></i>
+            Registration Portal Opening Soon
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="registration-container">
+        <div class="contact-content">
+          <h3>Need Help with Registration?</h3>
+          <p>
+            For any questions regarding registration process, fees, or payment
+            methods, please don't hesitate to contact us.
+          </p>
+          <div class="contact-info">
+            <a href="./mailto:support@iprecon.org" class="contact-link">
+              <i class="fas fa-envelope"></i>
+              support@iprecon.org
+            </a>
+            <a href="./tel:+919562963617" class="contact-link">
+              <i class="fas fa-phone"></i>
+              +91 95629 62617
+            </a>
+            <a href="https://iprecon.org" class="contact-link">
+              <i class="fas fa-globe"></i>
+              iprecon.org
+            </a>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="./scripts/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true,
-          margin: 20,
-          nav: true,
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ],
-          autoplay: true,
-          autoplayTimeout: 3000,
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Paper Submission</h3>
+        <ul class="footer-links">
+          <li><a href="./cfp.html">Call for Papers</a></li>
+          <li><a href="./submissions.html">Submit a Paper</a></li>
+          <li>
+            <a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+          <li><a href="./committee.html">Team</a></li>
+          <li><a href="./about-iprecon.html">Legacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Travel and Accommodation</h3>
+        <ul class="footer-links">
+          <li><a href="./venue.html">Transportation</a></li>
+          <li><a href="./accommodation.html">Hotels</a></li>
+          <li><a href="./kerala.html">Tourism</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <div class="social-icons">
+          <a target="_blank" href="https://www.facebook.com/ieeeceksb/" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a target="_blank" href="https://x.com/IEEE_SB_CEK" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/ieeesbcek/" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a target="_blank" href="https://www.instagram.com/ieee_sb_cek" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+        <div class="copyright">
+          Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#news-slider").owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>",
+        ],
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 3,
           },
-        });
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+        },
+      });
 
-        // Warning Modal Functionality
-        const warningModal = document.getElementById('warningModal');
-        const registerBtn = document.getElementById('registerBtn');
-        const closeWarningBtn = document.getElementById('closeWarningBtn');
-        const cancelWarningBtn = document.getElementById('cancelWarningBtn');
-        const termsCheckbox = document.getElementById('termsCheckbox');
-        const finalRegisterBtn = document.getElementById('finalRegisterBtn');
+      // Warning Modal Functionality
+      const warningModal = document.getElementById('warningModal');
+      const registerBtn = document.getElementById('registerBtn');
+      const closeWarningBtn = document.getElementById('closeWarningBtn');
+      const cancelWarningBtn = document.getElementById('cancelWarningBtn');
+      const termsCheckbox = document.getElementById('termsCheckbox');
+      const finalRegisterBtn = document.getElementById('finalRegisterBtn');
 
-        // Show warning modal when register button is clicked
-        registerBtn.addEventListener('click', function(e) {
+      // Show warning modal when register button is clicked
+      registerBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        warningModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close modal and scroll to Important Information
+      closeWarningBtn.addEventListener('click', function () {
+        warningModal.classList.remove('show');
+        document.body.style.overflow = '';
+
+        // Small delay to ensure modal is closed before scrolling
+        setTimeout(() => {
+          // Smooth scroll to Important Information section
+          const importantInfoSection = document.querySelector('.registration-notes');
+          if (importantInfoSection) {
+            const offsetTop = importantInfoSection.offsetTop - 100; // Adjust for fixed header
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 300);
+      });
+
+      // Cancel and close modal
+      cancelWarningBtn.addEventListener('click', function () {
+        warningModal.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+
+      // Close modal when clicking outside
+      warningModal.addEventListener('click', function (e) {
+        if (e.target === warningModal) {
+          warningModal.classList.remove('show');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Terms checkbox functionality
+      termsCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+          finalRegisterBtn.classList.add('enabled');
+        } else {
+          finalRegisterBtn.classList.remove('enabled');
+        }
+      });
+
+      // Final register button click
+      finalRegisterBtn.addEventListener('click', function (e) {
+        if (!termsCheckbox.checked) {
           e.preventDefault();
-          warningModal.classList.add('show');
-          document.body.style.overflow = 'hidden';
-        });
 
-        // Close modal and scroll to Important Information
-        closeWarningBtn.addEventListener('click', function() {
-          warningModal.classList.remove('show');
-          document.body.style.overflow = '';
-          
-          // Small delay to ensure modal is closed before scrolling
+          // Highlight the checkbox area
+          const checkboxContainer = document.querySelector('.terms-checkbox-container');
+          checkboxContainer.style.animation = 'shake 0.5s ease-in-out';
+
           setTimeout(() => {
-            // Smooth scroll to Important Information section
-            const importantInfoSection = document.querySelector('.registration-notes');
-            if (importantInfoSection) {
-              const offsetTop = importantInfoSection.offsetTop - 100; // Adjust for fixed header
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            }
-          }, 300);
-        });
+            checkboxContainer.style.animation = '';
+          }, 500);
 
-        // Cancel and close modal
-        cancelWarningBtn.addEventListener('click', function() {
-          warningModal.classList.remove('show');
-          document.body.style.overflow = '';
-        });
+          return;
+        }
 
-        // Close modal when clicking outside
-        warningModal.addEventListener('click', function(e) {
-          if (e.target === warningModal) {
-            warningModal.classList.remove('show');
-            document.body.style.overflow = '';
+        // Here you would redirect to your actual registration portal
+        // For now, show a placeholder message
+        alert('Registration portal will be available soon! Please check back after paper submission opens.');
+        // window.location.href = 'your-registration-portal-url';
+      });
+
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
           }
         });
+      }, observerOptions);
 
-        // Terms checkbox functionality
-        termsCheckbox.addEventListener('change', function() {
-          if (this.checked) {
-            finalRegisterBtn.classList.add('enabled');
-          } else {
-            finalRegisterBtn.classList.remove('enabled');
-          }
-        });
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
 
-        // Final register button click
-        finalRegisterBtn.addEventListener('click', function(e) {
-          if (!termsCheckbox.checked) {
-            e.preventDefault();
-            
-            // Highlight the checkbox area
-            const checkboxContainer = document.querySelector('.terms-checkbox-container');
-            checkboxContainer.style.animation = 'shake 0.5s ease-in-out';
-            
-            setTimeout(() => {
-              checkboxContainer.style.animation = '';
-            }, 500);
-            
-            return;
-          }
-          
-          // Here you would redirect to your actual registration portal
-          // For now, show a placeholder message
-          alert('Registration portal will be available soon! Please check back after paper submission opens.');
-          // window.location.href = 'your-registration-portal-url';
-        });
+      // Add smooth scrolling for anchor links
+      $('a[href^="#"]').on("click", function (event) {
+        var target = $(this.getAttribute("href"));
+        if (target.length) {
+          event.preventDefault();
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: target.offset().top - 100,
+              },
+              1000
+            );
+        }
+      });
 
-        // Scroll animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        }, observerOptions);
-
-        document.querySelectorAll(".fade-in").forEach((el) => {
-          observer.observe(el);
-        });
-
-        // Add smooth scrolling for anchor links
-        $('a[href^="#"]').on("click", function (event) {
-          var target = $(this.getAttribute("href"));
-          if (target.length) {
-            event.preventDefault();
-            $("html, body")
-              .stop()
-              .animate(
-                {
-                  scrollTop: target.offset().top - 100,
-                },
-                1000
-              );
-          }
-        });
-
-        // Add shake animation for terms checkbox
-        const style = document.createElement('style');
-        style.textContent = `
+      // Add shake animation for terms checkbox
+      const style = document.createElement('style');
+      style.textContent = `
           @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-5px); }
             75% { transform: translateX(5px); }
           }
         `;
-        document.head.appendChild(style);
-      });
-    </script>
-  </body>
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+
 </html>

@@ -1,1232 +1,1178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Travel Support - IPRECON 2026</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <style>
-      /* =================================================================
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Travel Support - IPRECON 2026</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <style>
+    /* =================================================================
          STANDARDIZED BUTTON SYSTEM
          ================================================================= */
-      .iprecon-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 15px 30px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        cursor: pointer;
-        font-family: 'Montserrat', sans-serif;
-        text-align: center;
-        justify-content: center;
-        line-height: 1;
-        white-space: nowrap;
-      }
+    .iprecon-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      justify-content: center;
+      line-height: 1;
+      white-space: nowrap;
+    }
 
-      .iprecon-btn.large {
-        padding: 18px 40px;
-        font-size: 1.1rem;
-        gap: 15px;
-      }
+    .iprecon-btn.large {
+      padding: 18px 40px;
+      font-size: 1.1rem;
+      gap: 15px;
+    }
 
-      .iprecon-btn.small {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-        gap: 8px;
-      }
+    .iprecon-btn.small {
+      padding: 12px 25px;
+      font-size: 0.9rem;
+      gap: 8px;
+    }
 
-      /* PRIMARY BUTTON */
-      .iprecon-btn.primary {
-        background: linear-gradient(135deg, #8e24aa, #211021);
-        color: white;
-        border-color: transparent;
-        box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
-      }
+    /* PRIMARY BUTTON */
+    .iprecon-btn.primary {
+      background: linear-gradient(135deg, #8e24aa, #211021);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+    }
 
-      .iprecon-btn.primary:hover {
-        background: linear-gradient(135deg, #7b1f96, #1a0e1a);
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
-        color: white;
-        text-decoration: none;
-      }
+    .iprecon-btn.primary:hover {
+      background: linear-gradient(135deg, #7b1f96, #1a0e1a);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(142, 36, 170, 0.4);
+      color: white;
+      text-decoration: none;
+    }
 
-      /* SECONDARY BUTTON */
-      .iprecon-btn.secondary {
-        background: #d4af37;
-        color: #211021;
-        border-color: #d4af37;
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-      }
+    /* SECONDARY BUTTON */
+    .iprecon-btn.secondary {
+      background: #d4af37;
+      color: #211021;
+      border-color: #d4af37;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
 
-      .iprecon-btn.secondary:hover {
-        background: transparent;
-        color: #d4af37;
-        border-color: #d4af37;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-        text-decoration: none;
-      }
+    .iprecon-btn.secondary:hover {
+      background: transparent;
+      color: #d4af37;
+      border-color: #d4af37;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      text-decoration: none;
+    }
 
-      /* TERTIARY BUTTON */
-      .iprecon-btn.tertiary {
-        background: transparent;
-        color: white;
-        border-color: white;
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-      }
+    /* TERTIARY BUTTON */
+    .iprecon-btn.tertiary {
+      background: transparent;
+      color: white;
+      border-color: white;
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    }
 
-      .iprecon-btn.tertiary:hover {
-        background: white;
-        color: #211021;
-        border-color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        text-decoration: none;
-      }
+    .iprecon-btn.tertiary:hover {
+      background: white;
+      color: #211021;
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
 
-      .iprecon-btn.tertiary.dark-bg {
-        color: #211021;
-        border-color: #211021;
-        box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
-      }
+    .iprecon-btn.tertiary.dark-bg {
+      color: #211021;
+      border-color: #211021;
+      box-shadow: 0 5px 15px rgba(33, 16, 33, 0.2);
+    }
 
-      .iprecon-btn.tertiary.dark-bg:hover {
-        background: #211021;
-        color: white;
-        border-color: #211021;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
-      }
+    .iprecon-btn.tertiary.dark-bg:hover {
+      background: #211021;
+      color: white;
+      border-color: #211021;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(33, 16, 33, 0.3);
+    }
 
-      .iprecon-btn-group {
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: center;
-      }
+    .iprecon-btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-      /* =================================================================
+    /* =================================================================
          Student Travel Support PAGE STYLES
          ================================================================= */
 
-      /* Hero Section */
-      .travel-hero {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 60px 0;
-        border-bottom: 1px solid #e9ecef;
+    /* Hero Section */
+    .travel-hero {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 60px 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .travel-hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .travel-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #211021;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .travel-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background-color: #8e24aa;
+    }
+
+    .travel-subtitle {
+      font-size: 1.3rem;
+      color: #6c757d;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Regional Support Highlight */
+    .regional-highlight {
+      background: linear-gradient(135deg, #211021, #8e24aa);
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 900px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(33, 16, 33, 0.3);
+    }
+
+    .regional-highlight::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      z-index: 1;
+    }
+
+    .regional-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    /* Header with icon and title */
+    .regional-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .regional-content h3 i {
+      color: #d4af37;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Text content */
+    .regional-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 400;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .regional-content .strong {
+      color: #d4af37;
+      font-weight: 700;
+    }
+
+    /* Main Content */
+    .travel-content {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .travel-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Support Limits Section */
+    .support-limits-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #2196f3;
+      transition: all 0.3s ease;
+    }
+
+    .support-limits-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .support-limits-section h3 {
+      color: #211021;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .support-limits-section h3 i {
+      color: #8e24aa;
+      font-size: 1.8rem;
+    }
+
+    .limits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .limit-card {
+      background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid #2196f3;
+      transition: all 0.3s ease;
+    }
+
+    .limit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(33, 150, 243, 0.15);
+      border-color: #1976d2;
+    }
+
+    .limit-card h4 {
+      color: #0d47a1;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .limit-card h4 i {
+      color: #2196f3;
+      font-size: 1.1rem;
+    }
+
+    .limit-card p {
+      color: #1565c0;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .limit-card .amount {
+      color: #0d47a1;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* Eligibility Section - UPDATED FOR 2x2 GRID */
+    .eligibility-section {
+      background: linear-gradient(135deg, #211021, #8e24aa);
+      color: white;
+      padding: 50px;
+      border-radius: 20px;
+      margin: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eligibility-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    }
+
+    .eligibility-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eligibility-section h3 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .eligibility-section h3 i {
+      color: #d4af37;
+      font-size: 2rem;
+    }
+
+    /* Updated 2x2 grid for 4 criteria */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .criteria-item {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 15px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+    }
+
+    .criteria-item:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.6);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .criteria-number {
+      width: 40px;
+      height: 40px;
+      background: #d4af37;
+      color: #211021;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .criteria-item p {
+      color: white;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    .criteria-item .strong {
+      color: #d4af37;
+      font-weight: 700;
+    }
+
+    /* Important Notice Section */
+    .important-notice {
+      background: linear-gradient(135deg, #fff3e0, #ffebee);
+      border: 2px solid #ff9800;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      border-left: 6px solid #ff9800;
+      transition: all 0.3s ease;
+    }
+
+    .important-notice:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 152, 0, 0.15);
+    }
+
+    .important-notice h3 {
+      color: #e65100;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .important-notice h3 i {
+      color: #ff9800;
+      font-size: 1.5rem;
+    }
+
+    .important-notice p {
+      color: #333;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .important-notice .strong {
+      color: #e65100;
+      font-weight: 700;
+    }
+
+    /* Application Timeline Section */
+    .timeline-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #4caf50;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .timeline-section h3 {
+      color: #2e7d32;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .timeline-section h3 i {
+      color: #4caf50;
+      font-size: 1.8rem;
+    }
+
+    .timeline-item {
+      background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 2px solid #4caf50;
+    }
+
+    .timeline-item h4 {
+      color: #2e7d32;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .timeline-item p {
+      color: #1b5e20;
+      font-size: 1.1rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .timeline-item .strong {
+      color: #1b5e20;
+      font-weight: 700;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #f8f9fa;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-content h3 {
+      font-size: 2rem;
+      color: #211021;
+      margin-bottom: 20px;
+    }
+
+    .contact-content p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #8e24aa;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: #211021;
+      transform: translateY(-2px);
+    }
+
+    .contact-link i {
+      font-size: 1.2rem;
+    }
+
+    .strong {
+      color: #211021;
+      font-weight: 600;
+    }
+
+    /* Responsive Design - UPDATED FOR 2x2 GRID */
+    @media (max-width: 1024px) {
+      .limits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
 
-      .travel-hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        text-align: center;
+      .criteria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .travel-hero {
+        padding: 40px 0;
       }
 
       .travel-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #211021;
-        margin-bottom: 15px;
-        line-height: 1.2;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
+        font-size: 2.2rem;
       }
 
       .travel-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 4px;
-        background-color: #8e24aa;
+        width: 100px;
+        height: 3px;
       }
 
       .travel-subtitle {
-        font-size: 1.3rem;
-        color: #6c757d;
-        margin-bottom: 30px;
-        line-height: 1.4;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+        font-size: 1.1rem;
       }
 
-      /* Regional Support Highlight */
       .regional-highlight {
-        background: linear-gradient(135deg, #211021, #8e24aa);
-        color: white;
-        padding: 40px;
-        border-radius: 20px;
-        margin: 40px auto;
-        max-width: 900px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(33, 16, 33, 0.3);
+        padding: 30px 25px;
+        margin: 30px 15px;
       }
 
-      .regional-highlight::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-        z-index: 1;
-      }
-
-      .regional-content {
-        position: relative;
-        z-index: 2;
+      .regional-content h3 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 15px;
         text-align: center;
       }
 
-      /* Header with icon and title */
-      .regional-content h3 {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-        font-weight: 700;
-        line-height: 1.3;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-
       .regional-content h3 i {
-        color: #d4af37;
-        font-size: 1.6rem;
-        flex-shrink: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        font-size: 1.4rem;
         width: 50px;
         height: 50px;
       }
 
-      /* Text content */
       .regional-content p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        margin: 0;
-        color: rgba(255, 255, 255, 0.95);
-        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .support-limits-section,
+      .eligibility-section,
+      .important-notice,
+      .timeline-section {
+        padding: 30px 25px;
+      }
+
+      .support-limits-section h3,
+      .eligibility-section h3,
+      .important-notice h3,
+      .timeline-section h3 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .regional-content .strong {
-        color: #d4af37;
-        font-weight: 700;
-      }
-
-      /* Main Content */
-      .travel-content {
-        padding: 80px 0;
-        background: white;
-      }
-
-      .travel-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Support Limits Section */
-      .support-limits-section {
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        margin: 40px 0;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        border-left: 6px solid #2196f3;
-        transition: all 0.3s ease;
-      }
-
-      .support-limits-section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-      }
-
-      .support-limits-section h3 {
-        color: #211021;
-        font-size: 2rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .support-limits-section h3 i {
-        color: #8e24aa;
-        font-size: 1.8rem;
       }
 
       .limits-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin: 30px 0;
+        grid-template-columns: 1fr;
       }
 
-      .limit-card {
-        background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
-        padding: 25px;
-        border-radius: 15px;
-        border: 2px solid #2196f3;
-        transition: all 0.3s ease;
-      }
-
-      .limit-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(33, 150, 243, 0.15);
-        border-color: #1976d2;
-      }
-
-      .limit-card h4 {
-        color: #0d47a1;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .limit-card h4 i {
-        color: #2196f3;
-        font-size: 1.1rem;
-      }
-
-      .limit-card p {
-        color: #1565c0;
-        line-height: 1.6;
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-
-      .limit-card .amount {
-        color: #0d47a1;
-        font-weight: 700;
-        font-size: 1.1rem;
-      }
-
-      /* Eligibility Section - UPDATED FOR 2x2 GRID */
-      .eligibility-section {
-        background: linear-gradient(135deg, #211021, #8e24aa);
-        color: white;
-        padding: 50px;
-        border-radius: 20px;
-        margin: 60px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .eligibility-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-      }
-
-      .eligibility-content {
-        position: relative;
-        z-index: 2;
-      }
-
-      .eligibility-section h3 {
-        font-size: 2.2rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        text-align: center;
-        justify-content: center;
-      }
-
-      .eligibility-section h3 i {
-        color: #d4af37;
-        font-size: 2rem;
-      }
-
-      /* Updated 2x2 grid for 4 criteria */
       .criteria-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin: 30px 0;
-      }
-
-      .criteria-item {
-        background: rgba(255, 255, 255, 0.15);
-        padding: 25px;
-        border-radius: 15px;
-        border: 2px solid rgba(212, 175, 55, 0.3);
-        backdrop-filter: blur(15px);
-        transition: all 0.3s ease;
-      }
-
-      .criteria-item:hover {
-        background: rgba(255, 255, 255, 0.25);
-        transform: translateY(-5px);
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      }
-
-      .criteria-number {
-        width: 40px;
-        height: 40px;
-        background: #d4af37;
-        color: #211021;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-      }
-
-      .criteria-item p {
-        color: white;
-        line-height: 1.6;
-        margin: 0;
-        font-size: 1rem;
-        opacity: 0.95;
-      }
-
-      .criteria-item .strong {
-        color: #d4af37;
-        font-weight: 700;
-      }
-
-      /* Important Notice Section */
-      .important-notice {
-        background: linear-gradient(135deg, #fff3e0, #ffebee);
-        border: 2px solid #ff9800;
-        border-radius: 20px;
-        padding: 40px;
-        margin: 40px 0;
-        border-left: 6px solid #ff9800;
-        transition: all 0.3s ease;
-      }
-
-      .important-notice:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(255, 152, 0, 0.15);
-      }
-
-      .important-notice h3 {
-        color: #e65100;
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .important-notice h3 i {
-        color: #ff9800;
-        font-size: 1.5rem;
-      }
-
-      .important-notice p {
-        color: #333;
-        line-height: 1.7;
-        margin-bottom: 15px;
-        font-size: 1.05rem;
-      }
-
-      .important-notice .strong {
-        color: #e65100;
-        font-weight: 700;
-      }
-
-      /* Application Timeline Section */
-      .timeline-section {
-        background: white;
-        border-radius: 20px;
-        padding: 40px;
-        margin: 40px 0;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        border-left: 6px solid #4caf50;
-        transition: all 0.3s ease;
-      }
-
-      .timeline-section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-      }
-
-      .timeline-section h3 {
-        color: #2e7d32;
-        font-size: 2rem;
-        margin-bottom: 25px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .timeline-section h3 i {
-        color: #4caf50;
-        font-size: 1.8rem;
-      }
-
-      .timeline-item {
-        background: linear-gradient(135deg, #e8f5e8, #f3e5f5);
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-        border: 2px solid #4caf50;
-      }
-
-      .timeline-item h4 {
-        color: #2e7d32;
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-      }
-
-      .timeline-item p {
-        color: #1b5e20;
-        font-size: 1.1rem;
-        margin: 0;
-        line-height: 1.5;
-      }
-
-      .timeline-item .strong {
-        color: #1b5e20;
-        font-weight: 700;
-      }
-
-      /* Contact Section */
-      .contact-section {
-        background: #f8f9fa;
-        padding: 60px 0;
-        text-align: center;
-      }
-
-      .contact-content {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .contact-content h3 {
-        font-size: 2rem;
-        color: #211021;
-        margin-bottom: 20px;
-      }
-
-      .contact-content p {
-        font-size: 1.1rem;
-        color: #666;
-        margin-bottom: 30px;
-        line-height: 1.6;
+        grid-template-columns: 1fr;
       }
 
       .contact-info {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
       }
 
       .contact-link {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #8e24aa;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .travel-title {
+        font-size: 1.8rem;
       }
 
-      .contact-link:hover {
-        color: #211021;
-        transform: translateY(-2px);
+      .travel-title::after {
+        width: 80px;
       }
 
-      .contact-link i {
+      .regional-highlight {
+        padding: 25px 20px;
+        margin: 25px 10px;
+      }
+
+      .regional-content h3 {
+        font-size: 1.3rem;
+        gap: 12px;
+      }
+
+      .regional-content h3 i {
         font-size: 1.2rem;
+        width: 45px;
+        height: 45px;
       }
 
-      .strong {
-        color: #211021;
-        font-weight: 600;
+      .regional-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
 
-      /* Responsive Design - UPDATED FOR 2x2 GRID */
-      @media (max-width: 1024px) {
-        .limits-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-        }
-        
-        .criteria-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-        }
+      .support-limits-section h3,
+      .eligibility-section h3,
+      .important-notice h3,
+      .timeline-section h3 {
+        font-size: 1.4rem;
       }
 
-      @media (max-width: 768px) {
-        .travel-hero {
-          padding: 40px 0;
-        }
-
-        .travel-title {
-          font-size: 2.2rem;
-        }
-
-        .travel-title::after {
-          width: 100px;
-          height: 3px;
-        }
-
-        .travel-subtitle {
-          font-size: 1.1rem;
-        }
-
-        .regional-highlight {
-          padding: 30px 25px;
-          margin: 30px 15px;
-        }
-
-        .regional-content h3 {
-          font-size: 1.5rem;
-          flex-direction: column;
-          gap: 15px;
-          text-align: center;
-        }
-
-        .regional-content h3 i {
-          font-size: 1.4rem;
-          width: 50px;
-          height: 50px;
-        }
-
-        .regional-content p {
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-
-        .support-limits-section,
-        .eligibility-section,
-        .important-notice,
-        .timeline-section {
-          padding: 30px 25px;
-        }
-
-        .support-limits-section h3,
-        .eligibility-section h3,
-        .important-notice h3,
-        .timeline-section h3 {
-          font-size: 1.6rem;
-          flex-direction: column;
-          gap: 10px;
-          text-align: center;
-        }
-
-        .limits-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .criteria-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .contact-info {
-          flex-direction: column;
-          gap: 20px;
-          align-items: center;
-        }
-
-        .contact-link {
-          justify-content: center;
-        }
+      .limits-grid {
+        grid-template-columns: 1fr;
       }
 
-      @media (max-width: 480px) {
-        .travel-title {
-          font-size: 1.8rem;
-        }
-
-        .travel-title::after {
-          width: 80px;
-        }
-
-        .regional-highlight {
-          padding: 25px 20px;
-          margin: 25px 10px;
-        }
-
-        .regional-content h3 {
-          font-size: 1.3rem;
-          gap: 12px;
-        }
-
-        .regional-content h3 i {
-          font-size: 1.2rem;
-          width: 45px;
-          height: 45px;
-        }
-
-        .regional-content p {
-          font-size: 0.95rem;
-          line-height: 1.5;
-        }
-
-        .support-limits-section h3,
-        .eligibility-section h3,
-        .important-notice h3,
-        .timeline-section h3 {
-          font-size: 1.4rem;
-        }
-
-        .limits-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .criteria-grid {
-          grid-template-columns: 1fr;
-        }
+      .criteria-grid {
+        grid-template-columns: 1fr;
       }
+    }
 
-      /* Animation Classes */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-      }
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
 
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
-    <meta
-      name="description"
-      content="Student Travel Support for Indian Participants - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India"
-    />
-  </head>
-  <body>
-    <!-- Header -->
-    <div class="header-container">
-      <div class="header-section">
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 black.png"
-            alt="IPRECON 2026 Logo"
-            class="logo"
-          />
-        </a>
-        <div class="separator"></div>
-        <div class="event-info">
-          <span>September 04-06, 2026</span>
-          <span>College of Engineering Karunagappally, Kerala, INDIA</span>
-        </div>
-      </div>
-      <div class="header-section">
-        <span class="sponsor-label" style="visibility: hidden">Powered by</span>
-        <div class="separator"></div>
-        <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <meta name="description"
+    content="Student Travel Support for Indian Participants - IPRECON 2026 International Power and Renewable Energy Conference at College of Engineering Karunagappally, Kerala, India" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header-container">
+    <div class="header-section">
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 black.png" alt="IPRECON 2026 Logo" class="logo" />
+      </a>
+      <div class="separator"></div>
+      <div class="event-info">
+        <span>September 04-06, 2026</span>
+        <span>College of Engineering Karunagappally, Kerala, INDIA</span>
       </div>
     </div>
+    <div class="header-section">
+      <span class="sponsor-label" style="visibility: hidden">Powered by</span>
+      <div class="separator"></div>
+      <img src="./assets/img/ieee blk.png" alt="IEEE Logo" class="logo" />
+    </div>
+  </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <div class="mob-marq marquee-container">
-          <div class="marquee">
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Paper Submissions Opening Soon! To View Call for Papers
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="mob-marq marquee-container">
+        <div class="marquee">
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Paper Submissions Opening Soon! To View Call for Papers
+            <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            20% of the presented conference papers will be eligible for
+            further review and possible publication in IAS Periodicals.
+          </div>
+          <div class="notification">
+            <i class="fas fa-bell"></i>
+            Presented papers from IPRECON have been posted in the IEEE Xplore®
+            Digital Library! To View
+            <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
+          </div>
+        </div>
+      </div>
+      <a href="https://iprecon.org">
+        <img src="./assets/img/iprecon26 white.png" alt="IPRECON 2026 Logo" class="brand-logo" id="brandLogo" />
+      </a>
+      <ul class="nav-items">
+        <li class="nav-item"><a href="./index.html">HOME</a></li>
+        <li class="nav-item">
+          <span class="nav-link">ABOUT</span>
+          <div class="dropdown-content">
+            <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
+            <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
+            <a href="./venue.html" class="dropdown-item">VENUE</a>
+            <a href="./kerala.html" class="dropdown-item">KERALA</a>
+            <a href="./accommodation.html" class="dropdown-item">ACCOMMODATION</a>
+            <a href="./visa.html" class="dropdown-item">VISA</a>
+            <a href="./sponsors.html" class="dropdown-item">SPONSORS & EXHIBITORS</a>
+            <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
+        <li class="nav-item">
+          <span class="nav-link">FOR AUTHORS</span>
+          <div class="dropdown-content">
+            <a href="./cfp.html" class="dropdown-item">CALL FOR PAPERS</a>
+            <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
+            <a href="./important-dates.html" class="dropdown-item">IMPORTANT DATES</a>
+            <a href="./camera-ready.html" class="dropdown-item">CAMERA READY SUBMISSION INSTRUCTIONS</a>
+            <a href="./presentation-guidelines.html" class="dropdown-item">PRESENTATION GUIDELINES</a>
+            <a href="housing-support.html" class="dropdown-item">STUDENT HOUSING SUPPORT</a>
+            <a href="./travel-support.html" class="dropdown-item">STUDENT TRAVEL SUPPORT</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
+        <li class="nav-item">
+          <span class="nav-link">PROGRAM</span>
+          <div class="dropdown-content">
+            <a href="./inaugural.html" class="dropdown-item">INAUGRAL PROGRAM</a>
+            <a href="./distinguished-lectures.html" class="dropdown-item">DISTINGUISHED LECTURE PROGRAM</a>
+            <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
+            <a href="./tracks.html" class="dropdown-item">TRACKS</a>
+            <a href="./special-sessions.html" class="dropdown-item">SPECIAL SESSIONS</a>
+            <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
+        <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Marquee -->
+  <div class="non-mob marquee-container">
+    <div class="marquee">
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Paper Submissions Opening Soon! To View Call for Papers
+        <a href="https://iprecon.org/cfp.html" class="purple-link">Click Here</a>
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        20% of the presented conference papers will be eligible for further
+        review and possible publication in IAS Periodicals.
+      </div>
+      <div class="notification">
+        <i class="fas fa-bell"></i>
+        Presented papers from IPRECON have been posted in the IEEE Xplore®
+        Digital Library! To View
+        <a href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings" class="purple-link">Click Here</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spacer for when marquee becomes fixed -->
+  <div id="marquee-placeholder" style="display: none"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="travel-hero">
+      <div class="travel-hero-content">
+        <h1 class="travel-title">Student Travel Support</h1>
+        <p class="travel-subtitle">
+          Financial assistance for travel expenses for student authors from India, Nepal, and Bhutan attending IPRECON
+          2026
+        </p>
+
+        <div class="regional-highlight">
+          <div class="regional-content">
+            <h3>
+              <i class="fas fa-train"></i>
+              Regional Student Travel Support Available
+            </h3>
+            <p>
+              <span class="strong">Travel Support is available only for Student Authors from India, Nepal, and
+                Bhutan.</span>
+              Delegates from other countries are supported through the Student Housing Support program.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="travel-content">
+      <div class="travel-container">
+
+        <!-- Student Travel Support Limits Section -->
+        <div class="support-limits-section fade-in">
+          <h3>
+            <i class="fas fa-map-marker-alt"></i>
+            Student Travel Support Limits
+          </h3>
+
+          <div class="limits-grid">
+            <div class="limit-card">
+              <h4>
+                <i class="fas fa-map"></i>
+                Kerala
+              </h4>
+              <p>
+                <span class="amount">Up to ₹2,000</span> or 3rd Class AC train fare (whichever is lower)
+              </p>
             </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              20% of the presented conference papers will be eligible for
-              further review and possible publication in IAS Periodicals.
+
+            <div class="limit-card">
+              <h4>
+                <i class="fas fa-location-arrow"></i>
+                Tamil Nadu, Karnataka, Telangana, Andhra Pradesh
+              </h4>
+              <p>
+                <span class="amount">Up to ₹3,500</span> or 3rd Class AC train fare (whichever is lower)
+              </p>
             </div>
-            <div class="notification">
-              <i class="fas fa-bell"></i>
-              Presented papers from IPRECON have been posted in the IEEE Xplore®
-              Digital Library! To View
-              <a
-                href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-                class="purple-link"
-                >Click Here</a
-              >
+
+            <div class="limit-card">
+              <h4>
+                <i class="fas fa-compass"></i>
+                Rest of India
+              </h4>
+              <p>
+                <span class="amount">Up to ₹5,000</span> or 3rd Class AC train fare (whichever is lower)
+                <br><small style="color: #666; font-style: italic;">(excluding 7 North-Eastern States)</small>
+              </p>
+            </div>
+
+            <div class="limit-card">
+              <h4>
+                <i class="fas fa-mountain"></i>
+                NE India, Bhutan & Nepal
+              </h4>
+              <p>
+                <span class="amount">Up to ₹7,500</span> or 3rd Class AC train fare or by other means of
+                transport(whichever is lower)
+                <br><small style="color: #666; font-style: italic;">(7 Sister States, Bhutan & Nepal)</small>
+              </p>
             </div>
           </div>
         </div>
-        <a href="https://iprecon.org">
-          <img
-            src="./assets/img/iprecon26 white.png"
-            alt="IPRECON 2026 Logo"
-            class="brand-logo"
-            id="brandLogo"
-          />
-        </a>
-        <ul class="nav-items">
-          <li class="nav-item"><a href="./index.html">HOME</a></li>
-          <li class="nav-item">
-            <span class="nav-link">ABOUT</span>
-            <div class="dropdown-content">
-              <a href="./about-iprecon.html" class="dropdown-item">IPRECON</a>
-              <a href="./organizers.html" class="dropdown-item">ORGANIZERS</a>
-              <a href="./venue.html" class="dropdown-item">VENUE</a>
-              <a href="./kerala.html" class="dropdown-item">KERALA</a>
-              <a href="./accommodation.html" class="dropdown-item"
-                >ACCOMMODATION</a
-              >
-              <a href="./visa.html" class="dropdown-item">VISA</a>
-              <a href="./sponsors.html" class="dropdown-item"
-                >SPONSORS & EXHIBITORS</a
-              >
-              <a href="./dei.html" class="dropdown-item">DEI STATEMENT</a>
+
+        <!-- Eligibility Criteria Section -->
+        <div class="eligibility-section fade-in">
+          <div class="eligibility-content">
+            <h3>
+              <i class="fas fa-check-circle"></i>
+              Eligibility Criteria
+            </h3>
+
+            <div class="criteria-grid">
+              <div class="criteria-item">
+                <div class="criteria-number">1</div>
+                <p>
+                  The applicant must have a <span class="strong">paper accepted at IPRECON 2026</span> and must complete
+                  <span class="strong">full conference registration</span> before applying for Student Travel Support.
+                </p>
+              </div>
+
+              <div class="criteria-item">
+                <div class="criteria-number">2</div>
+                <p>
+                  The applicant must be an <span class="strong">active IEEE Student or Graduate Student Member
+                    (GSM)</span>
+                  with valid membership status during the conference period.
+                </p>
+              </div>
+
+              <div class="criteria-item">
+                <div class="criteria-number">3</div>
+                <p>
+                  <span class="strong">Priority will be given</span> to applicants with valid
+                  <span class="strong">IEEE IAS and/or PES Memberships</span> in addition to their student membership.
+                </p>
+              </div>
+
+              <div class="criteria-item">
+                <div class="criteria-number">4</div>
+                <p>
+                  <span class="strong">Students receiving travel support from their university/Other means are not
+                    eligible</span> for this funding.
+                  All applicants must submit a <span class="strong">declaration confirming that they are not receiving
+                    any other travel support</span>,
+                  in order to avoid duplication of funding.
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Important Notice Section -->
+        <div class="important-notice fade-in">
+          <h3>
+            <i class="fas fa-exclamation-triangle"></i>
+            Important Information
+          </h3>
+          <p>
+            <span class="strong">Support is limited and granted on a first-come, first-served basis.</span>
+            Reimbursement will be provided after reaching the venue and completing the registration process.
+          </p>
+          <p>
+            All Student Travel Support is subject to available funds and conference budget allocations.
+            Delegates are advised to apply early to ensure consideration for financial assistance.
+          </p>
+        </div>
+
+        <!-- Application Timeline Section -->
+        <div class="timeline-section fade-in">
+          <h3>
+            <i class="fas fa-calendar-alt"></i>
+            Application Timeline
+          </h3>
+
+          <div class="timeline-item">
+            <h4>Student Travel Support Application Opening</h4>
+            <p>
+              The application for <span class="strong">Student Travel Support will open after the Acceptance
+                Notification is released</span>.
+              Eligible participants will receive detailed application instructions via email along with their acceptance
+              notification.
+            </p>
+          </div>
+        </div>
+
+        <!-- Action Section -->
+        <div class="support-limits-section fade-in" style="border-left-color: #4caf50; text-align: center;">
+          <h3>
+            <i class="fas fa-envelope"></i>
+            Ready to Apply?
+          </h3>
+          <p style="text-align: center; margin-bottom: 30px;">
+            For questions about Student Travel Support or to discuss special travel requirements, please contact our
+            support team.
+          </p>
+          <div class="iprecon-btn-group">
+            <a href="./mailto:support@iprecon.org" class="iprecon-btn primary large">
+              <i class="fas fa-envelope"></i>
+              Contact Travel Support
+            </a>
+            <a href="./housing-support.html" class="iprecon-btn secondary">
+              <i class="fas fa-bed"></i>
+              Student Housing Support Info
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="travel-container">
+        <div class="contact-content fade-in">
+          <h3>Need Assistance with Student Travel Support?</h3>
+          <p>For any questions regarding Student Travel Support eligibility, application process, or reimbursement
+            procedures</p>
+          <div class="contact-info">
+            <a href="./mailto:support@iprecon.org" class="contact-link">
+              <i class="fas fa-envelope"></i>
+              support@iprecon.org
+            </a>
+            <a href="./contact.html" class="contact-link">
+              <i class="fas fa-headset"></i>
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer section -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Paper Submission</h3>
+        <ul class="footer-links">
+          <li><a href="./cfp.html">Call for Papers</a></li>
+          <li><a href="./submissions.html">Submit a Paper</a></li>
+          <li>
+            <a href="https://www.ieee.org/conferences/publishing/templates">Paper Template</a>
           </li>
-          <li class="nav-item"><a href="./committee.html">COMMITTEE</a></li>
-          <li class="nav-item">
-            <span class="nav-link">FOR AUTHORS</span>
-            <div class="dropdown-content">
-              <a href="./cfp.html" class="dropdown-item"
-                >CALL FOR PAPERS</a
-              >
-              <a href="./submissions.html" class="dropdown-item">SUBMISSIONS</a>
-              <a href="./important-dates.html" class="dropdown-item"
-                >IMPORTANT DATES</a
-              >
-              <a href="./camera-ready.html" class="dropdown-item"
-                >CAMERA READY SUBMISSION INSTRUCTIONS</a
-              >
-              <a href="./presentation-guidelines.html" class="dropdown-item"
-                >PRESENTATION GUIDELINES</a
-              >
-               <a href="housing-support.html" class="dropdown-item"
-                >STUDENT HOUSING SUPPORT</a
-              >
-              <a href="./travel-support.html" class="dropdown-item"
-                >STUDENT TRAVEL SUPPORT</a
-              >
-            </div>
-          </li>
-          <li class="nav-item"><a href="./speakers.html">SPEAKERS</a></li>
-          <li class="nav-item">
-            <span class="nav-link">PROGRAM</span>
-            <div class="dropdown-content">
-              <a href="./inaugural.html" class="dropdown-item"
-                >INAUGRAL PROGRAM</a
-              >
-              <a href="./distinguished-lectures.html" class="dropdown-item"
-                >DISTINGUISHED LECTURE PROGRAM</a
-              >
-              <a href="./tutorials.html" class="dropdown-item">TUTORIALS</a>
-              <a href="./tracks.html" class="dropdown-item">TRACKS</a>
-              <a href="./special-sessions.html" class="dropdown-item"
-                >SPECIAL SESSIONS</a
-              >
-              <a href="./keynote.html" class="dropdown-item">KEYNOTE</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="./registration.html">REGISTRATION</a></li>
-          <li class="nav-item"><a href="./contact.html">CONTACT</a></li>
         </ul>
       </div>
-    </nav>
 
-    <!-- Marquee -->
-    <div class="non-mob marquee-container">
-      <div class="marquee">
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Paper Submissions Opening Soon! To View Call for Papers
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
+      <div class="footer-column">
+        <h3>About</h3>
+        <ul class="footer-links">
+          <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
+          <li><a href="./committee.html">Team</a></li>
+          <li><a href="./about-iprecon.html">Legacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Travel and Accommodation</h3>
+        <ul class="footer-links">
+          <li><a href="./venue.html">Transportation</a></li>
+          <li><a href="./accommodation.html">Hotels</a></li>
+          <li><a href="./kerala.html">Tourism</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <div class="social-icons">
+          <a href="./#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="./#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="./#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="./#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          20% of the presented conference papers will be eligible for further
-          review and possible publication in IAS Periodicals.
-        </div>
-        <div class="notification">
-          <i class="fas fa-bell"></i>
-          Presented papers from IPRECON have been posted in the IEEE Xplore®
-          Digital Library! To View
-          <a
-            href="https://ieeexplore.ieee.org/xpl/conhome/1839284/all-proceedings"
-            class="purple-link"
-            >Click Here</a
-          >
+        <div class="copyright">
+          Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
         </div>
       </div>
     </div>
+  </footer>
 
-    <!-- Spacer for when marquee becomes fixed -->
-    <div id="marquee-placeholder" style="display: none"></div>
-
-    <main>
-      <!-- Hero Section -->
-      <section class="travel-hero">
-        <div class="travel-hero-content">
-          <h1 class="travel-title">Student Travel Support</h1>
-          <p class="travel-subtitle">
-            Financial assistance for travel expenses for student authors from India, Nepal, and Bhutan attending IPRECON 2026
-          </p>
-          
-          <div class="regional-highlight">
-            <div class="regional-content">
-              <h3>
-                <i class="fas fa-train"></i>
-                Regional Student Travel Support Available
-              </h3>
-              <p>
-                <span class="strong">Travel Support is available only for Student Authors from India, Nepal, and Bhutan.</span> 
-                Delegates from other countries are supported through the Student Housing Support program.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Main Content -->
-      <section class="travel-content">
-        <div class="travel-container">
-          
-          <!-- Student Travel Support Limits Section -->
-          <div class="support-limits-section fade-in">
-            <h3>
-              <i class="fas fa-map-marker-alt"></i>
-              Student Travel Support Limits
-            </h3>
-            
-            <div class="limits-grid">
-              <div class="limit-card">
-                <h4>
-                  <i class="fas fa-map"></i>
-                  Kerala
-                </h4>
-                <p>
-                  <span class="amount">Up to ₹2,000</span> or 3rd Class AC train fare (whichever is lower)
-                </p>
-              </div>
-              
-              <div class="limit-card">
-                <h4>
-                  <i class="fas fa-location-arrow"></i>
-                  Tamil Nadu, Karnataka, Telangana, Andhra Pradesh
-                </h4>
-                <p>
-                  <span class="amount">Up to ₹3,500</span> or 3rd Class AC train fare (whichever is lower)
-                </p>
-              </div>
-              
-              <div class="limit-card">
-                <h4>
-                  <i class="fas fa-compass"></i>
-                  Rest of India
-                </h4>
-                <p>
-                  <span class="amount">Up to ₹5,000</span> or 3rd Class AC train fare (whichever is lower)
-                  <br><small style="color: #666; font-style: italic;">(excluding 7 North-Eastern States)</small>
-                </p>
-              </div>
-              
-              <div class="limit-card">
-                <h4>
-                  <i class="fas fa-mountain"></i>
-                  NE India, Bhutan & Nepal
-                </h4>
-                <p>
-                  <span class="amount">Up to ₹7,500</span> or 3rd Class AC train fare or by other means of transport(whichever is lower)
-                  <br><small style="color: #666; font-style: italic;">(7 Sister States, Bhutan & Nepal)</small>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Eligibility Criteria Section -->
-          <div class="eligibility-section fade-in">
-            <div class="eligibility-content">
-              <h3>
-                <i class="fas fa-check-circle"></i>
-                Eligibility Criteria
-              </h3>
-              
-              <div class="criteria-grid">
-                <div class="criteria-item">
-                  <div class="criteria-number">1</div>
-                  <p>
-                    The applicant must have a <span class="strong">paper accepted at IPRECON 2026</span> and must complete 
-                    <span class="strong">full conference registration</span> before applying for Student Travel Support.
-                  </p>
-                </div>
-                
-                <div class="criteria-item">
-                  <div class="criteria-number">2</div>
-                  <p>
-                    The applicant must be an <span class="strong">active IEEE Student or Graduate Student Member (GSM)</span> 
-                    with valid membership status during the conference period.
-                  </p>
-                </div>
-                
-                <div class="criteria-item">
-                  <div class="criteria-number">3</div>
-                  <p>
-                    <span class="strong">Priority will be given</span> to applicants with valid 
-                    <span class="strong">IEEE IAS and/or PES Memberships</span> in addition to their student membership.
-                  </p>
-                </div>
-
-                <div class="criteria-item">
-                  <div class="criteria-number">4</div>
-                  <p>
-                    <span class="strong">Students receiving travel support from their university/Other means are not eligible</span> for this funding. 
-                    All applicants must submit a <span class="strong">declaration confirming that they are not receiving any other travel support</span>, 
-                    in order to avoid duplication of funding.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Important Notice Section -->
-          <div class="important-notice fade-in">
-            <h3>
-              <i class="fas fa-exclamation-triangle"></i>
-              Important Information
-            </h3>
-            <p>
-              <span class="strong">Support is limited and granted on a first-come, first-served basis.</span> 
-              Reimbursement will be provided after reaching the venue and completing the registration process.
-            </p>
-            <p>
-              All Student Travel Support is subject to available funds and conference budget allocations. 
-              Delegates are advised to apply early to ensure consideration for financial assistance.
-            </p>
-          </div>
-
-          <!-- Application Timeline Section -->
-          <div class="timeline-section fade-in">
-            <h3>
-              <i class="fas fa-calendar-alt"></i>
-              Application Timeline
-            </h3>
-            
-            <div class="timeline-item">
-              <h4>Student Travel Support Application Opening</h4>
-              <p>
-                The application for <span class="strong">Student Travel Support will open after the Acceptance Notification is released</span>. 
-                Eligible participants will receive detailed application instructions via email along with their acceptance notification.
-              </p>
-            </div>
-          </div>
-
-          <!-- Action Section -->
-          <div class="support-limits-section fade-in" style="border-left-color: #4caf50; text-align: center;">
-            <h3>
-              <i class="fas fa-envelope"></i>
-              Ready to Apply?
-            </h3>
-            <p style="text-align: center; margin-bottom: 30px;">
-              For questions about Student Travel Support or to discuss special travel requirements, please contact our support team.
-            </p>
-            <div class="iprecon-btn-group">
-              <a href="./mailto:support@iprecon.org" class="iprecon-btn primary large">
-                <i class="fas fa-envelope"></i>
-                Contact Travel Support
-              </a>
-              <a href="./housing-support.html" class="iprecon-btn secondary">
-                <i class="fas fa-bed"></i>
-                Student Housing Support Info
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="contact-section">
-        <div class="travel-container">
-          <div class="contact-content fade-in">
-            <h3>Need Assistance with Student Travel Support?</h3>
-            <p>For any questions regarding Student Travel Support eligibility, application process, or reimbursement procedures</p>
-            <div class="contact-info">
-              <a href="./mailto:support@iprecon.org" class="contact-link">
-                <i class="fas fa-envelope"></i>
-                support@iprecon.org
-              </a>
-              <a href="./contact.html" class="contact-link">
-                <i class="fas fa-headset"></i>
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Footer section -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Paper Submission</h3>
-          <ul class="footer-links">
-            <li><a href="./cfp.html">Call for Papers</a></li>
-            <li><a href="./submissions.html">Submit a Paper</a></li>
-            <li>
-              <a href="https://www.ieee.org/conferences/publishing/templates"
-                >Paper Template</a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>About</h3>
-          <ul class="footer-links">
-            <li><a href="https://ieeesbcek.org">IEEE SB CEK</a></li>
-            <li><a href="./committee.html">Team</a></li>
-            <li><a href="./about-iprecon.html">Legacy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Travel and Accommodation</h3>
-          <ul class="footer-links">
-            <li><a href="./venue.html">Transportation</a></li>
-            <li><a href="./accommodation.html">Hotels</a></li>
-            <li><a href="./kerala.html">Tourism</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <div class="social-icons">
-            <a href="./#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="./#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="./#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a href="./#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-          <div class="copyright">
-            Built with <i class="fas fa-heart"></i> | IEEE SB CEK © 2025
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="./scripts/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#news-slider").owlCarousel({
-          items: 4,
-          loop: true,
-          margin: 20,
-          nav: true,
-          navText: [
-            "<i class='fa fa-chevron-left'></i>",
-            "<i class='fa fa-chevron-right'></i>",
-          ],
-          autoplay: true,
-          autoplayTimeout: 3000,
-          responsive: {
-            0: {
-              items: 3,
-            },
-            600: {
-              items: 3,
-            },
-            1000: {
-              items: 4,
-            },
+  <script src="./scripts/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#news-slider").owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left'></i>",
+          "<i class='fa fa-chevron-right'></i>",
+        ],
+        autoplay: true,
+        autoplayTimeout: 3000,
+        responsive: {
+          0: {
+            items: 3,
           },
-        });
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
+        },
+      });
 
-        // Scroll animations
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
+      // Scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        }, observerOptions);
-
-        document.querySelectorAll(".fade-in").forEach((el) => {
-          observer.observe(el);
-        });
-
-        // Smooth scrolling for anchor links
-        $('a[href^="#"]').on("click", function (event) {
-          var target = $(this.getAttribute("href"));
-          if (target.length) {
-            event.preventDefault();
-            $("html, body")
-              .stop()
-              .animate(
-                {
-                  scrollTop: target.offset().top - 100,
-                },
-                1000
-              );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
           }
         });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
       });
-    </script>
-  </body>
+
+      // Smooth scrolling for anchor links
+      $('a[href^="#"]').on("click", function (event) {
+        var target = $(this.getAttribute("href"));
+        if (target.length) {
+          event.preventDefault();
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: target.offset().top - 100,
+              },
+              1000
+            );
+        }
+      });
+    });
+  </script>
+</body>
 </html>
