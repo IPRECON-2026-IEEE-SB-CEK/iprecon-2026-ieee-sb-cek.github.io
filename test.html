@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanctity Ferme - Meet our Farmlands</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background: #fefefe;
+        }
+
+        /* Glassmorphism Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(254, 254, 254, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header.scrolled {
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(30px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d5016;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo::before {
+            content: "🌱";
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #2d5016, #4ade80);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover {
+            color: #2d5016;
+            transform: translateY(-2px);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #2d5016;
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #2d5016, #4ade80);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(45, 80, 22, 0.4);
+        }
+
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Hero with Particle Background */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fefefe 0%, #f8f9fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="%232d5016" opacity="0.1"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="75" cy="75" r="0.5" fill="%232d5016" opacity="0.1"><animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="50" cy="10" r="0.3" fill="%232d5016" opacity="0.1"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/></circle></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: drift 20s linear infinite;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 3rem 4rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            opacity: 0;
+            animation: slideUpFade 1s ease 0.3s forwards;
+        }
+
+        .hero-title .script {
+            font-style: italic;
+            background: linear-gradient(135deg, #2d5016, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .hero-title .script::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2d5016, #4ade80);
+            border-radius: 2px;
+            animation: expandWidth 1.5s ease 1.5s forwards;
+            transform: scaleX(0);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: slideUpFade 1s ease 0.6s forwards;
+        }
+
+        .hero-cta {
+            opacity: 0;
+            animation: slideUpFade 1s ease 0.9s forwards;
+        }
+
+        .hero-btn {
+            background: linear-gradient(135deg, #2d5016, #4ade80);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(45, 80, 22, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.4);
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.1), rgba(74, 222, 128, 0.1));
+            animation: floatAround 8s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* Projects Section with 3D Cards */
+        .projects {
+            padding: 8rem 0;
+            background: #fefefe;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            margin-bottom: 8rem;
+        }
+
+        .project-item:nth-child(even) .project-content {
+            order: 2;
+        }
+
+        .project-item:nth-child(even) .project-visual {
+            order: 1;
+        }
+
+        .project-visual {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f0f9f0, #e8f5e8);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #2d5016;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.1);
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(45, 80, 22, 0.0) 0%, 
+                rgba(74, 222, 128, 0.05) 100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .project-image:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(45, 80, 22, 0.15);
+        }
+
+        .project-image:hover::before {
+            opacity: 1;
+        }
+
+        .project-status {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-available {
+            background: rgba(5, 150, 105, 0.2);
+            color: #059669;
+            box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+        }
+
+        .status-sold {
+            background: rgba(220, 38, 38, 0.2);
+            color: #dc2626;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .project-content {
+            padding: 2rem 0;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .project-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5016, #4ade80);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover .project-title::after {
+            width: 120px;
+        }
+
+        .project-location {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .project-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2d5016, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .project-features li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            color: #666;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .project-features li::before {
+            content: "✓";
+            color: #059669;
+            font-weight: bold;
+            background: rgba(5, 150, 105, 0.1);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .project-features li:hover {
+            transform: translateX(10px);
+            color: #1a1a1a;
+        }
+
+        .project-btn {
+            background: linear-gradient(135deg, #2d5016, #4ade80);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.3);
+        }
+
+        .project-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.8s ease;
+        }
+
+        .project-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(45, 80, 22, 0.4);
+        }
+
+        .project-btn:hover::before {
+            left: 100%;
+        }
+
+        .project-btn:disabled {
+            background: linear-gradient(135deg, #e5e5e5, #d1d5db);
+            color: #999;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .project-btn:disabled::before {
+            display: none;
+        }
+
+        /* Why Invest with Morphing Cards */
+        .why-invest {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fefefe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-invest::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%232d5016" opacity="0.05"><animate attributeName="r" values="2;4;2" dur="4s" repeatCount="indefinite"/></circle></svg>');
+            animation: drift 15s linear infinite reverse;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            letter-spacing: -0.03em;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #2d5016, #4ade80);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.05), rgba(74, 222, 128, 0.05));
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            border-color: rgba(45, 80, 22, 0.2);
+        }
+
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card:hover .benefit-title {
+            color: #2d5016;
+        }
+
+        .benefit-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CTA with Animated Background */
+        .cta-section {
+            padding: 8rem 0;
+            background: linear-gradient(135deg, #2d5016 0%, #1f3510 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="80" r="1" fill="white" opacity="0.1"><animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/></circle></svg>');
+            animation: drift 25s linear infinite;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            line-height: 1.3;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-btn {
+            background: white;
+            color: #2d5016;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(45, 80, 22, 0.1);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: #fefefe;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-section a::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2d5016;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #2d5016;
+            transform: translateX(5px);
+        }
+
+        .footer-section a:hover::before {
+            width: 100%;
+        }
+
+        .contact-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info p:hover {
+            color: #2d5016;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Simplified Scroll Animations - Content visible by default */
+        .section-enter {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-enter.will-animate {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .section-enter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image animations - visible by default */
+        .image-slide-left,
+        .image-slide-right,
+        .image-slide-up {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .image-slide-left.will-animate {
+            opacity: 0;
+            transform: translateX(-60px) scale(0.95);
+        }
+
+        .image-slide-right.will-animate {
+            opacity: 0;
+            transform: translateX(60px) scale(0.95);
+        }
+
+        .image-slide-up.will-animate {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+        }
+
+        /* Content animations - visible by default */
+        .content-fade-up,
+        .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .content-fade-up.will-animate {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .stagger-item.will-animate {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Text reveal - visible by default */
+        .text-reveal .text-content {
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .text-reveal.will-animate .text-content {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .text-reveal.visible .text-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Scale animations - visible by default */
+        .scale-in {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scale-in.will-animate {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        @keyframes slideUpFade {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expandWidth {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+            66% {
+                transform: translateY(5px) rotate(-3deg);
+            }
+        }
+
+        @keyframes floatAround {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, -20px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-10px, -30px) rotate(180deg);
+            }
+            75% {
+                transform: translate(-30px, 10px) rotate(270deg);
+            }
+        }
+
+        @keyframes drift {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-container,
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 3.5rem);
+            }
+
+            .project-item {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                margin-bottom: 5rem;
+            }
+
+            .project-item:nth-child(even) .project-content,
+            .project-item:nth-child(even) .project-visual {
+                order: initial;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cursor,
+            .cursor-trail {
+                display: none;
+            }
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #2d5016, #4ade80);
+            z-index: 10000;
+            transition: width 0.1s ease;
+        }
+
+        /* Magnetic Effect for Buttons */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2d5016, #4ade80);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.8s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo">Sanctity Ferme</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#projects" class="nav-link active">Projects</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#farm-stays" class="nav-link">Farm-Stays</a></li>
+                <li><a href="#life" class="nav-link">Life at SF</a></li>
+                <li><a href="#sustainability" class="nav-link">Sustainability at SF</a></li>
+            </ul>
+            <button class="contact-btn magnetic">Get in touch</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section-enter" id="home">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-container">
+            <h1 class="hero-title text-reveal">
+                <span class="text-content">Meet our <span class="script">Farmlands</span></span>
+            </h1>
+            <p class="hero-subtitle content-fade-up">
+                At Sanctity Ferme, each project is a unique blend of sustainable living and community-building. Our farm spaces offer a balance of eco-friendly development, nature, and the promise of long-term value. SF1, SF2, and SF3 are fully sold out, but our latest project, SF4, is now available for investment.
+            </p>
+            <div class="hero-cta scale-in">
+                <button class="hero-btn magnetic" onclick="scrollToProjects()">Explore Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section-enter" id="projects">
+        <div class="container">
+            
+            <!-- Sanctity Ferme 4 -->
+            <div class="project-item" data-project="sf4">
+                <div class="project-visual image-slide-left">
+                    <div class="project-image">
+                        🌾
+                        <div class="project-status status-available">Available</div>
+                    </div>
+                </div>
+                <div class="project-content content-fade-up">
+                    <h2 class="project-title stagger-item">Sanctity Ferme 4</h2>
+                    <p class="project-location stagger-item">📍 Shoolagiri, Near Hosur, Tamil Nadu</p>
+                    <p class="project-price stagger-item">₹375 per sq. ft.</p>
+                    <p class="project-description stagger-item">45 mins from Sarjapura, Bangalore</p>
+                    <p class="project-description stagger-item">Surrounded by greenery, each plot is an opportunity to create your dream farmhouse, enjoy panoramic views, and embrace a pollution-free, eco-friendly lifestyle in a thriving community.</p>
+                    <ul class="project-features">
+                        <li class="stagger-item">Proximity to nature while still being 90 mins from Bangalore</li>
+                        <li class="stagger-item">Eco-friendly design and sustainable farming practices</li>
+                        <li class="stagger-item">A vibrant community of like-minded individuals</li>
+                        <li class="stagger-item">Long-term return on investment through property value appreciation and potential for rental income</li>
+                        <li class="stagger-item">Only 15% of the land is for construction, ensuring 85% remains lush, open, and connected to nature</li>
+                    </ul>
+                    <button class="project-btn magnetic stagger-item" onclick="exploreProject('sf4')">Explore SF4</button>
+                </div>
+            </div>
+
+            <!-- Sanctity Ferme 1 -->
+            <div class="project-item" data-project="sf1">
+                <div class="project-visual image-slide-right">
+                    <div class="project-image">
+                        🏠
+                        <div class="project-status status-sold">Sold Out</div>
+                    </div>
+                </div>
+                <div class="project-content content-fade-up">
+                    <h2 class="project-title stagger-item">Sanctity Ferme 1</h2>
+                    <p class="project-location stagger-item">📍 Shoolagiri, Near Hosur, Tamil Nadu</p>
+                    <p class="project-price stagger-item">90 mins from Electronic city, Bangalore</p>
+                    <p class="project-description stagger-item">SF1 was the first project to bring the Sanctity Ferme vision to life. Set on a lush, expansive plot, SF1 has become home to a vibrant community of nature enthusiasts who enjoy sustainable living. With its proximity to key amenities and natural beauty, SF1 was quickly sold out, laying the foundation for future projects.</p>
+                    <button class="project-btn magnetic stagger-item" disabled>Sold Out</button>
+                </div>
+            </div>
+
+            <!-- Sanctity Ferme 2 -->
+            <div class="project-item" data-project="sf2">
+                <div class="project-visual image-slide-left">
+                    <div class="project-image">
+                        🌳
+                        <div class="project-status status-sold">Sold Out</div>
+                    </div>
+                </div>
+                <div class="project-content content-fade-up">
+                    <h2 class="project-title stagger-item">Sanctity Ferme 2</h2>
+                    <p class="project-location stagger-item">📍 Athimugam, Berigai road, Tamil Nadu</p>
+                    <p class="project-price stagger-item">45 mins from Sarjapura, Bangalore</p>
+                    <p class="project-description stagger-item">SF2 continued the success of our first project, offering thoughtfully designed plots surrounded by nature. The community here thrives on the sustainable principles set by Sanctity Ferme, with residents enjoying their green spaces, farm life, and the benefits of being part of an eco-friendly environment. SF2's quick sell-out is a testament to the demand for our unique offering.</p>
+                    <button class="project-btn magnetic stagger-item" disabled>Sold Out</button>
+                </div>
+            </div>
+
+            <!-- Sanctity Ferme 3 -->
+            <div class="project-item" data-project="sf3">
+                <div class="project-visual image-slide-right">
+                    <div class="project-image">
+                        🌿
+                        <div class="project-status status-sold">Sold Out</div>
+                    </div>
+                </div>
+                <div class="project-content content-fade-up">
+                    <h2 class="project-title stagger-item">Sanctity Ferme 3</h2>
+                    <p class="project-location stagger-item">📍 Athimugam, Berigai road, Tamil Nadu</p>
+                    <p class="project-price stagger-item">45 mins from Sarjapura, Bangalore</p>
+                    <p class="project-description stagger-item">SF3 introduced even more innovative sustainability features, and like its predecessors, it quickly became a favorite among investors seeking a green, peaceful lifestyle. With expansive plots and a strong sense of community, SF3 is another success story in our journey to build sustainable farm spaces.</p>
+                    <button class="project-btn magnetic stagger-item" disabled>Sold Out</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Invest Section -->
+    <section class="why-invest section-enter" id="why-invest">
+        <div class="container">
+            <h2 class="section-title text-reveal">
+                <span class="text-content">Why Invest</span>
+            </h2>
+            <p class="section-subtitle content-fade-up">
+                At Sanctity Ferme, we're more than just land developers—we're building a way of life. Our projects offer more than just a place to live; they offer a unique investment in both your future and the environment. With our managed farmlands, you get the best of both worlds: financial returns and the peace of living in a sustainable, thriving community.
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card magnetic scale-in">
+                    <h3 class="benefit-title">Hassle-Free Maintenance</h3>
+                </div>
+                
+                <div class="benefit-card magnetic scale-in">
+                    <h3 class="benefit-title">Weekend Getaway</h3>
+                </div>
+                
+                <div class="benefit-card magnetic scale-in">
+                    <h3 class="benefit-title">Gift for Future Generations</h3>
+                </div>
+                
+                <div class="benefit-card magnetic scale-in">
+                    <h3 class="benefit-title">Activities at the Property</h3>
+                    <p class="benefit-subtitle">with Resort Membership</p>
+                </div>
+                
+                <div class="benefit-card magnetic scale-in">
+                    <h3 class="benefit-title">Agricultural Income is Tax-Exempt</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-enter">
+        <div class="container">
+            <h2 class="cta-title text-reveal">
+                <span class="text-content">Ready to reconnect with nature and become part of a thriving, sustainable community?</span>
+            </h2>
+            <button class="cta-btn magnetic scale-in" onclick="contactUs()">Discover Sanctity Ferme</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#farm-stays">Farm-Stays</a></li>
+                        <li><a href="#life">Life at SF</a></li>
+                        <li><a href="#sustainability">Sustainability at SF</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#life">Life at SF</a></li>
+                        <li><a href="#sustainability">Sustainability at SF</a></li>
+                        <li><a href="#faqs">FAQ's</a></li>
+                        <li><a href="#blogs">Our Blogs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enquiry Now</h4>
+                    <div class="contact-info">
+                        <p>Hospitality - +91 9362 952 025</p>
+                        <p>For plot enquiries - +91 790 408 0319</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Copyright © 2024 Sanctity Ferme. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Loading Animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('hidden');
+                
+                // Initialize animations after page load
+                initializeScrollAnimations();
+            }, 1500);
+        });
+
+        function initializeScrollAnimations() {
+            // Add animate-in class to all elements that should animate
+            document.querySelectorAll('.section-enter:not(.hero), .image-slide-left, .image-slide-right, .image-slide-up, .content-fade-up, .text-reveal:not(.hero .text-reveal), .scale-in, .stagger-item').forEach(el => {
+                el.classList.add('animate-in');
+            });
+        }
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Stagger animation for project features
+                    const features = entry.target.querySelectorAll('.project-features li');
+                    features.forEach((feature, index) => {
+                        setTimeout(() => {
+                            feature.style.opacity = '1';
+                            feature.style.transform = 'translateX(0)';
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all project items
+        document.querySelectorAll('.project-item').forEach(el => {
+            observer.observe(el);
+            
+            // Initially hide features for animation
+            const features = el.querySelectorAll('.project-features li');
+            features.forEach(feature => {
+                feature.style.opacity = '0';
+                feature.style.transform = 'translateX(-20px)';
+                feature.style.transition = 'all 0.6s ease';
+            });
+        });
+
+        // Magnetic Effect for Interactive Elements
+        document.querySelectorAll('.magnetic').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                el.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // Subtle parallax effect for floating elements only
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const floatingElements = document.querySelectorAll('.floating-element');
+            
+            floatingElements.forEach((element, index) => {
+                const rate = scrolled * (0.1 + index * 0.05);
+                element.style.transform = `translateY(${rate}px)`;
+            });
+        });
+
+        // Smooth Scrolling Functions
+        function scrollToProjects() {
+            document.getElementById('projects').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function exploreProject(projectId) {
+            // Create a beautiful modal or notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 3rem;
+                border-radius: 20px;
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+                z-index: 10000;
+                text-align: center;
+                max-width: 500px;
+                border: 1px solid rgba(45, 80, 22, 0.2);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            `;
+            
+            notification.innerHTML = `
+                <h3 style="color: #2d5016; margin-bottom: 1rem; font-size: 1.5rem;">Interested in Sanctity Ferme 4?</h3>
+                <p style="color: #666; margin-bottom: 2rem; line-height: 1.6;">Get in touch with us for site visits, plot availability, and detailed information about our latest farmland project.</p>
+                <div style="margin-bottom: 1.5rem;">
+                    <p style="color: #2d5016; font-weight: 600;">📞 Hospitality: +91 9362 952 025</p>
+                    <p style="color: #2d5016; font-weight: 600;">📱 Plot Enquiries: +91 790 408 0319</p>
+                </div>
+                <button onclick="this.parentElement.remove()" style="
+                    background: linear-gradient(135deg, #2d5016, #4ade80);
+                    color: white;
+                    border: none;
+                    padding: 0.8rem 2rem;
+                    border-radius: 50px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                ">Close</button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 10);
+            
+            // Auto remove after 10 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.style.transform = 'translate(-50%, -50%) scale(0)';
+                    setTimeout(() => notification.remove(), 400);
+                }
+            }, 10000);
+        }
+
+        function contactUs() {
+            // Similar beautiful modal for contact
+            exploreProject('contact');
+        }
+
+        // Navigation Smooth Scroll
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').substring(1);
+                const element = document.getElementById(target);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Clean Project Image Interactions
+        document.querySelectorAll('.project-image').forEach(img => {
+            img.addEventListener('click', function() {
+                // Simple scale feedback on click
+                this.style.transform = 'translateY(-8px) scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-8px) scale(1)';
+                }, 150);
+            });
+        });
+
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: translate(-50%, -50%) scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Performance optimization - Intersection Observer for heavy animations
+        const performanceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.willChange = 'transform';
+                } else {
+                    entry.target.style.willChange = 'auto';
+                }
+            });
+        });
+
+        document.querySelectorAll('.project-item, .benefit-card').forEach(el => {
+            performanceObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
