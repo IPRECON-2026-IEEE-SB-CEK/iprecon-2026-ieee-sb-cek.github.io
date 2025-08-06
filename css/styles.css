@@ -34,7 +34,12 @@
 }
 
 .logo {
-  max-height: 100px;
+  max-height: 80px;
+}
+
+.sponsor-logo {
+  max-height: 60px;
+  margin-right: 20px;
 }
 
 .event-info {
@@ -55,14 +60,23 @@
     color: rgb(0, 0, 0);
   }
 
+  .header-section:last-child {
+    justify-content: flex-start;
+  }
+
   .separator {
     height: 40px;
-    margin: 0 5px;
+    margin: 0 3px;
     background-color: rgba(136, 136, 136, 0.3);
   }
 
   .logo {
-    max-height: 40px !important;
+    max-height: 25px !important;
+  }
+
+  .sponsor-logo {
+    max-height: 20px !important;
+    margin-right: 5px;
   }
 
   .event-info {
@@ -74,10 +88,19 @@
 
 @media (max-width: 480px) {
   .logo {
-    max-height: 35px !important;
+    max-height: 23px !important;
+  }
+  
+  .sponsor-logo {
+    max-height: 25px !important;
+    margin-right: 3px;
+  }
+
+  .separator {
+    height: 30px;
+    margin: 0 2px;
   }
 }
-
 /* --------------------- NAVIGATION BAR STYLES --------------------- */
 .navbar {
   background-color: #211021;
