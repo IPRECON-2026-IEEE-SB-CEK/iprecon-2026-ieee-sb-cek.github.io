@@ -38,8 +38,9 @@
 }
 
 .sponsor-logo {
-  max-height: 60px;
-  margin-right: 20px;
+  max-height: 50px;
+  width: auto;
+  margin: 0 5px;
 }
 
 .event-info {
@@ -75,8 +76,7 @@
   }
 
   .sponsor-logo {
-    max-height: 20px !important;
-    margin-right: 5px;
+    max-height: 15px !important;
   }
 
   .event-info {
@@ -88,12 +88,11 @@
 
 @media (max-width: 480px) {
   .logo {
-    max-height: 23px !important;
+    max-height: 25px !important;
   }
   
   .sponsor-logo {
-    max-height: 25px !important;
-    margin-right: 3px;
+    max-height: 15px !important;
   }
 
   .separator {
